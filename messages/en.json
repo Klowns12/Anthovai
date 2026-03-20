@@ -1,0 +1,221 @@
+{
+  "metadata": {
+    "description": "Anthovai — the AI platforms, enterprise software, and intelligent infrastructure company. Built from Thailand, for the world."
+  },
+  "nav": {
+    "products": "Products",
+    "solutions": "Solutions",
+    "klang": "Klang",
+    "about": "About",
+    "careers": "Careers",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "eyebrow": "A HOUSE OF KAISER KLOWNS · IT / SOFTWARE / AI",
+    "title_1": "Intelligence,",
+    "title_2": "Engineered.",
+    "body": "We build the AI platforms, enterprise software, and intelligent infrastructure that power organizations forward. From Thailand, for the world.",
+    "cta_primary": "Explore Products",
+    "cta_secondary": "Our Story",
+    "stat_projects": "Projects Delivered",
+    "stat_uptime": "Uptime SLA",
+    "stat_countries": "Countries Served",
+    "stat_engineers": "Engineers"
+  },
+  "about": {
+    "label": "WHO WE ARE",
+    "headline": "The backbone of bold organizations.",
+    "p1": "Anthovai was founded with a single conviction: that the right technology, built with intelligence and intention, can transform any organization.",
+    "p2": "From AI-driven automation to enterprise resource management, from cloud infrastructure to bespoke B2B platforms — we build the systems that make organizations work better, faster, and smarter.",
+    "p3": "We don't just deliver software. We architect legacies."
+  },
+  "products": {
+    "label": "OUR PLATFORMS",
+    "headline": "Built to power everything.",
+    "view_all": "View All",
+    "arkai": {
+      "tag": "AI PLATFORM",
+      "name": "Arkai",
+      "desc": "AI-powered intelligent automation platform. Includes Arkai Work Assistant — a LINE-based workspace AI that captures files, summarizes tasks, and retains full conversation context."
+    },
+    "aello": {
+      "tag": "DEVELOPMENT",
+      "name": "Aello",
+      "desc": "An integrated development environment built with AI at its core. Write, test, and deploy faster — with intelligence woven into every stage."
+    },
+    "alfa": {
+      "tag": "ENTERPRISE ERP",
+      "name": "Alfa",
+      "desc": "A comprehensive enterprise resource management system designed for organizations that demand precision, reliability, and scalability."
+    },
+    "klownsnexus": {
+      "tag": "OPERATIONS SUITE",
+      "name": "KlownsNexus",
+      "desc": "A complete business operations suite — office tools, project management, and collaboration in one unified platform."
+    }
+  },
+  "klang": {
+    "tag": "BUILT BY ANTHOVAI · PROGRAMMING LANGUAGE",
+    "headline": "Klang — One Language. Every Platform.",
+    "sub": "A modern, statically-typed, compiled language with the speed of C, readability of Python, and built-in AI primitives. The foundation of the Anthovai ecosystem.",
+    "cta": "Explore Klang",
+    "stat_tests": "Tests Passing",
+    "stat_targets": "Compile Targets",
+    "stat_stdlib": "Stdlib Functions",
+    "stat_version": "Self-Hosting",
+    "target_native": "Native Binary",
+    "target_llvm": "LLVM IR",
+    "target_wasm": "WebAssembly",
+    "pillars": {
+      "speed": "C-Level Speed",
+      "readable": "Python Readability",
+      "safe": "Type Safe",
+      "ai": "AI-Native Primitives"
+    }
+  },
+  "process": {
+    "label": "HOW WE WORK",
+    "headline": "From first brief to lasting impact.",
+    "steps": {
+      "discover": { "title": "Discover", "desc": "We start by understanding your business deeply — your systems, your goals, and the gaps holding you back." },
+      "architect": { "title": "Architect", "desc": "Our engineers design a system blueprint tailored to your context — no off-the-shelf compromises." },
+      "build": { "title": "Build", "desc": "We develop with precision and speed — proprietary platforms or fully custom, always built to last." },
+      "evolve": { "title": "Evolve", "desc": "We stay after launch — improving, integrating, and growing your systems as your business grows." }
+    }
+  },
+  "services": {
+    "label": "WHAT WE DO",
+    "headline": "End-to-end engineering.",
+    "items": {
+      "ai": { "title": "AI & Machine Learning", "desc": "Custom models, NLP pipelines, and intelligent automation tailored to your domain." },
+      "enterprise": { "title": "Enterprise Software", "desc": "Scalable business applications built for operational excellence." },
+      "cloud": { "title": "Cloud Infrastructure", "desc": "Architecture, deployment, and management of production systems." },
+      "security": { "title": "Cybersecurity", "desc": "Threat modeling, penetration testing, and security-first design." },
+      "data": { "title": "Data Engineering", "desc": "Pipelines, lakes, and real-time analytics at scale." },
+      "consulting": { "title": "IT Consulting", "desc": "Strategic technology advisory for digital transformation." }
+    }
+  },
+  "manifesto": {
+    "quote": "Every system we build moves from A to I — from data to decision, from complexity to clarity.",
+    "attribution": "ANTHOVAI · INTELLIGENCE, ENGINEERED."
+  },
+  "cta": {
+    "headline": "Ready to build something lasting?",
+    "sub": "Let's talk about what Anthovai can engineer for you.",
+    "button": "Contact Us"
+  },
+  "footer": {
+    "tagline": "Intelligence, Engineered.",
+    "parent": "A House of Kaiser Klowns",
+    "copy": "© 2026 Anthovai. All rights reserved.",
+    "platform": "Platform",
+    "company": "Company",
+    "connect": "Connect"
+  },
+  "about_page": {
+    "hero_label": "ABOUT ANTHOVAI",
+    "hero_headline": "Intelligence takes form.",
+    "hero_body": "We are a technology company built on the conviction that the right software — engineered with precision and purpose — can transform organizations from the inside out.",
+    "mission_label": "OUR MISSION",
+    "mission_headline": "Build the infrastructure that makes intelligence operational.",
+    "mission_body": "We don't build software for the sake of software. We build systems that become the operational backbone of the organizations that trust us — from enterprise platforms to AI-driven automation.",
+    "values_label": "OUR VALUES",
+    "values": {
+      "precision": { "title": "Precision", "desc": "Every line of code, every architecture decision, every deployment — done with surgical precision." },
+      "ownership": { "title": "Ownership", "desc": "We don't hand off problems. We own the entire lifecycle, from discovery to evolution." },
+      "transparency": { "title": "Transparency", "desc": "Clear communication, honest timelines, and zero black boxes." },
+      "ambition": { "title": "Ambition", "desc": "We build for scale. We build for the future. We build to last." }
+    }
+  },
+  "products_page": {
+    "hero_label": "PRODUCTS & PLATFORMS",
+    "hero_headline": "Software that runs the world.",
+    "hero_body": "From AI platforms to enterprise ERP, every Anthovai product is built to operate at scale — designed for precision, engineered for permanence."
+  },
+  "solutions_page": {
+    "hero_label": "SOLUTIONS",
+    "hero_headline": "Technology, applied.",
+    "hero_body": "We deliver end-to-end technology solutions across industries — from AI automation to cloud infrastructure to enterprise transformation.",
+    "industries_label": "INDUSTRIES",
+    "industries": {
+      "finance": { "title": "Financial Services", "desc": "Risk analytics, compliance automation, and real-time transaction systems." },
+      "healthcare": { "title": "Healthcare", "desc": "Patient data systems, clinical AI, and HIPAA-compliant infrastructure." },
+      "manufacturing": { "title": "Manufacturing", "desc": "IoT-connected production, supply chain optimization, and predictive maintenance." },
+      "government": { "title": "Government", "desc": "Secure, scalable public sector platforms with full audit compliance." }
+    }
+  },
+  "careers_page": {
+    "hero_label": "CAREERS",
+    "hero_headline": "Build what matters.",
+    "hero_body": "We're looking for engineers, designers, and thinkers who want to build software that shapes industries. Remote-first, based in Thailand.",
+    "why_label": "WHY ANTHOVAI",
+    "why_items": {
+      "impact": { "title": "Real Impact", "desc": "Work on products used by organizations worldwide — from AI platforms to enterprise systems." },
+      "growth": { "title": "Growth", "desc": "Continuous learning, mentorship, and access to cutting-edge technologies." },
+      "culture": { "title": "Culture", "desc": "A team of driven individuals who value precision, ownership, and ambition." },
+      "remote": { "title": "Remote-First", "desc": "Work from anywhere. Our team spans Thailand and the world." }
+    },
+    "cta_headline": "No open roles right now?",
+    "cta_body": "Send us your portfolio anyway. We're always looking for exceptional people.",
+    "cta_button": "Get In Touch"
+  },
+  "contact_page": {
+    "hero_label": "CONTACT",
+    "hero_headline": "Let's build together.",
+    "hero_body": "Whether you have a project in mind or just want to explore what's possible — we'd love to hear from you.",
+    "form": {
+      "name": "Full Name",
+      "company": "Company",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Message sent successfully. We'll be in touch.",
+      "error": "Something went wrong. Please try again.",
+      "subjects": {
+        "general": "General Inquiry",
+        "project": "Project Discussion",
+        "partnership": "Partnership",
+        "careers": "Careers",
+        "other": "Other"
+      }
+    },
+    "info": {
+      "title": "Get in Touch",
+      "email": "hello@anthovai.com",
+      "location": "Bangkok, Thailand",
+      "hours": "Mon–Fri, 9:00–18:00 ICT"
+    }
+  },
+  "klang_page": {
+    "hero_label": "THE LANGUAGE WE BUILT",
+    "hero_headline": "The Language We Built to Power Everything.",
+    "hero_body": "Klang is a modern, statically-typed, compiled programming language — designed for performance, readability, and AI-native capabilities.",
+    "pillars_label": "LANGUAGE PILLARS",
+    "pillars": {
+      "speed": { "title": "Speed", "desc": "Compiles to native binaries. Zero-cost abstractions. C-level performance without the complexity." },
+      "readability": { "title": "Readability", "desc": "Clean, Python-inspired syntax that's easy to write, easy to read, and easy to maintain." },
+      "structure": { "title": "Structure", "desc": "First-class structs, traits, and modules. Type safety without ceremony." },
+      "ai": { "title": "AI-Native", "desc": "Built-in AI primitives — model, infer, train — as language keywords, not libraries." }
+    },
+    "targets_label": "COMPILE TARGETS",
+    "targets": {
+      "native": { "title": "Native Binary", "desc": "Direct machine code compilation for maximum performance." },
+      "llvm": { "title": "LLVM IR", "desc": "Full LLVM backend for cross-platform optimization." },
+      "wasm": { "title": "WebAssembly", "desc": "Run Klang in any browser or edge runtime." }
+    },
+    "install_label": "GET STARTED",
+    "install_command": "curl -sSf https://klang.kkg/install.sh | sh",
+    "docs_cta": "Read the Docs",
+    "ecosystem_label": "ECOSYSTEM",
+    "ecosystem": {
+      "klang": { "name": "Klang", "desc": "The language itself — compiler, stdlib, and toolchain." },
+      "rumba": { "name": "DevStudio Rumba", "desc": "The official Klang IDE and development environment." },
+      "arkai": { "name": "Arkai AI", "desc": "AI platform built with Klang at its core." },
+      "ocean": { "name": "Ocean OS", "desc": "Operating system kernel components written in Klang." }
+    }
+  },
+  "marquee": {
+    "items": ["ARTIFICIAL INTELLIGENCE", "ENTERPRISE SOFTWARE", "CLOUD INFRASTRUCTURE", "MACHINE LEARNING", "CYBERSECURITY", "DATA ENGINEERING", "KLANG LANGUAGE", "ANTHOVAI"]
+  }
+}
