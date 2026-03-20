@@ -3,7 +3,7 @@
   "buildCommand": "bun run build",
   "installCommand": "bun install",
   "devCommand": "bun run dev",
-  "regions": ["sin1", "hnd1"],
+  "regions": ["sin1"],
   "headers": [
     {
       "source": "/(.*)",
