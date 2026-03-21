@@ -15,12 +15,7 @@
     "title_1": "Intelligence,",
     "title_2": "Engineered.",
     "body": "We build the AI platforms, enterprise software, and intelligent infrastructure that power organizations forward. From Thailand, for the world.",
-    "cta_primary": "Explore Products",
-    "cta_secondary": "Our Story",
-    "stat_projects": "Projects Delivered",
-    "stat_uptime": "Uptime SLA",
-    "stat_countries": "Countries Served",
-    "stat_engineers": "Engineers"
+    "cta_primary": "Explore Services"
   },
   "about": {
     "label": "WHO WE ARE",
@@ -36,7 +31,7 @@
     "arkai": {
       "tag": "AI PLATFORM",
       "name": "Arkai",
-      "desc": "AI-powered intelligent automation platform. Includes Arkai Work Assistant — a LINE-based workspace AI that captures files, summarizes tasks, and retains full conversation context."
+      "desc": "Intelligent automation for teams. Capture, summarize, and act on information without switching tools. Built for organizations that cannot afford to slow down."
     },
     "aello": {
       "tag": "DEVELOPMENT",
@@ -59,10 +54,6 @@
     "headline": "Klang — One Language. Every Platform.",
     "sub": "A modern, statically-typed, compiled language with the speed of C, readability of Python, and built-in AI primitives. The foundation of the Anthovai ecosystem.",
     "cta": "Explore Klang",
-    "stat_tests": "Tests Passing",
-    "stat_targets": "Compile Targets",
-    "stat_stdlib": "Stdlib Functions",
-    "stat_version": "Self-Hosting",
     "target_native": "Native Binary",
     "target_llvm": "LLVM IR",
     "target_wasm": "WebAssembly",
@@ -151,7 +142,7 @@
     "why_label": "WHY ANTHOVAI",
     "why_items": {
       "impact": { "title": "Real Impact", "desc": "Work on products used by organizations worldwide — from AI platforms to enterprise systems." },
-      "growth": { "title": "Growth", "desc": "Continuous learning, mentorship, and access to cutting-edge technologies." },
+      "growth": { "title": "Growth", "desc": "Continuous learning, mentorship, and access to advanced foundational technologies." },
       "culture": { "title": "Culture", "desc": "A team of driven individuals who value precision, ownership, and ambition." },
       "remote": { "title": "Remote-First", "desc": "Work from anywhere. Our team spans Thailand and the world." }
     },

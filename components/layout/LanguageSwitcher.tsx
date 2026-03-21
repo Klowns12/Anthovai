@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from '@/i18n/navigation'
 import { useLocale } from 'next-intl'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useTransition } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -20,6 +20,7 @@ const languages = [
 
 export function LanguageSwitcher() {
   const [open, setOpen] = useState(false)
+  const [isPending, startTransition] = useTransition()
   const locale = useLocale()
   const router = useRouter()
   const pathname = usePathname()
@@ -38,17 +39,22 @@ export function LanguageSwitcher() {
   }, [])
 
   function switchLocale(code: string) {
-    router.replace(pathname, { locale: code as 'en' | 'th' | 'zh' | 'ja' | 'fr' | 'de' | 'ko' | 'es' })
     setOpen(false)
+    startTransition(() => {
+      // @ts-ignore - next-intl navigation types might complain but options accept scroll
+      router.replace(pathname, { locale: code, scroll: false })
+    })
   }
 
   return (
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
+        disabled={isPending}
         className={cn(
           'flex items-center gap-1.5 text-[11px] tracking-[0.15em] uppercase',
-          'text-white-60 hover:text-white transition-colors',
+          'text-[#1A1A1A]/60 hover:text-[#1A1A1A] transition-colors',
+          isPending && 'opacity-50 cursor-wait'
         )}
         aria-label="Select language"
         aria-expanded={open}
@@ -75,11 +81,12 @@ export function LanguageSwitcher() {
               <button
                 key={lang.code}
                 onClick={() => switchLocale(lang.code)}
+                disabled={isPending}
                 className={cn(
                   'w-full text-left px-4 py-2.5 text-[11px] tracking-[0.15em] uppercase transition-colors',
                   lang.code === locale
-                    ? 'text-gold bg-gold-dim'
-                    : 'text-white-60 hover:text-white hover:bg-white/[0.04]',
+                    ? 'text-[#1A1A1A] bg-[#1A1A1A]/5 font-bold'
+                    : 'text-[#1A1A1A]/60 hover:text-[#1A1A1A] hover:bg-[#1A1A1A]/[0.02]',
                 )}
                 role="option"
                 aria-selected={lang.code === locale}

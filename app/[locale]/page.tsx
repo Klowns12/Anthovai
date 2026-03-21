@@ -18,12 +18,10 @@ export default function Home() {
       <Hero />
       <Marquee items={marqueeItems} />
       <About />
-      <Products />
-      <KlangSection />
-      <Process />
       <Services />
+      <Process />
       <Manifesto />
-      <CTABand />
+      {/* <CTABand /> */}
     </>
   )
 }

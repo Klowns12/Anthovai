@@ -27,7 +27,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="font-display text-xl tracking-tight text-white">
-              Anthovai
+              <img src="/ANTHOVAI-BG.png" alt="Anthovai Logo" className="h-[60px] w-auto drop-shadow-md" />
             </Link>
             <p className="mt-3 text-sm text-white-30 font-display italic">
               {t('tagline')}

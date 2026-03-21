@@ -3,17 +3,17 @@
 
 @theme {
   /* Colors */
-  --color-bg: #06060A;
-  --color-bg-2: #0E0E14;
-  --color-bg-3: #161620;
+  --color-bg: #FFFFFF;
+  --color-bg-2: #F8F6F0;
+  --color-bg-3: #F0EFE9;
   --color-gold: #C9A84C;
   --color-gold-light: #E8C96A;
   --color-gold-dim: rgba(201, 168, 76, 0.12);
   --color-gold-border: rgba(201, 168, 76, 0.22);
-  --color-white: #F8F6F0;
-  --color-white-60: rgba(248, 246, 240, 0.60);
-  --color-white-30: rgba(248, 246, 240, 0.30);
-  --color-code-bg: #0D0D16;
+  --color-white: #06060A;
+  --color-white-60: rgba(6, 6, 10, 0.60);
+  --color-white-30: rgba(6, 6, 10, 0.30);
+  --color-code-bg: #E8E7E0;
 
   /* Typography */
   --font-display: var(--font-instrument-serif);
@@ -52,7 +52,7 @@ body::after {
   position: fixed;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
-  opacity: 0.018;
+  opacity: 0.04;
   pointer-events: none;
   z-index: 9999;
 }

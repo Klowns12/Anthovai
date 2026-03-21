@@ -12,84 +12,43 @@ export function Hero() {
   return (
     <section className="relative min-h-screen pt-24 pb-16 flex items-center overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 dot-grid -z-10" />
-      <div className="absolute inset-0 bg-radial-gradient from-bg/20 via-bg to-bg -z-10" />
+      <div className="absolute inset-0 bg-[#F2F0E9] -z-20" />
 
-      <div className="mx-auto max-w-7xl w-full px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-12 lg:gap-8 items-center">
-          {/* Left Column (Text) */}
-          <div className="relative z-10 pt-12 lg:pt-0">
-            <StaggerChildren>
-              {/* Eyebrow */}
-              <div className="mb-6 flex items-center gap-3">
-                <span className="w-8 h-[1px] bg-gold" />
-                <h2 className="text-[11px] font-medium tracking-[0.25em] uppercase text-gold">
-                  {t('eyebrow')}
-                </h2>
-              </div>
+      {/* Background Globe */}
+      <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden opacity-100 pointer-events-none">
+        <div className="relative w-full h-[95vh] max-w-[1200px] flex items-center justify-center translate-y-[5%] pointer-events-auto">
+          <GlobeCanvas className="absolute inset-0 w-full h-full" />
+        </div>
+      </div>
 
-              {/* Headline */}
-              <h1 className="font-display text-[clamp(56px,7vw,104px)] leading-[0.9] tracking-[-0.02em] text-white my-6">
-                <span className="block">{t('title_1')}</span>
-                <span className="block italic text-gold">{t('title_2')}</span>
-              </h1>
+      <div className="mx-auto max-w-7xl w-full px-6 lg:px-8 relative z-10">
+        <div className="max-w-4xl mx-auto flex flex-col items-center justify-center text-center">
+          <StaggerChildren>
+            {/* Eyebrow */}
+            <div className="mb-6 flex items-center justify-center gap-3">
+              <h2 className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#4A4A4A]">
+                {t('eyebrow')}
+              </h2>
+            </div>
 
-              {/* Body */}
-              <p className="mt-8 max-w-xl text-lg leading-relaxed text-white-60 font-sans">
-                {t('body')}
-              </p>
+            {/* Headline */}
+            <h1 className="font-display text-[clamp(44px,6vw,90px)] leading-[1.0] tracking-[-0.03em] text-[#1A1A1A] my-6">
+              <span className="block">{t('title_1')}</span>
+              <span className="block text-[#1A1A1A]">{t('title_2')}</span>
+            </h1>
 
-              {/* CTAs */}
-              <div className="mt-10 flex flex-wrap items-center gap-4">
-                <Button href="/products" variant="primary" size="lg">
-                  {t('cta_primary')}
-                </Button>
-                <Button href="/about" variant="ghost" size="lg">
-                  {t('cta_secondary')}
-                </Button>
-              </div>
+            {/* Body */}
+            <p className="mt-8 max-w-xl mx-auto text-[17px] leading-relaxed text-[#4A4A4A] font-sans">
+              {t('body')}
+            </p>
 
-              {/* Stats Row */}
-              <div className="mt-16 pt-8 border-t border-white/[0.08] flex gap-8 whitespace-nowrap overflow-x-auto no-scrollbar">
-                <div className="flex flex-col">
-                  <span className="font-display text-3xl text-white">
-                    <Counter to={500} suffix="+" duration={2.5} />
-                  </span>
-                  <span className="text-[10px] uppercase tracking-widest text-white-30 mt-1">
-                    {t('stat_projects')}
-                  </span>
-                </div>
-                <div className="w-[1px] h-10 bg-white/[0.08]" />
-                <div className="flex flex-col">
-                  <span className="font-display text-3xl text-white">
-                    <Counter to={99.99} suffix="%" duration={2.5} />
-                  </span>
-                  <span className="text-[10px] uppercase tracking-widest text-white-30 mt-1">
-                    {t('stat_uptime')}
-                  </span>
-                </div>
-                <div className="w-[1px] h-10 bg-white/[0.08]" />
-                <div className="flex flex-col">
-                  <span className="font-display text-3xl text-white">
-                    <Counter to={28} duration={2.5} />
-                  </span>
-                  <span className="text-[10px] uppercase tracking-widest text-white-30 mt-1">
-                    {t('stat_countries')}
-                  </span>
-                </div>
-              </div>
-            </StaggerChildren>
-          </div>
-
-          {/* Right Column (Globe) */}
-          <div className="relative aspect-square w-full max-w-[600px] mx-auto lg:ml-auto">
-            <div className="absolute inset-4 rounded-full bg-gold/[0.02] blur-3xl" />
-            <GlobeCanvas className="absolute inset-0" />
-            
-            {/* Visual anchor dots */}
-            <div className="absolute top-0 right-[20%] w-1.5 h-1.5 bg-gold rounded-full opacity-50 shadow-[0_0_10px_rgba(201,168,76,0.8)]" />
-            <div className="absolute bottom-[10%] left-[10%] w-2 h-2 bg-gold rounded-full opacity-30 blur-[1px]" />
-          </div>
+            {/* CTAs */}
+            <div className="mt-10 flex flex-wrap justify-center items-center gap-4">
+              <Button href="#services" variant="ghost" className="rounded-full border border-[#1A1A1A]/20 text-[#1A1A1A] hover:bg-[#1A1A1A]/5 px-8 pt-[3px] pb-1 transition-colors">
+                {t('cta_primary')}
+              </Button>
+            </div>
+          </StaggerChildren>
         </div>
       </div>
     </section>

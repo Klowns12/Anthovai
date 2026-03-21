@@ -107,12 +107,6 @@ export function KlangSection() {
               >
                 {t('cta')} &rarr;
               </Link>
-              <Link 
-                href="/klang/docs" 
-                className="text-sm font-mono text-white-60 hover:text-white transition-colors border-b border-transparent hover:border-white/30 pb-1"
-              >
-                klang.kkg
-              </Link>
             </div>
           </FadeUp>
 
@@ -131,17 +125,7 @@ export function KlangSection() {
                 />
               </div>
 
-              {/* Vertical Stats Row */}
-              <div className="grid grid-cols-2 gap-8 relative z-10 border-t border-white/[0.06] pt-8">
-                <div>
-                  <div className="font-display text-4xl text-white mb-2">286k+</div>
-                  <div className="text-[10px] tracking-widest uppercase text-white-30">{t('stat_tests')}</div>
-                </div>
-                <div>
-                  <div className="font-display text-4xl text-white mb-2">3</div>
-                  <div className="text-[10px] tracking-widest uppercase text-white-30">{t('stat_targets')}</div>
-                </div>
-              </div>
+
 
               {/* Targets Pill list */}
               <div className="flex flex-wrap gap-2 mt-8 relative z-10">

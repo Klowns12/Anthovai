@@ -9,7 +9,7 @@ import { LanguageSwitcher } from './LanguageSwitcher'
 import { cn } from '@/lib/utils'
 
 const navLinks = [
-  { href: '/products', key: 'products' },
+  // { href: '/products', key: 'products' },
   { href: '/solutions', key: 'solutions' },
   { href: '/klang', key: 'klang' },
   { href: '/about', key: 'about' },
@@ -44,7 +44,8 @@ export function Navbar() {
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2" aria-label="Anthovai Home">
-            <span className="font-display text-xl tracking-tight text-white">
+            <img src="/ANTHOVAI-BG.png" alt="Anthovai Logo" className="h-[60px] w-auto drop-shadow-md" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling?.classList.remove('hidden') }} />
+            <span className="font-display text-xl tracking-tight text-white hidden">
               Anthovai
             </span>
           </Link>

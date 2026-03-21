@@ -15,7 +15,7 @@ export function Services() {
   ] as const
 
   return (
-    <section className="py-24 lg:py-32 bg-bg-2 border-y border-white/[0.04]">
+    <section id="services" className="py-24 lg:py-32 bg-bg-2 border-y border-white/[0.04]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <FadeUp>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
