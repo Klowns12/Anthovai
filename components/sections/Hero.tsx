@@ -22,7 +22,9 @@ export function Hero() {
       </div>
 
       <div className="mx-auto max-w-7xl w-full px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto flex flex-col items-center justify-center text-center">
+        <div className="max-w-3xl mx-auto flex flex-col items-center justify-center text-center relative py-12">
+          {/* Soft background halo for text readability */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(242,240,233,0.95)_0%,rgba(242,240,233,0.8)_30%,rgba(242,240,233,0)_70%)] -z-10 pointer-events-none rounded-full blur-xl" />
           <StaggerChildren>
             {/* Eyebrow */}
             <div className="mb-6 flex items-center justify-center gap-3">
