@@ -3,7 +3,14 @@ import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { FadeUp } from '@/components/animations/FadeUp'
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+type Props = {
+  params: Promise<{
+    locale: string
+  }>
+}
+
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'expertise.enterpriseSoftware.meta' })
   return {
     title: t('title'),

@@ -7,7 +7,15 @@ import { notFound } from 'next/navigation'
 const validIndustries = ['healthcare', 'retail', 'manufacturing'] as const
 type Industry = typeof validIndustries[number]
 
-export async function generateMetadata({ params: { locale, industry } }: { params: { locale: string; industry: string } }) {
+type Props = {
+  params: Promise<{
+    locale: string
+    industry: string
+  }>
+}
+
+export async function generateMetadata({ params }: Props) {
+  const { locale, industry } = await params
   if (!validIndustries.includes(industry as Industry)) return {}
   const t = await getTranslations({ locale, namespace: `expertise.enterpriseSoftware.${industry}.meta` })
   return {
@@ -16,7 +24,8 @@ export async function generateMetadata({ params: { locale, industry } }: { param
   }
 }
 
-export default function IndustrySupportingPage({ params: { industry } }: { params: { industry: string } }) {
+export default async function IndustrySupportingPage({ params }: Props) {
+  const { industry } = await params
   if (!validIndustries.includes(industry as Industry)) {
     notFound()
   }
