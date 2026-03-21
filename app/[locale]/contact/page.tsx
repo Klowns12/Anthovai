@@ -14,9 +14,35 @@ export default function ContactPage() {
     e.preventDefault()
     setStatus('loading')
     
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setStatus('success')
+    const form = e.currentTarget
+    
+    const data = {
+      name: (form.querySelector('#name') as HTMLInputElement)?.value || '',
+      company: (form.querySelector('#company') as HTMLInputElement)?.value || '',
+      email: (form.querySelector('#email') as HTMLInputElement)?.value || '',
+      subject: (form.querySelector('#subject') as HTMLSelectElement)?.value || '',
+      message: (form.querySelector('#message') as HTMLTextAreaElement)?.value || '',
+    }
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      const result = await res.json()
+
+      if (res.ok && result.success) {
+        setStatus('success')
+        form.reset()
+      } else {
+        console.error('Mail error:', result.error)
+        setStatus('error')
+      }
+    } catch (err) {
+      console.error('Fetch error:', err)
+      setStatus('error')
+    }
   }
 
   const subjects = ['general', 'project', 'partnership', 'careers', 'other'] as const

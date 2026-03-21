@@ -91,22 +91,32 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://github.com/anthovai"
+                  href="https://www.facebook.com/anthovai25"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-white-60 hover:text-white transition-colors"
                 >
-                  GitHub
+                  Facebook
                 </a>
               </li>
               <li>
                 <a
-                  href="https://linkedin.com/company/anthovai"
+                  href="https://www.linkedin.com/showcase/anthovai/about/?viewAsMember=true"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-white-60 hover:text-white transition-colors"
                 >
                   LinkedIn
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/anthovai?igsh=MWhua3B5aHcxbndmZg=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-white-60 hover:text-white transition-colors"
+                >
+                  Instagram
                 </a>
               </li>
             </ul>
