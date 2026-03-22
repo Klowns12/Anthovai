@@ -5,7 +5,7 @@
   "nav": {
     "products": "Products",
     "solutions": "Solutions",
-    "klang": "Klang",
+    "klang": "Klowns Language",
     "about": "About",
     "careers": "Careers",
     "contact": "Contact Us"
@@ -83,6 +83,9 @@
       "cloud": { "title": "โครงสร้างพื้นฐานระบบ Cloud", "desc": "สถาปัตยกรรม การดำเนินการ (Deployment) และการจัดการระบบการผลิตที่มีคุณภาพสูงสุด" },
       "security": { "title": "การรักษาความปลอดภัยทางไซเบอร์", "desc": "การวิเคราะห์รูปแบบของภัยคุกคาม การทดสอบการเจาะระบบเพื่อหาช่องโหว่ (Penetration Test) ที่เน้นให้เกิดความปลอดภัยครอบคลุมทั้งระบบ (Security-first design)" },
       "data": { "title": "การดำเนินการด้าน Data", "desc": "ลำดับขั้นตอนกระบวนการข้อมูล (Pipelines) พื้นที่จัดเก็บข้อมูล (Data lakes) และการวิเคราะห์ข้อมูลเพื่อประกอบการตัดสินใจ (Analytics at scale) แบบ Real-time ครอบคลุมภาพรวมทั้งหมด" },
+      "mobile": { "title": "พัฒนาแอปพลิเคชันมือถือ", "desc": "แอปพลิเคชัน Native และ Cross-platform สำหรับ iOS และ Android ที่ออกแบบเพื่อประสิทธิภาพสูงสุด" },
+      "devops": { "title": "DevOps & ระบบอัตโนมัติ", "desc": "วางระบบ CI/CD Pipeline, Infrastructure as Code และ Workflow การ Deploy แบบอัตโนมัติ" },
+      "ux": { "title": "ออกแบบ UI/UX", "desc": "ออกแบบระบบที่เน้นผู้ใช้เป็นศูนย์กลาง ร่างโครงสร้าง (Wireframing) สร้าง Prototype และพัฒนา Frontend" },
       "consulting": { "title": "ศูนย์ให้คำปรึกษาด้าน IT", "desc": "ทีมที่ปรึกษาสำหรับกำหนดกลยุทธ์ทางเทคโนโลยี ช่วยยกระดับศักยภาพ (Digital Transformation)" }
     }
   },
@@ -195,7 +198,7 @@
     },
     "info": {
       "title": "ติดต่อเรา",
-      "email": "hello@anthovai.com",
+      "email": "contact@anthovai.com",
       "location": "Bangkok, Thailand",
       "hours": "Mon–Fri, 9:00–18:00 ICT"
     }
@@ -229,7 +232,7 @@
     }
   },
   "marquee": {
-    "items": ["ARTIFICIAL INTELLIGENCE", "ENTERPRISE SOFTWARE", "CLOUD INFRASTRUCTURE", "MACHINE LEARNING", "CYBERSECURITY", "DATA ENGINEERING", "KLANG LANGUAGE", "ANTHOVAI"]
+    "items": ["ARTIFICIAL INTELLIGENCE", "ENTERPRISE SOFTWARE", "CLOUD INFRASTRUCTURE", "MACHINE LEARNING", "CYBERSECURITY", "DATA ENGINEERING", "KLOWNS LANGUAGE", "ANTHOVAI"]
   },
   "expertise": {
     "enterpriseSoftware": {

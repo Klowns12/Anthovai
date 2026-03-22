@@ -1,7 +1,6 @@
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { FadeUp } from '@/components/animations/FadeUp'
-import { CTABand } from '@/components/sections/CTABand'
 
 export default function KlangPage() {
   const t = useTranslations('klang_page')
@@ -135,7 +134,6 @@ export default function KlangPage() {
           </div>
         </section>
       </main>
-      <CTABand />
     </>
   )
 }

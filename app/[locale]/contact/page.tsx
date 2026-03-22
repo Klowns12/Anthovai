@@ -157,7 +157,7 @@ export default function ContactPage() {
                     <Mail size={20} className="text-gold shrink-0 mt-1" />
                     <div>
                       <p className="text-sm text-white-60 mb-1">Email</p>
-                      <a href="mailto:hello@anthovai.com" className="text-lg text-white hover:text-gold transition-colors">
+                      <a href="mailto:contact@anthovai.com" className="text-lg text-white hover:text-gold transition-colors">
                         {t('info.email')}
                       </a>
                     </div>

@@ -1,7 +1,6 @@
 import { useTranslations } from 'next-intl'
 import { FadeUp } from '@/components/animations/FadeUp'
 import { Link } from '@/i18n/navigation'
-import { CTABand } from '@/components/sections/CTABand'
 import { ArrowUpRight } from 'lucide-react'
 
 export default function ProductsPage() {
@@ -83,7 +82,6 @@ export default function ProductsPage() {
           </div>
         </section>
       </main>
-      <CTABand />
     </>
   )
 }

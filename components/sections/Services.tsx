@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl'
 import { FadeUp } from '../animations/FadeUp'
-import { Cpu, Terminal, Cloud, ShieldCheck, Database, Lightbulb } from 'lucide-react'
+import { Cpu, Terminal, Cloud, ShieldCheck, Database, Lightbulb, Smartphone, Settings, Palette } from 'lucide-react'
 
 export function Services() {
   const t = useTranslations('services')
@@ -11,6 +11,9 @@ export function Services() {
     { key: 'cloud', icon: Cloud },
     { key: 'security', icon: ShieldCheck },
     { key: 'data', icon: Database },
+    { key: 'mobile', icon: Smartphone },
+    { key: 'devops', icon: Settings },
+    { key: 'ux', icon: Palette },
     { key: 'consulting', icon: Lightbulb },
   ] as const
 

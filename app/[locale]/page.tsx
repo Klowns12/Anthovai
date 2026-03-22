@@ -6,7 +6,6 @@ import { KlangSection } from '@/components/sections/KlangSection'
 import { Process } from '@/components/sections/Process'
 import { Services } from '@/components/sections/Services'
 import { Manifesto } from '@/components/sections/Manifesto'
-import { CTABand } from '@/components/sections/CTABand'
 import { FAQ } from '@/components/sections/FAQ'
 import { Marquee } from '@/components/ui/Marquee'
 
@@ -23,7 +22,6 @@ export default function Home() {
       <Process />
       <Manifesto />
       <FAQ />
-      {/* <CTABand /> */}
     </>
   )
 }

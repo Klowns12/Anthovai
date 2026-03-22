@@ -38,7 +38,7 @@ export function Navbar() {
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
           scrolled
             ? 'bg-bg/80 backdrop-blur-xl border-b border-white/[0.06]'
-            : 'bg-transparent',
+            : 'bg-bg',
         )}
       >
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
@@ -74,8 +74,8 @@ export function Navbar() {
             <Link
               href="/contact"
               className={cn(
-                'px-5 py-2 text-[11px] font-medium tracking-[0.15em] uppercase',
-                'border border-gold-border text-gold hover:bg-gold-dim transition-all',
+                'px-6 py-2.5 text-[11px] font-semibold tracking-[0.2em] uppercase',
+                'bg-white border text-[#C9A84C] border-[#C9A84C] hover:bg-black/5 transition-all',
               )}
             >
               {t('contact')}
@@ -122,7 +122,7 @@ export function Navbar() {
               ))}
               <Link
                 href="/contact"
-                className="mt-4 px-8 py-3 text-sm font-medium tracking-[0.15em] uppercase border border-gold-border text-gold hover:bg-gold-dim transition-all"
+                className="mt-4 px-8 py-3 text-sm font-semibold tracking-[0.2em] uppercase bg-white border border-[#C9A84C] text-[#C9A84C] hover:bg-black/5 transition-all"
                 onClick={() => setMobileOpen(false)}
               >
                 {t('contact')}

@@ -1,6 +1,5 @@
 import { useTranslations } from 'next-intl'
 import { FadeUp } from '@/components/animations/FadeUp'
-import { CTABand } from '@/components/sections/CTABand'
 
 export default function AboutPage() {
   const t = useTranslations('about_page')
@@ -81,7 +80,6 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-      <CTABand />
     </>
   )
 }

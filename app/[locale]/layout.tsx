@@ -26,15 +26,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       template: '%s | Anthovai',
     },
     description: t('description'),
-    keywords: ['AI', 'Software', 'Infrastructure', 'Enterprise', 'Thailand', 'Klang', 'Kaiser Klowns'],
+    keywords: ['AI', 'Software', 'Infrastructure', 'Enterprise', 'Thailand', 'Klowns Language', 'Kaiser Klowns'],
     authors: [{ name: 'Anthovai', url: 'https://anthovai.com' }],
     openGraph: {
       type: 'website',
       url: 'https://anthovai.com',
       siteName: 'Anthovai',
-      images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+      images: [{ url: 'https://anthovai.com/ANTHOVAI-W.png', width: 1200, height: 630 }],
     },
-    twitter: { card: 'summary_large_image' },
+    twitter: {
+      card: 'summary_large_image',
+      images: ['https://anthovai.com/ANTHOVAI-W.png'],
+    },
     robots: { index: true, follow: true },
     alternates: {
       canonical: 'https://anthovai.com',

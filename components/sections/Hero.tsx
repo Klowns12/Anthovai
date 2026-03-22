@@ -10,21 +10,21 @@ export function Hero() {
   const t = useTranslations('hero')
 
   return (
-    <section className="relative min-h-screen pt-24 pb-16 flex items-center overflow-hidden">
+    <section className="relative h-screen flex items-center overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-[#F2F0E9] -z-20" />
 
-      {/* Background Globe */}
-      <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden opacity-100 pointer-events-none">
-        <div className="relative w-full h-[95vh] max-w-[1200px] flex items-center justify-center translate-y-[5%] pointer-events-auto">
+      {/* Background Globe — fills entire viewport */}
+      <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
+        <div className="relative w-full h-screen max-w-[1400px] flex items-center justify-center pointer-events-auto">
           <GlobeCanvas className="absolute inset-0 w-full h-full" />
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl w-full px-6 lg:px-8 relative z-10">
+      <div className="mx-auto max-w-7xl w-full px-6 lg:px-8 relative z-10 pt-16">
         <div className="max-w-3xl mx-auto flex flex-col items-center justify-center text-center relative py-12">
           {/* Soft background halo for text readability */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(242,240,233,0.95)_0%,rgba(242,240,233,0.8)_30%,rgba(242,240,233,0)_70%)] -z-10 pointer-events-none rounded-full blur-xl" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(242,240,233,0.85)_0%,rgba(242,240,233,0.6)_35%,rgba(242,240,233,0)_65%)] -z-10 pointer-events-none rounded-full blur-xl" />
           <StaggerChildren>
             {/* Eyebrow */}
             <div className="mb-6 flex items-center justify-center gap-3">

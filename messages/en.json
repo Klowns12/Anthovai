@@ -5,7 +5,7 @@
   "nav": {
     "products": "Products",
     "solutions": "Solutions",
-    "klang": "Klang",
+    "klang": "Klowns Language",
     "about": "About",
     "careers": "Careers",
     "contact": "Contact Us"
@@ -83,6 +83,9 @@
       "cloud": { "title": "Cloud Infrastructure", "desc": "Architecture, deployment, and management of production systems." },
       "security": { "title": "Cybersecurity", "desc": "Threat modeling, penetration testing, and security-first design." },
       "data": { "title": "Data Engineering", "desc": "Pipelines, lakes, and real-time analytics at scale." },
+      "mobile": { "title": "Mobile & App Development", "desc": "Native and cross-platform applications for iOS and Android, built for performance." },
+      "devops": { "title": "DevOps & Automation", "desc": "CI/CD pipelines, infrastructure as code, and automated deployment workflows." },
+      "ux": { "title": "UI/UX Design", "desc": "User-centered design systems, wireframing, prototyping, and frontend engineering." },
       "consulting": { "title": "IT Consulting", "desc": "Strategic technology advisory for digital transformation." }
     }
   },
@@ -195,7 +198,7 @@
     },
     "info": {
       "title": "Get in Touch",
-      "email": "hello@anthovai.com",
+      "email": "contact@anthovai.com",
       "location": "Bangkok, Thailand",
       "hours": "Mon–Fri, 9:00–18:00 ICT"
     }
@@ -229,7 +232,7 @@
     }
   },
   "marquee": {
-    "items": ["ARTIFICIAL INTELLIGENCE", "ENTERPRISE SOFTWARE", "CLOUD INFRASTRUCTURE", "MACHINE LEARNING", "CYBERSECURITY", "DATA ENGINEERING", "KLANG LANGUAGE", "ANTHOVAI"]
+    "items": ["ARTIFICIAL INTELLIGENCE", "ENTERPRISE SOFTWARE", "CLOUD INFRASTRUCTURE", "MACHINE LEARNING", "CYBERSECURITY", "DATA ENGINEERING", "KLOWNS LANGUAGE", "ANTHOVAI"]
   },
   "expertise": {
     "enterpriseSoftware": {

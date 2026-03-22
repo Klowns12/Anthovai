@@ -1,6 +1,5 @@
 import { useTranslations } from 'next-intl'
 import { FadeUp } from '@/components/animations/FadeUp'
-import { CTABand } from '@/components/sections/CTABand'
 import { notFound } from 'next/navigation'
 
 export default async function ProductDetailPage({
@@ -60,7 +59,6 @@ function ProductContent({ slug }: { slug: string }) {
           </div>
         </section>
       </main>
-      <CTABand />
     </>
   )
 }
