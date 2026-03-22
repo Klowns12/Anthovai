@@ -45,7 +45,7 @@ export default function ContactPage() {
     }
   }
 
-  const subjects = ['general', 'project', 'partnership', 'careers', 'other'] as const
+  const subjects = ['erp', 'ai', 'cloud', 'custom', 'other'] as const
 
   return (
     <main className="pt-32 pb-24">

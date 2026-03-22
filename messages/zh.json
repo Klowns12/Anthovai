@@ -1,21 +1,369 @@
 {
-  "metadata": { "description": "Anthovai — AI平台、企业软件和智能基础设施公司。立足泰国，服务全球。" },
-  "nav": { "products": "产品", "solutions": "解决方案", "klang": "Klowns Language", "about": "关于我们", "careers": "加入我们", "contact": "联系我们" },
-  "hero": { "eyebrow": "KAISER KLOWNS 旗下 · IT / SOFTWARE / AI", "title_1": "智能，", "title_2": "精心打造。", "body": "我们构建AI平台、企业软件和智能基础设施，推动组织持续进步。立足泰国，服务全球。", "cta_primary": "探索产品", "cta_secondary": "我们的故事", "stat_projects": "已交付项目", "stat_uptime": "正常运行SLA", "stat_countries": "服务国家", "stat_engineers": "工程师" },
-  "about": { "label": "我们是谁", "headline": "大胆组织的坚实后盾。", "p1": "Anthovai 创立于一个简单的信念：正确的技术，以智慧和意图构建，能够改变任何组织。", "p2": "从AI驱动的自动化到企业资源管理，从云基础设施到定制B2B平台——我们构建让组织运作更好、更快、更智能的系统。", "p3": "我们不仅交付软件。我们构建传承。" },
-  "products": { "label": "我们的平台", "headline": "为一切赋能。", "view_all": "查看全部", "arkai": { "tag": "AI 平台", "name": "Arkai", "desc": "AI驱动的智能自动化平台。" }, "aello": { "tag": "开发", "name": "Aello", "desc": "以AI为核心的集成开发环境。" }, "alfa": { "tag": "企业 ERP", "name": "Alfa", "desc": "全面的企业资源管理系统。" }, "klownsnexus": { "tag": "运营套件", "name": "KlownsNexus", "desc": "完整的业务运营套件。" } },
-  "klang": { "tag": "ANTHOVAI 出品 · 编程语言", "headline": "Klang — 一种语言，每个平台。", "sub": "一种现代的、静态类型的编译语言，具有C的速度、Python的可读性和内置AI原语。", "cta": "探索 Klang", "stat_tests": "通过测试", "stat_targets": "编译目标", "stat_stdlib": "标准库函数", "stat_version": "自举编译", "target_native": "原生二进制", "target_llvm": "LLVM IR", "target_wasm": "WebAssembly", "pillars": { "speed": "C级速度", "readable": "Python可读性", "safe": "类型安全", "ai": "AI原生原语" } },
-  "process": { "label": "我们的工作方式", "headline": "从首次简报到持久影响。", "steps": { "discover": { "title": "发现", "desc": "深入了解您的业务——系统、目标和差距。" }, "architect": { "title": "架构", "desc": "量身定制的系统蓝图——没有现成妥协。" }, "build": { "title": "构建", "desc": "精确和速度开发——始终经久耐用。" }, "evolve": { "title": "进化", "desc": "发布后继续改进、整合和扩展。" } } },
-  "services": { "label": "我们做什么", "headline": "端到端工程。", "items": { "ai": { "title": "AI与机器学习", "desc": "定制模型、NLP管道和智能自动化。" }, "enterprise": { "title": "企业软件", "desc": "可扩展的业务应用。" }, "cloud": { "title": "云基础设施", "desc": "生产系统的架构和管理。" }, "security": { "title": "网络安全", "desc": "威胁建模和安全优先设计。" }, "data": { "title": "数据工程", "desc": "大规模管道和实时分析。" }, "mobile": { "title": "移动应用开发", "desc": "为iOS和Android打造的原生和跨平台应用。" }, "devops": { "title": "DevOps与自动化", "desc": "CI/CD管道、基础设施即代码和自动化部署。" }, "ux": { "title": "UI/UX设计", "desc": "以用户为中心的设计系统和前端工程。" }, "consulting": { "title": "IT咨询", "desc": "数字化转型战略顾问。" } } },
-  "manifesto": { "quote": "我们构建的每个系统都从A到I——从数据到决策，从复杂到清晰。", "attribution": "ANTHOVAI · INTELLIGENCE, ENGINEERED." },
-  "cta": { "headline": "准备构建持久的事物？", "sub": "让我们谈谈Anthovai能为您设计什么。", "button": "联系我们" },
-  "footer": { "tagline": "Intelligence, Engineered.", "parent": "Kaiser Klowns 旗下", "copy": "© 2026 Anthovai. 保留所有权利。", "platform": "平台", "company": "公司", "connect": "联系" },
-  "about_page": { "hero_label": "关于 ANTHOVAI", "hero_headline": "智能成形。", "hero_body": "正确的软件能够从内到外改变组织。", "mission_label": "我们的使命", "mission_headline": "构建让智能可运营的基础设施。", "mission_body": "我们构建成为组织运营支柱的系统。", "values_label": "我们的价值观", "values": { "precision": { "title": "精确", "desc": "每一行代码都以外科手术般的精确完成。" }, "ownership": { "title": "担当", "desc": "我们负责整个生命周期。" }, "transparency": { "title": "透明", "desc": "清晰沟通、诚实时间表。" }, "ambition": { "title": "抱负", "desc": "为规模、未来和持久而建。" } } },
-  "products_page": { "hero_label": "产品与平台", "hero_headline": "运行世界的软件。", "hero_body": "每个产品都为大规模运营而构建。" },
-  "solutions_page": { "hero_label": "解决方案", "hero_headline": "技术，应用。", "hero_body": "跨行业端到端技术解决方案。", "industries_label": "行业", "industries": { "finance": { "title": "金融服务", "desc": "风险分析和实时交易系统。" }, "healthcare": { "title": "医疗健康", "desc": "患者数据系统和临床AI。" }, "manufacturing": { "title": "制造业", "desc": "IoT生产和供应链优化。" }, "government": { "title": "政府", "desc": "安全可扩展的公共部门平台。" } } },
-  "careers_page": { "hero_label": "加入我们", "hero_headline": "构建重要的事物。", "hero_body": "寻找想要构建塑造行业软件的人才。远程优先，总部泰国。", "why_label": "为什么选择 ANTHOVAI", "why_items": { "impact": { "title": "真实影响", "desc": "参与全球组织使用的产品。" }, "growth": { "title": "成长", "desc": "持续学习和前沿技术。" }, "culture": { "title": "文化", "desc": "重视精确和担当的团队。" }, "remote": { "title": "远程优先", "desc": "在任何地方工作。" } }, "cta_headline": "没有空缺职位？", "cta_body": "请发送您的作品集。", "cta_button": "联系我们" },
-  "contact_page": { "hero_label": "联系", "hero_headline": "让我们一起构建。", "hero_body": "我们很乐意听取您的意见。", "form": { "name": "全名", "company": "公司", "email": "邮箱", "subject": "主题", "message": "消息", "submit": "发送消息", "success": "消息发送成功。", "error": "出了点问题。", "subjects": { "general": "一般咨询", "project": "项目讨论", "partnership": "合作", "careers": "职业", "other": "其他" } }, "info": { "title": "联系我们", "email": "contact@anthovai.com", "location": "曼谷，泰国", "hours": "周一至周五 9:00–18:00 ICT" } },
-  "klang_page": { "hero_label": "我们构建的语言", "hero_headline": "驱动一切的语言。", "hero_body": "现代的、静态类型的编译编程语言。", "pillars_label": "语言支柱", "pillars": { "speed": { "title": "速度", "desc": "编译为原生二进制，C级性能。" }, "readability": { "title": "可读性", "desc": "Python启发的简洁语法。" }, "structure": { "title": "结构", "desc": "一等结构体和类型安全。" }, "ai": { "title": "AI原生", "desc": "内置AI原语。" } }, "targets_label": "编译目标", "targets": { "native": { "title": "原生二进制", "desc": "最大性能的机器码。" }, "llvm": { "title": "LLVM IR", "desc": "跨平台优化。" }, "wasm": { "title": "WebAssembly", "desc": "浏览器运行。" } }, "install_label": "开始使用", "install_command": "curl -sSf https://klang.kkg/install.sh | sh", "docs_cta": "阅读文档", "ecosystem_label": "生态系统", "ecosystem": { "klang": { "name": "Klang", "desc": "编译器和工具链。" }, "rumba": { "name": "DevStudio Rumba", "desc": "官方IDE。" }, "arkai": { "name": "Arkai AI", "desc": "AI平台。" }, "ocean": { "name": "Ocean OS", "desc": "操作系统组件。" } } },
-  "faq": { "label": "答疑解惑", "headline": "常见问题", "items": { "q1": { "q": "Anthovai 是什么公司？", "a": "Anthovai 是一家高端 AI 软件工程公司。我们设计、构建和部署企业级 AI 平台、智能基础设施和定制 B2B 软件。" }, "q2": { "q": "你们提供定制企业级 AI 集成服务吗？", "a": "是的。我们为企业打造定制 AI 系统、专有大语言模型 (LLM) 以及与现有架构深度集成的自动化工作流。" }, "q3": { "q": "Anthovai 服务哪些行业？", "a": "我们为数据密集型行业提供企业软件和 AI 解决方案，包括金融服务、医疗健康、制造业和公共部门。" }, "q4": { "q": "公司总部在哪里？", "a": "Anthovai 总部位于泰国曼谷，以远程优先的全球化模式为世界各地的组织提供服务。" } } },
-  "marquee": { "items": ["人工智能", "企业软件", "云基础设施", "机器学习", "网络安全", "数据工程", "KLOWNS LANGUAGE", "ANTHOVAI"] }
+  "metadata": {
+    "description": "Anthovai — AI平台、企业软件和智能基础设施公司。立足泰国，服务全球。"
+  },
+  "nav": {
+    "products": "产品",
+    "solutions": "解决方案",
+    "klang": "Klowns Language",
+    "about": "关于我们",
+    "careers": "加入我们",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "eyebrow": "KAISER KLOWNS 旗下 · IT / SOFTWARE / AI",
+    "title_1": "智能，",
+    "title_2": "精心打造。",
+    "body": "我们构建AI平台、企业软件和智能基础设施，推动组织持续进步。立足泰国，服务全球。",
+    "cta_primary": "探索产品",
+    "cta_secondary": "我们的故事",
+    "stat_projects": "已交付项目",
+    "stat_uptime": "正常运行SLA",
+    "stat_countries": "服务国家",
+    "stat_engineers": "工程师"
+  },
+  "about": {
+    "label": "我们是谁",
+    "headline": "大胆组织的坚实后盾。",
+    "p1": "Anthovai 创立于一个简单的信念：正确的技术，以智慧和意图构建，能够改变任何组织。",
+    "p2": "从AI驱动的自动化到企业资源管理，从云基础设施到定制B2B平台——我们构建让组织运作更好、更快、更智能的系统。",
+    "p3": "我们不仅交付软件。我们构建传承。"
+  },
+  "products": {
+    "label": "我们的平台",
+    "headline": "为一切赋能。",
+    "view_all": "查看全部",
+    "arkai": {
+      "tag": "AI 平台",
+      "name": "Arkai",
+      "desc": "AI驱动的智能自动化平台。"
+    },
+    "aello": {
+      "tag": "开发",
+      "name": "Aello",
+      "desc": "以AI为核心的集成开发环境。"
+    },
+    "alfa": {
+      "tag": "企业 ERP",
+      "name": "Alfa",
+      "desc": "全面的企业资源管理系统。"
+    },
+    "klownsnexus": {
+      "tag": "运营套件",
+      "name": "KlownsNexus",
+      "desc": "完整的业务运营套件。"
+    }
+  },
+  "klang": {
+    "tag": "ANTHOVAI 出品 · 编程语言",
+    "headline": "Klang — 一种语言，每个平台。",
+    "sub": "一种现代的、静态类型的编译语言，具有C的速度、Python的可读性和内置AI原语。",
+    "cta": "探索 Klang",
+    "stat_tests": "通过测试",
+    "stat_targets": "编译目标",
+    "stat_stdlib": "标准库函数",
+    "stat_version": "自举编译",
+    "target_native": "原生二进制",
+    "target_llvm": "LLVM IR",
+    "target_wasm": "WebAssembly",
+    "pillars": {
+      "speed": "C级速度",
+      "readable": "Python可读性",
+      "safe": "类型安全",
+      "ai": "AI原生原语"
+    }
+  },
+  "process": {
+    "label": "我们的工作方式",
+    "headline": "从首次简报到持久影响。",
+    "steps": {
+      "discover": {
+        "title": "发现",
+        "desc": "深入了解您的业务——系统、目标和差距。"
+      },
+      "architect": {
+        "title": "架构",
+        "desc": "量身定制的系统蓝图——没有现成妥协。"
+      },
+      "build": {
+        "title": "构建",
+        "desc": "精确和速度开发——始终经久耐用。"
+      },
+      "evolve": {
+        "title": "进化",
+        "desc": "发布后继续改进、整合和扩展。"
+      }
+    }
+  },
+  "services": {
+    "label": "我们做什么",
+    "headline": "端到端工程。",
+    "items": {
+      "ai": {
+        "title": "AI与机器学习",
+        "desc": "定制模型、NLP管道和智能自动化。"
+      },
+      "enterprise": {
+        "title": "企业软件",
+        "desc": "可扩展的业务应用。"
+      },
+      "cloud": {
+        "title": "云基础设施",
+        "desc": "生产系统的架构和管理。"
+      },
+      "security": {
+        "title": "网络安全",
+        "desc": "威胁建模和安全优先设计。"
+      },
+      "data": {
+        "title": "数据工程",
+        "desc": "大规模管道和实时分析。"
+      },
+      "mobile": {
+        "title": "移动应用开发",
+        "desc": "为iOS和Android打造的原生和跨平台应用。"
+      },
+      "devops": {
+        "title": "DevOps与自动化",
+        "desc": "CI/CD管道、基础设施即代码和自动化部署。"
+      },
+      "ux": {
+        "title": "UI/UX设计",
+        "desc": "以用户为中心的设计系统和前端工程。"
+      },
+      "consulting": {
+        "title": "IT咨询",
+        "desc": "数字化转型战略顾问。"
+      }
+    }
+  },
+  "manifesto": {
+    "quote": "我们构建的每个系统都从A到I——从数据到决策，从复杂到清晰。",
+    "attribution": "ANTHOVAI · INTELLIGENCE, ENGINEERED."
+  },
+  "cta": {
+    "headline": "准备构建持久的事物？",
+    "sub": "让我们谈谈Anthovai能为您设计什么。",
+    "button": "联系我们"
+  },
+  "footer": {
+    "tagline": "Intelligence, Engineered.",
+    "parent": "Kaiser Klowns 旗下",
+    "copy": "© 2026 Anthovai. 保留所有权利。",
+    "platform": "平台",
+    "company": "公司",
+    "connect": "联系"
+  },
+  "about_page": {
+    "hero_label": "关于 ANTHOVAI",
+    "hero_headline": "智能成形。",
+    "hero_body": "正确的软件能够从内到外改变组织。",
+    "mission_label": "我们的使命",
+    "mission_headline": "构建让智能可运营的基础设施。",
+    "mission_body": "我们构建成为组织运营支柱的系统。",
+    "values_label": "我们的价值观",
+    "values": {
+      "precision": {
+        "title": "精确",
+        "desc": "每一行代码都以外科手术般的精确完成。"
+      },
+      "ownership": {
+        "title": "担当",
+        "desc": "我们负责整个生命周期。"
+      },
+      "transparency": {
+        "title": "透明",
+        "desc": "清晰沟通、诚实时间表。"
+      },
+      "ambition": {
+        "title": "抱负",
+        "desc": "为规模、未来和持久而建。"
+      }
+    }
+  },
+  "products_page": {
+    "hero_label": "产品与平台",
+    "hero_headline": "运行世界的软件。",
+    "hero_body": "每个产品都为大规模运营而构建。"
+  },
+  "solutions_page": {
+    "hero_label": "解决方案",
+    "hero_headline": "技术，应用。",
+    "hero_body": "跨行业端到端技术解决方案。",
+    "industries_label": "行业",
+    "industries": {
+      "finance": {
+        "title": "金融服务",
+        "desc": "风险分析和实时交易系统。",
+        "did": "我们设计了安全的风险分析仪表板，并构建了自动化合规报告管道，实行严格的数据治理。"
+      },
+      "healthcare": {
+        "title": "医疗健康",
+        "desc": "患者数据系统和临床AI。"
+      },
+      "manufacturing": {
+        "title": "制造业",
+        "desc": "IoT生产和供应链优化。",
+        "did": "我们为纺织制造商构建了库存和生产管理系统——实现实时追踪、条形码扫描和基于角色的访问控制。"
+      },
+      "government": {
+        "title": "政府",
+        "desc": "安全可扩展的公共部门平台。",
+        "did": "我们开发了集中的数据交换平台和公共服务门户网站，具备强大的审计追踪和公民身份验证功能。"
+      }
+    }
+  },
+  "careers_page": {
+    "hero_label": "加入我们",
+    "hero_headline": "构建重要的事物。",
+    "hero_body": "寻找想要构建塑造行业软件的人才。远程优先，总部泰国。",
+    "why_label": "为什么选择 ANTHOVAI",
+    "why_items": {
+      "impact": {
+        "title": "真实影响",
+        "desc": "参与全球组织使用的产品。"
+      },
+      "growth": {
+        "title": "成长",
+        "desc": "持续学习和前沿技术。"
+      },
+      "culture": {
+        "title": "文化",
+        "desc": "重视精确和担当的团队。"
+      },
+      "remote": {
+        "title": "远程优先",
+        "desc": "在任何地方工作。"
+      }
+    },
+    "cta_headline": "没有空缺职位？",
+    "cta_body": "请发送您的作品集。",
+    "cta_button": "联系我们"
+  },
+  "contact_page": {
+    "hero_label": "联系",
+    "hero_headline": "您希望构建什么？",
+    "hero_body": "我们很乐意听取您的意见。",
+    "form": {
+      "name": "全名",
+      "company": "公司",
+      "email": "邮箱",
+      "subject": "主题",
+      "message": "消息",
+      "submit": "发送消息",
+      "success": "消息发送成功。",
+      "error": "出了点问题。",
+      "subjects": {
+        "erp": "ERP系统",
+        "ai": "AI集成",
+        "cloud": "云基础设施",
+        "custom": "定制软件",
+        "other": "其他"
+      }
+    },
+    "info": {
+      "title": "联系我们",
+      "email": "contact@anthovai.com",
+      "location": "曼谷，泰国",
+      "hours": "周一至周五 9:00–18:00 ICT"
+    }
+  },
+  "klang_page": {
+    "hero_label": "我们构建的语言",
+    "hero_headline": "驱动一切的语言。",
+    "hero_body": "现代的、静态类型的编译编程语言。",
+    "pillars_label": "语言支柱",
+    "pillars": {
+      "speed": {
+        "title": "速度",
+        "desc": "编译为原生二进制，C级性能。"
+      },
+      "readability": {
+        "title": "可读性",
+        "desc": "Python启发的简洁语法。"
+      },
+      "structure": {
+        "title": "结构",
+        "desc": "一等结构体和类型安全。"
+      },
+      "ai": {
+        "title": "AI原生",
+        "desc": "内置AI原语。"
+      }
+    },
+    "targets_label": "编译目标",
+    "targets": {
+      "native": {
+        "title": "原生二进制",
+        "desc": "最大性能的机器码。"
+      },
+      "llvm": {
+        "title": "LLVM IR",
+        "desc": "跨平台优化。"
+      },
+      "wasm": {
+        "title": "WebAssembly",
+        "desc": "浏览器运行。"
+      }
+    },
+    "install_label": "开始使用",
+    "install_command": "curl -sSf https://klang.kkg/install.sh | sh",
+    "docs_cta": "阅读文档",
+    "ecosystem_label": "生态系统",
+    "ecosystem": {
+      "klang": {
+        "name": "Klang",
+        "desc": "编译器和工具链。"
+      },
+      "rumba": {
+        "name": "DevStudio Rumba",
+        "desc": "官方IDE。"
+      },
+      "arkai": {
+        "name": "Arkai AI",
+        "desc": "AI平台。"
+      },
+      "ocean": {
+        "name": "Ocean OS",
+        "desc": "操作系统组件。"
+      }
+    }
+  },
+  "faq": {
+    "label": "答疑解惑",
+    "headline": "常见问题",
+    "items": {
+      "q1": {
+        "q": "Anthovai 是什么公司？",
+        "a": "Anthovai 是一家高端 AI 软件工程公司。我们设计、构建和部署企业级 AI 平台、智能基础设施和定制 B2B 软件。"
+      },
+      "q2": {
+        "q": "你们提供定制企业级 AI 集成服务吗？",
+        "a": "是的。我们为企业打造定制 AI 系统、专有大语言模型 (LLM) 以及与现有架构深度集成的自动化工作流。"
+      },
+      "q3": {
+        "q": "Anthovai 服务哪些行业？",
+        "a": "我们为数据密集型行业提供企业软件和 AI 解决方案，包括金融服务、医疗健康、制造业和公共部门。"
+      },
+      "q4": {
+        "q": "公司总部在哪里？",
+        "a": "Anthovai 总部位于泰国曼谷，以远程优先的全球化模式为世界各地的组织提供服务。"
+      }
+    }
+  },
+  "marquee": {
+    "items": [
+      "人工智能",
+      "企业软件",
+      "云基础设施",
+      "机器学习",
+      "网络安全",
+      "数据工程",
+      "KLOWNS LANGUAGE",
+      "ANTHOVAI"
+    ]
+  },
+  "client_logos": {
+    "subtitle": "从在线学习平台到制造业ERP——我们构建驱动企业运转的核心系统。"
+  }
 }

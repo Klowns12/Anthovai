@@ -4,6 +4,7 @@ import { About } from '@/components/sections/About'
 import { Products } from '@/components/sections/Products'
 import { KlangSection } from '@/components/sections/KlangSection'
 import { Process } from '@/components/sections/Process'
+import { ClientLogos } from '@/components/sections/ClientLogos'
 import { Services } from '@/components/sections/Services'
 import { Manifesto } from '@/components/sections/Manifesto'
 import { FAQ } from '@/components/sections/FAQ'
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <ClientLogos />
       <Marquee items={marqueeItems} />
       <About />
       <Services />

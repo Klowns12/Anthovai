@@ -152,12 +152,50 @@
     "hero_label": "SOLUTIONS",
     "hero_headline": "ก้าวข้ามข้อจำกัดของเทคโนโลยี",
     "hero_body": "การประยุกต์ใช้งานเทคโนโลยีผ่านรูปแบบ (End-to-End Solutions) อย่างสมบูรณ์แบบ — จากรูปแบบควบคุมสั่งการทำงานอัตโนมัติด้วยโครงข่ายครอบคลุมทั้งระบบไปจนถึงการยกระดับธุรกิจ (Enterprise Transformation)",
-    "industries_label": "INDUSTRIES",
+    "services_label": "LAYER 1",
+    "services_title": "บริการทางวิศวกรรมเฉพาะทาง",
+    "services": {
+      "ai": { "title": "AI Integration", "desc": "Custom models, LLM, automation" },
+      "erp": { "title": "ERP Systems", "desc": "โมเดล Alfa platform, custom workflows" },
+      "cloud": { "title": "Cloud Infra", "desc": "Deploy, manage, ขยายระบบและสเกลทำงาน" },
+      "cybersecurity": { "title": "Cybersecurity", "desc": "Threat modeling, pentest, วางระบบความปลอดภัยข้อมูล" }
+    },
+    "industries_label": "LAYER 2",
+    "industries_title": "กลุ่มอุตสาหกรรมเป้าหมาย",
     "industries": {
-      "finance": { "title": "บริการทางการเงิน", "desc": "การคำนวณเพื่อบริหารความเสี่ยง การปฏิบัติตามมาตรฐานการจัดระเบียบโครงสร้างข้อมูล รวมถึงรูปแบบทำธุรกรรมที่แสดงผลทันเวลา (Real-time Transaction Systems)" },
-      "healthcare": { "title": "การดูแลด้านสุขอนามัย", "desc": "เครือข่ายสำหรับข้อมูลคนไข้ พร้อม AI เข้ามาจัดการ ควบคู่กับรูปแบบที่ได้มาตรฐานสอดคล้อง (HIPAA)" },
-      "manufacturing": { "title": "สายการผลิต (Manufacturing)", "desc": "รูปแบบพัฒนาอุปกรณ์ IoT ที่เพิ่มศักยภาพด้าน Supply Chain และพัฒนาระบบบำรุงรักษาในส่วนคาดการณ์ล่วงหน้า (Predictive Maintenance)" },
-      "government": { "title": "ด้านสาธารณูปโภคขั้นพื้นฐาน", "desc": "ตอบโจทย์ด้านการจัดการและเข้าประเมินโครงสร้างแพลตฟอร์มในส่วนโครงสร้างภาครัฐที่มีความมั่นคง" }
+      "education": { 
+        "title": "Education", 
+        "desc": "ระบบจัดการข้อมูลนักศึกษา, digital infrastructure สำหรับมหาวิทยาลัย\n→ มีลูกค้าจริง: ราชภัฏร้อยเอ็ด",
+        "did": "เราร่วมสร้างแพลตฟอร์มรับสมัครนักศึกษาและระบบจัดการข้อมูลการศึกษา ที่รองรับผู้ใช้งานพร้อมกันหลักหมื่นคนในช่วงลงทะเบียนเรียน"
+      },
+      "manufacturing": { 
+        "title": "Manufacturing", 
+        "desc": "ERP, supply chain, IoT integration, production management systems\n→ มีลูกค้าจริง: Bellco, CH, Vista",
+        "did": "เราสร้างระบบบริหารจัดการคลังสินค้าและสายการผลิตสำหรับผู้ผลิตสิ่งทอ — โดดเด่นด้วยการติดตามผลแบบ Real-time, ระบบสแกนบาร์โค้ด และการกำหนดสิทธิ์ผู้ใช้งาน"
+      },
+      "finance": { 
+        "title": "Financial Services", 
+        "desc": "Risk analytics, compliance ความละเอียดสูงสุดทางระบบการเงิน",
+        "did": "เราวางระบบแดชบอร์ดวิเคราะห์ความเสี่ยงและระบบรายงานตามมาตรฐานโดยอัตโนมัติ พร้อมการกำกับดูแลข้อมูลที่รัดกุม"
+      },
+      "government": { 
+        "title": "Government", 
+        "desc": "Secure public sector platforms โครงสร้างสำหรับหน่วยงานรัฐ",
+        "did": "เราพัฒนาระบบแลกเปลี่ยนข้อมูลส่วนกลางและพอร์ทัลบริการประชาชน ที่มาพร้อมระบบตรวจสอบย้อนหลังที่เชื่อถือได้และการยืนยันตัวตน"
+      }
+    },
+    "process_label": "LAYER 3",
+    "process_title": "วิธีการทำงานของเรา",
+    "faq_title": "FAQ สำหรับลูกค้า B2B",
+    "faq": {
+      "q1": { "q": "ใช้ระยะเวลาในการพัฒนานานแค่ไหน?", "a": "ระยะเวลาขึ้นอยู่กับสเกลของโปรเจกต์ แต่การวางโครงสร้างและ Prototype จะเกิดขึ้นในไม่กี่สัปดาห์ และจะสามารถใช้งานจริงได้ในกรอบเวลา 3-6 เดือน โดยเราจะประเมินชัดเจนในขั้นตอน Discover" },
+      "q2": { "q": "ราคาและงบประมาณเริ่มต้นอยู่ที่เท่าไหร่?", "a": "เราปั้นและประเมินระบบแบบ Bespoke เฉพาะองค์กรของคุณ จึงไม่มีราคาตายตัว ทางทีมวิศวกรจะประเมิน Requirements ก่อนและร่าง Project Estimate ที่เหมาะสมที่สุดให้คุณพิจารณา" }
+    },
+    "cta": {
+      "headline": "พร้อมที่จะปฏิวัติระบบสเกลเดิมๆ หรือยัง?",
+      "sub": "ติดต่อทีมงานเพื่อให้เราวิเคราะห์ระบบเบื้องต้นโดยไม่มีค่าใช้จ่าย",
+      "button_consultation": "Book a free 30-min consultation",
+      "button_estimate": "Get a project estimate"
     }
   },
   "careers_page": {
@@ -177,7 +215,7 @@
   },
   "contact_page": {
     "hero_label": "CONTACT",
-    "hero_headline": "เพื่อทุกโครงสร้างที่ตอบโจทย์",
+    "hero_headline": "คุณกำลังมองหาระบบแบบไหนอยู่?",
     "hero_body": "ไม่ว่าคุณจะมีแผนโครงงานที่วางเอาไว้แล้ว หรือมีความสนใจมองหาอะไรที่เปิดโลกทัศน์ — เรารอรับสายจากคุณอยู่เสมอ",
     "form": {
       "name": "Full Name",
@@ -189,10 +227,10 @@
       "success": "ข้อความของท่านถูกส่งแล้ว เราจะติดต่อกลับไป",
       "error": "บางอย่างผิดพลาด กรุณาลองใหม่อีกครั้ง",
       "subjects": {
-        "general": "สอบถามทั่วไป",
-        "project": "ปรึกษาเรื่องโครงงาน",
-        "partnership": "ให้ความร่วมมือ",
-        "careers": "สมัครงาน",
+        "erp": "ระบบ ERP (Enterprise Resource Planning)",
+        "ai": "การทำงานร่วมกับ AI (AI Integration)",
+        "cloud": "โครงสร้างพื้นฐานระบบคลาวด์",
+        "custom": "พัฒนาซอฟต์แวร์เฉพาะทาง (Custom Software)",
         "other": "อื่นๆ"
       }
     },
@@ -233,6 +271,9 @@
   },
   "marquee": {
     "items": ["ARTIFICIAL INTELLIGENCE", "ENTERPRISE SOFTWARE", "CLOUD INFRASTRUCTURE", "MACHINE LEARNING", "CYBERSECURITY", "DATA ENGINEERING", "KLOWNS LANGUAGE", "ANTHOVAI"]
+  },
+  "client_logos": {
+    "subtitle": "จากแพลตฟอร์ม e-learning ไปจนถึงระบบ ERP สำหรับโรงงานการผลิต — เราสร้างระบบที่เป็นหัวใจหลักในการขับเคลื่อนธุรกิจ"
   },
   "expertise": {
     "enterpriseSoftware": {

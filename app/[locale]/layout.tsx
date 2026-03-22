@@ -6,6 +6,7 @@ import { routing } from '@/i18n/routing'
 import { instrumentSerif, dmSans, jetbrainsMono } from '@/lib/fonts'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
+import '@/app/globals.css'
 
 type Props = {
   children: React.ReactNode
@@ -21,11 +22,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'metadata' })
 
   return {
+    metadataBase: new URL('https://anthovai.com'),
     title: {
       default: 'Anthovai — Intelligence, Engineered.',
       template: '%s | Anthovai',
     },
     description: t('description'),
+    icons: {
+      icon: '/ANTHOVAI-B.png',
+    },
     keywords: ['AI', 'Software', 'Infrastructure', 'Enterprise', 'Thailand', 'Klowns Language', 'Kaiser Klowns'],
     authors: [{ name: 'Anthovai', url: 'https://anthovai.com' }],
     openGraph: {

@@ -152,12 +152,50 @@
     "hero_label": "SOLUTIONS",
     "hero_headline": "Technology, applied.",
     "hero_body": "We deliver end-to-end technology solutions across industries — from AI automation to cloud infrastructure to enterprise transformation.",
-    "industries_label": "INDUSTRIES",
+    "services_label": "LAYER 1",
+    "services_title": "Services with Real Impact",
+    "services": {
+      "ai": { "title": "AI Integration", "desc": "Custom models, LLM, automation" },
+      "erp": { "title": "ERP Systems", "desc": "Alfa platform, custom workflows" },
+      "cloud": { "title": "Cloud Infra", "desc": "Deploy, manage, scale systems" },
+      "cybersecurity": { "title": "Cybersecurity", "desc": "Threat modeling, pentest, design" }
+    },
+    "industries_label": "LAYER 2",
+    "industries_title": "Industries We Transform",
     "industries": {
-      "finance": { "title": "Financial Services", "desc": "Risk analytics, compliance automation, and real-time transaction systems." },
-      "healthcare": { "title": "Healthcare", "desc": "Patient data systems, clinical AI, and HIPAA-compliant infrastructure." },
-      "manufacturing": { "title": "Manufacturing", "desc": "IoT-connected production, supply chain optimization, and predictive maintenance." },
-      "government": { "title": "Government", "desc": "Secure, scalable public sector platforms with full audit compliance." }
+      "education": { 
+        "title": "Education", 
+        "desc": "Student management systems, digital infrastructure for universities. Active Client: Roi Et Bajabhat University.",
+        "did": "We built comprehensive university admission and student management platforms, handling thousands of concurrent users during registration periods."
+      },
+      "manufacturing": { 
+        "title": "Manufacturing", 
+        "desc": "ERP, supply chain, IoT integration, production management systems. Active Clients: Bellco, CH, Vista.",
+        "did": "We built inventory and production management systems for textile manufacturers — real-time tracking, barcode scanning, role-based access."
+      },
+      "finance": { 
+        "title": "Financial Services", 
+        "desc": "Risk analytics, compliance automation. High security standards.",
+        "did": "We engineered secure risk analytics dashboards and automated compliance reporting pipelines with strict data governance."
+      },
+      "government": { 
+        "title": "Government", 
+        "desc": "Secure, scalable public sector platforms with robust audit trails.",
+        "did": "We developed centralized data exchange platforms and public service portals with robust audit trails and citizen authentication."
+      }
+    },
+    "process_label": "LAYER 3",
+    "process_title": "How We Work",
+    "faq_title": "Frequently Asked Questions",
+    "faq": {
+      "q1": { "q": "How long does a typical integration take?", "a": "Timelines depend on the scale of the system, but we aim for rapid prototyping within weeks, scaling to full deployment in 3-6 months. Our 'Discover' phase gives exact estimates." },
+      "q2": { "q": "What is the starting price for enterprise solutions?", "a": "Every system is bespoke. We don't have off-the-shelf pricing. We assess your needs during a consultation and provide a clear project estimate before starting." }
+    },
+    "cta": {
+      "headline": "Ready to scale your operations?",
+      "sub": "Let's architect your next enterprise tier system today.",
+      "button_consultation": "Book a free 30-min consultation",
+      "button_estimate": "Get a project estimate"
     }
   },
   "careers_page": {
@@ -177,7 +215,7 @@
   },
   "contact_page": {
     "hero_label": "CONTACT",
-    "hero_headline": "Let's build together.",
+    "hero_headline": "What are you looking to build?",
     "hero_body": "Whether you have a project in mind or just want to explore what's possible — we'd love to hear from you.",
     "form": {
       "name": "Full Name",
@@ -189,10 +227,10 @@
       "success": "Message sent successfully. We'll be in touch.",
       "error": "Something went wrong. Please try again.",
       "subjects": {
-        "general": "General Inquiry",
-        "project": "Project Discussion",
-        "partnership": "Partnership",
-        "careers": "Careers",
+        "erp": "ERP Systems",
+        "ai": "AI Integration",
+        "cloud": "Cloud Infrastructure",
+        "custom": "Custom Software",
         "other": "Other"
       }
     },
@@ -233,6 +271,9 @@
   },
   "marquee": {
     "items": ["ARTIFICIAL INTELLIGENCE", "ENTERPRISE SOFTWARE", "CLOUD INFRASTRUCTURE", "MACHINE LEARNING", "CYBERSECURITY", "DATA ENGINEERING", "KLOWNS LANGUAGE", "ANTHOVAI"]
+  },
+  "client_logos": {
+    "subtitle": "From e-learning platforms to manufacturing ERP — we build the systems that run the business."
   },
   "expertise": {
     "enterpriseSoftware": {

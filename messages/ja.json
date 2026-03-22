@@ -1,21 +1,369 @@
 {
-  "metadata": { "description": "Anthovai — AIプラットフォーム、エンタープライズソフトウェア、インテリジェントインフラを構築。タイから、世界へ。" },
-  "nav": { "products": "プロダクト", "solutions": "ソリューション", "klang": "Klowns Language", "about": "会社について", "careers": "採用情報", "contact": "お問い合わせ" },
-  "hero": { "eyebrow": "KAISER KLOWNS 傘下 · IT / SOFTWARE / AI", "title_1": "インテリジェンスを、", "title_2": "エンジニアリングで。", "body": "AIプラットフォーム、エンタープライズソフトウェア、インテリジェントインフラを構築し、組織を前進させます。タイから、世界へ。", "cta_primary": "プロダクトを探索", "cta_secondary": "ストーリー", "stat_projects": "納品プロジェクト", "stat_uptime": "アップタイムSLA", "stat_countries": "対応国", "stat_engineers": "エンジニア" },
-  "about": { "label": "私たちについて", "headline": "大胆な組織のバックボーン。", "p1": "Anthovaiは、正しいテクノロジーがあらゆる組織を変革できるという確信のもとに設立されました。", "p2": "AI駆動の自動化からエンタープライズリソース管理、クラウドインフラからB2Bプラットフォームまで — より良く、より速く、よりスマートに機能するシステムを構築します。", "p3": "ソフトウェアを納品するだけではありません。レガシーを設計します。" },
-  "products": { "label": "プラットフォーム", "headline": "すべてを動かすために。", "view_all": "すべて見る", "arkai": { "tag": "AIプラットフォーム", "name": "Arkai", "desc": "AI搭載のインテリジェント自動化プラットフォーム。" }, "aello": { "tag": "開発", "name": "Aello", "desc": "AIを核とした統合開発環境。" }, "alfa": { "tag": "エンタープライズERP", "name": "Alfa", "desc": "包括的なエンタープライズリソース管理システム。" }, "klownsnexus": { "tag": "オペレーションスイート", "name": "KlownsNexus", "desc": "完全なビジネスオペレーションスイート。" } },
-  "klang": { "tag": "ANTHOVAI製 · プログラミング言語", "headline": "Klang — ひとつの言語、すべてのプラットフォーム。", "sub": "C言語の速度、Pythonの可読性、組み込みAIプリミティブを持つ、モダンな静的型付けコンパイル言語。", "cta": "Klangを探索", "stat_tests": "テスト合格", "stat_targets": "コンパイルターゲット", "stat_stdlib": "標準ライブラリ関数", "stat_version": "セルフホスティング", "target_native": "ネイティブバイナリ", "target_llvm": "LLVM IR", "target_wasm": "WebAssembly", "pillars": { "speed": "Cレベル速度", "readable": "Python可読性", "safe": "型安全", "ai": "AIネイティブプリミティブ" } },
-  "process": { "label": "ワークフロー", "headline": "最初のブリーフから持続的なインパクトへ。", "steps": { "discover": { "title": "発見", "desc": "ビジネスを深く理解することから始めます。" }, "architect": { "title": "設計", "desc": "コンテキストに合わせたシステムブループリントを設計します。" }, "build": { "title": "構築", "desc": "精度とスピードで開発します。" }, "evolve": { "title": "進化", "desc": "ローンチ後も改善、統合、成長を続けます。" } } },
-  "services": { "label": "サービス", "headline": "エンドツーエンドエンジニアリング。", "items": { "ai": { "title": "AI & 機械学習", "desc": "カスタムモデルとインテリジェント自動化。" }, "enterprise": { "title": "エンタープライズソフトウェア", "desc": "スケーラブルなビジネスアプリケーション。" }, "cloud": { "title": "クラウドインフラ", "desc": "本番システムのアーキテクチャと管理。" }, "security": { "title": "サイバーセキュリティ", "desc": "脅威モデリングとセキュリティファースト設計。" }, "data": { "title": "データエンジニアリング", "desc": "大規模パイプラインとリアルタイム分析。" }, "mobile": { "title": "モバイルアプリ開発", "desc": "iOSとAndroid向けのネイティブ・クロスプラットフォームアプリ。" }, "devops": { "title": "DevOps & 自動化", "desc": "CI/CDパイプライン、IaC、自動デプロイワークフロー。" }, "ux": { "title": "UI/UXデザイン", "desc": "ユーザー中心のデザインシステムとフロントエンドエンジニアリング。" }, "consulting": { "title": "ITコンサルティング", "desc": "デジタル変革のための戦略的テクノロジーアドバイザリー。" } } },
-  "manifesto": { "quote": "私たちが構築するすべてのシステムはAからIへ — データから意思決定へ、複雑さから明確さへ。", "attribution": "ANTHOVAI · INTELLIGENCE, ENGINEERED." },
-  "cta": { "headline": "持続するものを構築する準備は？", "sub": "Anthovaiがあなたのために何をエンジニアリングできるか、話しましょう。", "button": "お問い合わせ" },
-  "footer": { "tagline": "Intelligence, Engineered.", "parent": "Kaiser Klowns傘下", "copy": "© 2026 Anthovai. All rights reserved.", "platform": "プラットフォーム", "company": "会社", "connect": "コネクト" },
-  "about_page": { "hero_label": "ANTHOVAIについて", "hero_headline": "インテリジェンスが形になる。", "hero_body": "精度と目的をもって設計されたソフトウェアが組織を変革できるという信念に基づく技術企業です。", "mission_label": "ミッション", "mission_headline": "インテリジェンスを運用可能にするインフラを構築する。", "mission_body": "信頼してくださる組織の運用バックボーンとなるシステムを構築します。", "values_label": "バリュー", "values": { "precision": { "title": "精度", "desc": "すべてのコード、すべての決定を外科的精度で。" }, "ownership": { "title": "オーナーシップ", "desc": "ライフサイクル全体を担当します。" }, "transparency": { "title": "透明性", "desc": "明確なコミュニケーションと正直なタイムライン。" }, "ambition": { "title": "野心", "desc": "スケール、未来、永続性のために構築します。" } } },
-  "products_page": { "hero_label": "プロダクト & プラットフォーム", "hero_headline": "世界を動かすソフトウェア。", "hero_body": "すべてのAnthovai製品は大規模運用のために構築されています。" },
-  "solutions_page": { "hero_label": "ソリューション", "hero_headline": "テクノロジーの応用。", "hero_body": "業界横断的なエンドツーエンドテクノロジーソリューション。", "industries_label": "業界", "industries": { "finance": { "title": "金融サービス", "desc": "リスク分析とリアルタイム取引システム。" }, "healthcare": { "title": "ヘルスケア", "desc": "患者データシステムと臨床AI。" }, "manufacturing": { "title": "製造業", "desc": "IoT生産とサプライチェーン最適化。" }, "government": { "title": "政府", "desc": "セキュアでスケーラブルな公共セクタープラットフォーム。" } } },
-  "careers_page": { "hero_label": "採用情報", "hero_headline": "意味あるものを構築する。", "hero_body": "業界を形作るソフトウェアを構築したいエンジニア、デザイナー、思考家を探しています。", "why_label": "なぜANTHOVAIか", "why_items": { "impact": { "title": "リアルインパクト", "desc": "世界中の組織が使用する製品に携わる。" }, "growth": { "title": "成長", "desc": "継続的な学習と最先端技術。" }, "culture": { "title": "カルチャー", "desc": "精度と担当を大切にするチーム。" }, "remote": { "title": "リモートファースト", "desc": "どこからでも働けます。" } }, "cta_headline": "現在空きポジションなし？", "cta_body": "ポートフォリオをお送りください。", "cta_button": "お問い合わせ" },
-  "contact_page": { "hero_label": "お問い合わせ", "hero_headline": "一緒に構築しましょう。", "hero_body": "プロジェクトのアイデアがあれば、ぜひお聞かせください。", "form": { "name": "氏名", "company": "会社名", "email": "メールアドレス", "subject": "件名", "message": "メッセージ", "submit": "送信", "success": "メッセージを送信しました。", "error": "エラーが発生しました。", "subjects": { "general": "一般的なお問い合わせ", "project": "プロジェクト相談", "partnership": "パートナーシップ", "careers": "採用", "other": "その他" } }, "info": { "title": "お問い合わせ先", "email": "contact@anthovai.com", "location": "バンコク、タイ", "hours": "月〜金 9:00–18:00 ICT" } },
-  "klang_page": { "hero_label": "私たちが作った言語", "hero_headline": "すべてを動かすために作った言語。", "hero_body": "モダンな静的型付けコンパイル言語。", "pillars_label": "言語の柱", "pillars": { "speed": { "title": "速度", "desc": "ネイティブバイナリにコンパイル。" }, "readability": { "title": "可読性", "desc": "Python風のクリーンな構文。" }, "structure": { "title": "構造", "desc": "ファーストクラスの構造体と型安全。" }, "ai": { "title": "AIネイティブ", "desc": "組み込みAIプリミティブ。" } }, "targets_label": "コンパイルターゲット", "targets": { "native": { "title": "ネイティブバイナリ", "desc": "最大パフォーマンスのマシンコード。" }, "llvm": { "title": "LLVM IR", "desc": "クロスプラットフォーム最適化。" }, "wasm": { "title": "WebAssembly", "desc": "ブラウザで実行。" } }, "install_label": "はじめに", "install_command": "curl -sSf https://klang.kkg/install.sh | sh", "docs_cta": "ドキュメント", "ecosystem_label": "エコシステム", "ecosystem": { "klang": { "name": "Klang", "desc": "コンパイラとツールチェーン。" }, "rumba": { "name": "DevStudio Rumba", "desc": "公式IDE。" }, "arkai": { "name": "Arkai AI", "desc": "AIプラットフォーム。" }, "ocean": { "name": "Ocean OS", "desc": "OS コンポーネント。" } } },
-  "faq": { "label": "よくある質問", "headline": "よくある質問", "items": { "q1": { "q": "Anthovaiとはどんな会社ですか？", "a": "Anthovaiはプレミアム AI ソフトウェアエンジニアリング企業です。エンタープライズ AI プラットフォーム、インテリジェントインフラ、カスタム B2B ソフトウェアの設計・構築・デプロイを行っています。" }, "q2": { "q": "カスタムエンタープライズ AI 統合を提供していますか？", "a": "はい。カスタム AI システム、独自の大規模言語モデル（LLM）、既存のエンタープライズアーキテクチャに統合される自動化ワークフローを開発しています。" }, "q3": { "q": "どの業界にサービスを提供していますか？", "a": "金融サービス、ヘルスケア、製造業、公共セクターなど、データ集約型産業向けにカスタムエンタープライズソフトウェアと AI ソリューションを提供しています。" }, "q4": { "q": "本社はどこにありますか？", "a": "Anthovaiの本社はタイ・バンコクにあり、リモートファーストのグローバルテクノロジー企業として世界中の組織にサービスを提供しています。" } } },
-  "marquee": { "items": ["人工知能", "エンタープライズソフトウェア", "クラウドインフラ", "機械学習", "サイバーセキュリティ", "データエンジニアリング", "KLOWNS LANGUAGE", "ANTHOVAI"] }
+  "metadata": {
+    "description": "Anthovai — AIプラットフォーム、エンタープライズソフトウェア、インテリジェントインフラを構築。タイから、世界へ。"
+  },
+  "nav": {
+    "products": "プロダクト",
+    "solutions": "ソリューション",
+    "klang": "Klowns Language",
+    "about": "会社について",
+    "careers": "採用情報",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "eyebrow": "KAISER KLOWNS 傘下 · IT / SOFTWARE / AI",
+    "title_1": "インテリジェンスを、",
+    "title_2": "エンジニアリングで。",
+    "body": "AIプラットフォーム、エンタープライズソフトウェア、インテリジェントインフラを構築し、組織を前進させます。タイから、世界へ。",
+    "cta_primary": "プロダクトを探索",
+    "cta_secondary": "ストーリー",
+    "stat_projects": "納品プロジェクト",
+    "stat_uptime": "アップタイムSLA",
+    "stat_countries": "対応国",
+    "stat_engineers": "エンジニア"
+  },
+  "about": {
+    "label": "私たちについて",
+    "headline": "大胆な組織のバックボーン。",
+    "p1": "Anthovaiは、正しいテクノロジーがあらゆる組織を変革できるという確信のもとに設立されました。",
+    "p2": "AI駆動の自動化からエンタープライズリソース管理、クラウドインフラからB2Bプラットフォームまで — より良く、より速く、よりスマートに機能するシステムを構築します。",
+    "p3": "ソフトウェアを納品するだけではありません。レガシーを設計します。"
+  },
+  "products": {
+    "label": "プラットフォーム",
+    "headline": "すべてを動かすために。",
+    "view_all": "すべて見る",
+    "arkai": {
+      "tag": "AIプラットフォーム",
+      "name": "Arkai",
+      "desc": "AI搭載のインテリジェント自動化プラットフォーム。"
+    },
+    "aello": {
+      "tag": "開発",
+      "name": "Aello",
+      "desc": "AIを核とした統合開発環境。"
+    },
+    "alfa": {
+      "tag": "エンタープライズERP",
+      "name": "Alfa",
+      "desc": "包括的なエンタープライズリソース管理システム。"
+    },
+    "klownsnexus": {
+      "tag": "オペレーションスイート",
+      "name": "KlownsNexus",
+      "desc": "完全なビジネスオペレーションスイート。"
+    }
+  },
+  "klang": {
+    "tag": "ANTHOVAI製 · プログラミング言語",
+    "headline": "Klang — ひとつの言語、すべてのプラットフォーム。",
+    "sub": "C言語の速度、Pythonの可読性、組み込みAIプリミティブを持つ、モダンな静的型付けコンパイル言語。",
+    "cta": "Klangを探索",
+    "stat_tests": "テスト合格",
+    "stat_targets": "コンパイルターゲット",
+    "stat_stdlib": "標準ライブラリ関数",
+    "stat_version": "セルフホスティング",
+    "target_native": "ネイティブバイナリ",
+    "target_llvm": "LLVM IR",
+    "target_wasm": "WebAssembly",
+    "pillars": {
+      "speed": "Cレベル速度",
+      "readable": "Python可読性",
+      "safe": "型安全",
+      "ai": "AIネイティブプリミティブ"
+    }
+  },
+  "process": {
+    "label": "ワークフロー",
+    "headline": "最初のブリーフから持続的なインパクトへ。",
+    "steps": {
+      "discover": {
+        "title": "発見",
+        "desc": "ビジネスを深く理解することから始めます。"
+      },
+      "architect": {
+        "title": "設計",
+        "desc": "コンテキストに合わせたシステムブループリントを設計します。"
+      },
+      "build": {
+        "title": "構築",
+        "desc": "精度とスピードで開発します。"
+      },
+      "evolve": {
+        "title": "進化",
+        "desc": "ローンチ後も改善、統合、成長を続けます。"
+      }
+    }
+  },
+  "services": {
+    "label": "サービス",
+    "headline": "エンドツーエンドエンジニアリング。",
+    "items": {
+      "ai": {
+        "title": "AI & 機械学習",
+        "desc": "カスタムモデルとインテリジェント自動化。"
+      },
+      "enterprise": {
+        "title": "エンタープライズソフトウェア",
+        "desc": "スケーラブルなビジネスアプリケーション。"
+      },
+      "cloud": {
+        "title": "クラウドインフラ",
+        "desc": "本番システムのアーキテクチャと管理。"
+      },
+      "security": {
+        "title": "サイバーセキュリティ",
+        "desc": "脅威モデリングとセキュリティファースト設計。"
+      },
+      "data": {
+        "title": "データエンジニアリング",
+        "desc": "大規模パイプラインとリアルタイム分析。"
+      },
+      "mobile": {
+        "title": "モバイルアプリ開発",
+        "desc": "iOSとAndroid向けのネイティブ・クロスプラットフォームアプリ。"
+      },
+      "devops": {
+        "title": "DevOps & 自動化",
+        "desc": "CI/CDパイプライン、IaC、自動デプロイワークフロー。"
+      },
+      "ux": {
+        "title": "UI/UXデザイン",
+        "desc": "ユーザー中心のデザインシステムとフロントエンドエンジニアリング。"
+      },
+      "consulting": {
+        "title": "ITコンサルティング",
+        "desc": "デジタル変革のための戦略的テクノロジーアドバイザリー。"
+      }
+    }
+  },
+  "manifesto": {
+    "quote": "私たちが構築するすべてのシステムはAからIへ — データから意思決定へ、複雑さから明確さへ。",
+    "attribution": "ANTHOVAI · INTELLIGENCE, ENGINEERED."
+  },
+  "cta": {
+    "headline": "持続するものを構築する準備は？",
+    "sub": "Anthovaiがあなたのために何をエンジニアリングできるか、話しましょう。",
+    "button": "お問い合わせ"
+  },
+  "footer": {
+    "tagline": "Intelligence, Engineered.",
+    "parent": "Kaiser Klowns傘下",
+    "copy": "© 2026 Anthovai. All rights reserved.",
+    "platform": "プラットフォーム",
+    "company": "会社",
+    "connect": "コネクト"
+  },
+  "about_page": {
+    "hero_label": "ANTHOVAIについて",
+    "hero_headline": "インテリジェンスが形になる。",
+    "hero_body": "精度と目的をもって設計されたソフトウェアが組織を変革できるという信念に基づく技術企業です。",
+    "mission_label": "ミッション",
+    "mission_headline": "インテリジェンスを運用可能にするインフラを構築する。",
+    "mission_body": "信頼してくださる組織の運用バックボーンとなるシステムを構築します。",
+    "values_label": "バリュー",
+    "values": {
+      "precision": {
+        "title": "精度",
+        "desc": "すべてのコード、すべての決定を外科的精度で。"
+      },
+      "ownership": {
+        "title": "オーナーシップ",
+        "desc": "ライフサイクル全体を担当します。"
+      },
+      "transparency": {
+        "title": "透明性",
+        "desc": "明確なコミュニケーションと正直なタイムライン。"
+      },
+      "ambition": {
+        "title": "野心",
+        "desc": "スケール、未来、永続性のために構築します。"
+      }
+    }
+  },
+  "products_page": {
+    "hero_label": "プロダクト & プラットフォーム",
+    "hero_headline": "世界を動かすソフトウェア。",
+    "hero_body": "すべてのAnthovai製品は大規模運用のために構築されています。"
+  },
+  "solutions_page": {
+    "hero_label": "ソリューション",
+    "hero_headline": "テクノロジーの応用。",
+    "hero_body": "業界横断的なエンドツーエンドテクノロジーソリューション。",
+    "industries_label": "業界",
+    "industries": {
+      "finance": {
+        "title": "金融サービス",
+        "desc": "リスク分析とリアルタイム取引システム。",
+        "did": "厳格なデータガバナンスを備えた安全なリスク分析ダッシュボードと、自動化されたコンプライアンスレポートのパイプラインを設計しました。"
+      },
+      "healthcare": {
+        "title": "ヘルスケア",
+        "desc": "患者データシステムと臨床AI。"
+      },
+      "manufacturing": {
+        "title": "製造業",
+        "desc": "IoT生産とサプライチェーン最適化。",
+        "did": "繊維メーカー向けの在庫および生産管理システムを構築し、リアルタイムトラッキング、バーコードスキャン、ロールベースアクセスを実現しました。"
+      },
+      "government": {
+        "title": "政府",
+        "desc": "セキュアでスケーラブルな公共セクタープラットフォーム。",
+        "did": "強固な監査証跡機能と市民認証機能を備えた、中央集権型のデータ交換プラットフォームと公共サービスポータルを開発しました。"
+      }
+    }
+  },
+  "careers_page": {
+    "hero_label": "採用情報",
+    "hero_headline": "意味あるものを構築する。",
+    "hero_body": "業界を形作るソフトウェアを構築したいエンジニア、デザイナー、思考家を探しています。",
+    "why_label": "なぜANTHOVAIか",
+    "why_items": {
+      "impact": {
+        "title": "リアルインパクト",
+        "desc": "世界中の組織が使用する製品に携わる。"
+      },
+      "growth": {
+        "title": "成長",
+        "desc": "継続的な学習と最先端技術。"
+      },
+      "culture": {
+        "title": "カルチャー",
+        "desc": "精度と担当を大切にするチーム。"
+      },
+      "remote": {
+        "title": "リモートファースト",
+        "desc": "どこからでも働けます。"
+      }
+    },
+    "cta_headline": "現在空きポジションなし？",
+    "cta_body": "ポートフォリオをお送りください。",
+    "cta_button": "お問い合わせ"
+  },
+  "contact_page": {
+    "hero_label": "お問い合わせ",
+    "hero_headline": "何を構築する予定ですか？",
+    "hero_body": "プロジェクトのアイデアがあれば、ぜひお聞かせください。",
+    "form": {
+      "name": "氏名",
+      "company": "会社名",
+      "email": "メールアドレス",
+      "subject": "件名",
+      "message": "メッセージ",
+      "submit": "送信",
+      "success": "メッセージを送信しました。",
+      "error": "エラーが発生しました。",
+      "subjects": {
+        "erp": "ERPシステム",
+        "ai": "AIインテグレーション",
+        "cloud": "クラウドインフラ",
+        "custom": "カスタムソフトウェア",
+        "other": "その他"
+      }
+    },
+    "info": {
+      "title": "お問い合わせ先",
+      "email": "contact@anthovai.com",
+      "location": "バンコク、タイ",
+      "hours": "月〜金 9:00–18:00 ICT"
+    }
+  },
+  "klang_page": {
+    "hero_label": "私たちが作った言語",
+    "hero_headline": "すべてを動かすために作った言語。",
+    "hero_body": "モダンな静的型付けコンパイル言語。",
+    "pillars_label": "言語の柱",
+    "pillars": {
+      "speed": {
+        "title": "速度",
+        "desc": "ネイティブバイナリにコンパイル。"
+      },
+      "readability": {
+        "title": "可読性",
+        "desc": "Python風のクリーンな構文。"
+      },
+      "structure": {
+        "title": "構造",
+        "desc": "ファーストクラスの構造体と型安全。"
+      },
+      "ai": {
+        "title": "AIネイティブ",
+        "desc": "組み込みAIプリミティブ。"
+      }
+    },
+    "targets_label": "コンパイルターゲット",
+    "targets": {
+      "native": {
+        "title": "ネイティブバイナリ",
+        "desc": "最大パフォーマンスのマシンコード。"
+      },
+      "llvm": {
+        "title": "LLVM IR",
+        "desc": "クロスプラットフォーム最適化。"
+      },
+      "wasm": {
+        "title": "WebAssembly",
+        "desc": "ブラウザで実行。"
+      }
+    },
+    "install_label": "はじめに",
+    "install_command": "curl -sSf https://klang.kkg/install.sh | sh",
+    "docs_cta": "ドキュメント",
+    "ecosystem_label": "エコシステム",
+    "ecosystem": {
+      "klang": {
+        "name": "Klang",
+        "desc": "コンパイラとツールチェーン。"
+      },
+      "rumba": {
+        "name": "DevStudio Rumba",
+        "desc": "公式IDE。"
+      },
+      "arkai": {
+        "name": "Arkai AI",
+        "desc": "AIプラットフォーム。"
+      },
+      "ocean": {
+        "name": "Ocean OS",
+        "desc": "OS コンポーネント。"
+      }
+    }
+  },
+  "faq": {
+    "label": "よくある質問",
+    "headline": "よくある質問",
+    "items": {
+      "q1": {
+        "q": "Anthovaiとはどんな会社ですか？",
+        "a": "Anthovaiはプレミアム AI ソフトウェアエンジニアリング企業です。エンタープライズ AI プラットフォーム、インテリジェントインフラ、カスタム B2B ソフトウェアの設計・構築・デプロイを行っています。"
+      },
+      "q2": {
+        "q": "カスタムエンタープライズ AI 統合を提供していますか？",
+        "a": "はい。カスタム AI システム、独自の大規模言語モデル（LLM）、既存のエンタープライズアーキテクチャに統合される自動化ワークフローを開発しています。"
+      },
+      "q3": {
+        "q": "どの業界にサービスを提供していますか？",
+        "a": "金融サービス、ヘルスケア、製造業、公共セクターなど、データ集約型産業向けにカスタムエンタープライズソフトウェアと AI ソリューションを提供しています。"
+      },
+      "q4": {
+        "q": "本社はどこにありますか？",
+        "a": "Anthovaiの本社はタイ・バンコクにあり、リモートファーストのグローバルテクノロジー企業として世界中の組織にサービスを提供しています。"
+      }
+    }
+  },
+  "marquee": {
+    "items": [
+      "人工知能",
+      "エンタープライズソフトウェア",
+      "クラウドインフラ",
+      "機械学習",
+      "サイバーセキュリティ",
+      "データエンジニアリング",
+      "KLOWNS LANGUAGE",
+      "ANTHOVAI"
+    ]
+  },
+  "client_logos": {
+    "subtitle": "eラーニングプラットフォームから製造業向けERPまで — ビジネスを動かすシステムを構築します。"
+  }
 }
