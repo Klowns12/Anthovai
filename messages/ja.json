@@ -141,6 +141,28 @@
     "quote": "私たちが構築するすべてのシステムはAからIへ — データから意思決定へ、複雑さから明確さへ。",
     "attribution": "ANTHOVAI · INTELLIGENCE, ENGINEERED."
   },
+  "faq": {
+    "label": "よくある質問",
+    "headline": "よくある質問",
+    "items": {
+      "q1": {
+        "q": "Anthovaiとはどんな会社ですか？",
+        "a": "Anthovaiはプレミアム AI ソフトウェアエンジニアリング企業です。エンタープライズ AI プラットフォーム、インテリジェントインフラ、カスタム B2B ソフトウェアの設計・構築・デプロイを行っています。"
+      },
+      "q2": {
+        "q": "カスタムエンタープライズ AI 統合を提供していますか？",
+        "a": "はい。カスタム AI システム、独自の大規模言語モデル（LLM）、既存のエンタープライズアーキテクチャに統合される自動化ワークフローを開発しています。"
+      },
+      "q3": {
+        "q": "どの業界にサービスを提供していますか？",
+        "a": "金融サービス、ヘルスケア、製造業、公共セクターなど、データ集約型産業向けにカスタムエンタープライズソフトウェアと AI ソリューションを提供しています。"
+      },
+      "q4": {
+        "q": "本社はどこにありますか？",
+        "a": "Anthovaiの本社はタイ・バンコクにあり、リモートファーストのグローバルテクノロジー企業として世界中の組織にサービスを提供しています。"
+      }
+    }
+  },
   "cta": {
     "headline": "持続するものを構築する準備は？",
     "sub": "Anthovaiがあなたのために何をエンジニアリングできるか、話しましょう。",
@@ -210,7 +232,52 @@
         "title": "政府",
         "desc": "セキュアでスケーラブルな公共セクタープラットフォーム。",
         "did": "強固な監査証跡機能と市民認証機能を備えた、中央集権型のデータ交換プラットフォームと公共サービスポータルを開発しました。"
+      },
+      "education": {
+        "title": "Education",
+        "desc": "Student management systems, digital infrastructure for universities. Active Client: Roi Et Bajabhat University.",
+        "did": "We built comprehensive university admission and student management platforms, handling thousands of concurrent users during registration periods."
       }
+    },
+    "services_label": "レイヤー 1",
+    "services_title": "確かな成果をもたらすサービス",
+    "services": {
+      "ai": {
+        "title": "AIインテグレーション",
+        "desc": "カスタムモデル、LLM、自動化"
+      },
+      "erp": {
+        "title": "ERPシステム",
+        "desc": "Alfaプラットフォーム、カスタムワークフロー"
+      },
+      "cloud": {
+        "title": "クラウドインフラ",
+        "desc": "システムのデプロイ、管理、スケーリング"
+      },
+      "cybersecurity": {
+        "title": "サイバーセキュリティ",
+        "desc": "脅威モデリング、ペネトレーションテスト"
+      }
+    },
+    "industries_title": "Industries We Transform",
+    "process_label": "レイヤー 3",
+    "process_title": "私たちの働き方",
+    "faq_title": "よくある質問",
+    "faq": {
+      "q1": {
+        "q": "一般的な統合にはどのくらいの時間がかかりますか？",
+        "a": "システムの規模に応じて異なりますが、数週間での迅速なプロトタイピングを目指し、3〜6か月で完全な展開を行います。"
+      },
+      "q2": {
+        "q": "エンタープライズソリューションの初期費用はいくらですか？",
+        "a": "システムは全てオーダーメイドであり、固定の価格はありません。相談の中でニーズを評価し、見積もりを提供します。"
+      }
+    },
+    "cta": {
+      "headline": "オペレーションを拡大する準備はできましたか？",
+      "sub": "今日、あなたの次のエンタープライズシステムを設計しましょう。",
+      "button_consultation": "無料の30分コンサルティングを予約する",
+      "button_estimate": "プロジェクトの見積もりを取る"
     }
   },
   "careers_page": {
@@ -262,7 +329,7 @@
       }
     },
     "info": {
-      "title": "お問い合わせ先",
+      "title": "お問い合わせ",
       "email": "contact@anthovai.com",
       "location": "バンコク、タイ",
       "hours": "月〜金 9:00–18:00 ICT"
@@ -329,28 +396,6 @@
       }
     }
   },
-  "faq": {
-    "label": "よくある質問",
-    "headline": "よくある質問",
-    "items": {
-      "q1": {
-        "q": "Anthovaiとはどんな会社ですか？",
-        "a": "Anthovaiはプレミアム AI ソフトウェアエンジニアリング企業です。エンタープライズ AI プラットフォーム、インテリジェントインフラ、カスタム B2B ソフトウェアの設計・構築・デプロイを行っています。"
-      },
-      "q2": {
-        "q": "カスタムエンタープライズ AI 統合を提供していますか？",
-        "a": "はい。カスタム AI システム、独自の大規模言語モデル（LLM）、既存のエンタープライズアーキテクチャに統合される自動化ワークフローを開発しています。"
-      },
-      "q3": {
-        "q": "どの業界にサービスを提供していますか？",
-        "a": "金融サービス、ヘルスケア、製造業、公共セクターなど、データ集約型産業向けにカスタムエンタープライズソフトウェアと AI ソリューションを提供しています。"
-      },
-      "q4": {
-        "q": "本社はどこにありますか？",
-        "a": "Anthovaiの本社はタイ・バンコクにあり、リモートファーストのグローバルテクノロジー企業として世界中の組織にサービスを提供しています。"
-      }
-    }
-  },
   "marquee": {
     "items": [
       "人工知能",
@@ -365,5 +410,214 @@
   },
   "client_logos": {
     "subtitle": "eラーニングプラットフォームから製造業向けERPまで — ビジネスを動かすシステムを構築します。"
+  },
+  "expertise": {
+    "enterpriseSoftware": {
+      "meta": {
+        "title": "Enterprise Software Development | Anthovai - Intelligence, Engineered.",
+        "description": "Anthovai builds enterprise software that powers operations across healthcare, retail, and manufacturing — engineered for scale, compliance, and performance."
+      },
+      "hero": {
+        "h1": "Enterprise Software Development",
+        "intro": "Anthovai builds enterprise software that powers operations across healthcare, retail, and manufacturing — engineered for scale, compliance, and performance."
+      },
+      "whatIs": {
+        "title": "What is Enterprise Software?",
+        "body": "Enterprise software forms the digital backbone of large-scale organizations. It centralizes data, automates complex workflows, and integrates disparate systems into a unified operational platform."
+      },
+      "whyAnthovai": {
+        "title": "Why Anthovai",
+        "points": {
+          "p1": {
+            "title": "Precision Engineered",
+            "desc": "We build systems with exact tolerances, ensuring zero-downtime reliability."
+          },
+          "p2": {
+            "title": "AI Native",
+            "desc": "Intelligence is built into the core architecture, not bolted on as an afterthought."
+          },
+          "p3": {
+            "title": "Bespoke Architecture",
+            "desc": "No off-the-shelf compromises. Your system is designed specifically for your operational reality."
+          }
+        }
+      },
+      "process": {
+        "title": "Our Process",
+        "steps": {
+          "s1": {
+            "title": "Architecture Design",
+            "desc": "We map your entire operational lifecycle to identify redundancies and design the ideal system footprint."
+          },
+          "s2": {
+            "title": "System Integration",
+            "desc": "We connect legacy databases, third-party APIs, and new microservices into a cohesive whole."
+          },
+          "s3": {
+            "title": "Precision Development",
+            "desc": "Our engineers build the core platform using high-performance, strictly-typed languages."
+          },
+          "s4": {
+            "title": "Deployment & Evolution",
+            "desc": "We deploy with zero-downtime strategies and continuously evolve the system based on real-world telemetry."
+          }
+        }
+      },
+      "industries": {
+        "title": "Industries We Serve",
+        "healthcare": "Healthcare",
+        "retail": "Retail & E-commerce",
+        "manufacturing": "Manufacturing",
+        "readMore": "View Details"
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "q1": {
+          "q": "What is the typical timeline for an enterprise software project?",
+          "a": "Timelines vary by complexity, but core architecture deployment usually takes 3 to 6 months. We prioritize rapid, iterative releases."
+        },
+        "q2": {
+          "q": "Do you offer post-launch support and maintenance?",
+          "a": "Yes. We operate as your long-term engineering partner, providing continuous evolution, security patching, and scaling support."
+        },
+        "q3": {
+          "q": "Can you integrate with our existing legacy systems?",
+          "a": "Absolutely. A core part of our expertise is building secure translation layers and APIs to connect legacy mainframes with modern infrastructure."
+        },
+        "q4": {
+          "q": "Who owns the intellectual property?",
+          "a": "You do. Upon completion, the source code, architecture blueprints, and all associated intellectual property are fully transferred to your organization."
+        }
+      },
+      "healthcare": {
+        "meta": {
+          "title": "Healthcare Software Development | Anthovai",
+          "description": "Anthovai develops healthcare software systems that streamline clinical workflows and patient data management — built for PDPA compliance."
+        },
+        "hero": {
+          "h1": "Healthcare Software Development — Clinical & Operational Systems",
+          "intro": "Anthovai develops healthcare software systems that streamline clinical workflows, patient data management, and hospital operations — built for PDPA compliance and HL7/FHIR integration."
+        },
+        "sections": {
+          "s1": {
+            "title": "Patient Data & Records Systems",
+            "desc": "We engineer highly secure, encrypted electronic health record (EHR) systems that provide real-time patient history across departments without compromising access speed."
+          },
+          "s2": {
+            "title": "Compliance: PDPA / HL7 / FHIR",
+            "desc": "Regulatory compliance is baked into our architecture. We ensure all data pipelines adhere strictly to PDPA privacy laws and international HL7/FHIR interoperability standards."
+          },
+          "s3": {
+            "title": "Integration with Existing HIS",
+            "desc": "We do not disrupt your clinical workflows. Our software integrates seamlessly via secure APIs into your existing Hospital Information Systems (HIS)."
+          }
+        },
+        "faq": {
+          "title": "Healthcare Software FAQ",
+          "q1": {
+            "q": "Are your healthcare systems HIPAA and PDPA compliant?",
+            "a": "Yes. Every system we build incorporates end-to-end encryption, strict role-based access control, and full audit logging to meet PDPA and HIPAA standards."
+          },
+          "q2": {
+            "q": "Can you integrate AI into clinical diagnostics?",
+            "a": "We build the secure data pipelines that allow AI models to process imaging and lab results. However, we do not build medical diagnostic models ourselves."
+          },
+          "q3": {
+            "q": "How do you handle patient data migration?",
+            "a": "We use zero-downtime ETL (Extract, Transform, Load) processes with multi-stage verification to ensure zero data loss during legacy migration."
+          },
+          "q4": {
+            "q": "Do you build patient-facing portals?",
+            "a": "Yes. We develop secure patient portals for appointment scheduling, telemedicine, and lab result viewing."
+          }
+        }
+      },
+      "retail": {
+        "meta": {
+          "title": "Retail & E-commerce Software | Anthovai",
+          "description": "Anthovai builds retail and e-commerce platforms that unify inventory, orders, and customer data across all channels."
+        },
+        "hero": {
+          "h1": "Retail & E-commerce Software — Inventory, Orders, and Customer Systems",
+          "intro": "Anthovai builds retail and e-commerce platforms that unify inventory, orders, and customer data across all channels — scalable from single-store to enterprise-wide operations."
+        },
+        "sections": {
+          "s1": {
+            "title": "Omnichannel Systems",
+            "desc": "We build platforms that synchronize your physical retail stores with your digital e-commerce presence in true real-time."
+          },
+          "s2": {
+            "title": "POS & Payment Integration",
+            "desc": "Our systems connect directly to leading payment gateways and Point of Sale (POS) hardware, ensuring transaction integrity and speed."
+          },
+          "s3": {
+            "title": "Scalability & Performance",
+            "desc": "Engineered for high-traffic events like Black Friday, our cloud-native architectures auto-scale to handle massive concurrent transaction volumes."
+          }
+        },
+        "faq": {
+          "title": "Retail Software FAQ",
+          "q1": {
+            "q": "Do you build custom e-commerce engines or use Shopify?",
+            "a": "We build fully custom, headless e-commerce engines for enterprises where standard platforms like Shopify cannot handle the required architectural complexity."
+          },
+          "q2": {
+            "q": "How does real-time inventory work?",
+            "a": "We use event-driven architecture to update inventory databases globally the millisecond an item is purchased, preventing overselling."
+          },
+          "q3": {
+            "q": "Can you integrate with our warehouse robots?",
+            "a": "Yes. We build APIs that communicate directly with Automated Storage and Retrieval Systems (ASRS) and warehouse management robots."
+          },
+          "q4": {
+            "q": "Do you handle cross-border payments?",
+            "a": "We integrate with specialized international payment processors and handle complex multi-currency ledger arithmetic within the software."
+          }
+        }
+      },
+      "manufacturing": {
+        "meta": {
+          "title": "Manufacturing Software & MES | Anthovai",
+          "description": "Anthovai engineers manufacturing software including MES, ERP integrations, and supply chain tracking systems."
+        },
+        "hero": {
+          "h1": "Manufacturing Software — Production, Supply Chain & MES Systems",
+          "intro": "Anthovai engineers manufacturing software including MES, ERP integrations, and supply chain tracking systems — built for real-time visibility and IoT-ready infrastructure."
+        },
+        "sections": {
+          "s1": {
+            "title": "MES / ERP Integration",
+            "desc": "We bridge the gap between the shop floor and the top floor by integrating Manufacturing Execution Systems (MES) directly with your enterprise ERP."
+          },
+          "s2": {
+            "title": "Real-Time Production Tracking",
+            "desc": "Track every unit, batch, and metric in real-time. Our software provides absolute visibility into your production lifecycle."
+          },
+          "s3": {
+            "title": "IoT-Ready Architecture",
+            "desc": "Our infrastructure is designed to ingest and process high-frequency telemetry data from thousands of industrial IoT sensors operating on the factory floor."
+          }
+        },
+        "faq": {
+          "title": "Manufacturing Software FAQ",
+          "q1": {
+            "q": "What is an MES?",
+            "a": "A Manufacturing Execution System (MES) is software that monitors and controls the complex manufacturing systems and data flows on the factory floor."
+          },
+          "q2": {
+            "q": "How do you handle factory downtime during implementation?",
+            "a": "We deploy systems in parallel (shadow mode) alongside your existing processes until full stability is verified, ensuring zero production downtime."
+          },
+          "q3": {
+            "q": "Can your software predict machine failure?",
+            "a": "Yes. By analyzing IoT sensor data through integrated Machine Learning models, we provide predictive maintenance alerts before critical failures occur."
+          },
+          "q4": {
+            "q": "Do you support barcode and RFID scanning?",
+            "a": "Our platforms natively integrate with industrial barcode and RFID hardware for seamless inventory and asset tracking."
+          }
+        }
+      }
+    }
   }
 }
