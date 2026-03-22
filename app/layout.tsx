@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: '%s | Anthovai',
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: '/ANTHOVAI-B.png',
   },
 }
 

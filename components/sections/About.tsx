@@ -36,7 +36,7 @@ export function About() {
               </p>
             </div>
           </div>
-        </FaฤdeUp>
+        </FadeUp>
       </div>
     </section>
   )
