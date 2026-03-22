@@ -101,39 +101,48 @@
     "items": {
       "ai": {
         "title": "AI & 머신러닝",
-        "desc": "맞춤 모델과 지능형 자동화."
+        "desc": "맞춤 모델과 지능형 자동화.",
+        "did": "Including custom NLP pipelines and business predictive models."
       },
       "enterprise": {
         "title": "엔터프라이즈 소프트웨어",
-        "desc": "확장 가능한 비즈니스 애플리케이션."
+        "desc": "확장 가능한 비즈니스 애플리케이션.",
+        "did": "Including custom ERP for manufacturing and inventory tracking."
       },
       "cloud": {
         "title": "클라우드 인프라",
-        "desc": "프로덕션 시스템 아키텍처와 관리."
+        "desc": "프로덕션 시스템 아키텍처와 관리.",
+        "did": "Including zero-downtime AWS migrations and auto-scaling architectures."
       },
       "security": {
         "title": "사이버 보안",
-        "desc": "위협 모델링과 보안 우선 설계."
+        "desc": "위협 모델링과 보안 우선 설계.",
+        "did": "Including enterprise penetration testing and data governance auditing."
       },
       "data": {
         "title": "데이터 엔지니어링",
-        "desc": "대규모 파이프라인과 실시간 분석."
+        "desc": "대규모 파이프라인과 실시간 분석.",
+        "did": "Including real-time data lakes and analytics dashboards."
       },
       "mobile": {
         "title": "모바일 앱 개발",
-        "desc": "iOS와 Android를 위한 네이티브 및 크로스 플랫폼 앱."
+        "desc": "iOS와 Android를 위한 네이티브 및 크로스 플랫폼 앱.",
+        "did": "Including high-performance native iOS/Android apps for enterprise clients."
       },
       "devops": {
         "title": "DevOps & 자동화",
-        "desc": "CI/CD 파이프라인, IaC, 자동화 배포 워크플로."
+        "desc": "CI/CD 파이프라인, IaC, 자동화 배포 워크플로.",
+        "did": "Including automated CI/CD pipelines to dramatically speed up release cycles."
       },
       "ux": {
         "title": "UI/UX 디자인",
-        "desc": "사용자 중심 디자인 시스템과 프론트엔드 엔지니어링."
+        "desc": "사용자 중심 디자인 시스템과 프론트엔드 엔지니어링.",
+        "did": "Including massive UI design systems and complex B2B workflow dashboards."
       },
       "consulting": {
         "title": "IT 컨설팅",
-        "desc": "디지털 전환 전략 기술 자문."
+        "desc": "디지털 전환 전략 기술 자문.",
+        "did": "Including full-scale digital transformation strategy for legacy organizations."
       }
     }
   },
@@ -142,24 +151,24 @@
     "attribution": "ANTHOVAI · INTELLIGENCE, ENGINEERED."
   },
   "faq": {
-    "label": "자주 묻는 질문",
-    "headline": "자주 묻는 질문",
+    "label": "Common Questions",
+    "headline": "Frequently Asked Questions",
     "items": {
       "q1": {
-        "q": "Anthovai는 무엇을 하는 회사인가요?",
-        "a": "Anthovai는 프리미엄 AI 소프트웨어 엔지니어링 기업입니다. 엔터프라이즈 AI 플랫폼, 지능형 인프라, 맞춤형 B2B 소프트웨어를 설계, 구축, 배포합니다."
+        "q": "How long does a typical project take?",
+        "a": "Timelines depend on the scale of the system, but we generally complete rapid prototyping within 2-4 weeks, followed by full deployment within 3-6 months."
       },
       "q2": {
-        "q": "맞춤형 엔터프라이즈 AI 통합을 제공하나요?",
-        "a": "네. 맞춤형 AI 시스템, 독자적인 대규모 언어 모델(LLM), 기존 엔터프라이즈 아키텍처와 통합되는 자동화 워크플로를 개발합니다."
+        "q": "What is your starting price?",
+        "a": "We don't offer fixed-price packages because every system is bespoke. We'll assess your requirements during a free consultation and provide a clear quotation based on the actual scope."
       },
       "q3": {
-        "q": "어떤 산업을 서비스하나요?",
-        "a": "금융 서비스, 헬스케어, 제조업, 공공 부문 등 데이터 집약적 산업에 맞춤형 엔터프라이즈 소프트웨어와 AI 솔루션을 제공합니다."
+        "q": "How is Anthovai different from hiring freelancers?",
+        "a": "You get a complete end-to-end engineering team—including Architects, Developers, and QA. We deliver enterprise-grade security, scalability, proper documentation, and long-term accountability."
       },
       "q4": {
-        "q": "본사는 어디에 있나요?",
-        "a": "Anthovai 본사는 태국 방콕에 있으며, 리모트 퍼스트 글로벌 기술 기업으로 전 세계 조직에 서비스를 제공합니다."
+        "q": "Do you offer post-launch maintenance?",
+        "a": "Absolutely. We don't just hand over the source code. We provide long-term SLA support, cloud infrastructure management, and continuous maintenance to ensure your system scales with your business."
       }
     }
   },

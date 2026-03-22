@@ -101,39 +101,48 @@
     "items": {
       "ai": {
         "title": "AI与机器学习",
-        "desc": "定制模型、NLP管道和智能自动化。"
+        "desc": "定制模型、NLP管道和智能自动化。",
+        "did": "Including custom NLP pipelines and business predictive models."
       },
       "enterprise": {
         "title": "企业软件",
-        "desc": "可扩展的业务应用。"
+        "desc": "可扩展的业务应用。",
+        "did": "Including custom ERP for manufacturing and inventory tracking."
       },
       "cloud": {
         "title": "云基础设施",
-        "desc": "生产系统的架构和管理。"
+        "desc": "生产系统的架构和管理。",
+        "did": "Including zero-downtime AWS migrations and auto-scaling architectures."
       },
       "security": {
         "title": "网络安全",
-        "desc": "威胁建模和安全优先设计。"
+        "desc": "威胁建模和安全优先设计。",
+        "did": "Including enterprise penetration testing and data governance auditing."
       },
       "data": {
         "title": "数据工程",
-        "desc": "大规模管道和实时分析。"
+        "desc": "大规模管道和实时分析。",
+        "did": "Including real-time data lakes and analytics dashboards."
       },
       "mobile": {
         "title": "移动应用开发",
-        "desc": "为iOS和Android打造的原生和跨平台应用。"
+        "desc": "为iOS和Android打造的原生和跨平台应用。",
+        "did": "Including high-performance native iOS/Android apps for enterprise clients."
       },
       "devops": {
         "title": "DevOps与自动化",
-        "desc": "CI/CD管道、基础设施即代码和自动化部署。"
+        "desc": "CI/CD管道、基础设施即代码和自动化部署。",
+        "did": "Including automated CI/CD pipelines to dramatically speed up release cycles."
       },
       "ux": {
         "title": "UI/UX设计",
-        "desc": "以用户为中心的设计系统和前端工程。"
+        "desc": "以用户为中心的设计系统和前端工程。",
+        "did": "Including massive UI design systems and complex B2B workflow dashboards."
       },
       "consulting": {
         "title": "IT咨询",
-        "desc": "数字化转型战略顾问。"
+        "desc": "数字化转型战略顾问。",
+        "did": "Including full-scale digital transformation strategy for legacy organizations."
       }
     }
   },
@@ -142,24 +151,24 @@
     "attribution": "ANTHOVAI · INTELLIGENCE, ENGINEERED."
   },
   "faq": {
-    "label": "答疑解惑",
-    "headline": "常见问题",
+    "label": "Common Questions",
+    "headline": "Frequently Asked Questions",
     "items": {
       "q1": {
-        "q": "Anthovai 是什么公司？",
-        "a": "Anthovai 是一家高端 AI 软件工程公司。我们设计、构建和部署企业级 AI 平台、智能基础设施和定制 B2B 软件。"
+        "q": "How long does a typical project take?",
+        "a": "Timelines depend on the scale of the system, but we generally complete rapid prototyping within 2-4 weeks, followed by full deployment within 3-6 months."
       },
       "q2": {
-        "q": "你们提供定制企业级 AI 集成服务吗？",
-        "a": "是的。我们为企业打造定制 AI 系统、专有大语言模型 (LLM) 以及与现有架构深度集成的自动化工作流。"
+        "q": "What is your starting price?",
+        "a": "We don't offer fixed-price packages because every system is bespoke. We'll assess your requirements during a free consultation and provide a clear quotation based on the actual scope."
       },
       "q3": {
-        "q": "Anthovai 服务哪些行业？",
-        "a": "我们为数据密集型行业提供企业软件和 AI 解决方案，包括金融服务、医疗健康、制造业和公共部门。"
+        "q": "How is Anthovai different from hiring freelancers?",
+        "a": "You get a complete end-to-end engineering team—including Architects, Developers, and QA. We deliver enterprise-grade security, scalability, proper documentation, and long-term accountability."
       },
       "q4": {
-        "q": "公司总部在哪里？",
-        "a": "Anthovai 总部位于泰国曼谷，以远程优先的全球化模式为世界各地的组织提供服务。"
+        "q": "Do you offer post-launch maintenance?",
+        "a": "Absolutely. We don't just hand over the source code. We provide long-term SLA support, cloud infrastructure management, and continuous maintenance to ensure your system scales with your business."
       }
     }
   },

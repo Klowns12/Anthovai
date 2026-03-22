@@ -101,39 +101,48 @@
     "items": {
       "ai": {
         "title": "KI & Machine Learning",
-        "desc": "Maßgeschneiderte Modelle und intelligente Automatisierung."
+        "desc": "Maßgeschneiderte Modelle und intelligente Automatisierung.",
+        "did": "Including custom NLP pipelines and business predictive models."
       },
       "enterprise": {
         "title": "Unternehmenssoftware",
-        "desc": "Skalierbare Geschäftsanwendungen."
+        "desc": "Skalierbare Geschäftsanwendungen.",
+        "did": "Including custom ERP for manufacturing and inventory tracking."
       },
       "cloud": {
         "title": "Cloud-Infrastruktur",
-        "desc": "Architektur und Verwaltung von Produktionssystemen."
+        "desc": "Architektur und Verwaltung von Produktionssystemen.",
+        "did": "Including zero-downtime AWS migrations and auto-scaling architectures."
       },
       "security": {
         "title": "Cybersicherheit",
-        "desc": "Bedrohungsmodellierung und Security-First-Design."
+        "desc": "Bedrohungsmodellierung und Security-First-Design.",
+        "did": "Including enterprise penetration testing and data governance auditing."
       },
       "data": {
         "title": "Data Engineering",
-        "desc": "Pipelines und Echtzeit-Analytics im großen Maßstab."
+        "desc": "Pipelines und Echtzeit-Analytics im großen Maßstab.",
+        "did": "Including real-time data lakes and analytics dashboards."
       },
       "mobile": {
         "title": "Mobile App-Entwicklung",
-        "desc": "Native und plattformübergreifende Apps für iOS und Android."
+        "desc": "Native und plattformübergreifende Apps für iOS und Android.",
+        "did": "Including high-performance native iOS/Android apps for enterprise clients."
       },
       "devops": {
         "title": "DevOps & Automatisierung",
-        "desc": "CI/CD-Pipelines, IaC und automatisierte Deployment-Workflows."
+        "desc": "CI/CD-Pipelines, IaC und automatisierte Deployment-Workflows.",
+        "did": "Including automated CI/CD pipelines to dramatically speed up release cycles."
       },
       "ux": {
         "title": "UI/UX-Design",
-        "desc": "Nutzerzentrierte Designsysteme und Frontend-Engineering."
+        "desc": "Nutzerzentrierte Designsysteme und Frontend-Engineering.",
+        "did": "Including massive UI design systems and complex B2B workflow dashboards."
       },
       "consulting": {
         "title": "IT-Beratung",
-        "desc": "Strategische Technologieberatung für digitale Transformation."
+        "desc": "Strategische Technologieberatung für digitale Transformation.",
+        "did": "Including full-scale digital transformation strategy for legacy organizations."
       }
     }
   },
@@ -142,24 +151,24 @@
     "attribution": "ANTHOVAI · INTELLIGENCE, ENGINEERED."
   },
   "faq": {
-    "label": "HÄUFIG GESTELLTE FRAGEN",
-    "headline": "Häufig Gestellte Fragen",
+    "label": "Common Questions",
+    "headline": "Frequently Asked Questions",
     "items": {
       "q1": {
-        "q": "Was macht Anthovai?",
-        "a": "Anthovai ist ein Premium-KI-Software-Engineering-Unternehmen. Wir entwerfen, bauen und deployen Enterprise-KI-Plattformen, intelligente Infrastruktur und maßgeschneiderte B2B-Software."
+        "q": "How long does a typical project take?",
+        "a": "Timelines depend on the scale of the system, but we generally complete rapid prototyping within 2-4 weeks, followed by full deployment within 3-6 months."
       },
       "q2": {
-        "q": "Bieten Sie individuelle Enterprise-KI-Integration an?",
-        "a": "Ja. Wir entwickeln maßgeschneiderte KI-Systeme, proprietäre Große Sprachmodelle (LLMs) und automatisierte Workflows, die in Ihre bestehende Architektur integriert werden."
+        "q": "What is your starting price?",
+        "a": "We don't offer fixed-price packages because every system is bespoke. We'll assess your requirements during a free consultation and provide a clear quotation based on the actual scope."
       },
       "q3": {
-        "q": "Welche Branchen bedienen Sie?",
-        "a": "Wir liefern Enterprise-Software und KI-Lösungen für datenintensive Branchen: Finanzdienstleistungen, Gesundheitswesen, Fertigung und öffentlicher Sektor."
+        "q": "How is Anthovai different from hiring freelancers?",
+        "a": "You get a complete end-to-end engineering team—including Architects, Developers, and QA. We deliver enterprise-grade security, scalability, proper documentation, and long-term accountability."
       },
       "q4": {
-        "q": "Wo ist der Hauptsitz?",
-        "a": "Der Hauptsitz von Anthovai befindet sich in Bangkok, Thailand. Wir arbeiten als globales Remote-First-Technologieunternehmen."
+        "q": "Do you offer post-launch maintenance?",
+        "a": "Absolutely. We don't just hand over the source code. We provide long-term SLA support, cloud infrastructure management, and continuous maintenance to ensure your system scales with your business."
       }
     }
   },

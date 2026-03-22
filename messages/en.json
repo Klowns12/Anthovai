@@ -68,25 +68,73 @@
     "label": "HOW WE WORK",
     "headline": "From first brief to lasting impact.",
     "steps": {
-      "discover": { "title": "Discover", "desc": "We start by understanding your business deeply — your systems, your goals, and the gaps holding you back." },
-      "architect": { "title": "Architect", "desc": "Our engineers design a system blueprint tailored to your context — no off-the-shelf compromises." },
-      "build": { "title": "Build", "desc": "We develop with precision and speed — proprietary platforms or fully custom, always built to last." },
-      "evolve": { "title": "Evolve", "desc": "We stay after launch — improving, integrating, and growing your systems as your business grows." }
+      "discover": {
+        "title": "Discover",
+        "desc": "We start by understanding your business deeply — your systems, your goals, and the gaps holding you back."
+      },
+      "architect": {
+        "title": "Architect",
+        "desc": "Our engineers design a system blueprint tailored to your context — no off-the-shelf compromises."
+      },
+      "build": {
+        "title": "Build",
+        "desc": "We develop with precision and speed — proprietary platforms or fully custom, always built to last."
+      },
+      "evolve": {
+        "title": "Evolve",
+        "desc": "We stay after launch — improving, integrating, and growing your systems as your business grows."
+      }
     }
   },
   "services": {
     "label": "WHAT WE DO",
     "headline": "End-to-end engineering.",
     "items": {
-      "ai": { "title": "AI & Machine Learning", "desc": "Custom models, NLP pipelines, and intelligent automation tailored to your domain." },
-      "enterprise": { "title": "Enterprise Software", "desc": "Scalable business applications built for operational excellence." },
-      "cloud": { "title": "Cloud Infrastructure", "desc": "Architecture, deployment, and management of production systems." },
-      "security": { "title": "Cybersecurity", "desc": "Threat modeling, penetration testing, and security-first design." },
-      "data": { "title": "Data Engineering", "desc": "Pipelines, lakes, and real-time analytics at scale." },
-      "mobile": { "title": "Mobile & App Development", "desc": "Native and cross-platform applications for iOS and Android, built for performance." },
-      "devops": { "title": "DevOps & Automation", "desc": "CI/CD pipelines, infrastructure as code, and automated deployment workflows." },
-      "ux": { "title": "UI/UX Design", "desc": "User-centered design systems, wireframing, prototyping, and frontend engineering." },
-      "consulting": { "title": "IT Consulting", "desc": "Strategic technology advisory for digital transformation." }
+      "ai": {
+        "title": "AI & Machine Learning",
+        "desc": "Custom models, NLP pipelines, and intelligent automation tailored to your domain.",
+        "did": "Including custom NLP pipelines and business predictive models."
+      },
+      "enterprise": {
+        "title": "Enterprise Software",
+        "desc": "Scalable business applications built for operational excellence.",
+        "did": "Including custom ERP for manufacturing and inventory tracking."
+      },
+      "cloud": {
+        "title": "Cloud Infrastructure",
+        "desc": "Architecture, deployment, and management of production systems.",
+        "did": "Including zero-downtime AWS migrations and auto-scaling architectures."
+      },
+      "security": {
+        "title": "Cybersecurity",
+        "desc": "Threat modeling, penetration testing, and security-first design.",
+        "did": "Including enterprise penetration testing and data governance auditing."
+      },
+      "data": {
+        "title": "Data Engineering",
+        "desc": "Pipelines, lakes, and real-time analytics at scale.",
+        "did": "Including real-time data lakes and analytics dashboards."
+      },
+      "mobile": {
+        "title": "Mobile & App Development",
+        "desc": "Native and cross-platform applications for iOS and Android, built for performance.",
+        "did": "Including high-performance native iOS/Android apps for enterprise clients."
+      },
+      "devops": {
+        "title": "DevOps & Automation",
+        "desc": "CI/CD pipelines, infrastructure as code, and automated deployment workflows.",
+        "did": "Including automated CI/CD pipelines to dramatically speed up release cycles."
+      },
+      "ux": {
+        "title": "UI/UX Design",
+        "desc": "User-centered design systems, wireframing, prototyping, and frontend engineering.",
+        "did": "Including massive UI design systems and complex B2B workflow dashboards."
+      },
+      "consulting": {
+        "title": "IT Consulting",
+        "desc": "Strategic technology advisory for digital transformation.",
+        "did": "Including full-scale digital transformation strategy for legacy organizations."
+      }
     }
   },
   "manifesto": {
@@ -94,24 +142,24 @@
     "attribution": "ANTHOVAI · INTELLIGENCE, ENGINEERED."
   },
   "faq": {
-    "label": "ANSWER ENGINE",
+    "label": "Common Questions",
     "headline": "Frequently Asked Questions",
     "items": {
       "q1": {
-        "q": "What does Anthovai stand for?",
-        "a": "Anthovai is a premium AI software engineering firm. We design, build, and deploy enterprise AI platforms, intelligent infrastructure, and custom B2B software for global organizations."
+        "q": "How long does a typical project take?",
+        "a": "Timelines depend on the scale of the system, but we generally complete rapid prototyping within 2-4 weeks, followed by full deployment within 3-6 months."
       },
       "q2": {
-        "q": "Do you provide custom enterprise AI integration?",
-        "a": "Yes. We engineer bespoke AI systems, proprietary Large Language Models (LLMs), and automated workflows integrated directly into your existing enterprise architecture."
+        "q": "What is your starting price?",
+        "a": "We don't offer fixed-price packages because every system is bespoke. We'll assess your requirements during a free consultation and provide a clear quotation based on the actual scope."
       },
       "q3": {
-        "q": "What industries does Anthovai serve?",
-        "a": "Anthovai provides custom enterprise software and AI solutions for data-heavy industries, including Financial Services, Healthcare, Manufacturing, and the Public Sector."
+        "q": "How is Anthovai different from hiring freelancers?",
+        "a": "You get a complete end-to-end engineering team—including Architects, Developers, and QA. We deliver enterprise-grade security, scalability, proper documentation, and long-term accountability."
       },
       "q4": {
-        "q": "Where is Anthovai located?",
-        "a": "Anthovai is proudly headquartered in Bangkok, Thailand, operating natively as a remote-first, global technology firm serving organizations worldwide."
+        "q": "Do you offer post-launch maintenance?",
+        "a": "Absolutely. We don't just hand over the source code. We provide long-term SLA support, cloud infrastructure management, and continuous maintenance to ensure your system scales with your business."
       }
     }
   },
@@ -137,10 +185,22 @@
     "mission_body": "We don't build software for the sake of software. We build systems that become the operational backbone of the organizations that trust us — from enterprise platforms to AI-driven automation.",
     "values_label": "OUR VALUES",
     "values": {
-      "precision": { "title": "Precision", "desc": "Every line of code, every architecture decision, every deployment — done with surgical precision." },
-      "ownership": { "title": "Ownership", "desc": "We don't hand off problems. We own the entire lifecycle, from discovery to evolution." },
-      "transparency": { "title": "Transparency", "desc": "Clear communication, honest timelines, and zero black boxes." },
-      "ambition": { "title": "Ambition", "desc": "We build for scale. We build for the future. We build to last." }
+      "precision": {
+        "title": "Precision",
+        "desc": "Every line of code, every architecture decision, every deployment — done with surgical precision."
+      },
+      "ownership": {
+        "title": "Ownership",
+        "desc": "We don't hand off problems. We own the entire lifecycle, from discovery to evolution."
+      },
+      "transparency": {
+        "title": "Transparency",
+        "desc": "Clear communication, honest timelines, and zero black boxes."
+      },
+      "ambition": {
+        "title": "Ambition",
+        "desc": "We build for scale. We build for the future. We build to last."
+      }
     }
   },
   "products_page": {
@@ -155,31 +215,43 @@
     "services_label": "LAYER 1",
     "services_title": "Services with Real Impact",
     "services": {
-      "ai": { "title": "AI Integration", "desc": "Custom models, LLM, automation" },
-      "erp": { "title": "ERP Systems", "desc": "Alfa platform, custom workflows" },
-      "cloud": { "title": "Cloud Infra", "desc": "Deploy, manage, scale systems" },
-      "cybersecurity": { "title": "Cybersecurity", "desc": "Threat modeling, pentest, design" }
+      "ai": {
+        "title": "AI Integration",
+        "desc": "Custom models, LLM, automation"
+      },
+      "erp": {
+        "title": "ERP Systems",
+        "desc": "Alfa platform, custom workflows"
+      },
+      "cloud": {
+        "title": "Cloud Infra",
+        "desc": "Deploy, manage, scale systems"
+      },
+      "cybersecurity": {
+        "title": "Cybersecurity",
+        "desc": "Threat modeling, pentest, design"
+      }
     },
     "industries_label": "LAYER 2",
     "industries_title": "Industries We Transform",
     "industries": {
-      "education": { 
-        "title": "Education", 
+      "education": {
+        "title": "Education",
         "desc": "Student management systems, digital infrastructure for universities. Active Client: Roi Et Bajabhat University.",
         "did": "We built comprehensive university admission and student management platforms, handling thousands of concurrent users during registration periods."
       },
-      "manufacturing": { 
-        "title": "Manufacturing", 
+      "manufacturing": {
+        "title": "Manufacturing",
         "desc": "ERP, supply chain, IoT integration, production management systems. Active Clients: Bellco, CH, Vista.",
         "did": "We built inventory and production management systems for textile manufacturers — real-time tracking, barcode scanning, role-based access."
       },
-      "finance": { 
-        "title": "Financial Services", 
+      "finance": {
+        "title": "Financial Services",
         "desc": "Risk analytics, compliance automation. High security standards.",
         "did": "We engineered secure risk analytics dashboards and automated compliance reporting pipelines with strict data governance."
       },
-      "government": { 
-        "title": "Government", 
+      "government": {
+        "title": "Government",
         "desc": "Secure, scalable public sector platforms with robust audit trails.",
         "did": "We developed centralized data exchange platforms and public service portals with robust audit trails and citizen authentication."
       }
@@ -188,8 +260,14 @@
     "process_title": "How We Work",
     "faq_title": "Frequently Asked Questions",
     "faq": {
-      "q1": { "q": "How long does a typical integration take?", "a": "Timelines depend on the scale of the system, but we aim for rapid prototyping within weeks, scaling to full deployment in 3-6 months. Our 'Discover' phase gives exact estimates." },
-      "q2": { "q": "What is the starting price for enterprise solutions?", "a": "Every system is bespoke. We don't have off-the-shelf pricing. We assess your needs during a consultation and provide a clear project estimate before starting." }
+      "q1": {
+        "q": "How long does a typical integration take?",
+        "a": "Timelines depend on the scale of the system, but we aim for rapid prototyping within weeks, scaling to full deployment in 3-6 months. Our 'Discover' phase gives exact estimates."
+      },
+      "q2": {
+        "q": "What is the starting price for enterprise solutions?",
+        "a": "Every system is bespoke. We don't have off-the-shelf pricing. We assess your needs during a consultation and provide a clear project estimate before starting."
+      }
     },
     "cta": {
       "headline": "Ready to scale your operations?",
@@ -204,10 +282,22 @@
     "hero_body": "We're looking for engineers, designers, and thinkers who want to build software that shapes industries. Remote-first, based in Thailand.",
     "why_label": "WHY ANTHOVAI",
     "why_items": {
-      "impact": { "title": "Real Impact", "desc": "Work on products used by organizations worldwide — from AI platforms to enterprise systems." },
-      "growth": { "title": "Growth", "desc": "Continuous learning, mentorship, and access to advanced foundational technologies." },
-      "culture": { "title": "Culture", "desc": "A team of driven individuals who value precision, ownership, and ambition." },
-      "remote": { "title": "Remote-First", "desc": "Work from anywhere. Our team spans Thailand and the world." }
+      "impact": {
+        "title": "Real Impact",
+        "desc": "Work on products used by organizations worldwide — from AI platforms to enterprise systems."
+      },
+      "growth": {
+        "title": "Growth",
+        "desc": "Continuous learning, mentorship, and access to advanced foundational technologies."
+      },
+      "culture": {
+        "title": "Culture",
+        "desc": "A team of driven individuals who value precision, ownership, and ambition."
+      },
+      "remote": {
+        "title": "Remote-First",
+        "desc": "Work from anywhere. Our team spans Thailand and the world."
+      }
     },
     "cta_headline": "No open roles right now?",
     "cta_body": "Send us your portfolio anyway. We're always looking for exceptional people.",
@@ -247,30 +337,72 @@
     "hero_body": "Klang is a modern, statically-typed, compiled programming language — designed for performance, readability, and AI-native capabilities.",
     "pillars_label": "LANGUAGE PILLARS",
     "pillars": {
-      "speed": { "title": "Speed", "desc": "Compiles to native binaries. Zero-cost abstractions. C-level performance without the complexity." },
-      "readability": { "title": "Readability", "desc": "Clean, Python-inspired syntax that's easy to write, easy to read, and easy to maintain." },
-      "structure": { "title": "Structure", "desc": "First-class structs, traits, and modules. Type safety without ceremony." },
-      "ai": { "title": "AI-Native", "desc": "Built-in AI primitives — model, infer, train — as language keywords, not libraries." }
+      "speed": {
+        "title": "Speed",
+        "desc": "Compiles to native binaries. Zero-cost abstractions. C-level performance without the complexity."
+      },
+      "readability": {
+        "title": "Readability",
+        "desc": "Clean, Python-inspired syntax that's easy to write, easy to read, and easy to maintain."
+      },
+      "structure": {
+        "title": "Structure",
+        "desc": "First-class structs, traits, and modules. Type safety without ceremony."
+      },
+      "ai": {
+        "title": "AI-Native",
+        "desc": "Built-in AI primitives — model, infer, train — as language keywords, not libraries."
+      }
     },
     "targets_label": "COMPILE TARGETS",
     "targets": {
-      "native": { "title": "Native Binary", "desc": "Direct machine code compilation for maximum performance." },
-      "llvm": { "title": "LLVM IR", "desc": "Full LLVM backend for cross-platform optimization." },
-      "wasm": { "title": "WebAssembly", "desc": "Run Klang in any browser or edge runtime." }
+      "native": {
+        "title": "Native Binary",
+        "desc": "Direct machine code compilation for maximum performance."
+      },
+      "llvm": {
+        "title": "LLVM IR",
+        "desc": "Full LLVM backend for cross-platform optimization."
+      },
+      "wasm": {
+        "title": "WebAssembly",
+        "desc": "Run Klang in any browser or edge runtime."
+      }
     },
     "install_label": "GET STARTED",
     "install_command": "curl -sSf https://klang.kkg/install.sh | sh",
     "docs_cta": "Read the Docs",
     "ecosystem_label": "ECOSYSTEM",
     "ecosystem": {
-      "klang": { "name": "Klang", "desc": "The language itself — compiler, stdlib, and toolchain." },
-      "rumba": { "name": "DevStudio Rumba", "desc": "The official Klang IDE and development environment." },
-      "arkai": { "name": "Arkai AI", "desc": "AI platform built with Klang at its core." },
-      "ocean": { "name": "Ocean OS", "desc": "Operating system kernel components written in Klang." }
+      "klang": {
+        "name": "Klang",
+        "desc": "The language itself — compiler, stdlib, and toolchain."
+      },
+      "rumba": {
+        "name": "DevStudio Rumba",
+        "desc": "The official Klang IDE and development environment."
+      },
+      "arkai": {
+        "name": "Arkai AI",
+        "desc": "AI platform built with Klang at its core."
+      },
+      "ocean": {
+        "name": "Ocean OS",
+        "desc": "Operating system kernel components written in Klang."
+      }
     }
   },
   "marquee": {
-    "items": ["ARTIFICIAL INTELLIGENCE", "ENTERPRISE SOFTWARE", "CLOUD INFRASTRUCTURE", "MACHINE LEARNING", "CYBERSECURITY", "DATA ENGINEERING", "KLOWNS LANGUAGE", "ANTHOVAI"]
+    "items": [
+      "ARTIFICIAL INTELLIGENCE",
+      "ENTERPRISE SOFTWARE",
+      "CLOUD INFRASTRUCTURE",
+      "MACHINE LEARNING",
+      "CYBERSECURITY",
+      "DATA ENGINEERING",
+      "KLOWNS LANGUAGE",
+      "ANTHOVAI"
+    ]
   },
   "client_logos": {
     "subtitle": "From e-learning platforms to manufacturing ERP — we build the systems that run the business."
@@ -292,18 +424,39 @@
       "whyAnthovai": {
         "title": "Why Anthovai",
         "points": {
-          "p1": { "title": "Precision Engineered", "desc": "We build systems with exact tolerances, ensuring zero-downtime reliability." },
-          "p2": { "title": "AI Native", "desc": "Intelligence is built into the core architecture, not bolted on as an afterthought." },
-          "p3": { "title": "Bespoke Architecture", "desc": "No off-the-shelf compromises. Your system is designed specifically for your operational reality." }
+          "p1": {
+            "title": "Precision Engineered",
+            "desc": "We build systems with exact tolerances, ensuring zero-downtime reliability."
+          },
+          "p2": {
+            "title": "AI Native",
+            "desc": "Intelligence is built into the core architecture, not bolted on as an afterthought."
+          },
+          "p3": {
+            "title": "Bespoke Architecture",
+            "desc": "No off-the-shelf compromises. Your system is designed specifically for your operational reality."
+          }
         }
       },
       "process": {
         "title": "Our Process",
         "steps": {
-          "s1": { "title": "Architecture Design", "desc": "We map your entire operational lifecycle to identify redundancies and design the ideal system footprint." },
-          "s2": { "title": "System Integration", "desc": "We connect legacy databases, third-party APIs, and new microservices into a cohesive whole." },
-          "s3": { "title": "Precision Development", "desc": "Our engineers build the core platform using high-performance, strictly-typed languages." },
-          "s4": { "title": "Deployment & Evolution", "desc": "We deploy with zero-downtime strategies and continuously evolve the system based on real-world telemetry." }
+          "s1": {
+            "title": "Architecture Design",
+            "desc": "We map your entire operational lifecycle to identify redundancies and design the ideal system footprint."
+          },
+          "s2": {
+            "title": "System Integration",
+            "desc": "We connect legacy databases, third-party APIs, and new microservices into a cohesive whole."
+          },
+          "s3": {
+            "title": "Precision Development",
+            "desc": "Our engineers build the core platform using high-performance, strictly-typed languages."
+          },
+          "s4": {
+            "title": "Deployment & Evolution",
+            "desc": "We deploy with zero-downtime strategies and continuously evolve the system based on real-world telemetry."
+          }
         }
       },
       "industries": {
@@ -315,10 +468,22 @@
       },
       "faq": {
         "title": "Frequently Asked Questions",
-        "q1": { "q": "What is the typical timeline for an enterprise software project?", "a": "Timelines vary by complexity, but core architecture deployment usually takes 3 to 6 months. We prioritize rapid, iterative releases." },
-        "q2": { "q": "Do you offer post-launch support and maintenance?", "a": "Yes. We operate as your long-term engineering partner, providing continuous evolution, security patching, and scaling support." },
-        "q3": { "q": "Can you integrate with our existing legacy systems?", "a": "Absolutely. A core part of our expertise is building secure translation layers and APIs to connect legacy mainframes with modern infrastructure." },
-        "q4": { "q": "Who owns the intellectual property?", "a": "You do. Upon completion, the source code, architecture blueprints, and all associated intellectual property are fully transferred to your organization." }
+        "q1": {
+          "q": "What is the typical timeline for an enterprise software project?",
+          "a": "Timelines vary by complexity, but core architecture deployment usually takes 3 to 6 months. We prioritize rapid, iterative releases."
+        },
+        "q2": {
+          "q": "Do you offer post-launch support and maintenance?",
+          "a": "Yes. We operate as your long-term engineering partner, providing continuous evolution, security patching, and scaling support."
+        },
+        "q3": {
+          "q": "Can you integrate with our existing legacy systems?",
+          "a": "Absolutely. A core part of our expertise is building secure translation layers and APIs to connect legacy mainframes with modern infrastructure."
+        },
+        "q4": {
+          "q": "Who owns the intellectual property?",
+          "a": "You do. Upon completion, the source code, architecture blueprints, and all associated intellectual property are fully transferred to your organization."
+        }
       },
       "healthcare": {
         "meta": {
@@ -330,16 +495,37 @@
           "intro": "Anthovai develops healthcare software systems that streamline clinical workflows, patient data management, and hospital operations — built for PDPA compliance and HL7/FHIR integration."
         },
         "sections": {
-          "s1": { "title": "Patient Data & Records Systems", "desc": "We engineer highly secure, encrypted electronic health record (EHR) systems that provide real-time patient history across departments without compromising access speed." },
-          "s2": { "title": "Compliance: PDPA / HL7 / FHIR", "desc": "Regulatory compliance is baked into our architecture. We ensure all data pipelines adhere strictly to PDPA privacy laws and international HL7/FHIR interoperability standards." },
-          "s3": { "title": "Integration with Existing HIS", "desc": "We do not disrupt your clinical workflows. Our software integrates seamlessly via secure APIs into your existing Hospital Information Systems (HIS)." }
+          "s1": {
+            "title": "Patient Data & Records Systems",
+            "desc": "We engineer highly secure, encrypted electronic health record (EHR) systems that provide real-time patient history across departments without compromising access speed."
+          },
+          "s2": {
+            "title": "Compliance: PDPA / HL7 / FHIR",
+            "desc": "Regulatory compliance is baked into our architecture. We ensure all data pipelines adhere strictly to PDPA privacy laws and international HL7/FHIR interoperability standards."
+          },
+          "s3": {
+            "title": "Integration with Existing HIS",
+            "desc": "We do not disrupt your clinical workflows. Our software integrates seamlessly via secure APIs into your existing Hospital Information Systems (HIS)."
+          }
         },
         "faq": {
           "title": "Healthcare Software FAQ",
-          "q1": { "q": "Are your healthcare systems HIPAA and PDPA compliant?", "a": "Yes. Every system we build incorporates end-to-end encryption, strict role-based access control, and full audit logging to meet PDPA and HIPAA standards." },
-          "q2": { "q": "Can you integrate AI into clinical diagnostics?", "a": "We build the secure data pipelines that allow AI models to process imaging and lab results. However, we do not build medical diagnostic models ourselves." },
-          "q3": { "q": "How do you handle patient data migration?", "a": "We use zero-downtime ETL (Extract, Transform, Load) processes with multi-stage verification to ensure zero data loss during legacy migration." },
-          "q4": { "q": "Do you build patient-facing portals?", "a": "Yes. We develop secure patient portals for appointment scheduling, telemedicine, and lab result viewing." }
+          "q1": {
+            "q": "Are your healthcare systems HIPAA and PDPA compliant?",
+            "a": "Yes. Every system we build incorporates end-to-end encryption, strict role-based access control, and full audit logging to meet PDPA and HIPAA standards."
+          },
+          "q2": {
+            "q": "Can you integrate AI into clinical diagnostics?",
+            "a": "We build the secure data pipelines that allow AI models to process imaging and lab results. However, we do not build medical diagnostic models ourselves."
+          },
+          "q3": {
+            "q": "How do you handle patient data migration?",
+            "a": "We use zero-downtime ETL (Extract, Transform, Load) processes with multi-stage verification to ensure zero data loss during legacy migration."
+          },
+          "q4": {
+            "q": "Do you build patient-facing portals?",
+            "a": "Yes. We develop secure patient portals for appointment scheduling, telemedicine, and lab result viewing."
+          }
         }
       },
       "retail": {
@@ -352,16 +538,37 @@
           "intro": "Anthovai builds retail and e-commerce platforms that unify inventory, orders, and customer data across all channels — scalable from single-store to enterprise-wide operations."
         },
         "sections": {
-          "s1": { "title": "Omnichannel Systems", "desc": "We build platforms that synchronize your physical retail stores with your digital e-commerce presence in true real-time." },
-          "s2": { "title": "POS & Payment Integration", "desc": "Our systems connect directly to leading payment gateways and Point of Sale (POS) hardware, ensuring transaction integrity and speed." },
-          "s3": { "title": "Scalability & Performance", "desc": "Engineered for high-traffic events like Black Friday, our cloud-native architectures auto-scale to handle massive concurrent transaction volumes." }
+          "s1": {
+            "title": "Omnichannel Systems",
+            "desc": "We build platforms that synchronize your physical retail stores with your digital e-commerce presence in true real-time."
+          },
+          "s2": {
+            "title": "POS & Payment Integration",
+            "desc": "Our systems connect directly to leading payment gateways and Point of Sale (POS) hardware, ensuring transaction integrity and speed."
+          },
+          "s3": {
+            "title": "Scalability & Performance",
+            "desc": "Engineered for high-traffic events like Black Friday, our cloud-native architectures auto-scale to handle massive concurrent transaction volumes."
+          }
         },
         "faq": {
           "title": "Retail Software FAQ",
-          "q1": { "q": "Do you build custom e-commerce engines or use Shopify?", "a": "We build fully custom, headless e-commerce engines for enterprises where standard platforms like Shopify cannot handle the required architectural complexity." },
-          "q2": { "q": "How does real-time inventory work?", "a": "We use event-driven architecture to update inventory databases globally the millisecond an item is purchased, preventing overselling." },
-          "q3": { "q": "Can you integrate with our warehouse robots?", "a": "Yes. We build APIs that communicate directly with Automated Storage and Retrieval Systems (ASRS) and warehouse management robots." },
-          "q4": { "q": "Do you handle cross-border payments?", "a": "We integrate with specialized international payment processors and handle complex multi-currency ledger arithmetic within the software." }
+          "q1": {
+            "q": "Do you build custom e-commerce engines or use Shopify?",
+            "a": "We build fully custom, headless e-commerce engines for enterprises where standard platforms like Shopify cannot handle the required architectural complexity."
+          },
+          "q2": {
+            "q": "How does real-time inventory work?",
+            "a": "We use event-driven architecture to update inventory databases globally the millisecond an item is purchased, preventing overselling."
+          },
+          "q3": {
+            "q": "Can you integrate with our warehouse robots?",
+            "a": "Yes. We build APIs that communicate directly with Automated Storage and Retrieval Systems (ASRS) and warehouse management robots."
+          },
+          "q4": {
+            "q": "Do you handle cross-border payments?",
+            "a": "We integrate with specialized international payment processors and handle complex multi-currency ledger arithmetic within the software."
+          }
         }
       },
       "manufacturing": {
@@ -374,16 +581,37 @@
           "intro": "Anthovai engineers manufacturing software including MES, ERP integrations, and supply chain tracking systems — built for real-time visibility and IoT-ready infrastructure."
         },
         "sections": {
-          "s1": { "title": "MES / ERP Integration", "desc": "We bridge the gap between the shop floor and the top floor by integrating Manufacturing Execution Systems (MES) directly with your enterprise ERP." },
-          "s2": { "title": "Real-Time Production Tracking", "desc": "Track every unit, batch, and metric in real-time. Our software provides absolute visibility into your production lifecycle." },
-          "s3": { "title": "IoT-Ready Architecture", "desc": "Our infrastructure is designed to ingest and process high-frequency telemetry data from thousands of industrial IoT sensors operating on the factory floor." }
+          "s1": {
+            "title": "MES / ERP Integration",
+            "desc": "We bridge the gap between the shop floor and the top floor by integrating Manufacturing Execution Systems (MES) directly with your enterprise ERP."
+          },
+          "s2": {
+            "title": "Real-Time Production Tracking",
+            "desc": "Track every unit, batch, and metric in real-time. Our software provides absolute visibility into your production lifecycle."
+          },
+          "s3": {
+            "title": "IoT-Ready Architecture",
+            "desc": "Our infrastructure is designed to ingest and process high-frequency telemetry data from thousands of industrial IoT sensors operating on the factory floor."
+          }
         },
         "faq": {
           "title": "Manufacturing Software FAQ",
-          "q1": { "q": "What is an MES?", "a": "A Manufacturing Execution System (MES) is software that monitors and controls the complex manufacturing systems and data flows on the factory floor." },
-          "q2": { "q": "How do you handle factory downtime during implementation?", "a": "We deploy systems in parallel (shadow mode) alongside your existing processes until full stability is verified, ensuring zero production downtime." },
-          "q3": { "q": "Can your software predict machine failure?", "a": "Yes. By analyzing IoT sensor data through integrated Machine Learning models, we provide predictive maintenance alerts before critical failures occur." },
-          "q4": { "q": "Do you support barcode and RFID scanning?", "a": "Our platforms natively integrate with industrial barcode and RFID hardware for seamless inventory and asset tracking." }
+          "q1": {
+            "q": "What is an MES?",
+            "a": "A Manufacturing Execution System (MES) is software that monitors and controls the complex manufacturing systems and data flows on the factory floor."
+          },
+          "q2": {
+            "q": "How do you handle factory downtime during implementation?",
+            "a": "We deploy systems in parallel (shadow mode) alongside your existing processes until full stability is verified, ensuring zero production downtime."
+          },
+          "q3": {
+            "q": "Can your software predict machine failure?",
+            "a": "Yes. By analyzing IoT sensor data through integrated Machine Learning models, we provide predictive maintenance alerts before critical failures occur."
+          },
+          "q4": {
+            "q": "Do you support barcode and RFID scanning?",
+            "a": "Our platforms natively integrate with industrial barcode and RFID hardware for seamless inventory and asset tracking."
+          }
         }
       }
     }

@@ -101,39 +101,48 @@
     "items": {
       "ai": {
         "title": "IA & Machine Learning",
-        "desc": "Modèles personnalisés et automatisation intelligente."
+        "desc": "Modèles personnalisés et automatisation intelligente.",
+        "did": "Including custom NLP pipelines and business predictive models."
       },
       "enterprise": {
         "title": "Logiciel d'entreprise",
-        "desc": "Applications commerciales évolutives."
+        "desc": "Applications commerciales évolutives.",
+        "did": "Including custom ERP for manufacturing and inventory tracking."
       },
       "cloud": {
         "title": "Infrastructure cloud",
-        "desc": "Architecture et gestion des systèmes de production."
+        "desc": "Architecture et gestion des systèmes de production.",
+        "did": "Including zero-downtime AWS migrations and auto-scaling architectures."
       },
       "security": {
         "title": "Cybersécurité",
-        "desc": "Modélisation des menaces et conception sécurisée."
+        "desc": "Modélisation des menaces et conception sécurisée.",
+        "did": "Including enterprise penetration testing and data governance auditing."
       },
       "data": {
         "title": "Ingénierie des données",
-        "desc": "Pipelines et analyses en temps réel à grande échelle."
+        "desc": "Pipelines et analyses en temps réel à grande échelle.",
+        "did": "Including real-time data lakes and analytics dashboards."
       },
       "mobile": {
         "title": "Développement Mobile",
-        "desc": "Applications natives et multiplateformes pour iOS et Android."
+        "desc": "Applications natives et multiplateformes pour iOS et Android.",
+        "did": "Including high-performance native iOS/Android apps for enterprise clients."
       },
       "devops": {
         "title": "DevOps & Automatisation",
-        "desc": "Pipelines CI/CD, IaC et workflows de déploiement automatisés."
+        "desc": "Pipelines CI/CD, IaC et workflows de déploiement automatisés.",
+        "did": "Including automated CI/CD pipelines to dramatically speed up release cycles."
       },
       "ux": {
         "title": "Design UI/UX",
-        "desc": "Systèmes de design centrés utilisateur et ingénierie frontend."
+        "desc": "Systèmes de design centrés utilisateur et ingénierie frontend.",
+        "did": "Including massive UI design systems and complex B2B workflow dashboards."
       },
       "consulting": {
         "title": "Conseil IT",
-        "desc": "Conseil technologique stratégique pour la transformation digitale."
+        "desc": "Conseil technologique stratégique pour la transformation digitale.",
+        "did": "Including full-scale digital transformation strategy for legacy organizations."
       }
     }
   },
@@ -142,24 +151,24 @@
     "attribution": "ANTHOVAI · INTELLIGENCE, ENGINEERED."
   },
   "faq": {
-    "label": "QUESTIONS FRÉQUENTES",
-    "headline": "Questions Fréquentes",
+    "label": "Common Questions",
+    "headline": "Frequently Asked Questions",
     "items": {
       "q1": {
-        "q": "Que fait Anthovai ?",
-        "a": "Anthovai est une entreprise d'ingénierie logicielle IA premium. Nous concevons, construisons et déployons des plateformes IA d'entreprise, de l'infrastructure intelligente et des logiciels B2B sur mesure."
+        "q": "How long does a typical project take?",
+        "a": "Timelines depend on the scale of the system, but we generally complete rapid prototyping within 2-4 weeks, followed by full deployment within 3-6 months."
       },
       "q2": {
-        "q": "Proposez-vous une intégration IA personnalisée ?",
-        "a": "Oui. Nous développons des systèmes IA sur mesure, des Grands Modèles de Langage (LLM) propriétaires et des workflows automatisés intégrés à votre architecture existante."
+        "q": "What is your starting price?",
+        "a": "We don't offer fixed-price packages because every system is bespoke. We'll assess your requirements during a free consultation and provide a clear quotation based on the actual scope."
       },
       "q3": {
-        "q": "Quels secteurs servez-vous ?",
-        "a": "Nous fournissons des logiciels et solutions IA pour les secteurs à forte intensité de données : services financiers, santé, industrie et secteur public."
+        "q": "How is Anthovai different from hiring freelancers?",
+        "a": "You get a complete end-to-end engineering team—including Architects, Developers, and QA. We deliver enterprise-grade security, scalability, proper documentation, and long-term accountability."
       },
       "q4": {
-        "q": "Où est situé votre siège ?",
-        "a": "Le siège d'Anthovai est à Bangkok, Thaïlande. Nous opérons en tant qu'entreprise technologique mondiale remote-first."
+        "q": "Do you offer post-launch maintenance?",
+        "a": "Absolutely. We don't just hand over the source code. We provide long-term SLA support, cloud infrastructure management, and continuous maintenance to ensure your system scales with your business."
       }
     }
   },

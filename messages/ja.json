@@ -101,39 +101,48 @@
     "items": {
       "ai": {
         "title": "AI & 機械学習",
-        "desc": "カスタムモデルとインテリジェント自動化。"
+        "desc": "カスタムモデルとインテリジェント自動化。",
+        "did": "Including custom NLP pipelines and business predictive models."
       },
       "enterprise": {
         "title": "エンタープライズソフトウェア",
-        "desc": "スケーラブルなビジネスアプリケーション。"
+        "desc": "スケーラブルなビジネスアプリケーション。",
+        "did": "Including custom ERP for manufacturing and inventory tracking."
       },
       "cloud": {
         "title": "クラウドインフラ",
-        "desc": "本番システムのアーキテクチャと管理。"
+        "desc": "本番システムのアーキテクチャと管理。",
+        "did": "Including zero-downtime AWS migrations and auto-scaling architectures."
       },
       "security": {
         "title": "サイバーセキュリティ",
-        "desc": "脅威モデリングとセキュリティファースト設計。"
+        "desc": "脅威モデリングとセキュリティファースト設計。",
+        "did": "Including enterprise penetration testing and data governance auditing."
       },
       "data": {
         "title": "データエンジニアリング",
-        "desc": "大規模パイプラインとリアルタイム分析。"
+        "desc": "大規模パイプラインとリアルタイム分析。",
+        "did": "Including real-time data lakes and analytics dashboards."
       },
       "mobile": {
         "title": "モバイルアプリ開発",
-        "desc": "iOSとAndroid向けのネイティブ・クロスプラットフォームアプリ。"
+        "desc": "iOSとAndroid向けのネイティブ・クロスプラットフォームアプリ。",
+        "did": "Including high-performance native iOS/Android apps for enterprise clients."
       },
       "devops": {
         "title": "DevOps & 自動化",
-        "desc": "CI/CDパイプライン、IaC、自動デプロイワークフロー。"
+        "desc": "CI/CDパイプライン、IaC、自動デプロイワークフロー。",
+        "did": "Including automated CI/CD pipelines to dramatically speed up release cycles."
       },
       "ux": {
         "title": "UI/UXデザイン",
-        "desc": "ユーザー中心のデザインシステムとフロントエンドエンジニアリング。"
+        "desc": "ユーザー中心のデザインシステムとフロントエンドエンジニアリング。",
+        "did": "Including massive UI design systems and complex B2B workflow dashboards."
       },
       "consulting": {
         "title": "ITコンサルティング",
-        "desc": "デジタル変革のための戦略的テクノロジーアドバイザリー。"
+        "desc": "デジタル変革のための戦略的テクノロジーアドバイザリー。",
+        "did": "Including full-scale digital transformation strategy for legacy organizations."
       }
     }
   },
@@ -142,24 +151,24 @@
     "attribution": "ANTHOVAI · INTELLIGENCE, ENGINEERED."
   },
   "faq": {
-    "label": "よくある質問",
-    "headline": "よくある質問",
+    "label": "Common Questions",
+    "headline": "Frequently Asked Questions",
     "items": {
       "q1": {
-        "q": "Anthovaiとはどんな会社ですか？",
-        "a": "Anthovaiはプレミアム AI ソフトウェアエンジニアリング企業です。エンタープライズ AI プラットフォーム、インテリジェントインフラ、カスタム B2B ソフトウェアの設計・構築・デプロイを行っています。"
+        "q": "How long does a typical project take?",
+        "a": "Timelines depend on the scale of the system, but we generally complete rapid prototyping within 2-4 weeks, followed by full deployment within 3-6 months."
       },
       "q2": {
-        "q": "カスタムエンタープライズ AI 統合を提供していますか？",
-        "a": "はい。カスタム AI システム、独自の大規模言語モデル（LLM）、既存のエンタープライズアーキテクチャに統合される自動化ワークフローを開発しています。"
+        "q": "What is your starting price?",
+        "a": "We don't offer fixed-price packages because every system is bespoke. We'll assess your requirements during a free consultation and provide a clear quotation based on the actual scope."
       },
       "q3": {
-        "q": "どの業界にサービスを提供していますか？",
-        "a": "金融サービス、ヘルスケア、製造業、公共セクターなど、データ集約型産業向けにカスタムエンタープライズソフトウェアと AI ソリューションを提供しています。"
+        "q": "How is Anthovai different from hiring freelancers?",
+        "a": "You get a complete end-to-end engineering team—including Architects, Developers, and QA. We deliver enterprise-grade security, scalability, proper documentation, and long-term accountability."
       },
       "q4": {
-        "q": "本社はどこにありますか？",
-        "a": "Anthovaiの本社はタイ・バンコクにあり、リモートファーストのグローバルテクノロジー企業として世界中の組織にサービスを提供しています。"
+        "q": "Do you offer post-launch maintenance?",
+        "a": "Absolutely. We don't just hand over the source code. We provide long-term SLA support, cloud infrastructure management, and continuous maintenance to ensure your system scales with your business."
       }
     }
   },

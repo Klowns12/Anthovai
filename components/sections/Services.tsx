@@ -49,6 +49,11 @@ export function Services() {
                   <p className="text-white-60 leading-relaxed text-sm">
                     {t(`items.${item.key}.desc`)}
                   </p>
+                  <div className="mt-4 pt-4 border-t border-white/[0.04]">
+                    <p className="text-gold text-xs font-light italic tracking-wide">
+                      {t(`items.${item.key}.did`)}
+                    </p>
+                  </div>
                 </div>
               </FadeUp>
             )
