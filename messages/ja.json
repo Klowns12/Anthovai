@@ -5,7 +5,7 @@
   "nav": {
     "products": "プロダクト",
     "solutions": "ソリューション",
-    "klang": "Klowns Language",
+    "klang": "クラウン言語",
     "about": "会社について",
     "careers": "採用情報",
     "contact": "お問い合わせ"
@@ -65,7 +65,7 @@
     "stat_version": "セルフホスティング",
     "target_native": "ネイティブバイナリ",
     "target_llvm": "LLVM IR",
-    "target_wasm": "WebAssembly",
+    "target_wasm": "Webアセンブリ",
     "pillars": {
       "speed": "Cレベル速度",
       "readable": "Python可読性",
@@ -102,73 +102,73 @@
       "ai": {
         "title": "AI & 機械学習",
         "desc": "カスタムモデルとインテリジェント自動化。",
-        "did": "Including custom NLP pipelines and business predictive models."
+        "did": "カスタム NLP パイプラインとビジネス予測モデルが含まれます。"
       },
       "enterprise": {
         "title": "エンタープライズソフトウェア",
         "desc": "スケーラブルなビジネスアプリケーション。",
-        "did": "Including custom ERP for manufacturing and inventory tracking."
+        "did": "製造および在庫追跡のためのカスタム ERP が含まれます。"
       },
       "cloud": {
         "title": "クラウドインフラ",
         "desc": "本番システムのアーキテクチャと管理。",
-        "did": "Including zero-downtime AWS migrations and auto-scaling architectures."
+        "did": "ダウンタイムゼロの AWS 移行と自動スケーリング アーキテクチャが含まれます。"
       },
       "security": {
         "title": "サイバーセキュリティ",
         "desc": "脅威モデリングとセキュリティファースト設計。",
-        "did": "Including enterprise penetration testing and data governance auditing."
+        "did": "エンタープライズ侵入テストとデータ ガバナンス監査が含まれます。"
       },
       "data": {
         "title": "データエンジニアリング",
         "desc": "大規模パイプラインとリアルタイム分析。",
-        "did": "Including real-time data lakes and analytics dashboards."
+        "did": "リアルタイム データ レイクと分析ダッシュボードが含まれます。"
       },
       "mobile": {
         "title": "モバイルアプリ開発",
         "desc": "iOSとAndroid向けのネイティブ・クロスプラットフォームアプリ。",
-        "did": "Including high-performance native iOS/Android apps for enterprise clients."
+        "did": "企業クライアント向けの高性能ネイティブ iOS/Android アプリが含まれます。"
       },
       "devops": {
         "title": "DevOps & 自動化",
         "desc": "CI/CDパイプライン、IaC、自動デプロイワークフロー。",
-        "did": "Including automated CI/CD pipelines to dramatically speed up release cycles."
+        "did": "自動化された CI/CD パイプラインを含めて、リリース サイクルを劇的に短縮します。"
       },
       "ux": {
         "title": "UI/UXデザイン",
         "desc": "ユーザー中心のデザインシステムとフロントエンドエンジニアリング。",
-        "did": "Including massive UI design systems and complex B2B workflow dashboards."
+        "did": "大規模な UI デザイン システムと複雑な B2B ワークフロー ダッシュボードが含まれます。"
       },
       "consulting": {
         "title": "ITコンサルティング",
         "desc": "デジタル変革のための戦略的テクノロジーアドバイザリー。",
-        "did": "Including full-scale digital transformation strategy for legacy organizations."
+        "did": "レガシー組織向けの本格的なデジタル変革戦略が含まれます。"
       }
     }
   },
   "manifesto": {
     "quote": "私たちが構築するすべてのシステムはAからIへ — データから意思決定へ、複雑さから明確さへ。",
-    "attribution": "ANTHOVAI · INTELLIGENCE, ENGINEERED."
+    "attribution": "アンソヴァイ · インテリジェンス、エンジニアリング。"
   },
   "faq": {
-    "label": "Common Questions",
-    "headline": "Frequently Asked Questions",
+    "label": "よくある質問",
+    "headline": "よくある質問",
     "items": {
       "q1": {
-        "q": "How long does a typical project take?",
-        "a": "Timelines depend on the scale of the system, but we generally complete rapid prototyping within 2-4 weeks, followed by full deployment within 3-6 months."
+        "q": "一般的なプロジェクトにはどのくらいの時間がかかりますか?",
+        "a": "スケジュールはシステムの規模によって異なりますが、通常、ラピッド プロトタイピングは 2 ～ 4 週間以内に完了し、その後 3 ～ 6 か月以内に完全な導入が完了します。"
       },
       "q2": {
-        "q": "What is your starting price?",
-        "a": "We don't offer fixed-price packages because every system is bespoke. We'll assess your requirements during a free consultation and provide a clear quotation based on the actual scope."
+        "q": "開始価格はいくらですか?",
+        "a": "すべてのシステムはオーダーメイドであるため、固定価格のパッケージは提供しません。無料相談でお客様の要件を評価し、実際の範囲に基づいて明確な見積もりを提供します。"
       },
       "q3": {
-        "q": "How is Anthovai different from hiring freelancers?",
-        "a": "You get a complete end-to-end engineering team—including Architects, Developers, and QA. We deliver enterprise-grade security, scalability, proper documentation, and long-term accountability."
+        "q": "Anthovai はフリーランサーの雇用とどう違うのですか?",
+        "a": "アーキテクト、開発者、QA を含む、完全なエンドツーエンドのエンジニアリング チームが得られます。当社は、エンタープライズ グレードのセキュリティ、拡張性、適切な文書化、長期的な責任を提供します。"
       },
       "q4": {
-        "q": "Do you offer post-launch maintenance?",
-        "a": "Absolutely. We don't just hand over the source code. We provide long-term SLA support, cloud infrastructure management, and continuous maintenance to ensure your system scales with your business."
+        "q": "導入後のメンテナンスはしてもらえますか？",
+        "a": "絶対に。私たちはソースコードを渡すだけではありません。当社は長期的な SLA サポート、クラウド インフラストラクチャ管理、継続的なメンテナンスを提供し、システムがビジネスに合わせて拡張できるようにします。"
       }
     }
   },
@@ -178,9 +178,9 @@
     "button": "お問い合わせ"
   },
   "footer": {
-    "tagline": "Intelligence, Engineered.",
+    "tagline": "インテリジェンス、エンジニアリング。",
     "parent": "Kaiser Klowns傘下",
-    "copy": "© 2026 Anthovai. All rights reserved.",
+    "copy": "© 2026 アンソヴァイ。無断転載を禁じます。",
     "platform": "プラットフォーム",
     "company": "会社",
     "connect": "コネクト"
@@ -243,9 +243,9 @@
         "did": "強固な監査証跡機能と市民認証機能を備えた、中央集権型のデータ交換プラットフォームと公共サービスポータルを開発しました。"
       },
       "education": {
-        "title": "Education",
-        "desc": "Student management systems, digital infrastructure for universities. Active Client: Roi Et Bajabhat University.",
-        "did": "We built comprehensive university admission and student management platforms, handling thousands of concurrent users during registration periods."
+        "title": "教育",
+        "desc": "学生管理システム、大学のデジタル インフラストラクチャ。アクティブなクライアント: Roi Et Bajabhat University。",
+        "did": "私たちは包括的な大学入学および学生管理プラットフォームを構築し、登録期間中に数千人の同時ユーザーを処理しました。"
       }
     },
     "services_label": "レイヤー 1",
@@ -268,7 +268,7 @@
         "desc": "脅威モデリング、ペネトレーションテスト"
       }
     },
-    "industries_title": "Industries We Transform",
+    "industries_title": "私たちが変革する業界",
     "process_label": "レイヤー 3",
     "process_title": "私たちの働き方",
     "faq_title": "よくある質問",
@@ -378,12 +378,12 @@
         "desc": "クロスプラットフォーム最適化。"
       },
       "wasm": {
-        "title": "WebAssembly",
+        "title": "Webアセンブリ",
         "desc": "ブラウザで実行。"
       }
     },
     "install_label": "はじめに",
-    "install_command": "curl -sSf https://klang.kkg/install.sh | sh",
+    "install_command": "カール -sSf https://klang.kkg/install.sh |しー",
     "docs_cta": "ドキュメント",
     "ecosystem_label": "エコシステム",
     "ecosystem": {
@@ -396,7 +396,7 @@
         "desc": "公式IDE。"
       },
       "arkai": {
-        "name": "Arkai AI",
+        "name": "アルカイAI",
         "desc": "AIプラットフォーム。"
       },
       "ocean": {
@@ -423,207 +423,207 @@
   "expertise": {
     "enterpriseSoftware": {
       "meta": {
-        "title": "Enterprise Software Development | Anthovai - Intelligence, Engineered.",
-        "description": "Anthovai builds enterprise software that powers operations across healthcare, retail, and manufacturing — engineered for scale, compliance, and performance."
+        "title": "エンタープライズ ソフトウェア開発 | Anthovai - インテリジェンス、エンジニアリング。",
+        "description": "Anthovai は、規模、コンプライアンス、パフォーマンスを考慮して設計された、医療、小売、製造全体の業務を強化するエンタープライズ ソフトウェアを構築しています。"
       },
       "hero": {
-        "h1": "Enterprise Software Development",
-        "intro": "Anthovai builds enterprise software that powers operations across healthcare, retail, and manufacturing — engineered for scale, compliance, and performance."
+        "h1": "エンタープライズ ソフトウェア開発",
+        "intro": "Anthovai は、規模、コンプライアンス、パフォーマンスを考慮して設計された、医療、小売、製造全体の業務を強化するエンタープライズ ソフトウェアを構築しています。"
       },
       "whatIs": {
-        "title": "What is Enterprise Software?",
-        "body": "Enterprise software forms the digital backbone of large-scale organizations. It centralizes data, automates complex workflows, and integrates disparate systems into a unified operational platform."
+        "title": "エンタープライズ ソフトウェアとは何ですか?",
+        "body": "エンタープライズ ソフトウェアは、大規模組織のデジタル バックボーンを形成します。データを一元化し、複雑なワークフローを自動化し、異種システムを統合された運用プラットフォームに統合します。"
       },
       "whyAnthovai": {
-        "title": "Why Anthovai",
+        "title": "アンソヴァイを選ぶ理由",
         "points": {
           "p1": {
-            "title": "Precision Engineered",
-            "desc": "We build systems with exact tolerances, ensuring zero-downtime reliability."
+            "title": "精密設計",
+            "desc": "当社は正確な公差を備えたシステムを構築し、ダウンタイムゼロの信頼性を保証します。"
           },
           "p2": {
-            "title": "AI Native",
-            "desc": "Intelligence is built into the core architecture, not bolted on as an afterthought."
+            "title": "AIネイティブ",
+            "desc": "インテリジェンスはコア アーキテクチャに組み込まれており、後付けで追加されるものではありません。"
           },
           "p3": {
-            "title": "Bespoke Architecture",
-            "desc": "No off-the-shelf compromises. Your system is designed specifically for your operational reality."
+            "title": "オーダーメイドのアーキテクチャ",
+            "desc": "既製の妥協はありません。システムは、実際の運用に合わせて特別に設計されています。"
           }
         }
       },
       "process": {
-        "title": "Our Process",
+        "title": "私たちのプロセス",
         "steps": {
           "s1": {
-            "title": "Architecture Design",
-            "desc": "We map your entire operational lifecycle to identify redundancies and design the ideal system footprint."
+            "title": "建築設計",
+            "desc": "当社は運用ライフサイクル全体をマッピングして冗長性を特定し、理想的なシステムの設置面積を設計します。"
           },
           "s2": {
-            "title": "System Integration",
-            "desc": "We connect legacy databases, third-party APIs, and new microservices into a cohesive whole."
+            "title": "システム統合",
+            "desc": "私たちは、レガシー データベース、サードパーティ API、新しいマイクロサービスを 1 つのまとまりに接続します。"
           },
           "s3": {
-            "title": "Precision Development",
-            "desc": "Our engineers build the core platform using high-performance, strictly-typed languages."
+            "title": "精密な開発",
+            "desc": "当社のエンジニアは、高性能で厳密に型指定された言語を使用してコア プラットフォームを構築します。"
           },
           "s4": {
-            "title": "Deployment & Evolution",
-            "desc": "We deploy with zero-downtime strategies and continuously evolve the system based on real-world telemetry."
+            "title": "導入と進化",
+            "desc": "当社はゼロダウンタイム戦略で展開し、現実世界のテレメトリに基づいてシステムを継続的に進化させます。"
           }
         }
       },
       "industries": {
-        "title": "Industries We Serve",
-        "healthcare": "Healthcare",
-        "retail": "Retail & E-commerce",
-        "manufacturing": "Manufacturing",
-        "readMore": "View Details"
+        "title": "私たちがサービスを提供する業界",
+        "healthcare": "健康管理",
+        "retail": "小売と電子商取引",
+        "manufacturing": "製造業",
+        "readMore": "詳細を見る"
       },
       "faq": {
-        "title": "Frequently Asked Questions",
+        "title": "よくある質問",
         "q1": {
-          "q": "What is the typical timeline for an enterprise software project?",
-          "a": "Timelines vary by complexity, but core architecture deployment usually takes 3 to 6 months. We prioritize rapid, iterative releases."
+          "q": "エンタープライズ ソフトウェア プロジェクトの一般的なスケジュールはどのようなものですか?",
+          "a": "タイムラインは複雑さによって異なりますが、コア アーキテクチャの導入には通常 3 ～ 6 か月かかります。私たちは迅速な反復リリースを優先します。"
         },
         "q2": {
-          "q": "Do you offer post-launch support and maintenance?",
-          "a": "Yes. We operate as your long-term engineering partner, providing continuous evolution, security patching, and scaling support."
+          "q": "リリース後のサポートやメンテナンスは提供されますか?",
+          "a": "はい。当社はお客様の長期的なエンジニアリング パートナーとして活動し、継続的な進化、セキュリティ パッチ適用、拡張サポートを提供します。"
         },
         "q3": {
-          "q": "Can you integrate with our existing legacy systems?",
-          "a": "Absolutely. A core part of our expertise is building secure translation layers and APIs to connect legacy mainframes with modern infrastructure."
+          "q": "既存のレガシー システムと統合できますか?",
+          "a": "絶対に。当社の専門知識の中核は、従来のメインフレームを最新のインフラストラクチャに接続するための安全な翻訳レイヤーと API を構築することです。"
         },
         "q4": {
-          "q": "Who owns the intellectual property?",
-          "a": "You do. Upon completion, the source code, architecture blueprints, and all associated intellectual property are fully transferred to your organization."
+          "q": "知的財産の所有者は誰ですか?",
+          "a": "あなたがやる。完了すると、ソース コード、アーキテクチャ設計図、および関連するすべての知的財産が組織に完全に転送されます。"
         }
       },
       "healthcare": {
         "meta": {
-          "title": "Healthcare Software Development | Anthovai",
-          "description": "Anthovai develops healthcare software systems that streamline clinical workflows and patient data management — built for PDPA compliance."
+          "title": "ヘルスケア ソフトウェア開発 |アンソヴァイ",
+          "description": "Anthovai は、PDPA 準拠のために構築された臨床ワークフローと患者データ管理を合理化するヘルスケア ソフトウェア システムを開発しています。"
         },
         "hero": {
-          "h1": "Healthcare Software Development — Clinical & Operational Systems",
-          "intro": "Anthovai develops healthcare software systems that streamline clinical workflows, patient data management, and hospital operations — built for PDPA compliance and HL7/FHIR integration."
+          "h1": "ヘルスケア ソフトウェア開発 — 臨床システムおよび運用システム",
+          "intro": "Anthovai は、PDPA 準拠と HL7/FHIR 統合を目的として構築された、臨床ワークフロー、患者データ管理、病院運営を合理化するヘルスケア ソフトウェア システムを開発しています。"
         },
         "sections": {
           "s1": {
-            "title": "Patient Data & Records Systems",
-            "desc": "We engineer highly secure, encrypted electronic health record (EHR) systems that provide real-time patient history across departments without compromising access speed."
+            "title": "患者データおよび記録システム",
+            "desc": "当社は、アクセス速度を損なうことなく、部門を超えてリアルタイムの患者履歴を提供する、安全性の高い暗号化された電子医療記録 (EHR) システムを設計しています。"
           },
           "s2": {
-            "title": "Compliance: PDPA / HL7 / FHIR",
-            "desc": "Regulatory compliance is baked into our architecture. We ensure all data pipelines adhere strictly to PDPA privacy laws and international HL7/FHIR interoperability standards."
+            "title": "コンプライアンス: PDPA / HL7 / FHIR",
+            "desc": "規制遵守は当社のアーキテクチャに組み込まれています。すべてのデータ パイプラインが PDPA プライバシー法と国際的な HL7/FHIR 相互運用性標準に厳密に準拠していることを保証します。"
           },
           "s3": {
-            "title": "Integration with Existing HIS",
-            "desc": "We do not disrupt your clinical workflows. Our software integrates seamlessly via secure APIs into your existing Hospital Information Systems (HIS)."
+            "title": "既存のHISとの統合",
+            "desc": "お客様の臨床ワークフローを中断することはありません。当社のソフトウェアは、安全な API を介して既存の病院情報システム (HIS) にシームレスに統合されます。"
           }
         },
         "faq": {
-          "title": "Healthcare Software FAQ",
+          "title": "ヘルスケア ソフトウェアに関するよくある質問",
           "q1": {
-            "q": "Are your healthcare systems HIPAA and PDPA compliant?",
-            "a": "Yes. Every system we build incorporates end-to-end encryption, strict role-based access control, and full audit logging to meet PDPA and HIPAA standards."
+            "q": "あなたの医療システムは HIPAA および PDPA に準拠していますか?",
+            "a": "はい。当社が構築するすべてのシステムには、エンドツーエンドの暗号化、厳密なロールベースのアクセス制御、および PDPA および HIPAA 基準を満たす完全な監査ログが組み込まれています。"
           },
           "q2": {
-            "q": "Can you integrate AI into clinical diagnostics?",
-            "a": "We build the secure data pipelines that allow AI models to process imaging and lab results. However, we do not build medical diagnostic models ourselves."
+            "q": "AI を臨床診断に統合できますか?",
+            "a": "AI モデルが画像処理や検査結果を処理できるようにする安全なデータ パイプラインを構築します。ただし、私たちは医療診断モデルを自分たちで構築するわけではありません。"
           },
           "q3": {
-            "q": "How do you handle patient data migration?",
-            "a": "We use zero-downtime ETL (Extract, Transform, Load) processes with multi-stage verification to ensure zero data loss during legacy migration."
+            "q": "患者データの移行はどのように処理しますか?",
+            "a": "当社では、ダウンタイムゼロの ETL (抽出、変換、ロード) プロセスと多段階検証を使用して、レガシー移行中のデータ損失ゼロを保証します。"
           },
           "q4": {
-            "q": "Do you build patient-facing portals?",
-            "a": "Yes. We develop secure patient portals for appointment scheduling, telemedicine, and lab result viewing."
+            "q": "患者向けのポータルを構築していますか?",
+            "a": "はい。私たちは、予約のスケジュール設定、遠隔医療、検査結果の表示のための安全な患者ポータルを開発しています。"
           }
         }
       },
       "retail": {
         "meta": {
-          "title": "Retail & E-commerce Software | Anthovai",
-          "description": "Anthovai builds retail and e-commerce platforms that unify inventory, orders, and customer data across all channels."
+          "title": "小売および電子商取引ソフトウェア |アンソヴァイ",
+          "description": "Anthovai は、在庫、注文、顧客データをすべてのチャネルにわたって統合する小売および電子商取引プラットフォームを構築しています。"
         },
         "hero": {
-          "h1": "Retail & E-commerce Software — Inventory, Orders, and Customer Systems",
-          "intro": "Anthovai builds retail and e-commerce platforms that unify inventory, orders, and customer data across all channels — scalable from single-store to enterprise-wide operations."
+          "h1": "小売および電子商取引ソフトウェア — 在庫、注文、および顧客システム",
+          "intro": "Anthovai は、すべてのチャネルにわたって在庫、注文、顧客データを統合する小売および電子商取引プラットフォームを構築しており、単一店舗から企業全体の運営まで拡張可能です。"
         },
         "sections": {
           "s1": {
-            "title": "Omnichannel Systems",
-            "desc": "We build platforms that synchronize your physical retail stores with your digital e-commerce presence in true real-time."
+            "title": "オムニチャネル システム",
+            "desc": "私たちは、実店舗とデジタル e コマースの存在を真のリアルタイムで同期するプラットフォームを構築します。"
           },
           "s2": {
-            "title": "POS & Payment Integration",
-            "desc": "Our systems connect directly to leading payment gateways and Point of Sale (POS) hardware, ensuring transaction integrity and speed."
+            "title": "POSと支払いの統合",
+            "desc": "当社のシステムは、主要な支払いゲートウェイおよび販売時点管理 (POS) ハードウェアに直接接続し、トランザクションの整合性と速度を保証します。"
           },
           "s3": {
-            "title": "Scalability & Performance",
-            "desc": "Engineered for high-traffic events like Black Friday, our cloud-native architectures auto-scale to handle massive concurrent transaction volumes."
+            "title": "スケーラビリティとパフォーマンス",
+            "desc": "ブラック フライデーのようなトラフィックの多いイベント向けに設計された当社のクラウドネイティブ アーキテクチャは、大量の同時トランザクション量を処理するために自動スケールされます。"
           }
         },
         "faq": {
-          "title": "Retail Software FAQ",
+          "title": "小売ソフトウェアに関するよくある質問",
           "q1": {
-            "q": "Do you build custom e-commerce engines or use Shopify?",
-            "a": "We build fully custom, headless e-commerce engines for enterprises where standard platforms like Shopify cannot handle the required architectural complexity."
+            "q": "カスタム e コマース エンジンを構築していますか、それとも Shopify を使用していますか?",
+            "a": "当社は、Shopify などの標準プラットフォームでは必要なアーキテクチャの複雑さを処理できない企業向けに、完全にカスタムのヘッドレス e コマース エンジンを構築します。"
           },
           "q2": {
-            "q": "How does real-time inventory work?",
-            "a": "We use event-driven architecture to update inventory databases globally the millisecond an item is purchased, preventing overselling."
+            "q": "リアルタイム在庫はどのように機能しますか?",
+            "a": "当社はイベント駆動型のアーキテクチャを使用して、商品が購入されるミリ秒ごとに在庫データベースをグローバルに更新し、過剰販売を防ぎます。"
           },
           "q3": {
-            "q": "Can you integrate with our warehouse robots?",
-            "a": "Yes. We build APIs that communicate directly with Automated Storage and Retrieval Systems (ASRS) and warehouse management robots."
+            "q": "当社の倉庫ロボットと統合できますか?",
+            "a": "はい。当社は、自動保管および取り出しシステム (ASRS) および倉庫管理ロボットと直接通信する API を構築します。"
           },
           "q4": {
-            "q": "Do you handle cross-border payments?",
-            "a": "We integrate with specialized international payment processors and handle complex multi-currency ledger arithmetic within the software."
+            "q": "国境を越えた支払いに対応していますか?",
+            "a": "当社は専門の国際決済プロセッサと統合し、ソフトウェア内で複雑な複数通貨台帳演算を処理します。"
           }
         }
       },
       "manufacturing": {
         "meta": {
-          "title": "Manufacturing Software & MES | Anthovai",
-          "description": "Anthovai engineers manufacturing software including MES, ERP integrations, and supply chain tracking systems."
+          "title": "製造ソフトウェアとMES |アンソヴァイ",
+          "description": "Anthovai は、MES、ERP 統合、サプライ チェーン追跡システムなどのソフトウェアを製造するエンジニアを務めています。"
         },
         "hero": {
-          "h1": "Manufacturing Software — Production, Supply Chain & MES Systems",
-          "intro": "Anthovai engineers manufacturing software including MES, ERP integrations, and supply chain tracking systems — built for real-time visibility and IoT-ready infrastructure."
+          "h1": "製造ソフトウェア — 生産、サプライチェーン、MES システム",
+          "intro": "Anthovai のエンジニアは、リアルタイムの可視性と IoT 対応インフラストラクチャを実現するために構築された、MES、ERP 統合、サプライ チェーン追跡システムなどのソフトウェアを製造しています。"
         },
         "sections": {
           "s1": {
-            "title": "MES / ERP Integration",
-            "desc": "We bridge the gap between the shop floor and the top floor by integrating Manufacturing Execution Systems (MES) directly with your enterprise ERP."
+            "title": "MES/ERP統合",
+            "desc": "当社は、製造実行システム (MES) をエンタープライズ ERP と直接統合することで、製造現場と最上階の間のギャップを埋めます。"
           },
           "s2": {
-            "title": "Real-Time Production Tracking",
-            "desc": "Track every unit, batch, and metric in real-time. Our software provides absolute visibility into your production lifecycle."
+            "title": "リアルタイムの生産追跡",
+            "desc": "すべてのユニット、バッチ、メトリクスをリアルタイムで追跡します。当社のソフトウェアは、生産ライフサイクルを完全に可視化します。"
           },
           "s3": {
-            "title": "IoT-Ready Architecture",
-            "desc": "Our infrastructure is designed to ingest and process high-frequency telemetry data from thousands of industrial IoT sensors operating on the factory floor."
+            "title": "IoT対応アーキテクチャ",
+            "desc": "当社のインフラストラクチャは、工場現場で動作する何千もの産業用 IoT センサーからの高周波テレメトリ データを取り込んで処理するように設計されています。"
           }
         },
         "faq": {
-          "title": "Manufacturing Software FAQ",
+          "title": "製造ソフトウェアに関するよくある質問",
           "q1": {
-            "q": "What is an MES?",
-            "a": "A Manufacturing Execution System (MES) is software that monitors and controls the complex manufacturing systems and data flows on the factory floor."
+            "q": "MESとは何ですか?",
+            "a": "製造実行システム (MES) は、工場現場の複雑な製造システムとデータ フローを監視および制御するソフトウェアです。"
           },
           "q2": {
-            "q": "How do you handle factory downtime during implementation?",
-            "a": "We deploy systems in parallel (shadow mode) alongside your existing processes until full stability is verified, ensuring zero production downtime."
+            "q": "導入中の工場のダウンタイムにはどのように対処しますか?",
+            "a": "完全な安定性が確認されるまで、システムを既存のプロセスと並行して (シャドウ モード) 展開し、生産のダウンタイムがゼロであることを保証します。"
           },
           "q3": {
-            "q": "Can your software predict machine failure?",
-            "a": "Yes. By analyzing IoT sensor data through integrated Machine Learning models, we provide predictive maintenance alerts before critical failures occur."
+            "q": "あなたのソフトウェアは機械の故障を予測できますか?",
+            "a": "はい。統合された機械学習モデルを通じて IoT センサー データを分析することで、重大な障害が発生する前に予知メンテナンス アラートを提供します。"
           },
           "q4": {
-            "q": "Do you support barcode and RFID scanning?",
-            "a": "Our platforms natively integrate with industrial barcode and RFID hardware for seamless inventory and asset tracking."
+            "q": "バーコードとRFIDスキャンをサポートしていますか?",
+            "a": "当社のプラットフォームは産業用バーコードおよび RFID ハードウェアとネイティブに統合されており、シームレスな在庫と資産の追跡を実現します。"
           }
         }
       }

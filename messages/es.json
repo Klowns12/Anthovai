@@ -5,7 +5,7 @@
   "nav": {
     "products": "Productos",
     "solutions": "Soluciones",
-    "klang": "Klowns Language",
+    "klang": "Idioma de los payasos",
     "about": "Nosotros",
     "careers": "Carreras",
     "contact": "Contáctenos"
@@ -64,8 +64,8 @@
     "stat_stdlib": "Funciones Stdlib",
     "stat_version": "Auto-alojamiento",
     "target_native": "Binario nativo",
-    "target_llvm": "LLVM IR",
-    "target_wasm": "WebAssembly",
+    "target_llvm": "IR LLVM",
+    "target_wasm": "Asamblea web",
     "pillars": {
       "speed": "Velocidad nivel C",
       "readable": "Legibilidad Python",
@@ -102,73 +102,73 @@
       "ai": {
         "title": "IA y Machine Learning",
         "desc": "Modelos personalizados y automatización inteligente.",
-        "did": "Including custom NLP pipelines and business predictive models."
+        "did": "Incluyendo canales de PNL personalizados y modelos predictivos de negocios."
       },
       "enterprise": {
         "title": "Software empresarial",
         "desc": "Aplicaciones empresariales escalables.",
-        "did": "Including custom ERP for manufacturing and inventory tracking."
+        "did": "Incluyendo ERP personalizado para fabricación y seguimiento de inventario."
       },
       "cloud": {
         "title": "Infraestructura cloud",
         "desc": "Arquitectura y gestión de sistemas de producción.",
-        "did": "Including zero-downtime AWS migrations and auto-scaling architectures."
+        "did": "Incluyendo migraciones de AWS sin tiempo de inactividad y arquitecturas de escalamiento automático."
       },
       "security": {
         "title": "Ciberseguridad",
         "desc": "Modelado de amenazas y diseño security-first.",
-        "did": "Including enterprise penetration testing and data governance auditing."
+        "did": "Incluyendo pruebas de penetración empresarial y auditorías de gobierno de datos."
       },
       "data": {
         "title": "Ingeniería de datos",
         "desc": "Pipelines y análisis en tiempo real a escala.",
-        "did": "Including real-time data lakes and analytics dashboards."
+        "did": "Incluyendo lagos de datos en tiempo real y paneles de análisis."
       },
       "mobile": {
         "title": "Desarrollo Móvil",
         "desc": "Aplicaciones nativas y multiplataforma para iOS y Android.",
-        "did": "Including high-performance native iOS/Android apps for enterprise clients."
+        "did": "Incluyendo aplicaciones nativas de iOS/Android de alto rendimiento para clientes empresariales."
       },
       "devops": {
         "title": "DevOps & Automatización",
         "desc": "Pipelines CI/CD, IaC y flujos de despliegue automatizados.",
-        "did": "Including automated CI/CD pipelines to dramatically speed up release cycles."
+        "did": "Incluyendo procesos de CI/CD automatizados para acelerar drásticamente los ciclos de lanzamiento."
       },
       "ux": {
         "title": "Diseño UI/UX",
         "desc": "Sistemas de diseño centrados en el usuario e ingeniería frontend.",
-        "did": "Including massive UI design systems and complex B2B workflow dashboards."
+        "did": "Incluyendo sistemas masivos de diseño de UI y paneles de control de flujo de trabajo B2B complejos."
       },
       "consulting": {
         "title": "Consultoría IT",
         "desc": "Asesoría tecnológica estratégica para transformación digital.",
-        "did": "Including full-scale digital transformation strategy for legacy organizations."
+        "did": "Incluyendo una estrategia de transformación digital a gran escala para organizaciones heredadas."
       }
     }
   },
   "manifesto": {
     "quote": "Cada sistema que construimos se mueve de A a I — de datos a decisión, de complejidad a claridad.",
-    "attribution": "ANTHOVAI · INTELLIGENCE, ENGINEERED."
+    "attribution": "ANTHOVAI · INTELIGENCIA, INGENIERÍA."
   },
   "faq": {
-    "label": "Common Questions",
-    "headline": "Frequently Asked Questions",
+    "label": "Preguntas comunes",
+    "headline": "Preguntas frecuentes",
     "items": {
       "q1": {
-        "q": "How long does a typical project take?",
-        "a": "Timelines depend on the scale of the system, but we generally complete rapid prototyping within 2-4 weeks, followed by full deployment within 3-6 months."
+        "q": "¿Cuánto tiempo lleva un proyecto típico?",
+        "a": "Los plazos dependen de la escala del sistema, pero generalmente completamos la creación rápida de prototipos en un plazo de 2 a 4 semanas, seguida de la implementación completa en un plazo de 3 a 6 meses."
       },
       "q2": {
-        "q": "What is your starting price?",
-        "a": "We don't offer fixed-price packages because every system is bespoke. We'll assess your requirements during a free consultation and provide a clear quotation based on the actual scope."
+        "q": "¿Cuál es su precio inicial?",
+        "a": "No ofrecemos paquetes de precio fijo porque cada sistema es personalizado. Evaluaremos sus requisitos durante una consulta gratuita y le proporcionaremos una cotización clara basada en el alcance real."
       },
       "q3": {
-        "q": "How is Anthovai different from hiring freelancers?",
-        "a": "You get a complete end-to-end engineering team—including Architects, Developers, and QA. We deliver enterprise-grade security, scalability, proper documentation, and long-term accountability."
+        "q": "¿En qué se diferencia Anthovai de la contratación de autónomos?",
+        "a": "Obtendrá un equipo de ingeniería completo de principio a fin, que incluye arquitectos, desarrolladores y control de calidad. Ofrecemos seguridad de nivel empresarial, escalabilidad, documentación adecuada y responsabilidad a largo plazo."
       },
       "q4": {
-        "q": "Do you offer post-launch maintenance?",
-        "a": "Absolutely. We don't just hand over the source code. We provide long-term SLA support, cloud infrastructure management, and continuous maintenance to ensure your system scales with your business."
+        "q": "¿Ofrecen mantenimiento post-lanzamiento?",
+        "a": "Absolutamente. No nos limitamos a entregar el código fuente. Brindamos soporte SLA a largo plazo, administración de infraestructura en la nube y mantenimiento continuo para garantizar que su sistema escale con su negocio."
       }
     }
   },
@@ -178,7 +178,7 @@
     "button": "Contáctenos"
   },
   "footer": {
-    "tagline": "Intelligence, Engineered.",
+    "tagline": "Inteligencia, ingeniería.",
     "parent": "Una casa de Kaiser Klowns",
     "copy": "© 2026 Anthovai. Todos los derechos reservados.",
     "platform": "Plataforma",
@@ -243,9 +243,9 @@
         "did": "Desarrollamos plataformas centralizadas de intercambio de datos y portales de servicios públicos con sólidos registros de auditoría y autenticación ciudadana."
       },
       "education": {
-        "title": "Education",
-        "desc": "Student management systems, digital infrastructure for universities. Active Client: Roi Et Bajabhat University.",
-        "did": "We built comprehensive university admission and student management platforms, handling thousands of concurrent users during registration periods."
+        "title": "Educación",
+        "desc": "Sistemas de gestión de estudiantes, infraestructura digital para universidades. Cliente activo: Universidad Roi Et Bajabhat.",
+        "did": "Construimos plataformas integrales de administración de estudiantes y admisión universitaria, manejando miles de usuarios simultáneos durante los períodos de registro."
       }
     },
     "services_label": "NIVEL 1",
@@ -268,7 +268,7 @@
         "desc": "Modelado de amenazas, pentest, diseño"
       }
     },
-    "industries_title": "Industries We Transform",
+    "industries_title": "Industrias que transformamos",
     "process_label": "NIVEL 3",
     "process_title": "Cómo trabajamos",
     "faq_title": "Preguntas Frecuentes",
@@ -308,7 +308,7 @@
         "desc": "Un equipo que valora la precisión y la ambición."
       },
       "remote": {
-        "title": "Remote-First",
+        "title": "Remoto primero",
         "desc": "Trabaje desde cualquier lugar."
       }
     },
@@ -339,7 +339,7 @@
     },
     "info": {
       "title": "Ponte en contacto",
-      "email": "contact@anthovai.com",
+      "email": "contacto@anthovai.com",
       "location": "Bangkok, Tailandia",
       "hours": "Lun-Vie, 9:00-18:00 ICT"
     }
@@ -374,11 +374,11 @@
         "desc": "Código máquina para máximo rendimiento."
       },
       "llvm": {
-        "title": "LLVM IR",
+        "title": "IR LLVM",
         "desc": "Optimización multiplataforma."
       },
       "wasm": {
-        "title": "WebAssembly",
+        "title": "Asamblea web",
         "desc": "Ejecutar en el navegador."
       }
     },
@@ -396,7 +396,7 @@
         "desc": "IDE oficial."
       },
       "arkai": {
-        "name": "Arkai AI",
+        "name": "Arkai IA",
         "desc": "Plataforma IA."
       },
       "ocean": {
@@ -423,207 +423,207 @@
   "expertise": {
     "enterpriseSoftware": {
       "meta": {
-        "title": "Enterprise Software Development | Anthovai - Intelligence, Engineered.",
-        "description": "Anthovai builds enterprise software that powers operations across healthcare, retail, and manufacturing — engineered for scale, compliance, and performance."
+        "title": "Desarrollo de software empresarial | Anthovai - Inteligencia, ingeniería.",
+        "description": "Anthovai crea software empresarial que impulsa las operaciones en los sectores de atención médica, comercio minorista y fabricación, diseñado para escalar, cumplir y rendir."
       },
       "hero": {
-        "h1": "Enterprise Software Development",
-        "intro": "Anthovai builds enterprise software that powers operations across healthcare, retail, and manufacturing — engineered for scale, compliance, and performance."
+        "h1": "Desarrollo de software empresarial",
+        "intro": "Anthovai crea software empresarial que impulsa las operaciones en los sectores de atención médica, comercio minorista y fabricación, diseñado para escalar, cumplir y rendir."
       },
       "whatIs": {
-        "title": "What is Enterprise Software?",
-        "body": "Enterprise software forms the digital backbone of large-scale organizations. It centralizes data, automates complex workflows, and integrates disparate systems into a unified operational platform."
+        "title": "¿Qué es el software empresarial?",
+        "body": "El software empresarial constituye la columna vertebral digital de las organizaciones de gran escala. Centraliza datos, automatiza flujos de trabajo complejos e integra sistemas dispares en una plataforma operativa unificada."
       },
       "whyAnthovai": {
-        "title": "Why Anthovai",
+        "title": "¿Por qué Anthovai?",
         "points": {
           "p1": {
-            "title": "Precision Engineered",
-            "desc": "We build systems with exact tolerances, ensuring zero-downtime reliability."
+            "title": "Diseñado con precisión",
+            "desc": "Construimos sistemas con tolerancias exactas, garantizando confiabilidad sin tiempo de inactividad."
           },
           "p2": {
-            "title": "AI Native",
-            "desc": "Intelligence is built into the core architecture, not bolted on as an afterthought."
+            "title": "Nativo de IA",
+            "desc": "La inteligencia está integrada en la arquitectura central, no se incorpora como una ocurrencia tardía."
           },
           "p3": {
-            "title": "Bespoke Architecture",
-            "desc": "No off-the-shelf compromises. Your system is designed specifically for your operational reality."
+            "title": "Arquitectura a medida",
+            "desc": "Sin compromisos estándar. Su sistema está diseñado específicamente para su realidad operativa."
           }
         }
       },
       "process": {
-        "title": "Our Process",
+        "title": "Nuestro proceso",
         "steps": {
           "s1": {
-            "title": "Architecture Design",
-            "desc": "We map your entire operational lifecycle to identify redundancies and design the ideal system footprint."
+            "title": "Diseño de Arquitectura",
+            "desc": "Mapeamos todo su ciclo de vida operativo para identificar redundancias y diseñar el espacio ideal del sistema."
           },
           "s2": {
-            "title": "System Integration",
-            "desc": "We connect legacy databases, third-party APIs, and new microservices into a cohesive whole."
+            "title": "Integración del sistema",
+            "desc": "Conectamos bases de datos heredadas, API de terceros y nuevos microservicios en un todo cohesivo."
           },
           "s3": {
-            "title": "Precision Development",
-            "desc": "Our engineers build the core platform using high-performance, strictly-typed languages."
+            "title": "Desarrollo de precisión",
+            "desc": "Nuestros ingenieros construyen la plataforma central utilizando lenguajes estrictamente tipificados de alto rendimiento."
           },
           "s4": {
-            "title": "Deployment & Evolution",
-            "desc": "We deploy with zero-downtime strategies and continuously evolve the system based on real-world telemetry."
+            "title": "Implementación y evolución",
+            "desc": "Implementamos estrategias sin tiempo de inactividad y evolucionamos continuamente el sistema en función de la telemetría del mundo real."
           }
         }
       },
       "industries": {
-        "title": "Industries We Serve",
-        "healthcare": "Healthcare",
-        "retail": "Retail & E-commerce",
-        "manufacturing": "Manufacturing",
-        "readMore": "View Details"
+        "title": "Industrias a las que servimos",
+        "healthcare": "Cuidado de la salud",
+        "retail": "Venta minorista y comercio electrónico",
+        "manufacturing": "Fabricación",
+        "readMore": "Ver detalles"
       },
       "faq": {
-        "title": "Frequently Asked Questions",
+        "title": "Preguntas frecuentes",
         "q1": {
-          "q": "What is the typical timeline for an enterprise software project?",
-          "a": "Timelines vary by complexity, but core architecture deployment usually takes 3 to 6 months. We prioritize rapid, iterative releases."
+          "q": "¿Cuál es el cronograma típico de un proyecto de software empresarial?",
+          "a": "Los plazos varían según la complejidad, pero la implementación de la arquitectura central suele tardar entre 3 y 6 meses. Priorizamos lanzamientos rápidos e iterativos."
         },
         "q2": {
-          "q": "Do you offer post-launch support and maintenance?",
-          "a": "Yes. We operate as your long-term engineering partner, providing continuous evolution, security patching, and scaling support."
+          "q": "¿Ofrecen soporte y mantenimiento post-lanzamiento?",
+          "a": "Sí. Operamos como su socio de ingeniería a largo plazo, brindando evolución continua, parches de seguridad y soporte de escalamiento."
         },
         "q3": {
-          "q": "Can you integrate with our existing legacy systems?",
-          "a": "Absolutely. A core part of our expertise is building secure translation layers and APIs to connect legacy mainframes with modern infrastructure."
+          "q": "¿Se puede integrar con nuestros sistemas heredados existentes?",
+          "a": "Absolutamente. Una parte fundamental de nuestra experiencia es la creación de capas de traducción seguras y API para conectar mainframes heredados con infraestructura moderna."
         },
         "q4": {
-          "q": "Who owns the intellectual property?",
-          "a": "You do. Upon completion, the source code, architecture blueprints, and all associated intellectual property are fully transferred to your organization."
+          "q": "¿A quién pertenece la propiedad intelectual?",
+          "a": "Tú haces. Al finalizar, el código fuente, los planos de arquitectura y toda la propiedad intelectual asociada se transfieren completamente a su organización."
         }
       },
       "healthcare": {
         "meta": {
-          "title": "Healthcare Software Development | Anthovai",
-          "description": "Anthovai develops healthcare software systems that streamline clinical workflows and patient data management — built for PDPA compliance."
+          "title": "Desarrollo de software sanitario | anthovai",
+          "description": "Anthovai desarrolla sistemas de software de atención médica que agilizan los flujos de trabajo clínicos y la gestión de datos de pacientes, diseñados para cumplir con la PDPA."
         },
         "hero": {
-          "h1": "Healthcare Software Development — Clinical & Operational Systems",
-          "intro": "Anthovai develops healthcare software systems that streamline clinical workflows, patient data management, and hospital operations — built for PDPA compliance and HL7/FHIR integration."
+          "h1": "Desarrollo de software sanitario: sistemas clínicos y operativos",
+          "intro": "Anthovai desarrolla sistemas de software de atención médica que agilizan los flujos de trabajo clínicos, la gestión de datos de pacientes y las operaciones hospitalarias, diseñados para cumplir con PDPA y la integración HL7/FHIR."
         },
         "sections": {
           "s1": {
-            "title": "Patient Data & Records Systems",
-            "desc": "We engineer highly secure, encrypted electronic health record (EHR) systems that provide real-time patient history across departments without compromising access speed."
+            "title": "Sistemas de registros y datos de pacientes",
+            "desc": "Diseñamos sistemas de registros médicos electrónicos (EHR) cifrados y altamente seguros que brindan el historial del paciente en tiempo real en todos los departamentos sin comprometer la velocidad de acceso."
           },
           "s2": {
-            "title": "Compliance: PDPA / HL7 / FHIR",
-            "desc": "Regulatory compliance is baked into our architecture. We ensure all data pipelines adhere strictly to PDPA privacy laws and international HL7/FHIR interoperability standards."
+            "title": "Cumplimiento: PDPA / HL7 / FHIR",
+            "desc": "El cumplimiento normativo está integrado en nuestra arquitectura. Nos aseguramos de que todos los canales de datos cumplan estrictamente con las leyes de privacidad PDPA y los estándares internacionales de interoperabilidad HL7/FHIR."
           },
           "s3": {
-            "title": "Integration with Existing HIS",
-            "desc": "We do not disrupt your clinical workflows. Our software integrates seamlessly via secure APIs into your existing Hospital Information Systems (HIS)."
+            "title": "Integración con HIS existente",
+            "desc": "No interrumpimos sus flujos de trabajo clínicos. Nuestro software se integra perfectamente a través de API seguras en sus sistemas de información hospitalaria (HIS) existentes."
           }
         },
         "faq": {
-          "title": "Healthcare Software FAQ",
+          "title": "Preguntas frecuentes sobre software sanitario",
           "q1": {
-            "q": "Are your healthcare systems HIPAA and PDPA compliant?",
-            "a": "Yes. Every system we build incorporates end-to-end encryption, strict role-based access control, and full audit logging to meet PDPA and HIPAA standards."
+            "q": "¿Sus sistemas de atención médica cumplen con HIPAA y PDPA?",
+            "a": "Sí. Cada sistema que construimos incorpora cifrado de extremo a extremo, estricto control de acceso basado en roles y registro de auditoría completo para cumplir con los estándares PDPA e HIPAA."
           },
           "q2": {
-            "q": "Can you integrate AI into clinical diagnostics?",
-            "a": "We build the secure data pipelines that allow AI models to process imaging and lab results. However, we do not build medical diagnostic models ourselves."
+            "q": "¿Se puede integrar la IA en el diagnóstico clínico?",
+            "a": "Construimos canales de datos seguros que permiten que los modelos de IA procesen imágenes y resultados de laboratorio. Sin embargo, no construimos nosotros mismos modelos de diagnóstico médico."
           },
           "q3": {
-            "q": "How do you handle patient data migration?",
-            "a": "We use zero-downtime ETL (Extract, Transform, Load) processes with multi-stage verification to ensure zero data loss during legacy migration."
+            "q": "¿Cómo se maneja la migración de datos de pacientes?",
+            "a": "Utilizamos procesos ETL (Extracción, Transformación, Carga) sin tiempo de inactividad con verificación de varias etapas para garantizar cero pérdida de datos durante la migración heredada."
           },
           "q4": {
-            "q": "Do you build patient-facing portals?",
-            "a": "Yes. We develop secure patient portals for appointment scheduling, telemedicine, and lab result viewing."
+            "q": "¿Construyen portales orientados al paciente?",
+            "a": "Sí. Desarrollamos portales seguros para pacientes para programación de citas, telemedicina y visualización de resultados de laboratorio."
           }
         }
       },
       "retail": {
         "meta": {
-          "title": "Retail & E-commerce Software | Anthovai",
-          "description": "Anthovai builds retail and e-commerce platforms that unify inventory, orders, and customer data across all channels."
+          "title": "Software de comercio minorista y electrónico | anthovai",
+          "description": "Anthovai crea plataformas minoristas y de comercio electrónico que unifican el inventario, los pedidos y los datos de los clientes en todos los canales."
         },
         "hero": {
-          "h1": "Retail & E-commerce Software — Inventory, Orders, and Customer Systems",
-          "intro": "Anthovai builds retail and e-commerce platforms that unify inventory, orders, and customer data across all channels — scalable from single-store to enterprise-wide operations."
+          "h1": "Software de comercio minorista y electrónico: inventario, pedidos y sistemas de clientes",
+          "intro": "Anthovai crea plataformas minoristas y de comercio electrónico que unifican el inventario, los pedidos y los datos de los clientes en todos los canales, escalables desde operaciones de una sola tienda hasta operaciones de toda la empresa."
         },
         "sections": {
           "s1": {
-            "title": "Omnichannel Systems",
-            "desc": "We build platforms that synchronize your physical retail stores with your digital e-commerce presence in true real-time."
+            "title": "Sistemas omnicanal",
+            "desc": "Construimos plataformas que sincronizan sus tiendas minoristas físicas con su presencia de comercio electrónico digital en tiempo real."
           },
           "s2": {
-            "title": "POS & Payment Integration",
-            "desc": "Our systems connect directly to leading payment gateways and Point of Sale (POS) hardware, ensuring transaction integrity and speed."
+            "title": "Integración de POS y pagos",
+            "desc": "Nuestros sistemas se conectan directamente a las principales pasarelas de pago y hardware de punto de venta (POS), lo que garantiza la integridad y velocidad de las transacciones."
           },
           "s3": {
-            "title": "Scalability & Performance",
-            "desc": "Engineered for high-traffic events like Black Friday, our cloud-native architectures auto-scale to handle massive concurrent transaction volumes."
+            "title": "Escalabilidad y rendimiento",
+            "desc": "Diseñadas para eventos de alto tráfico como el Black Friday, nuestras arquitecturas nativas de la nube se escalan automáticamente para manejar volúmenes masivos de transacciones simultáneas."
           }
         },
         "faq": {
-          "title": "Retail Software FAQ",
+          "title": "Preguntas frecuentes sobre software minorista",
           "q1": {
-            "q": "Do you build custom e-commerce engines or use Shopify?",
-            "a": "We build fully custom, headless e-commerce engines for enterprises where standard platforms like Shopify cannot handle the required architectural complexity."
+            "q": "¿Creas motores de comercio electrónico personalizados o usas Shopify?",
+            "a": "Creamos motores de comercio electrónico headless y totalmente personalizados para empresas donde las plataformas estándar como Shopify no pueden manejar la complejidad arquitectónica requerida."
           },
           "q2": {
-            "q": "How does real-time inventory work?",
-            "a": "We use event-driven architecture to update inventory databases globally the millisecond an item is purchased, preventing overselling."
+            "q": "¿Cómo funciona el inventario en tiempo real?",
+            "a": "Utilizamos una arquitectura basada en eventos para actualizar las bases de datos de inventario a nivel mundial cada milisegundo en que se compra un artículo, evitando la sobreventa."
           },
           "q3": {
-            "q": "Can you integrate with our warehouse robots?",
-            "a": "Yes. We build APIs that communicate directly with Automated Storage and Retrieval Systems (ASRS) and warehouse management robots."
+            "q": "¿Se puede integrar con nuestros robots de almacén?",
+            "a": "Sí. Creamos API que se comunican directamente con sistemas automatizados de almacenamiento y recuperación (ASRS) y robots de gestión de almacenes."
           },
           "q4": {
-            "q": "Do you handle cross-border payments?",
-            "a": "We integrate with specialized international payment processors and handle complex multi-currency ledger arithmetic within the software."
+            "q": "¿Manejan pagos transfronterizos?",
+            "a": "Nos integramos con procesadores de pagos internacionales especializados y manejamos aritmética compleja de libros de contabilidad multidivisa dentro del software."
           }
         }
       },
       "manufacturing": {
         "meta": {
-          "title": "Manufacturing Software & MES | Anthovai",
-          "description": "Anthovai engineers manufacturing software including MES, ERP integrations, and supply chain tracking systems."
+          "title": "Software de fabricación y MES | anthovai",
+          "description": "Anthovai diseña software de fabricación que incluye MES, integraciones de ERP y sistemas de seguimiento de la cadena de suministro."
         },
         "hero": {
-          "h1": "Manufacturing Software — Production, Supply Chain & MES Systems",
-          "intro": "Anthovai engineers manufacturing software including MES, ERP integrations, and supply chain tracking systems — built for real-time visibility and IoT-ready infrastructure."
+          "h1": "Software de fabricación: producción, cadena de suministro y sistemas MES",
+          "intro": "Los ingenieros de Anthovai fabrican software que incluye MES, integraciones de ERP y sistemas de seguimiento de la cadena de suministro, creados para visibilidad en tiempo real e infraestructura preparada para IoT."
         },
         "sections": {
           "s1": {
-            "title": "MES / ERP Integration",
-            "desc": "We bridge the gap between the shop floor and the top floor by integrating Manufacturing Execution Systems (MES) directly with your enterprise ERP."
+            "title": "Integración MES/ERP",
+            "desc": "Cerramos la brecha entre el piso de producción y el piso superior mediante la integración de sistemas de ejecución de fabricación (MES) directamente con su ERP empresarial."
           },
           "s2": {
-            "title": "Real-Time Production Tracking",
-            "desc": "Track every unit, batch, and metric in real-time. Our software provides absolute visibility into your production lifecycle."
+            "title": "Seguimiento de producción en tiempo real",
+            "desc": "Realice un seguimiento de cada unidad, lote y métrica en tiempo real. Nuestro software proporciona visibilidad absoluta de su ciclo de vida de producción."
           },
           "s3": {
-            "title": "IoT-Ready Architecture",
-            "desc": "Our infrastructure is designed to ingest and process high-frequency telemetry data from thousands of industrial IoT sensors operating on the factory floor."
+            "title": "Arquitectura preparada para IoT",
+            "desc": "Nuestra infraestructura está diseñada para ingerir y procesar datos de telemetría de alta frecuencia de miles de sensores industriales de IoT que operan en la fábrica."
           }
         },
         "faq": {
-          "title": "Manufacturing Software FAQ",
+          "title": "Preguntas frecuentes sobre software de fabricación",
           "q1": {
-            "q": "What is an MES?",
-            "a": "A Manufacturing Execution System (MES) is software that monitors and controls the complex manufacturing systems and data flows on the factory floor."
+            "q": "¿Qué es un MES?",
+            "a": "Un sistema de ejecución de fabricación (MES) es un software que monitorea y controla los complejos sistemas de fabricación y los flujos de datos en la fábrica."
           },
           "q2": {
-            "q": "How do you handle factory downtime during implementation?",
-            "a": "We deploy systems in parallel (shadow mode) alongside your existing processes until full stability is verified, ensuring zero production downtime."
+            "q": "¿Cómo maneja el tiempo de inactividad de la fábrica durante la implementación?",
+            "a": "Implementamos sistemas en paralelo (modo sombra) junto con sus procesos existentes hasta que se verifique la estabilidad total, lo que garantiza un tiempo de inactividad de producción cero."
           },
           "q3": {
-            "q": "Can your software predict machine failure?",
-            "a": "Yes. By analyzing IoT sensor data through integrated Machine Learning models, we provide predictive maintenance alerts before critical failures occur."
+            "q": "¿Puede su software predecir fallas de la máquina?",
+            "a": "Sí. Al analizar los datos de los sensores de IoT a través de modelos integrados de aprendizaje automático, proporcionamos alertas de mantenimiento predictivo antes de que ocurran fallas críticas."
           },
           "q4": {
-            "q": "Do you support barcode and RFID scanning?",
-            "a": "Our platforms natively integrate with industrial barcode and RFID hardware for seamless inventory and asset tracking."
+            "q": "¿Admite el escaneo de códigos de barras y RFID?",
+            "a": "Nuestras plataformas se integran de forma nativa con códigos de barras industriales y hardware RFID para un seguimiento perfecto de inventario y activos."
           }
         }
       }

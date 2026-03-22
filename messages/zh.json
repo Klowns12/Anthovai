@@ -5,7 +5,7 @@
   "nav": {
     "products": "产品",
     "solutions": "解决方案",
-    "klang": "Klowns Language",
+    "klang": "小丑语言",
     "about": "关于我们",
     "careers": "加入我们",
     "contact": "联系我们"
@@ -64,8 +64,8 @@
     "stat_stdlib": "标准库函数",
     "stat_version": "自举编译",
     "target_native": "原生二进制",
-    "target_llvm": "LLVM IR",
-    "target_wasm": "WebAssembly",
+    "target_llvm": "LLVM红外",
+    "target_wasm": "网络组装",
     "pillars": {
       "speed": "C级速度",
       "readable": "Python可读性",
@@ -102,73 +102,73 @@
       "ai": {
         "title": "AI与机器学习",
         "desc": "定制模型、NLP管道和智能自动化。",
-        "did": "Including custom NLP pipelines and business predictive models."
+        "did": "包括自定义 NLP 管道和业务预测模型。"
       },
       "enterprise": {
         "title": "企业软件",
         "desc": "可扩展的业务应用。",
-        "did": "Including custom ERP for manufacturing and inventory tracking."
+        "did": "包括用于制造和库存跟踪的定制 ERP。"
       },
       "cloud": {
         "title": "云基础设施",
         "desc": "生产系统的架构和管理。",
-        "did": "Including zero-downtime AWS migrations and auto-scaling architectures."
+        "did": "包括零停机 AWS 迁移和自动扩展架构。"
       },
       "security": {
         "title": "网络安全",
         "desc": "威胁建模和安全优先设计。",
-        "did": "Including enterprise penetration testing and data governance auditing."
+        "did": "包括企业渗透测试和数据治理审计。"
       },
       "data": {
         "title": "数据工程",
         "desc": "大规模管道和实时分析。",
-        "did": "Including real-time data lakes and analytics dashboards."
+        "did": "包括实时数据湖和分析仪表板。"
       },
       "mobile": {
         "title": "移动应用开发",
         "desc": "为iOS和Android打造的原生和跨平台应用。",
-        "did": "Including high-performance native iOS/Android apps for enterprise clients."
+        "did": "包括面向企业客户的高性能本机 iOS/Android 应用程序。"
       },
       "devops": {
         "title": "DevOps与自动化",
         "desc": "CI/CD管道、基础设施即代码和自动化部署。",
-        "did": "Including automated CI/CD pipelines to dramatically speed up release cycles."
+        "did": "包括自动化 CI/CD 管道，可显着加快发布周期。"
       },
       "ux": {
         "title": "UI/UX设计",
         "desc": "以用户为中心的设计系统和前端工程。",
-        "did": "Including massive UI design systems and complex B2B workflow dashboards."
+        "did": "包括海量的UI设计系统和复杂的B2B工作流程仪表板。"
       },
       "consulting": {
         "title": "IT咨询",
         "desc": "数字化转型战略顾问。",
-        "did": "Including full-scale digital transformation strategy for legacy organizations."
+        "did": "包括传统组织的全面数字化转型战略。"
       }
     }
   },
   "manifesto": {
     "quote": "我们构建的每个系统都从A到I——从数据到决策，从复杂到清晰。",
-    "attribution": "ANTHOVAI · INTELLIGENCE, ENGINEERED."
+    "attribution": "ANTHOVAI · 智能，工程。"
   },
   "faq": {
-    "label": "Common Questions",
-    "headline": "Frequently Asked Questions",
+    "label": "常见问题",
+    "headline": "常见问题解答",
     "items": {
       "q1": {
-        "q": "How long does a typical project take?",
-        "a": "Timelines depend on the scale of the system, but we generally complete rapid prototyping within 2-4 weeks, followed by full deployment within 3-6 months."
+        "q": "一个典型的项目需要多长时间？",
+        "a": "时间表取决于系统的规模，但我们通常在 2-4 周内完成快速原型设计，然后在 3-6 个月内完成全面部署。"
       },
       "q2": {
-        "q": "What is your starting price?",
-        "a": "We don't offer fixed-price packages because every system is bespoke. We'll assess your requirements during a free consultation and provide a clear quotation based on the actual scope."
+        "q": "你们的起拍价是多少？",
+        "a": "我们不提供固定价格的套餐，因为每个系统都是定制的。我们将在免费咨询中评估您的需求，并根据实际范围提供明确的报价。"
       },
       "q3": {
-        "q": "How is Anthovai different from hiring freelancers?",
-        "a": "You get a complete end-to-end engineering team—including Architects, Developers, and QA. We deliver enterprise-grade security, scalability, proper documentation, and long-term accountability."
+        "q": "Anthovai 与雇用自由职业者有何不同？",
+        "a": "您将获得完整的端到端工程团队，包括架构师、开发人员和质量检查人员。我们提供企业级安全性、可扩展性、适当的文档和长期责任。"
       },
       "q4": {
-        "q": "Do you offer post-launch maintenance?",
-        "a": "Absolutely. We don't just hand over the source code. We provide long-term SLA support, cloud infrastructure management, and continuous maintenance to ensure your system scales with your business."
+        "q": "你们提供发布后维护吗？",
+        "a": "绝对地。我们不只是移交源代码。我们提供长期 SLA 支持、云基础设施管理和持续维护，以确保您的系统随着您的业务而扩展。"
       }
     }
   },
@@ -178,7 +178,7 @@
     "button": "联系我们"
   },
   "footer": {
-    "tagline": "Intelligence, Engineered.",
+    "tagline": "智能、工程化。",
     "parent": "Kaiser Klowns 旗下",
     "copy": "© 2026 Anthovai. 保留所有权利。",
     "platform": "平台",
@@ -243,9 +243,9 @@
         "did": "我们开发了集中的数据交换平台和公共服务门户网站，具备强大的审计追踪和公民身份验证功能。"
       },
       "education": {
-        "title": "Education",
-        "desc": "Student management systems, digital infrastructure for universities. Active Client: Roi Et Bajabhat University.",
-        "did": "We built comprehensive university admission and student management platforms, handling thousands of concurrent users during registration periods."
+        "title": "教育",
+        "desc": "学生管理系统、大学数字基础设施。活跃客户：Roi Et Bajabhat 大学。",
+        "did": "我们建立了全面的大学招生和学生管理平台，在注册期间可处理数千个并发用户。"
       }
     },
     "services_label": "第一层",
@@ -268,7 +268,7 @@
         "desc": "威胁建模、渗透测试、安全设计"
       }
     },
-    "industries_title": "Industries We Transform",
+    "industries_title": "我们转型的行业",
     "process_label": "第三层",
     "process_title": "我们如何工作",
     "faq_title": "常见问题解答",
@@ -374,16 +374,16 @@
         "desc": "最大性能的机器码。"
       },
       "llvm": {
-        "title": "LLVM IR",
+        "title": "LLVM红外",
         "desc": "跨平台优化。"
       },
       "wasm": {
-        "title": "WebAssembly",
+        "title": "网络组装",
         "desc": "浏览器运行。"
       }
     },
     "install_label": "开始使用",
-    "install_command": "curl -sSf https://klang.kkg/install.sh | sh",
+    "install_command": "卷曲-sSf https://klang.kkg/install.sh |嘘",
     "docs_cta": "阅读文档",
     "ecosystem_label": "生态系统",
     "ecosystem": {
@@ -396,7 +396,7 @@
         "desc": "官方IDE。"
       },
       "arkai": {
-        "name": "Arkai AI",
+        "name": "阿尔凯人工智能",
         "desc": "AI平台。"
       },
       "ocean": {
@@ -423,207 +423,207 @@
   "expertise": {
     "enterpriseSoftware": {
       "meta": {
-        "title": "Enterprise Software Development | Anthovai - Intelligence, Engineered.",
-        "description": "Anthovai builds enterprise software that powers operations across healthcare, retail, and manufacturing — engineered for scale, compliance, and performance."
+        "title": "企业软件开发| Anthovai - 智能、工程化。",
+        "description": "Anthovai 构建的企业软件为医疗保健、零售和制造领域的运营提供支持 - 专为规模、合规性和性能而设计。"
       },
       "hero": {
-        "h1": "Enterprise Software Development",
-        "intro": "Anthovai builds enterprise software that powers operations across healthcare, retail, and manufacturing — engineered for scale, compliance, and performance."
+        "h1": "企业软件开发",
+        "intro": "Anthovai 构建的企业软件为医疗保健、零售和制造领域的运营提供支持 - 专为规模、合规性和性能而设计。"
       },
       "whatIs": {
-        "title": "What is Enterprise Software?",
-        "body": "Enterprise software forms the digital backbone of large-scale organizations. It centralizes data, automates complex workflows, and integrates disparate systems into a unified operational platform."
+        "title": "什么是企业软件？",
+        "body": "企业软件构成了大型组织的数字骨干。它集中数据，自动化复杂的工作流程，并将不同的系统集成到统一的操作平台中。"
       },
       "whyAnthovai": {
-        "title": "Why Anthovai",
+        "title": "为什么选择安托瓦伊",
         "points": {
           "p1": {
-            "title": "Precision Engineered",
-            "desc": "We build systems with exact tolerances, ensuring zero-downtime reliability."
+            "title": "精密设计",
+            "desc": "我们构建具有精确公差的系统，确保零停机可靠性。"
           },
           "p2": {
-            "title": "AI Native",
-            "desc": "Intelligence is built into the core architecture, not bolted on as an afterthought."
+            "title": "人工智能原生",
+            "desc": "智能内置于核心架构中，而不是事后添加的。"
           },
           "p3": {
-            "title": "Bespoke Architecture",
-            "desc": "No off-the-shelf compromises. Your system is designed specifically for your operational reality."
+            "title": "定制架构",
+            "desc": "没有现成的妥协。您的系统是专为您的实际操作而设计的。"
           }
         }
       },
       "process": {
-        "title": "Our Process",
+        "title": "我们的流程",
         "steps": {
           "s1": {
-            "title": "Architecture Design",
-            "desc": "We map your entire operational lifecycle to identify redundancies and design the ideal system footprint."
+            "title": "建筑设计",
+            "desc": "我们绘制您的整个运营生命周期，以识别冗余并设计理想的系统占地面积。"
           },
           "s2": {
-            "title": "System Integration",
-            "desc": "We connect legacy databases, third-party APIs, and new microservices into a cohesive whole."
+            "title": "系统集成",
+            "desc": "我们将遗留数据库、第三方 API 和新的微服务连接成一个紧密结合的整体。"
           },
           "s3": {
-            "title": "Precision Development",
-            "desc": "Our engineers build the core platform using high-performance, strictly-typed languages."
+            "title": "精准开发",
+            "desc": "我们的工程师使用高性能、严格类型的语言构建核心平台。"
           },
           "s4": {
-            "title": "Deployment & Evolution",
-            "desc": "We deploy with zero-downtime strategies and continuously evolve the system based on real-world telemetry."
+            "title": "部署与演进",
+            "desc": "我们采用零停机策略进行部署，并根据现实世界的遥测技术不断改进系统。"
           }
         }
       },
       "industries": {
-        "title": "Industries We Serve",
-        "healthcare": "Healthcare",
-        "retail": "Retail & E-commerce",
-        "manufacturing": "Manufacturing",
-        "readMore": "View Details"
+        "title": "我们服务的行业",
+        "healthcare": "卫生保健",
+        "retail": "零售与电子商务",
+        "manufacturing": "制造业",
+        "readMore": "查看详情"
       },
       "faq": {
-        "title": "Frequently Asked Questions",
+        "title": "常见问题解答",
         "q1": {
-          "q": "What is the typical timeline for an enterprise software project?",
-          "a": "Timelines vary by complexity, but core architecture deployment usually takes 3 to 6 months. We prioritize rapid, iterative releases."
+          "q": "企业软件项目的典型时间表是怎样的？",
+          "a": "时间表因复杂程度而异，但核心架构部署通常需要 3 至 6 个月。我们优先考虑快速、迭代的发布。"
         },
         "q2": {
-          "q": "Do you offer post-launch support and maintenance?",
-          "a": "Yes. We operate as your long-term engineering partner, providing continuous evolution, security patching, and scaling support."
+          "q": "你们提供发布后支持和维护吗？",
+          "a": "是的。我们作为您的长期工程合作伙伴，提供持续发展、安全补丁和扩展支持。"
         },
         "q3": {
-          "q": "Can you integrate with our existing legacy systems?",
-          "a": "Absolutely. A core part of our expertise is building secure translation layers and APIs to connect legacy mainframes with modern infrastructure."
+          "q": "您可以与我们现有的遗留系统集成吗？",
+          "a": "绝对地。我们专业知识的核心部分是构建安全的转换层和 API，以将传统大型机与现代基础设施连接起来。"
         },
         "q4": {
-          "q": "Who owns the intellectual property?",
-          "a": "You do. Upon completion, the source code, architecture blueprints, and all associated intellectual property are fully transferred to your organization."
+          "q": "谁拥有知识产权？",
+          "a": "你做。完成后，源代码、架构蓝图和所有相关知识产权将完全转移到您的组织。"
         }
       },
       "healthcare": {
         "meta": {
-          "title": "Healthcare Software Development | Anthovai",
-          "description": "Anthovai develops healthcare software systems that streamline clinical workflows and patient data management — built for PDPA compliance."
+          "title": "医疗保健软件开发|安托瓦伊",
+          "description": "Anthovai 开发的医疗保健软件系统可简化临床工作流程和患者数据管理，专为 PDPA 合规性而构建。"
         },
         "hero": {
-          "h1": "Healthcare Software Development — Clinical & Operational Systems",
-          "intro": "Anthovai develops healthcare software systems that streamline clinical workflows, patient data management, and hospital operations — built for PDPA compliance and HL7/FHIR integration."
+          "h1": "医疗保健软件开发 - 临床和操作系统",
+          "intro": "Anthovai 开发的医疗保健软件系统可简化临床工作流程、患者数据管理和医院运营，专为 PDPA 合规性和 HL7/FHIR 集成而构建。"
         },
         "sections": {
           "s1": {
-            "title": "Patient Data & Records Systems",
-            "desc": "We engineer highly secure, encrypted electronic health record (EHR) systems that provide real-time patient history across departments without compromising access speed."
+            "title": "患者数据和记录系统",
+            "desc": "我们设计了高度安全、加密的电子健康记录 (EHR) 系统，可提供跨部门的实时患者历史记录，而不会影响访问速度。"
           },
           "s2": {
-            "title": "Compliance: PDPA / HL7 / FHIR",
-            "desc": "Regulatory compliance is baked into our architecture. We ensure all data pipelines adhere strictly to PDPA privacy laws and international HL7/FHIR interoperability standards."
+            "title": "合规性：PDPA / HL7 / FHIR",
+            "desc": "法规遵从性已融入我们的架构中。我们确保所有数据管道严格遵守 PDPA 隐私法和国际 HL7/FHIR 互操作性标准。"
           },
           "s3": {
-            "title": "Integration with Existing HIS",
-            "desc": "We do not disrupt your clinical workflows. Our software integrates seamlessly via secure APIs into your existing Hospital Information Systems (HIS)."
+            "title": "与现有 HIS 集成",
+            "desc": "我们不会扰乱您的临床工作流程。我们的软件通过安全 API 无缝集成到您现有的医院信息系统 (HIS)。"
           }
         },
         "faq": {
-          "title": "Healthcare Software FAQ",
+          "title": "医疗保健软件常见问题解答",
           "q1": {
-            "q": "Are your healthcare systems HIPAA and PDPA compliant?",
-            "a": "Yes. Every system we build incorporates end-to-end encryption, strict role-based access control, and full audit logging to meet PDPA and HIPAA standards."
+            "q": "您的医疗保健系统是否符合 HIPAA 和 PDPA 规定？",
+            "a": "是的。我们构建的每个系统都包含端到端加密、严格的基于角色的访问控制和完整的审核日志记录，以满足 PDPA 和 HIPAA 标准。"
           },
           "q2": {
-            "q": "Can you integrate AI into clinical diagnostics?",
-            "a": "We build the secure data pipelines that allow AI models to process imaging and lab results. However, we do not build medical diagnostic models ourselves."
+            "q": "能否将人工智能融入临床诊断？",
+            "a": "我们构建安全的数据管道，使人工智能模型能够处理成像和实验室结果。然而，我们自己并不构建医学诊断模型。"
           },
           "q3": {
-            "q": "How do you handle patient data migration?",
-            "a": "We use zero-downtime ETL (Extract, Transform, Load) processes with multi-stage verification to ensure zero data loss during legacy migration."
+            "q": "您如何处理患者数据迁移？",
+            "a": "我们使用具有多阶段验证的零停机 ETL（提取、转换、加载）流程，以确保遗留迁移期间的零数据丢失。"
           },
           "q4": {
-            "q": "Do you build patient-facing portals?",
-            "a": "Yes. We develop secure patient portals for appointment scheduling, telemedicine, and lab result viewing."
+            "q": "您是否建立面向患者的门户网站？",
+            "a": "是的。我们开发安全的患者门户，用于预约安排、远程医疗和实验室结果查看。"
           }
         }
       },
       "retail": {
         "meta": {
-          "title": "Retail & E-commerce Software | Anthovai",
-          "description": "Anthovai builds retail and e-commerce platforms that unify inventory, orders, and customer data across all channels."
+          "title": "零售和电子商务软件 |安托瓦伊",
+          "description": "Anthovai 构建零售和电子商务平台，统一所有渠道的库存、订单和客户数据。"
         },
         "hero": {
-          "h1": "Retail & E-commerce Software — Inventory, Orders, and Customer Systems",
-          "intro": "Anthovai builds retail and e-commerce platforms that unify inventory, orders, and customer data across all channels — scalable from single-store to enterprise-wide operations."
+          "h1": "零售和电子商务软件 - 库存、订单和客户系统",
+          "intro": "Anthovai 构建零售和电子商务平台，统一所有渠道的库存、订单和客户数据，可从单店运营扩展到企业范围运营。"
         },
         "sections": {
           "s1": {
-            "title": "Omnichannel Systems",
-            "desc": "We build platforms that synchronize your physical retail stores with your digital e-commerce presence in true real-time."
+            "title": "全渠道系统",
+            "desc": "我们构建的平台可以真正实时地将您的实体零售店与数字电子商务业务同步。"
           },
           "s2": {
-            "title": "POS & Payment Integration",
-            "desc": "Our systems connect directly to leading payment gateways and Point of Sale (POS) hardware, ensuring transaction integrity and speed."
+            "title": "POS 和支付集成",
+            "desc": "我们的系统直接连接到领先的支付网关和销售点 (POS) 硬件，确保交易的完整性和速度。"
           },
           "s3": {
-            "title": "Scalability & Performance",
-            "desc": "Engineered for high-traffic events like Black Friday, our cloud-native architectures auto-scale to handle massive concurrent transaction volumes."
+            "title": "可扩展性和性能",
+            "desc": "我们的云原生架构专为黑色星期五等高流量活动而设计，可自动扩展以处理大量并发交易量。"
           }
         },
         "faq": {
-          "title": "Retail Software FAQ",
+          "title": "零售软件常见问题解答",
           "q1": {
-            "q": "Do you build custom e-commerce engines or use Shopify?",
-            "a": "We build fully custom, headless e-commerce engines for enterprises where standard platforms like Shopify cannot handle the required architectural complexity."
+            "q": "您构建自定义电子商务引擎还是使用 Shopify？",
+            "a": "我们为 Shopify 等标准平台无法处理所需架构复杂性的企业构建完全定制的无头电子商务引擎。"
           },
           "q2": {
-            "q": "How does real-time inventory work?",
-            "a": "We use event-driven architecture to update inventory databases globally the millisecond an item is purchased, preventing overselling."
+            "q": "实时库存如何运作？",
+            "a": "我们使用事件驱动的架构在购买商品的毫秒内更新全球库存数据库，防止超售。"
           },
           "q3": {
-            "q": "Can you integrate with our warehouse robots?",
-            "a": "Yes. We build APIs that communicate directly with Automated Storage and Retrieval Systems (ASRS) and warehouse management robots."
+            "q": "您可以与我们的仓库机器人集成吗？",
+            "a": "是的。我们构建可直接与自动存储和检索系统 (ASRS) 以及仓库管理机器人通信的 API。"
           },
           "q4": {
-            "q": "Do you handle cross-border payments?",
-            "a": "We integrate with specialized international payment processors and handle complex multi-currency ledger arithmetic within the software."
+            "q": "你们处理跨境支付吗？",
+            "a": "我们与专业的国际支付处理器集成，并在软件内处理复杂的多货币分类账算法。"
           }
         }
       },
       "manufacturing": {
         "meta": {
-          "title": "Manufacturing Software & MES | Anthovai",
-          "description": "Anthovai engineers manufacturing software including MES, ERP integrations, and supply chain tracking systems."
+          "title": "制造软件和 MES |安托瓦伊",
+          "description": "Anthovai 设计制造软件，包括 MES、ERP 集成和供应链跟踪系统。"
         },
         "hero": {
-          "h1": "Manufacturing Software — Production, Supply Chain & MES Systems",
-          "intro": "Anthovai engineers manufacturing software including MES, ERP integrations, and supply chain tracking systems — built for real-time visibility and IoT-ready infrastructure."
+          "h1": "制造软件 — 生产、供应链和 MES 系统",
+          "intro": "Anthovai 设计制造软件，包括 MES、ERP 集成和供应链跟踪系统 - 专为实时可见性和物联网就绪基础设施而构建。"
         },
         "sections": {
           "s1": {
-            "title": "MES / ERP Integration",
-            "desc": "We bridge the gap between the shop floor and the top floor by integrating Manufacturing Execution Systems (MES) directly with your enterprise ERP."
+            "title": "MES/ERP 集成",
+            "desc": "我们通过将制造执行系统 ​​(MES) 直接与您的企业 ERP 集成，弥合车间和顶层之间的差距。"
           },
           "s2": {
-            "title": "Real-Time Production Tracking",
-            "desc": "Track every unit, batch, and metric in real-time. Our software provides absolute visibility into your production lifecycle."
+            "title": "实时生产跟踪",
+            "desc": "实时跟踪每个单位、批次和指标。我们的软件为您的生产生命周期提供绝对的可见性。"
           },
           "s3": {
-            "title": "IoT-Ready Architecture",
-            "desc": "Our infrastructure is designed to ingest and process high-frequency telemetry data from thousands of industrial IoT sensors operating on the factory floor."
+            "title": "物联网就绪架构",
+            "desc": "我们的基础设施旨在获取和处理来自工厂车间运行的数千个工业物联网传感器的高频遥测数据。"
           }
         },
         "faq": {
-          "title": "Manufacturing Software FAQ",
+          "title": "制造软件常见问题解答",
           "q1": {
-            "q": "What is an MES?",
-            "a": "A Manufacturing Execution System (MES) is software that monitors and controls the complex manufacturing systems and data flows on the factory floor."
+            "q": "什么是制造执行系统？",
+            "a": "制造执行系统 ​​(MES) 是监控和控制工厂车间复杂制造系统和数据流的软件。"
           },
           "q2": {
-            "q": "How do you handle factory downtime during implementation?",
-            "a": "We deploy systems in parallel (shadow mode) alongside your existing processes until full stability is verified, ensuring zero production downtime."
+            "q": "在实施过程中您如何处理工厂停机？",
+            "a": "我们与您的现有流程并行部署系统（影子模式），直到验证完全稳定性，确保零生产停机时间。"
           },
           "q3": {
-            "q": "Can your software predict machine failure?",
-            "a": "Yes. By analyzing IoT sensor data through integrated Machine Learning models, we provide predictive maintenance alerts before critical failures occur."
+            "q": "你们的软件可以预测机器故障吗？",
+            "a": "是的。通过集成机器学习模型分析物联网传感器数据，我们在发生严重故障之前提供预测性维护警报。"
           },
           "q4": {
-            "q": "Do you support barcode and RFID scanning?",
-            "a": "Our platforms natively integrate with industrial barcode and RFID hardware for seamless inventory and asset tracking."
+            "q": "你们支持条形码和RFID扫描吗？",
+            "a": "我们的平台本身与工业条码和 RFID 硬件集成，以实现无缝库存和资产跟踪。"
           }
         }
       }
