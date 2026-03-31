@@ -9,7 +9,7 @@ const clients = [
   { name: 'CH', logo: '/client logo/ch-logo-Photoroom.png', className: 'scale-75' },
   { name: 'Digital Nova', logo: '/client logo/RGB-Digital Nova_final logo.png', className: 'scale-150' },
   { name: 'PMY', logo: '/client logo/pmy-logo-Photoroom.png', className: 'scale-120' },
-  { name: 'Roi Et Bajabhat University', logo: '/client logo/rbu-logo.png', className: 'scale-90' },
+  { name: 'Roi Et Bajabhat University', logo: '/client logo/rbu-logo-Photoroom.png', className: 'scale-90' },
   { name: 'Bellco', logo: '/client logo/bellco-logo.png', className: 'scale-100' },
   { name: 'Vista', logo: '/client logo/vista-logo-Photoroom.png', className: 'scale-120' },
   { name: 'Sang Thong', logo: '/client logo/44230-Photoroom.png', className: 'scale-160' },
