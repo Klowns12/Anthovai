@@ -183,6 +183,11 @@ export function Footer() {
                 <span className="text-sm text-white-60 pt-0.5">Mon–Fri 9:00–18:00 ICT</span>
               </li>
             </ul>
+            <div className="mt-6">
+              <a href="https://lin.ee/8h2u2B9" target="_blank" rel="noopener noreferrer" className="inline-block hover:opacity-80 transition-opacity">
+                <img src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png" alt="เพิ่มเพื่อน" height="36" className="h-[36px] w-auto" />
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>
