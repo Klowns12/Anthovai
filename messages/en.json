@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "description": "Anthovai — the AI platforms, enterprise software, and intelligent infrastructure company. Built from Thailand, for the world."
+    "description": "Anthovai — the full-service software engineering, enterprise platforms, and intelligent infrastructure company. Built from Thailand, for the world."
   },
   "nav": {
     "products": "Products",
@@ -11,17 +11,17 @@
     "contact": "Contact Us"
   },
   "hero": {
-    "eyebrow": "A HOUSE OF KAISER KLOWNS · IT / SOFTWARE / AI",
-    "title_1": "Intelligence,",
+    "eyebrow": "A HOUSE OF KAISER KLOWNS · IT / SOFTWARE / ENGINEERING",
+    "title_1": "Software,",
     "title_2": "Engineered.",
-    "body": "Anthovai is a premium AI software engineering firm. We design, build, and deploy enterprise AI platforms, intelligent infrastructure, and custom B2B software for organizations scaling worldwide. From Thailand, for the world.",
+    "body": "Anthovai is a full-service software engineering firm. We design, build, and deploy bespoke enterprise platforms, scalable infrastructure, and custom B2B software for organizations scaling worldwide. From Thailand, for the world.",
     "cta_primary": "Explore Services"
   },
   "about": {
     "label": "WHO WE ARE",
     "headline": "The backbone of bold organizations.",
-    "p1": "What does Anthovai do? We engineer the technical foundations for modern enterprises. Our team specializes in custom AI integration, complete enterprise resource management (ERP), and scalable cloud infrastructure.",
-    "p2": "Every system we build is designed to be an operational backbone. Instead of relying on off-the-shelf tools, we architect bespoke software platforms where Artificial Intelligence and precise engineering work seamlessly together.",
+    "p1": "What does Anthovai do? We engineer the technical foundations for modern enterprises. Our team specializes in complete enterprise resource management (ERP), scalable cloud infrastructure, and custom platform integration.",
+    "p2": "Every system we build is designed to be an operational backbone. Instead of relying on off-the-shelf tools, we architect bespoke software platforms where precise engineering and robust architecture work seamlessly together.",
     "p3": "We don’t just deliver software. We build intelligent systems designed to outlast the competition."
   },
   "products": {
@@ -90,11 +90,6 @@
     "label": "WHAT WE DO",
     "headline": "End-to-end engineering.",
     "items": {
-      "ai": {
-        "title": "AI & Machine Learning",
-        "desc": "Custom models, NLP pipelines, and intelligent automation tailored to your domain.",
-        "did": "Including custom NLP pipelines and business predictive models."
-      },
       "enterprise": {
         "title": "Enterprise Software",
         "desc": "Scalable business applications built for operational excellence.",
@@ -105,15 +100,15 @@
         "desc": "Architecture, deployment, and management of production systems.",
         "did": "Including zero-downtime AWS migrations and auto-scaling architectures."
       },
-      "security": {
-        "title": "Cybersecurity",
-        "desc": "Threat modeling, penetration testing, and security-first design.",
-        "did": "Including enterprise penetration testing and data governance auditing."
-      },
       "data": {
         "title": "Data Engineering",
         "desc": "Pipelines, lakes, and real-time analytics at scale.",
         "did": "Including real-time data lakes and analytics dashboards."
+      },
+      "security": {
+        "title": "Cybersecurity",
+        "desc": "Threat modeling, penetration testing, and security-first design.",
+        "did": "Including enterprise penetration testing and data governance auditing."
       },
       "mobile": {
         "title": "Mobile & App Development",
@@ -130,6 +125,11 @@
         "desc": "User-centered design systems, wireframing, prototyping, and frontend engineering.",
         "did": "Including massive UI design systems and complex B2B workflow dashboards."
       },
+      "ai": {
+        "title": "AI & Machine Learning",
+        "desc": "Custom models, NLP pipelines, and intelligent automation tailored to your domain.",
+        "did": "Including custom NLP pipelines and business predictive models."
+      },
       "consulting": {
         "title": "IT Consulting",
         "desc": "Strategic technology advisory for digital transformation.",
@@ -138,8 +138,8 @@
     }
   },
   "manifesto": {
-    "quote": "What is the Anthovai standard? Moving systems from complex data to clear decisions. We build the architecture that makes enterprise intelligence operational.",
-    "attribution": "ANTHOVAI · INTELLIGENCE, ENGINEERED."
+    "quote": "What is the Anthovai standard? Moving systems from complex data to clear workflows. We build the architecture that makes enterprise vision operational.",
+    "attribution": "ANTHOVAI · SOFTWARE, ENGINEERED."
   },
   "faq": {
     "label": "Common Questions",
@@ -169,7 +169,7 @@
     "button": "Contact Us"
   },
   "footer": {
-    "tagline": "Intelligence, Engineered.",
+    "tagline": "Software, Engineered.",
     "parent": "A House of Kaiser Klowns",
     "copy": "© 2026 Anthovai. All rights reserved.",
     "platform": "Platform",
@@ -178,11 +178,11 @@
   },
   "about_page": {
     "hero_label": "ABOUT ANTHOVAI",
-    "hero_headline": "Intelligence takes form.",
+    "hero_headline": "Software takes form.",
     "hero_body": "We are a technology company built on the conviction that the right software — engineered with precision and purpose — can transform organizations from the inside out.",
     "mission_label": "OUR MISSION",
-    "mission_headline": "Build the infrastructure that makes intelligence operational.",
-    "mission_body": "We don't build software for the sake of software. We build systems that become the operational backbone of the organizations that trust us — from enterprise platforms to AI-driven automation.",
+    "mission_headline": "Build the infrastructure that makes enterprise operations flow.",
+    "mission_body": "We don't build software for the sake of software. We build systems that become the operational backbone of the organizations that trust us — from enterprise platforms to highly advanced automation.",
     "values_label": "OUR VALUES",
     "values": {
       "precision": {
@@ -394,12 +394,11 @@
   },
   "marquee": {
     "items": [
-      "ARTIFICIAL INTELLIGENCE",
       "ENTERPRISE SOFTWARE",
       "CLOUD INFRASTRUCTURE",
-      "MACHINE LEARNING",
-      "CYBERSECURITY",
       "DATA ENGINEERING",
+      "CYBERSECURITY",
+      "ARTIFICIAL INTELLIGENCE",
       "KLOWNS LANGUAGE",
       "ANTHOVAI"
     ]

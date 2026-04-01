@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "description": "Anthovai — AI平台、企业软件和智能基础设施公司。立足泰国，服务全球。"
+    "description": "Anthovai — 提供全方位服务的软件工程、企业平台和智能基础设施公司。源自泰国，面向世界。"
   },
   "nav": {
     "products": "产品",
@@ -11,10 +11,10 @@
     "contact": "联系我们"
   },
   "hero": {
-    "eyebrow": "KAISER KLOWNS 旗下 · IT / SOFTWARE / AI",
-    "title_1": "智能，",
-    "title_2": "精心打造。",
-    "body": "我们构建AI平台、企业软件和智能基础设施，推动组织持续进步。立足泰国，服务全球。",
+    "eyebrow": "A HOUSE OF KAISER KLOWNS · IT / 软件 / 工程",
+    "title_1": "软件，",
+    "title_2": "精心设计。",
+    "body": "Anthovai 是一家提供全方位服务的软件工程公司。我们为全球范围内的组织设计、构建和部署定制企业平台、可扩展基础设施和定制 B2B 软件。来自泰国，面向世界。",
     "cta_primary": "探索产品",
     "cta_secondary": "我们的故事",
     "stat_projects": "已交付项目",
@@ -24,9 +24,9 @@
   },
   "about": {
     "label": "我们是谁",
-    "headline": "大胆组织的坚实后盾。",
-    "p1": "Anthovai 创立于一个简单的信念：正确的技术，以智慧和意图构建，能够改变任何组织。",
-    "p2": "从AI驱动的自动化到企业资源管理，从云基础设施到定制B2B平台——我们构建让组织运作更好、更快、更智能的系统。",
+    "headline": "大胆组织的骨干。",
+    "p1": "安托瓦伊是做什么的？我们为现代企业设计技术基础。我们的团队专注于完整的企业资源管理 (ERP)、可扩展的云基础设施和定制平台集成。",
+    "p2": "Every system we build is designed to be an operational backbone. Instead of relying on off-the-shelf tools, we architect bespoke software platforms where precise engineering and robust architecture work seamlessly together.",
     "p3": "我们不仅交付软件。我们构建传承。"
   },
   "products": {
@@ -99,56 +99,56 @@
     "label": "我们做什么",
     "headline": "端到端工程。",
     "items": {
-      "ai": {
-        "title": "AI与机器学习",
-        "desc": "定制模型、NLP管道和智能自动化。",
-        "did": "包括自定义 NLP 管道和业务预测模型。"
-      },
       "enterprise": {
         "title": "企业软件",
-        "desc": "可扩展的业务应用。",
+        "desc": "为卓越运营而构建的可扩展业务应用程序。",
         "did": "包括用于制造和库存跟踪的定制 ERP。"
       },
       "cloud": {
         "title": "云基础设施",
-        "desc": "生产系统的架构和管理。",
-        "did": "包括零停机 AWS 迁移和自动扩展架构。"
-      },
-      "security": {
-        "title": "网络安全",
-        "desc": "威胁建模和安全优先设计。",
-        "did": "包括企业渗透测试和数据治理审计。"
+        "desc": "生产系统的架构、部署和管理。",
+        "did": "Including zero-downtime AWS migrations and auto-scaling architectures."
       },
       "data": {
         "title": "数据工程",
-        "desc": "大规模管道和实时分析。",
+        "desc": "大规模管道、湖泊和实时分析。",
         "did": "包括实时数据湖和分析仪表板。"
       },
+      "security": {
+        "title": "网络安全",
+        "desc": "威胁建模、渗透测试和安全第一设计。",
+        "did": "包括企业渗透测试和数据治理审计。"
+      },
       "mobile": {
-        "title": "移动应用开发",
-        "desc": "为iOS和Android打造的原生和跨平台应用。",
+        "title": "移动和应用程序开发",
+        "desc": "适用于 iOS 和 Android 的本机和跨平台应用程序，专为性能而构建。",
         "did": "包括面向企业客户的高性能本机 iOS/Android 应用程序。"
       },
       "devops": {
-        "title": "DevOps与自动化",
-        "desc": "CI/CD管道、基础设施即代码和自动化部署。",
+        "title": "开发运营与自动化",
+        "desc": "CI/CD 管道、基础设施即代码和自动化部署工作流程。",
         "did": "包括自动化 CI/CD 管道，可显着加快发布周期。"
       },
       "ux": {
-        "title": "UI/UX设计",
-        "desc": "以用户为中心的设计系统和前端工程。",
+        "title": "用户界面/用户体验设计",
+        "desc": "以用户为中心的设计系统、线框图、原型设计和前端工程。",
         "did": "包括海量的UI设计系统和复杂的B2B工作流程仪表板。"
       },
+      "ai": {
+        "title": "人工智能与机器学习",
+        "desc": "针对您的领域量身定制的自定义模型、NLP 管道和智能自动化。",
+        "did": "包括自定义 NLP 管道和业务预测模型。"
+      },
       "consulting": {
-        "title": "IT咨询",
-        "desc": "数字化转型战略顾问。",
+        "title": "信息技术咨询",
+        "desc": "数字化转型的战略技术咨询。",
         "did": "包括传统组织的全面数字化转型战略。"
       }
     }
   },
   "manifesto": {
-    "quote": "我们构建的每个系统都从A到I——从数据到决策，从复杂到清晰。",
-    "attribution": "ANTHOVAI · 智能，工程。"
+    "quote": "Anthovai 标准是什么？将系统从复杂的数据转移到清晰的工作流程。我们构建使企业愿景可操作的架构。",
+    "attribution": "ANTHOVAI · 软件，工程设计。"
   },
   "faq": {
     "label": "常见问题",
@@ -178,7 +178,7 @@
     "button": "联系我们"
   },
   "footer": {
-    "tagline": "智能、工程化。",
+    "tagline": "软件，工程设计。",
     "parent": "Kaiser Klowns 旗下",
     "copy": "© 2026 Anthovai. 保留所有权利。",
     "platform": "平台",
@@ -187,11 +187,11 @@
   },
   "about_page": {
     "hero_label": "关于 ANTHOVAI",
-    "hero_headline": "智能成形。",
+    "hero_headline": "软件成形。",
     "hero_body": "正确的软件能够从内到外改变组织。",
     "mission_label": "我们的使命",
-    "mission_headline": "构建让智能可运营的基础设施。",
-    "mission_body": "我们构建成为组织运营支柱的系统。",
+    "mission_headline": "构建使企业运营流程化的基础设施。",
+    "mission_body": "我们不会为了软件而构建软件。我们构建的系统成为信任我们的组织的运营支柱——从企业平台到高度先进的自动化。",
     "values_label": "我们的价值观",
     "values": {
       "precision": {
@@ -407,12 +407,11 @@
   },
   "marquee": {
     "items": [
-      "人工智能",
-      "企业软件",
-      "云基础设施",
-      "机器学习",
-      "网络安全",
-      "数据工程",
+      "ENTERPRISE SOFTWARE",
+      "CLOUD INFRASTRUCTURE",
+      "DATA ENGINEERING",
+      "CYBERSECURITY",
+      "ARTIFICIAL INTELLIGENCE",
       "KLOWNS LANGUAGE",
       "ANTHOVAI"
     ]

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "description": "Anthovai — KI-Plattformen, Unternehmenssoftware und intelligente Infrastruktur. Aus Thailand, für die Welt."
+    "description": "Anthovai – das Full-Service-Unternehmen für Softwareentwicklung, Unternehmensplattformen und intelligente Infrastruktur. Gebaut aus Thailand, für die Welt."
   },
   "nav": {
     "products": "Produkte",
@@ -11,10 +11,10 @@
     "contact": "Kontakt"
   },
   "hero": {
-    "eyebrow": "EIN HAUS VON KAISER KLOWNS · IT / SOFTWARE / AI",
-    "title_1": "Intelligenz,",
+    "eyebrow": "EIN HAUS DER KAISER KLOWNS · IT / SOFTWARE / ENGINEERING",
+    "title_1": "Software,",
     "title_2": "Entwickelt.",
-    "body": "Wir bauen KI-Plattformen, Unternehmenssoftware und intelligente Infrastruktur, die Organisationen voranbringen. Aus Thailand, für die Welt.",
+    "body": "Anthovai ist ein Full-Service-Softwareentwicklungsunternehmen. Wir entwerfen, bauen und implementieren maßgeschneiderte Unternehmensplattformen, skalierbare Infrastruktur und maßgeschneiderte B2B-Software für Unternehmen, die weltweit skalieren. Aus Thailand für die Welt.",
     "cta_primary": "Produkte entdecken",
     "cta_secondary": "Unsere Geschichte",
     "stat_projects": "Gelieferte Projekte",
@@ -25,8 +25,8 @@
   "about": {
     "label": "WER WIR SIND",
     "headline": "Das Rückgrat mutiger Organisationen.",
-    "p1": "Anthovai wurde mit einer einzigen Überzeugung gegründet: dass die richtige Technologie jede Organisation transformieren kann.",
-    "p2": "Von KI-gesteuerter Automatisierung bis zur Unternehmensressourcenverwaltung — wir bauen Systeme, die Organisationen besser, schneller und intelligenter arbeiten lassen.",
+    "p1": "Was macht Anthovai? Wir schaffen die technischen Grundlagen für moderne Unternehmen. Unser Team ist auf umfassendes Enterprise Resource Management (ERP), skalierbare Cloud-Infrastruktur und maßgeschneiderte Plattformintegration spezialisiert.",
+    "p2": "Jedes System, das wir bauen, ist als operatives Rückgrat konzipiert. Anstatt uns auf Standardtools zu verlassen, entwickeln wir maßgeschneiderte Softwareplattformen, bei denen präzises Engineering und robuste Architektur nahtlos zusammenarbeiten.",
     "p3": "Wir liefern nicht nur Software. Wir entwerfen Vermächtnisse."
   },
   "products": {
@@ -99,56 +99,56 @@
     "label": "WAS WIR TUN",
     "headline": "End-to-End Engineering.",
     "items": {
-      "ai": {
-        "title": "KI & Machine Learning",
-        "desc": "Maßgeschneiderte Modelle und intelligente Automatisierung.",
-        "did": "Einschließlich benutzerdefinierter NLP-Pipelines und geschäftsvorhersagender Modelle."
-      },
       "enterprise": {
         "title": "Unternehmenssoftware",
-        "desc": "Skalierbare Geschäftsanwendungen.",
+        "desc": "Skalierbare Geschäftsanwendungen für betriebliche Exzellenz.",
         "did": "Einschließlich benutzerdefiniertem ERP für die Fertigung und Bestandsverfolgung."
       },
       "cloud": {
         "title": "Cloud-Infrastruktur",
-        "desc": "Architektur und Verwaltung von Produktionssystemen.",
+        "desc": "Architektur, Bereitstellung und Verwaltung von Produktionssystemen.",
         "did": "Einschließlich AWS-Migrationen ohne Ausfallzeiten und automatisch skalierender Architekturen."
-      },
-      "security": {
-        "title": "Cybersicherheit",
-        "desc": "Bedrohungsmodellierung und Security-First-Design.",
-        "did": "Einschließlich Enterprise Penetration Testing und Data Governance Auditing."
       },
       "data": {
         "title": "Datentechnik",
-        "desc": "Pipelines und Echtzeit-Analytics im großen Maßstab.",
+        "desc": "Pipelines, Seen und Echtzeitanalysen im großen Maßstab.",
         "did": "Einschließlich Echtzeit-Data Lakes und Analyse-Dashboards."
       },
+      "security": {
+        "title": "Cybersicherheit",
+        "desc": "Bedrohungsmodellierung, Penetrationstests und sicherheitsorientiertes Design.",
+        "did": "Einschließlich Enterprise Penetration Testing und Data Governance Auditing."
+      },
       "mobile": {
-        "title": "Mobile App-Entwicklung",
-        "desc": "Native und plattformübergreifende Apps für iOS und Android.",
+        "title": "Mobile- und App-Entwicklung",
+        "desc": "Native und plattformübergreifende Anwendungen für iOS und Android, die auf Leistung ausgelegt sind.",
         "did": "Einschließlich leistungsstarker nativer iOS-/Android-Apps für Unternehmenskunden."
       },
       "devops": {
-        "title": "DevOps & Automatisierung",
-        "desc": "CI/CD-Pipelines, IaC und automatisierte Deployment-Workflows.",
+        "title": "DevOps und Automatisierung",
+        "desc": "CI/CD-Pipelines, Infrastruktur als Code und automatisierte Bereitstellungsworkflows.",
         "did": "Einschließlich automatisierter CI/CD-Pipelines zur drastischen Beschleunigung der Release-Zyklen."
       },
       "ux": {
         "title": "UI/UX-Design",
-        "desc": "Nutzerzentrierte Designsysteme und Frontend-Engineering.",
+        "desc": "Benutzerzentrierte Designsysteme, Wireframing, Prototyping und Frontend-Engineering.",
         "did": "Einschließlich umfangreicher UI-Designsysteme und komplexer B2B-Workflow-Dashboards."
+      },
+      "ai": {
+        "title": "KI und maschinelles Lernen",
+        "desc": "Benutzerdefinierte Modelle, NLP-Pipelines und intelligente Automatisierung, maßgeschneidert für Ihre Domäne.",
+        "did": "Einschließlich benutzerdefinierter NLP-Pipelines und geschäftsvorhersagender Modelle."
       },
       "consulting": {
         "title": "IT-Beratung",
-        "desc": "Strategische Technologieberatung für digitale Transformation.",
+        "desc": "Strategische Technologieberatung für die digitale Transformation.",
         "did": "Einschließlich einer umfassenden digitalen Transformationsstrategie für Altorganisationen."
       }
     }
   },
   "manifesto": {
-    "quote": "Jedes System, das wir bauen, bewegt sich von A nach I — von Daten zur Entscheidung, von Komplexität zu Klarheit.",
-    "attribution": "ANTHOVAI · INTELLIGENZ, TECHNIK."
+    "quote": "Was ist der Anthovai-Standard? Verschieben Sie Systeme von komplexen Daten zu klaren Arbeitsabläufen. Wir bauen die Architektur, die die Unternehmensvision in die Tat umsetzt.",
+    "attribution": "ANTHOVAI · SOFTWARE, ENTWICKELT."
   },
   "faq": {
     "label": "Häufige Fragen",
@@ -178,7 +178,7 @@
     "button": "Kontakt"
   },
   "footer": {
-    "tagline": "Intelligenz, konstruiert.",
+    "tagline": "Software, entwickelt.",
     "parent": "Ein Haus von Kaiser Klowns",
     "copy": "© 2026 Anthovai. Alle Rechte vorbehalten.",
     "platform": "Plattform",
@@ -187,11 +187,11 @@
   },
   "about_page": {
     "hero_label": "ÜBER ANTHOVAI",
-    "hero_headline": "Intelligenz nimmt Gestalt an.",
+    "hero_headline": "Software nimmt Gestalt an.",
     "hero_body": "Ein Technologieunternehmen, das Organisationen von innen heraus transformiert.",
     "mission_label": "UNSERE MISSION",
-    "mission_headline": "Infrastruktur bauen, die Intelligenz operationalisiert.",
-    "mission_body": "Wir bauen Systeme, die zum operativen Rückgrat der Organisationen werden.",
+    "mission_headline": "Bauen Sie die Infrastruktur auf, die den Unternehmensbetrieb reibungslos macht.",
+    "mission_body": "Wir entwickeln keine Software um der Software willen. Wir bauen Systeme, die zum operativen Rückgrat der Unternehmen werden, die uns vertrauen – von Unternehmensplattformen bis hin zu hochentwickelter Automatisierung.",
     "values_label": "UNSERE WERTE",
     "values": {
       "precision": {
@@ -407,12 +407,11 @@
   },
   "marquee": {
     "items": [
-      "KÜNSTLICHE INTELLIGENZ",
-      "UNTERNEHMENSSOFTWARE",
-      "CLOUD-INFRASTRUKTUR",
-      "MACHINE LEARNING",
-      "CYBERSICHERHEIT",
+      "ENTERPRISE SOFTWARE",
+      "CLOUD INFRASTRUCTURE",
       "DATA ENGINEERING",
+      "CYBERSECURITY",
+      "ARTIFICIAL INTELLIGENCE",
       "KLOWNS LANGUAGE",
       "ANTHOVAI"
     ]

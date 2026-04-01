@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "description": "Anthovai — plataformas de IA, software empresarial e infraestructura inteligente. Desde Tailandia, para el mundo."
+    "description": "Anthovai: la empresa de ingeniería de software, plataformas empresariales e infraestructura inteligente de servicio completo. Construido desde Tailandia, para el mundo."
   },
   "nav": {
     "products": "Productos",
@@ -11,10 +11,10 @@
     "contact": "Contáctenos"
   },
   "hero": {
-    "eyebrow": "UNA CASA DE KAISER KLOWNS · IT / SOFTWARE / AI",
-    "title_1": "Inteligencia,",
-    "title_2": "Diseñada.",
-    "body": "Construimos plataformas de IA, software empresarial e infraestructura inteligente que impulsan a las organizaciones. Desde Tailandia, para el mundo.",
+    "eyebrow": "UNA CASA DE PAYASOS KAISER · TI / SOFTWARE / INGENIERÍA",
+    "title_1": "Software,",
+    "title_2": "Diseñado.",
+    "body": "Anthovai es una empresa de ingeniería de software de servicio completo. Diseñamos, construimos e implementamos plataformas empresariales personalizadas, infraestructura escalable y software B2B personalizado para organizaciones que escalan en todo el mundo. Desde Tailandia, para el mundo.",
     "cta_primary": "Explorar productos",
     "cta_secondary": "Nuestra historia",
     "stat_projects": "Proyectos entregados",
@@ -25,8 +25,8 @@
   "about": {
     "label": "QUIÉNES SOMOS",
     "headline": "La columna vertebral de organizaciones audaces.",
-    "p1": "Anthovai fue fundada con una sola convicción: la tecnología correcta puede transformar cualquier organización.",
-    "p2": "Desde automatización impulsada por IA hasta gestión de recursos empresariales — construimos sistemas que hacen que las organizaciones funcionen mejor, más rápido y más inteligentemente.",
+    "p1": "¿Qué hace Anthovai? Diseñamos las bases técnicas para las empresas modernas. Nuestro equipo se especializa en gestión completa de recursos empresariales (ERP), infraestructura de nube escalable e integración de plataformas personalizadas.",
+    "p2": "Cada sistema que construimos está diseñado para ser una columna vertebral operativa. En lugar de depender de herramientas disponibles en el mercado, diseñamos plataformas de software a medida donde la ingeniería precisa y la arquitectura sólida funcionan juntas a la perfección.",
     "p3": "No solo entregamos software. Diseñamos legados."
   },
   "products": {
@@ -99,56 +99,56 @@
     "label": "QUÉ HACEMOS",
     "headline": "Ingeniería de punta a punta.",
     "items": {
-      "ai": {
-        "title": "IA y Machine Learning",
-        "desc": "Modelos personalizados y automatización inteligente.",
-        "did": "Incluyendo canales de PNL personalizados y modelos predictivos de negocios."
-      },
       "enterprise": {
         "title": "Software empresarial",
-        "desc": "Aplicaciones empresariales escalables.",
+        "desc": "Aplicaciones empresariales escalables creadas para la excelencia operativa.",
         "did": "Incluyendo ERP personalizado para fabricación y seguimiento de inventario."
       },
       "cloud": {
-        "title": "Infraestructura cloud",
-        "desc": "Arquitectura y gestión de sistemas de producción.",
+        "title": "Infraestructura de la nube",
+        "desc": "Arquitectura, despliegue y gestión de sistemas de producción.",
         "did": "Incluyendo migraciones de AWS sin tiempo de inactividad y arquitecturas de escalamiento automático."
-      },
-      "security": {
-        "title": "Ciberseguridad",
-        "desc": "Modelado de amenazas y diseño security-first.",
-        "did": "Incluyendo pruebas de penetración empresarial y auditorías de gobierno de datos."
       },
       "data": {
         "title": "Ingeniería de datos",
-        "desc": "Pipelines y análisis en tiempo real a escala.",
+        "desc": "Tuberías, lagos y análisis en tiempo real a escala.",
         "did": "Incluyendo lagos de datos en tiempo real y paneles de análisis."
       },
+      "security": {
+        "title": "Ciberseguridad",
+        "desc": "Modelado de amenazas, pruebas de penetración y diseño centrado en la seguridad.",
+        "did": "Incluyendo pruebas de penetración empresarial y auditorías de gobierno de datos."
+      },
       "mobile": {
-        "title": "Desarrollo Móvil",
-        "desc": "Aplicaciones nativas y multiplataforma para iOS y Android.",
+        "title": "Desarrollo de aplicaciones y móviles",
+        "desc": "Aplicaciones nativas y multiplataforma para iOS y Android, diseñadas para ofrecer rendimiento.",
         "did": "Incluyendo aplicaciones nativas de iOS/Android de alto rendimiento para clientes empresariales."
       },
       "devops": {
-        "title": "DevOps & Automatización",
-        "desc": "Pipelines CI/CD, IaC y flujos de despliegue automatizados.",
+        "title": "DevOps y automatización",
+        "desc": "Canalizaciones de CI/CD, infraestructura como código y flujos de trabajo de implementación automatizados.",
         "did": "Incluyendo procesos de CI/CD automatizados para acelerar drásticamente los ciclos de lanzamiento."
       },
       "ux": {
         "title": "Diseño UI/UX",
-        "desc": "Sistemas de diseño centrados en el usuario e ingeniería frontend.",
+        "desc": "Sistemas de diseño centrados en el usuario, wireframing, creación de prototipos e ingeniería frontend.",
         "did": "Incluyendo sistemas masivos de diseño de UI y paneles de control de flujo de trabajo B2B complejos."
       },
+      "ai": {
+        "title": "IA y aprendizaje automático",
+        "desc": "Modelos personalizados, canalizaciones de PNL y automatización inteligente adaptadas a su dominio.",
+        "did": "Incluyendo canales de PNL personalizados y modelos predictivos de negocios."
+      },
       "consulting": {
-        "title": "Consultoría IT",
-        "desc": "Asesoría tecnológica estratégica para transformación digital.",
+        "title": "Consultoría TI",
+        "desc": "Asesoría tecnológica estratégica para la transformación digital.",
         "did": "Incluyendo una estrategia de transformación digital a gran escala para organizaciones heredadas."
       }
     }
   },
   "manifesto": {
-    "quote": "Cada sistema que construimos se mueve de A a I — de datos a decisión, de complejidad a claridad.",
-    "attribution": "ANTHOVAI · INTELIGENCIA, INGENIERÍA."
+    "quote": "¿Qué es el estándar Anthovai? Mover sistemas de datos complejos a flujos de trabajo claros. Construimos la arquitectura que hace operativa la visión empresarial.",
+    "attribution": "ANTHOVAI · SOFTWARE, INGENIERÍA."
   },
   "faq": {
     "label": "Preguntas comunes",
@@ -178,7 +178,7 @@
     "button": "Contáctenos"
   },
   "footer": {
-    "tagline": "Inteligencia, ingeniería.",
+    "tagline": "Software, diseñado.",
     "parent": "Una casa de Kaiser Klowns",
     "copy": "© 2026 Anthovai. Todos los derechos reservados.",
     "platform": "Plataforma",
@@ -187,11 +187,11 @@
   },
   "about_page": {
     "hero_label": "SOBRE ANTHOVAI",
-    "hero_headline": "La inteligencia toma forma.",
+    "hero_headline": "El software toma forma.",
     "hero_body": "Una empresa de tecnología que transforma organizaciones desde adentro.",
     "mission_label": "NUESTRA MISIÓN",
-    "mission_headline": "Construir la infraestructura que hace la inteligencia operacional.",
-    "mission_body": "Construimos sistemas que se convierten en el pilar operativo de las organizaciones.",
+    "mission_headline": "Construya la infraestructura que haga que las operaciones empresariales fluyan.",
+    "mission_body": "No creamos software por el simple hecho de crear software. Construimos sistemas que se convierten en la columna vertebral operativa de las organizaciones que confían en nosotros, desde plataformas empresariales hasta automatización altamente avanzada.",
     "values_label": "NUESTROS VALORES",
     "values": {
       "precision": {
@@ -407,12 +407,11 @@
   },
   "marquee": {
     "items": [
-      "INTELIGENCIA ARTIFICIAL",
-      "SOFTWARE EMPRESARIAL",
-      "INFRAESTRUCTURA CLOUD",
-      "MACHINE LEARNING",
-      "CIBERSEGURIDAD",
-      "INGENIERÍA DE DATOS",
+      "ENTERPRISE SOFTWARE",
+      "CLOUD INFRASTRUCTURE",
+      "DATA ENGINEERING",
+      "CYBERSECURITY",
+      "ARTIFICIAL INTELLIGENCE",
       "KLOWNS LANGUAGE",
       "ANTHOVAI"
     ]

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "description": "Anthovai — plateformes IA, logiciels d'entreprise et infrastructure intelligente. De la Thaïlande, pour le monde."
+    "description": "Anthovai — la société offrant une gamme complète d'ingénierie logicielle, de plates-formes d'entreprise et d'infrastructures intelligentes. Construit depuis la Thaïlande, pour le monde."
   },
   "nav": {
     "products": "Produits",
@@ -11,10 +11,10 @@
     "contact": "Nous contacter"
   },
   "hero": {
-    "eyebrow": "UNE MAISON DE KAISER KLOWNS · IT / SOFTWARE / AI",
-    "title_1": "L'intelligence,",
-    "title_2": "Conçue.",
-    "body": "Nous construisons les plateformes IA, les logiciels d'entreprise et l'infrastructure intelligente qui propulsent les organisations. De la Thaïlande, pour le monde.",
+    "eyebrow": "UNE MAISON DE KAISER KLOWNS · INFORMATIQUE / LOGICIELS / INGÉNIERIE",
+    "title_1": "Logiciel,",
+    "title_2": "Conçu.",
+    "body": "Anthovai est une société d'ingénierie logicielle à service complet. Nous concevons, construisons et déployons des plates-formes d'entreprise sur mesure, une infrastructure évolutive et des logiciels B2B personnalisés pour les organisations qui évoluent dans le monde entier. De Thaïlande, pour le monde.",
     "cta_primary": "Explorer les produits",
     "cta_secondary": "Notre histoire",
     "stat_projects": "Projets livrés",
@@ -24,9 +24,9 @@
   },
   "about": {
     "label": "QUI NOUS SOMMES",
-    "headline": "L'épine dorsale des organisations audacieuses.",
-    "p1": "Anthovai a été fondée avec une seule conviction : la bonne technologie peut transformer n'importe quelle organisation.",
-    "p2": "De l'automatisation IA à la gestion des ressources d'entreprise, de l'infrastructure cloud aux plateformes B2B sur mesure — nous construisons les systèmes qui font fonctionner les organisations mieux, plus vite et plus intelligemment.",
+    "headline": "L’épine dorsale des organisations audacieuses.",
+    "p1": "Que fait Anthovaï ? Nous concevons les bases techniques des entreprises modernes. Notre équipe est spécialisée dans la gestion complète des ressources d'entreprise (ERP), l'infrastructure cloud évolutive et l'intégration de plateformes personnalisées.",
+    "p2": "Chaque système que nous construisons est conçu pour être une épine dorsale opérationnelle. Au lieu de nous appuyer sur des outils disponibles dans le commerce, nous concevons des plates-formes logicielles sur mesure où une ingénierie précise et une architecture robuste fonctionnent ensemble de manière transparente.",
     "p3": "Nous ne livrons pas simplement du logiciel. Nous architecturons des héritages."
   },
   "products": {
@@ -99,56 +99,56 @@
     "label": "CE QUE NOUS FAISONS",
     "headline": "Ingénierie de bout en bout.",
     "items": {
-      "ai": {
-        "title": "IA & Machine Learning",
-        "desc": "Modèles personnalisés et automatisation intelligente.",
-        "did": "Y compris des pipelines NLP personnalisés et des modèles prédictifs commerciaux."
-      },
       "enterprise": {
         "title": "Logiciel d'entreprise",
-        "desc": "Applications commerciales évolutives.",
+        "desc": "Des applications métier évolutives conçues pour l’excellence opérationnelle.",
         "did": "Y compris un ERP personnalisé pour la fabrication et le suivi des stocks."
       },
       "cloud": {
         "title": "Infrastructure cloud",
-        "desc": "Architecture et gestion des systèmes de production.",
+        "desc": "Architecture, déploiement et gestion des systèmes de production.",
         "did": "Y compris les migrations AWS sans temps d'arrêt et les architectures à mise à l'échelle automatique."
-      },
-      "security": {
-        "title": "Cybersécurité",
-        "desc": "Modélisation des menaces et conception sécurisée.",
-        "did": "Y compris les tests d’intrusion d’entreprise et l’audit de gouvernance des données."
       },
       "data": {
         "title": "Ingénierie des données",
-        "desc": "Pipelines et analyses en temps réel à grande échelle.",
+        "desc": "Pipelines, lacs et analyses en temps réel à grande échelle.",
         "did": "Y compris des lacs de données en temps réel et des tableaux de bord d'analyse."
       },
+      "security": {
+        "title": "Cybersécurité",
+        "desc": "Modélisation des menaces, tests d'intrusion et conception axée sur la sécurité.",
+        "did": "Y compris les tests d’intrusion d’entreprise et l’audit de gouvernance des données."
+      },
       "mobile": {
-        "title": "Développement Mobile",
-        "desc": "Applications natives et multiplateformes pour iOS et Android.",
+        "title": "Développement d'applications et de mobiles",
+        "desc": "Applications natives et multiplateformes pour iOS et Android, conçues pour la performance.",
         "did": "Y compris des applications iOS/Android natives hautes performances pour les entreprises clientes."
       },
       "devops": {
-        "title": "DevOps & Automatisation",
-        "desc": "Pipelines CI/CD, IaC et workflows de déploiement automatisés.",
+        "title": "DevOps et automatisation",
+        "desc": "Pipelines CI/CD, infrastructure en tant que code et workflows de déploiement automatisés.",
         "did": "Y compris des pipelines CI/CD automatisés pour accélérer considérablement les cycles de publication."
       },
       "ux": {
-        "title": "Design UI/UX",
-        "desc": "Systèmes de design centrés utilisateur et ingénierie frontend.",
-        "did": "Y compris des systèmes de conception d'interface utilisateur massifs et des tableaux de bord de flux de travail B2B complexes."
+        "title": "Conception UI/UX",
+        "desc": "Systèmes de conception centrés sur l'utilisateur, wireframing, prototypage et ingénierie front-end.",
+        "did": "Y compris des systèmes de conception d’interface utilisateur massifs et des tableaux de bord de flux de travail B2B complexes."
+      },
+      "ai": {
+        "title": "IA et apprentissage automatique",
+        "desc": "Modèles personnalisés, pipelines NLP et automatisation intelligente adaptés à votre domaine.",
+        "did": "Y compris des pipelines NLP personnalisés et des modèles prédictifs commerciaux."
       },
       "consulting": {
-        "title": "Conseil IT",
-        "desc": "Conseil technologique stratégique pour la transformation digitale.",
+        "title": "Conseil informatique",
+        "desc": "Conseil technologique stratégique pour la transformation numérique.",
         "did": "Y compris une stratégie de transformation numérique à grande échelle pour les organisations existantes."
       }
     }
   },
   "manifesto": {
-    "quote": "Chaque système que nous construisons passe de A à I — des données à la décision, de la complexité à la clarté.",
-    "attribution": "ANTHOVAI · INTELLIGENCE, INGÉNIERIE."
+    "quote": "Qu'est-ce que la norme Anthovai ? Déplacer les systèmes de données complexes vers des flux de travail clairs. Nous construisons l’architecture qui rend la vision d’entreprise opérationnelle.",
+    "attribution": "ANTHOVAI · LOGICIEL, CONÇU."
   },
   "faq": {
     "label": "Questions courantes",
@@ -178,7 +178,7 @@
     "button": "Nous contacter"
   },
   "footer": {
-    "tagline": "Intelligence, ingénierie.",
+    "tagline": "Logiciel, conçu.",
     "parent": "Une maison de Kaiser Klowns",
     "copy": "© 2026 Anthovai. Tous droits réservés.",
     "platform": "Plateforme",
@@ -187,11 +187,11 @@
   },
   "about_page": {
     "hero_label": "À PROPOS D'ANTHOVAI",
-    "hero_headline": "L'intelligence prend forme.",
+    "hero_headline": "Le logiciel prend forme.",
     "hero_body": "Une entreprise technologique qui transforme les organisations de l'intérieur.",
     "mission_label": "NOTRE MISSION",
-    "mission_headline": "Construire l'infrastructure qui rend l'intelligence opérationnelle.",
-    "mission_body": "Nous construisons des systèmes qui deviennent le pilier opérationnel des organisations.",
+    "mission_headline": "Construisez l’infrastructure qui assure la fluidité des opérations de l’entreprise.",
+    "mission_body": "Nous ne construisons pas de logiciels pour le logiciel. Nous construisons des systèmes qui deviennent l'épine dorsale opérationnelle des organisations qui nous font confiance, depuis les plateformes d'entreprise jusqu'à l'automatisation très avancée.",
     "values_label": "NOS VALEURS",
     "values": {
       "precision": {
@@ -407,12 +407,11 @@
   },
   "marquee": {
     "items": [
-      "INTELLIGENCE ARTIFICIELLE",
-      "LOGICIEL D'ENTREPRISE",
-      "INFRASTRUCTURE CLOUD",
-      "MACHINE LEARNING",
-      "CYBERSÉCURITÉ",
-      "INGÉNIERIE DES DONNÉES",
+      "ENTERPRISE SOFTWARE",
+      "CLOUD INFRASTRUCTURE",
+      "DATA ENGINEERING",
+      "CYBERSECURITY",
+      "ARTIFICIAL INTELLIGENCE",
       "KLOWNS LANGUAGE",
       "ANTHOVAI"
     ]
@@ -460,7 +459,7 @@
           },
           "s2": {
             "title": "Intégration du système",
-            "desc": "We connect legacy databases, third-party APIs, and new microservices into a cohesive whole."
+            "desc": "Nous connectons les bases de données existantes, les API tierces et les nouveaux microservices en un tout cohérent."
           },
           "s3": {
             "title": "Développement de précision",
