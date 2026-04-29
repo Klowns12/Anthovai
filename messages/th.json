@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "description": "Anthovai — บริษัทผู้พัฒนาซอฟต์แวร์วิศวกรรมแบบครบวงจร (Full-service software engineering), แพลตฟอร์มระดับองค์กร, และโครงสร้างพื้นฐานอัจฉริยะ สร้างจากประเทศไทย เพื่อขับเคลื่อนองค์กรทั่วโลก."
+    "description": "Anthovai — บริษัทวิศวกรรมเทคโนโลยีอัจฉริยะ (Intelligence-led engineering firm) พัฒนาแพลตฟอร์มระดับองค์กรและโครงสร้างพื้นฐานขั้นสูง สร้างจากประเทศไทย เพื่อขับเคลื่อนองค์กรทั่วโลก"
   },
   "nav": {
     "products": "Products",
@@ -12,17 +12,17 @@
   },
   "hero": {
     "eyebrow": "A HOUSE OF KAISER KLOWNS · IT / SOFTWARE / ENGINEERING",
-    "title_1": "Software,",
+    "title_1": "Intelligence,",
     "title_2": "Engineered.",
-    "body": "Anthovai คือบริษัทผู้ให้วิศวกรรมซอฟต์แวร์เต็มรูปแบบ (Full-service software engineering firm) เราออกแบบ สร้าง และติดตั้งแพลตฟอร์มระดับ Enterprise แบบเฉพาะเจาะจง โครงสร้างพื้นฐานที่รองรับการขยายตัว และซอฟต์แวร์ B2B สำหรับองค์กรที่ต้องการเติบโตระดับโลก",
+    "body": "Anthovai คือบริษัทวิศวกรรมเทคโนโลยีอัจฉริยะ (Intelligence-led engineering firm) เราออกแบบ สร้าง และติดตั้งแพลตฟอร์มระดับ Enterprise, โครงสร้างพื้นฐานระบบขั้นสูง, และระบบข้อมูลอัจฉริยะสำหรับองค์กรที่ต้องการเติบโตระดับโลก",
     "cta_primary": "โซลูชันของเรา"
   },
   "about": {
     "label": "WHO WE ARE",
     "headline": "The backbone of bold organizations.",
-    "p1": "Anthovai ทำอะไร? เราสร้างรากฐานทางเทคโนโลยีสำหรับองค์กรสมัยใหม่ ทีมงานของเราเชี่ยวชาญด้านการวางระบบ Enterprise Resource Management (ERP) แบบครบวงจร, โครงสร้างพื้นฐาน Cloud ที่ขยายขนาดได้, และการจัดการข้อมูลเชิงลึก (Data Engineering)",
-    "p2": "ทุกระบบที่เราสร้างถูกออกแบบมาเพื่อเป็นแกนหลักในการปฏิบัติงาน (Operational Backbone) แทนที่จะพึ่งพาเครื่องมือสำเร็จรูป เราสร้างแพลตฟอร์มซอฟต์แวร์เฉพาะทางที่ศาสตร์แห่งวิศวกรรม สถาปัตยกรรมระบบขั้นสูง ทำงานร่วมกันอย่างราบรื่น",
-    "p3": "เราไม่ได้เป็นแค่ผู้ส่งมอบซอฟต์แวร์ แต่เราพัฒนาระบบอัจฉริยะที่ออกแบบมาเพื่อพาคุณก้าวล้ำหน้าคู่แข่งอย่างยั่งยืน"
+    "p1": "ที่ Anthovai เราเชื่อว่าซอฟต์แวร์ไม่ควรเป็นแค่เครื่องมือแก้ปัญหา — แต่มันคือสิ่งที่จะสร้างความได้เปรียบทางธุรกิจอย่างมหาศาล เราสร้างรากฐานทางเทคโนโลยีให้กับองค์กรที่มีวิสัยทัศน์ เชื่อมต่อระหว่างความซับซ้อนของไอเดียกับการนำไปใช้จริงได้อย่างไร้รอยต่อ",
+    "p2": "ความสามารถของเราครอบคลุมในทุกมิติของเทคโนโลยี: ตั้งแต่การพัฒนาโมเดล AI เฉพาะทางและการจัดการท่อข้อมูลขนาด Petabyte ไปจนถึงการวางสถาปัตยกรรม Cloud ที่ไม่มีสะดุด และระบบ ERP ที่สั่งทำพิเศษ",
+    "p3": "เราสร้างระบบขึ้นมาเอง เพราะเครื่องมือสำเร็จรูปมักทำให้คุณต้องลดทอนความต้องการ ทุกระบบที่เรานำไปใช้งานถูกออกแบบมาอย่างแม่นยำเพื่อเป็นแกนหลักในการปฏิบัติงาน — มอบความอัจฉริยะและขีดความสามารถที่ทำให้คุณเป็นผู้นำในอุตสาหกรรม"
   },
   "products": {
     "label": "OUR PLATFORMS",
@@ -89,57 +89,42 @@
   "services": {
     "label": "WHAT WE DO",
     "headline": "วิศวกรรมแบบ End-to-End",
-    "items": {
-      "enterprise": {
-        "title": "ความเชี่ยวชาญด้าน Enterprise",
-        "desc": "แอปพลิเคชันธุรกิจที่พร้อมขยายตัว ขับเคลื่อนความเป็นเลิศเชิงปฏิบัติการระดับองค์กร",
-        "did": "เช่น ระบบ ERP จัดการโรงงานอุตสาหกรรม และการติดตามคลังสินค้า"
-      },
-      "cloud": {
-        "title": "โครงสร้างพื้นฐานระบบ Cloud",
-        "desc": "สถาปัตยกรรม การดำเนินการ (Deployment) และการจัดการระบบการผลิตที่มีคุณภาพสูงสุด",
-        "did": "เช่น การทำ AWS Migration แบบไร้รอยต่อ และเซ็ตอัประบบแบบ Auto-scaling"
-      },
-      "data": {
-        "title": "การดำเนินการด้าน Data",
-        "desc": "ลำดับขั้นตอนกระบวนการข้อมูล (Pipelines) พื้นที่จัดเก็บข้อมูล (Data lakes) และการวิเคราะห์ข้อมูลเพื่อประกอบการตัดสินใจ (Analytics at scale) แบบ Real-time ครอบคลุมภาพรวมทั้งหมด",
-        "did": "เช่น การสร้าง Data Lake เพื่อวิเคราะห์ข้อมูลแบบเรียลไทม์"
-      },
-      "security": {
-        "title": "การรักษาความปลอดภัยทางไซเบอร์",
-        "desc": "การวิเคราะห์รูปแบบของภัยคุกคาม การทดสอบการเจาะระบบเพื่อหาช่องโหว่ (Penetration Test) ที่เน้นให้เกิดความปลอดภัยครอบคลุมทั้งระบบ (Security-first design)",
-        "did": "เช่น การทดสอบเจาะระบบ (Pentest) และออกแบบ Data Governance สำหรับองค์กร"
-      },
-      "mobile": {
-        "title": "พัฒนาแอปพลิเคชันมือถือ",
-        "desc": "แอปพลิเคชัน Native และ Cross-platform สำหรับ iOS และ Android ที่ออกแบบเพื่อประสิทธิภาพสูงสุด",
-        "did": "เช่น การสร้างแอปพลิเคชัน Native ระดับองค์กรด้วย iOS และ Android"
-      },
-      "devops": {
-        "title": "DevOps & ระบบอัตโนมัติ",
-        "desc": "วางระบบ CI/CD Pipeline, Infrastructure as Code และ Workflow การ Deploy แบบอัตโนมัติ",
-        "did": "เช่น การวางท่อ CI/CD แบบอัตโนมัติ เพื่อให้ปล่อยอัปเดตระบบได้ไวขึ้น"
-      },
-      "ux": {
-        "title": "ออกแบบ UI/UX",
-        "desc": "ออกแบบระบบที่เน้นผู้ใช้เป็นศูนย์กลาง ร่างโครงสร้าง (Wireframing) สร้าง Prototype และพัฒนา Frontend",
-        "did": "เช่น การทำ Design System ขนาดใหญ่ และออกแบบ B2B Dashboard ที่ซับซ้อน"
-      },
+    "clusters": {
       "ai": {
-        "title": "AI & Machine Learning",
-        "desc": "โมเดลที่ปรับให้เข้ากับความต้องการเฉพาะตัว, ลำดับการทำงาน (NLP pipelines), และระบบอัตโนมัติอัจฉริยะที่ออกแบบมาเพื่อขอบเขตข้อมูลของคุณ",
-        "did": "เช่น การวางระบบประมวลผล NLP และ AI วิเคราะห์แนวโน้มธุรกิจ"
+        "title": "Enterprise AI & Data",
+        "desc": "ระบบปฏิบัติการอัตโนมัติอัจฉริยะและการวิเคราะห์เชิงคาดการณ์ที่ออกแบบมาเพื่อธุรกิจของคุณโดยเฉพาะ",
+        "tags": [
+          "Custom AI Models",
+          "Machine Learning",
+          "Data Engineering",
+          "NLP Pipelines"
+        ]
       },
-      "consulting": {
-        "title": "ศูนย์ให้คำปรึกษาด้าน IT",
-        "desc": "ทีมที่ปรึกษาสำหรับกำหนดกลยุทธ์ทางเทคโนโลยี ช่วยยกระดับศักยภาพ (Digital Transformation)",
-        "did": "เช่น การเป็นที่ปรึกษาด้าน Digital Transformation แก่องค์กรดั้งเดิม"
+      "infrastructure": {
+        "title": "Cloud & Infrastructure",
+        "desc": "สถาปัตยกรรมระบบประสิทธิภาพสูง ปลอดภัย และรองรับการขยายตัวอัตโนมัติระดับโลก",
+        "tags": [
+          "Cloud Architecture",
+          "DevOps Automation",
+          "Cybersecurity",
+          "Zero-Downtime Migration"
+        ]
+      },
+      "platforms": {
+        "title": "Core Engineering & Platforms",
+        "desc": "ระบบซอฟต์แวร์สั่งทำพิเศษที่สร้างขึ้นเพื่อเป็นแกนหลักในการดำเนินงานขององค์กร",
+        "tags": [
+          "ERP Systems",
+          "Bespoke B2B Software",
+          "Mobile & Web Apps",
+          "UI/UX Design Systems"
+        ]
       }
     }
   },
   "manifesto": {
     "quote": "มาตรฐานของ Anthovai คืออะไร? คือการเปลี่ยนระบบปฏิบัติการที่ซับซ้อนให้เป็นการตัดสินใจที่เฉียบขาด เราสร้างสถาปัตยกรรมซอฟต์แวร์ที่ทำให้วิสัยทัศน์ขององค์กรใช้งานได้จริง",
-    "attribution": "ANTHOVAI · SOFTWARE, ENGINEERED."
+    "attribution": "ANTHOVAI · INTELLIGENCE, ENGINEERED."
   },
   "faq": {
     "label": "คำถามที่พบบ่อย",
@@ -169,7 +154,7 @@
     "button": "Contact Us"
   },
   "footer": {
-    "tagline": "Software, Engineered.",
+    "tagline": "Intelligence, Engineered.",
     "parent": "A House of Kaiser Klowns",
     "copy": "© 2026 Anthovai. สงวนลิขสิทธิ์ทั้งหมด",
     "platform": "Platform",
@@ -214,46 +199,28 @@
     "hero_body": "การประยุกต์ใช้งานเทคโนโลยีผ่านรูปแบบ (End-to-End Solutions) อย่างสมบูรณ์แบบ — จากรูปแบบควบคุมสั่งการทำงานอัตโนมัติด้วยโครงข่ายครอบคลุมทั้งระบบไปจนถึงการยกระดับธุรกิจ (Enterprise Transformation)",
     "services_label": "LAYER 1",
     "services_title": "บริการทางวิศวกรรมเฉพาะทาง",
-    "services": {
-      "ai": {
-        "title": "AI Integration",
-        "desc": "Custom models, LLM, automation"
-      },
-      "erp": {
-        "title": "ERP Systems",
-        "desc": "โมเดล Alfa platform, custom workflows"
-      },
-      "cloud": {
-        "title": "Cloud Infra",
-        "desc": "Deploy, manage, ขยายระบบและสเกลทำงาน"
-      },
-      "cybersecurity": {
-        "title": "Cybersecurity",
-        "desc": "Threat modeling, pentest, วางระบบความปลอดภัยข้อมูล"
-      }
-    },
     "industries_label": "LAYER 2",
     "industries_title": "กลุ่มอุตสาหกรรมเป้าหมาย",
     "industries": {
+      "healthcare": {
+        "title": "Healthcare",
+        "desc": "ระบบจัดการสารสนเทศโรงพยาบาล (HIS), พอร์ทัลผู้ป่วยที่รองรับ PDPA และเวิร์กโฟลว์คลินิก\n→ มีลูกค้าอ้างอิงจริง: คณะพยาบาลศาสตร์",
+        "did": "เราออกแบบระบบเวชระเบียนอิเล็กทรอนิกส์ที่มีความปลอดภัยสูง พร้อมเข้ารหัส และเพิ่มประสิทธิภาพเวิร์กโฟลว์ทางคลินิกสำหรับสถาบันการแพทย์ขนาดใหญ่"
+      },
       "education": {
         "title": "Education",
         "desc": "ระบบจัดการข้อมูลนักศึกษา, digital infrastructure สำหรับมหาวิทยาลัย\n→ มีลูกค้าจริง: ราชภัฏร้อยเอ็ด",
         "did": "เราร่วมสร้างแพลตฟอร์มรับสมัครนักศึกษาและระบบจัดการข้อมูลการศึกษา ที่รองรับผู้ใช้งานพร้อมกันหลักหมื่นคนในช่วงลงทะเบียนเรียน"
       },
+      "government": {
+        "title": "Government",
+        "desc": "Secure public sector platforms โครงสร้างสำหรับหน่วยงานรัฐ รองรับทิศทาง e-GP",
+        "did": "เราพัฒนาระบบแลกเปลี่ยนข้อมูลส่วนกลางและพอร์ทัลบริการประชาชน ที่มาพร้อมระบบตรวจสอบย้อนหลังที่เชื่อถือได้และการยืนยันตัวตน"
+      },
       "manufacturing": {
         "title": "Manufacturing",
         "desc": "ERP, supply chain, IoT integration, production management systems\n→ มีลูกค้าจริง: Bellco, CH, Vista",
         "did": "เราสร้างระบบบริหารจัดการคลังสินค้าและสายการผลิตสำหรับผู้ผลิตสิ่งทอ — โดดเด่นด้วยการติดตามผลแบบ Real-time, ระบบสแกนบาร์โค้ด และการกำหนดสิทธิ์ผู้ใช้งาน"
-      },
-      "finance": {
-        "title": "Financial Services",
-        "desc": "Risk analytics, compliance ความละเอียดสูงสุดทางระบบการเงิน",
-        "did": "เราวางระบบแดชบอร์ดวิเคราะห์ความเสี่ยงและระบบรายงานตามมาตรฐานโดยอัตโนมัติ พร้อมการกำกับดูแลข้อมูลที่รัดกุม"
-      },
-      "government": {
-        "title": "Government",
-        "desc": "Secure public sector platforms โครงสร้างสำหรับหน่วยงานรัฐ",
-        "did": "เราพัฒนาระบบแลกเปลี่ยนข้อมูลส่วนกลางและพอร์ทัลบริการประชาชน ที่มาพร้อมระบบตรวจสอบย้อนหลังที่เชื่อถือได้และการยืนยันตัวตน"
       }
     },
     "process_label": "LAYER 3",
@@ -279,7 +246,7 @@
   "careers_page": {
     "hero_label": "CAREERS",
     "hero_headline": "ให้คุณร่วมขับเคลื่อนอนาคตของการพัฒนา",
-    "hero_body": "Anthovai มองหาวิศวกร นักออกแบบ รวมถึงนักคิด มารวมพลังเป็นส่วนหนึ่งของเรา เรามีสำนักงานอยู่ที่ประเทศไทย แต่ก็ให้อิสระในการทำผลงาน",
+    "hero_body": "เรากำลังมองหาวิศวกร ดีไซเนอร์ และนักคิดที่ต้องการสร้างระบบอัจฉริยะที่ขับเคลื่อนอุตสาหกรรม Remote-first ทำงานจากที่ไหนก็ได้ (ทีมหลักอยู่ในไทย)",
     "why_label": "WHY ANTHOVAI",
     "why_items": {
       "impact": {
@@ -394,14 +361,18 @@
   },
   "marquee": {
     "items": [
-      "ENTERPRISE SOFTWARE",
-      "CLOUD INFRASTRUCTURE",
-      "DATA ENGINEERING",
-      "CYBERSECURITY",
-      "ARTIFICIAL INTELLIGENCE",
-      "KLOWNS LANGUAGE",
+      "INTELLIGENT AUTOMATION",
+      "ENTERPRISE SCALABILITY",
+      "MISSION-CRITICAL SYSTEMS",
+      "ZERO-DOWNTIME ARCHITECTURE",
+      "DATA-DRIVEN DECISIONS",
+      "BESPOKE PLATFORMS",
       "ANTHOVAI"
     ]
+  },
+  "tech_stack": {
+    "label": "TECH STACK",
+    "headline": "เครื่องมือที่เราใช้ขับเคลื่อนระบบ"
   },
   "client_logos": {
     "subtitle": "จากแพลตฟอร์ม e-learning ไปจนถึงระบบ ERP สำหรับโรงงานการผลิต — เราสร้างระบบที่เป็นหัวใจหลักในการขับเคลื่อนธุรกิจ"

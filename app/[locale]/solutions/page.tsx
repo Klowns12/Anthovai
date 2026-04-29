@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl'
 import { FadeUp } from '@/components/animations/FadeUp'
 import { StaggerChildren, staggerItem } from '@/components/animations/StaggerChildren'
 import { Process } from '@/components/sections/Process'
-import { Cpu, Server, Shield, Database, ArrowRight, Library, Factory, Building2, Landmark, Plus } from 'lucide-react'
+import { Cpu, Server, Shield, Database, ArrowRight, Library, Factory, Building2, Activity, Plus } from 'lucide-react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 
@@ -13,19 +13,19 @@ import { SolutionsFAQ } from '@/components/sections/SolutionsFAQ'
 
 export default function SolutionsPage() {
   const t = useTranslations('solutions_page')
+  const tServices = useTranslations('services')
 
   const services = [
     { key: 'ai', icon: Cpu },
-    { key: 'erp', icon: Database },
-    { key: 'cloud', icon: Server },
-    { key: 'cybersecurity', icon: Shield },
+    { key: 'infrastructure', icon: Server },
+    { key: 'platforms', icon: Database },
   ] as const
 
   const industries = [
+    { key: 'healthcare', icon: Activity },
     { key: 'education', icon: Library },
-    { key: 'manufacturing', icon: Factory },
-    { key: 'finance', icon: Landmark },
     { key: 'government', icon: Building2 },
+    { key: 'manufacturing', icon: Factory },
   ] as const
 
   return (
@@ -65,20 +65,29 @@ export default function SolutionsPage() {
               </h3>
             </FadeUp>
 
-            <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {services.map((service) => {
                 const Icon = service.icon
+                const tags: string[] = tServices.raw(`clusters.${service.key}.tags`)
+                
                 return (
                   <motion.div key={service.key} variants={staggerItem} className="group p-8 border border-white/[0.06] bg-bg-2 rounded-xl hover:border-gold-border hover:bg-[#F0EFE9] transition-colors duration-300 flex flex-col h-full">
                     <div className="w-12 h-12 rounded-full border border-white/[0.08] bg-bg flex items-center justify-center mb-6 group-hover:border-gold group-hover:bg-[#E8E6E0] transition-colors duration-500">
                       <Icon size={20} className="text-white group-hover:text-gold transition-colors" />
                     </div>
                     <h4 className="text-xl font-medium text-white mb-3">
-                      {t(`services.${service.key}.title`)}
+                      {tServices(`clusters.${service.key}.title`)}
                     </h4>
-                    <p className="text-white-60 leading-relaxed text-sm flex-grow">
-                      {t(`services.${service.key}.desc`)}
+                    <p className="text-white-60 leading-relaxed text-sm flex-grow mb-6">
+                      {tServices(`clusters.${service.key}.desc`)}
                     </p>
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      {tags.map((tag, tagIndex) => (
+                        <span key={tagIndex} className="px-3 py-1 bg-white/[0.03] border border-white/[0.06] text-white/70 text-xs rounded-full group-hover:border-black/10 group-hover:bg-black/5 group-hover:text-black/70 transition-colors">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </motion.div>
                 )
               })}

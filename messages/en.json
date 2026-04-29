@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "description": "Anthovai — the full-service software engineering, enterprise platforms, and intelligent infrastructure company. Built from Thailand, for the world."
+    "description": "Anthovai — An intelligence-led engineering firm building bespoke enterprise platforms and critical infrastructure. Built from Thailand, for the world."
   },
   "nav": {
     "products": "Products",
@@ -12,17 +12,17 @@
   },
   "hero": {
     "eyebrow": "A HOUSE OF KAISER KLOWNS · IT / SOFTWARE / ENGINEERING",
-    "title_1": "Software,",
+    "title_1": "Intelligence,",
     "title_2": "Engineered.",
-    "body": "Anthovai is a full-service software engineering firm. We design, build, and deploy bespoke enterprise platforms, scalable infrastructure, and custom B2B software for organizations scaling worldwide. From Thailand, for the world.",
+    "body": "Anthovai is an intelligence-led engineering firm. We design, build, and deploy bespoke enterprise platforms, critical infrastructure, and advanced data systems for ambitious organizations. From Thailand, for the world.",
     "cta_primary": "Explore Services"
   },
   "about": {
     "label": "WHO WE ARE",
     "headline": "The backbone of bold organizations.",
-    "p1": "What does Anthovai do? We engineer the technical foundations for modern enterprises. Our team specializes in complete enterprise resource management (ERP), scalable cloud infrastructure, and custom platform integration.",
-    "p2": "Every system we build is designed to be an operational backbone. Instead of relying on off-the-shelf tools, we architect bespoke software platforms where precise engineering and robust architecture work seamlessly together.",
-    "p3": "We don’t just deliver software. We build intelligent systems designed to outlast the competition."
+    "p1": "At Anthovai, we believe that software should not just solve problems — it should give organizations an unfair advantage. We engineer the technical foundations for ambitious enterprises, bridging the gap between complex vision and seamless execution.",
+    "p2": "Our capabilities span the entire technological spectrum: from deploying custom AI models and engineering petabyte-scale data pipelines, to architecting zero-downtime cloud infrastructure and bespoke ERP platforms.",
+    "p3": "We build because off-the-shelf solutions force compromises. Every system we deploy is precision-engineered to be an operational backbone — giving you the intelligence and scale to dominate your industry."
   },
   "products": {
     "label": "OUR PLATFORMS",
@@ -89,57 +89,42 @@
   "services": {
     "label": "WHAT WE DO",
     "headline": "End-to-end engineering.",
-    "items": {
-      "enterprise": {
-        "title": "Enterprise Software",
-        "desc": "Scalable business applications built for operational excellence.",
-        "did": "Including custom ERP for manufacturing and inventory tracking."
-      },
-      "cloud": {
-        "title": "Cloud Infrastructure",
-        "desc": "Architecture, deployment, and management of production systems.",
-        "did": "Including zero-downtime AWS migrations and auto-scaling architectures."
-      },
-      "data": {
-        "title": "Data Engineering",
-        "desc": "Pipelines, lakes, and real-time analytics at scale.",
-        "did": "Including real-time data lakes and analytics dashboards."
-      },
-      "security": {
-        "title": "Cybersecurity",
-        "desc": "Threat modeling, penetration testing, and security-first design.",
-        "did": "Including enterprise penetration testing and data governance auditing."
-      },
-      "mobile": {
-        "title": "Mobile & App Development",
-        "desc": "Native and cross-platform applications for iOS and Android, built for performance.",
-        "did": "Including high-performance native iOS/Android apps for enterprise clients."
-      },
-      "devops": {
-        "title": "DevOps & Automation",
-        "desc": "CI/CD pipelines, infrastructure as code, and automated deployment workflows.",
-        "did": "Including automated CI/CD pipelines to dramatically speed up release cycles."
-      },
-      "ux": {
-        "title": "UI/UX Design",
-        "desc": "User-centered design systems, wireframing, prototyping, and frontend engineering.",
-        "did": "Including massive UI design systems and complex B2B workflow dashboards."
-      },
+    "clusters": {
       "ai": {
-        "title": "AI & Machine Learning",
-        "desc": "Custom models, NLP pipelines, and intelligent automation tailored to your domain.",
-        "did": "Including custom NLP pipelines and business predictive models."
+        "title": "Enterprise AI & Data",
+        "desc": "Intelligent automation and predictive systems tailored to your operational realities.",
+        "tags": [
+          "Custom AI Models",
+          "Machine Learning",
+          "Data Engineering",
+          "NLP Pipelines"
+        ]
       },
-      "consulting": {
-        "title": "IT Consulting",
-        "desc": "Strategic technology advisory for digital transformation.",
-        "did": "Including full-scale digital transformation strategy for legacy organizations."
+      "infrastructure": {
+        "title": "Cloud & Infrastructure",
+        "desc": "High-performance, secure, and auto-scaling architectures for global deployment.",
+        "tags": [
+          "Cloud Architecture",
+          "DevOps Automation",
+          "Cybersecurity",
+          "Zero-Downtime Migration"
+        ]
+      },
+      "platforms": {
+        "title": "Core Engineering & Platforms",
+        "desc": "Bespoke software systems built to serve as the operational backbone of your business.",
+        "tags": [
+          "ERP Systems",
+          "Bespoke B2B Software",
+          "Mobile & Web Apps",
+          "UI/UX Design Systems"
+        ]
       }
     }
   },
   "manifesto": {
     "quote": "What is the Anthovai standard? Moving systems from complex data to clear workflows. We build the architecture that makes enterprise vision operational.",
-    "attribution": "ANTHOVAI · SOFTWARE, ENGINEERED."
+    "attribution": "ANTHOVAI · INTELLIGENCE, ENGINEERED."
   },
   "faq": {
     "label": "Common Questions",
@@ -169,7 +154,7 @@
     "button": "Contact Us"
   },
   "footer": {
-    "tagline": "Software, Engineered.",
+    "tagline": "Intelligence, Engineered.",
     "parent": "A House of Kaiser Klowns",
     "copy": "© 2026 Anthovai. All rights reserved.",
     "platform": "Platform",
@@ -214,46 +199,28 @@
     "hero_body": "We deliver end-to-end technology solutions across industries — from AI automation to cloud infrastructure to enterprise transformation.",
     "services_label": "LAYER 1",
     "services_title": "Services with Real Impact",
-    "services": {
-      "ai": {
-        "title": "AI Integration",
-        "desc": "Custom models, LLM, automation"
-      },
-      "erp": {
-        "title": "ERP Systems",
-        "desc": "Alfa platform, custom workflows"
-      },
-      "cloud": {
-        "title": "Cloud Infra",
-        "desc": "Deploy, manage, scale systems"
-      },
-      "cybersecurity": {
-        "title": "Cybersecurity",
-        "desc": "Threat modeling, pentest, design"
-      }
-    },
     "industries_label": "LAYER 2",
     "industries_title": "Industries We Transform",
     "industries": {
+      "healthcare": {
+        "title": "Healthcare",
+        "desc": "Hospital Information Systems (HIS), PDPA-compliant patient portals, and clinical workflows. Active Reference: Nursing Faculty.",
+        "did": "We engineer highly secure, encrypted electronic health records and streamline clinical workflows for large-scale medical institutions."
+      },
       "education": {
         "title": "Education",
         "desc": "Student management systems, digital infrastructure for universities. Active Client: Roi Et Bajabhat University.",
         "did": "We built comprehensive university admission and student management platforms, handling thousands of concurrent users during registration periods."
       },
+      "government": {
+        "title": "Government",
+        "desc": "Secure, scalable public sector platforms with robust audit trails. Focus on e-GP systems.",
+        "did": "We developed centralized data exchange platforms and public service portals with robust audit trails and citizen authentication."
+      },
       "manufacturing": {
         "title": "Manufacturing",
         "desc": "ERP, supply chain, IoT integration, production management systems. Active Clients: Bellco, CH, Vista.",
         "did": "We built inventory and production management systems for textile manufacturers — real-time tracking, barcode scanning, role-based access."
-      },
-      "finance": {
-        "title": "Financial Services",
-        "desc": "Risk analytics, compliance automation. High security standards.",
-        "did": "We engineered secure risk analytics dashboards and automated compliance reporting pipelines with strict data governance."
-      },
-      "government": {
-        "title": "Government",
-        "desc": "Secure, scalable public sector platforms with robust audit trails.",
-        "did": "We developed centralized data exchange platforms and public service portals with robust audit trails and citizen authentication."
       }
     },
     "process_label": "LAYER 3",
@@ -279,7 +246,7 @@
   "careers_page": {
     "hero_label": "CAREERS",
     "hero_headline": "Build what matters.",
-    "hero_body": "We're looking for engineers, designers, and thinkers who want to build software that shapes industries. Remote-first, based in Thailand.",
+    "hero_body": "We're looking for engineers, designers, and thinkers who want to build intelligent systems that shape industries. Remote-first, based in Thailand.",
     "why_label": "WHY ANTHOVAI",
     "why_items": {
       "impact": {
@@ -394,14 +361,18 @@
   },
   "marquee": {
     "items": [
-      "ENTERPRISE SOFTWARE",
-      "CLOUD INFRASTRUCTURE",
-      "DATA ENGINEERING",
-      "CYBERSECURITY",
-      "ARTIFICIAL INTELLIGENCE",
-      "KLOWNS LANGUAGE",
+      "INTELLIGENT AUTOMATION",
+      "ENTERPRISE SCALABILITY",
+      "MISSION-CRITICAL SYSTEMS",
+      "ZERO-DOWNTIME ARCHITECTURE",
+      "DATA-DRIVEN DECISIONS",
+      "BESPOKE PLATFORMS",
       "ANTHOVAI"
     ]
+  },
+  "tech_stack": {
+    "label": "TECH STACK",
+    "headline": "The tools we use to build."
   },
   "client_logos": {
     "subtitle": "From e-learning platforms to manufacturing ERP — we build the systems that run the business."

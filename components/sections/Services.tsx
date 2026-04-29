@@ -1,20 +1,14 @@
 import { useTranslations } from 'next-intl'
 import { FadeUp } from '../animations/FadeUp'
-import { Cpu, Terminal, Cloud, ShieldCheck, Database, Lightbulb, Smartphone, Settings, Palette } from 'lucide-react'
+import { Cpu, Cloud, Terminal } from 'lucide-react'
 
 export function Services() {
   const t = useTranslations('services')
 
   const items = [
     { key: 'ai', icon: Cpu },
-    { key: 'enterprise', icon: Terminal },
-    { key: 'cloud', icon: Cloud },
-    { key: 'security', icon: ShieldCheck },
-    { key: 'data', icon: Database },
-    { key: 'mobile', icon: Smartphone },
-    { key: 'devops', icon: Settings },
-    { key: 'ux', icon: Palette },
-    { key: 'consulting', icon: Lightbulb },
+    { key: 'infrastructure', icon: Cloud },
+    { key: 'platforms', icon: Terminal },
   ] as const
 
   return (
@@ -36,23 +30,27 @@ export function Services() {
           </div>
         </FadeUp>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-8">
           {items.map((item, i) => {
             const Icon = item.icon
+            const tags: string[] = t.raw(`clusters.${item.key}.tags`)
+
             return (
               <FadeUp key={item.key} delay={i * 0.1}>
-                <div className="p-8 border border-white/[0.06] bg-bg rounded-lg hover:border-gold-border hover:bg-gold/[0.02] transition-colors duration-300 h-full">
+                <div className="p-8 border border-white/[0.06] bg-bg rounded-lg hover:border-gold-border hover:bg-gold/[0.02] transition-colors duration-300 h-full flex flex-col">
                   <Icon size={24} className="text-gold mb-6" />
-                  <h4 className="text-lg font-medium text-white mb-3 tracking-tight">
-                    {t(`items.${item.key}.title`)}
+                  <h4 className="text-xl font-medium text-white mb-4 tracking-tight">
+                    {t(`clusters.${item.key}.title`)}
                   </h4>
-                  <p className="text-white-60 leading-relaxed text-sm">
-                    {t(`items.${item.key}.desc`)}
+                  <p className="text-white-60 leading-relaxed text-sm mb-8 flex-grow">
+                    {t(`clusters.${item.key}.desc`)}
                   </p>
-                  <div className="mt-4 pt-4 border-t border-white/[0.04]">
-                    <p className="text-gold text-xs font-light italic tracking-wide">
-                      {t(`items.${item.key}.did`)}
-                    </p>
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {tags.map((tag, tagIndex) => (
+                      <span key={tagIndex} className="px-3 py-1 bg-white/[0.03] border border-white/[0.06] text-white/70 text-xs rounded-full">
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </FadeUp>
