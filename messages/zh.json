@@ -392,7 +392,7 @@
         "desc": "编译器和工具链。"
       },
       "rumba": {
-        "name": "DevStudio Rumba",
+        "name": "Aello",
         "desc": "官方IDE。"
       },
       "arkai": {

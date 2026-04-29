@@ -19,7 +19,7 @@ export default function Home() {
     <>
       <Hero />
       <ClientLogos />
-      <TechStack />
+      {/* <TechStack /> */}
       <Marquee items={marqueeItems} />
       <About />
       <Services />

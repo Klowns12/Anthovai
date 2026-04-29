@@ -346,7 +346,7 @@
         "desc": "The language itself — compiler, stdlib, and toolchain."
       },
       "rumba": {
-        "name": "DevStudio Rumba",
+        "name": "Aello",
         "desc": "The official Klang IDE and development environment."
       },
       "arkai": {

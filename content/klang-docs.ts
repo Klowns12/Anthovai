@@ -18,7 +18,7 @@ All Klang source files use the \`.kkg\` extension — e.g. \`main.kkg\`
 | Product | Role | Status |
 |---|---|---|
 | **Klang** | Core programming language (\`.kkg\`) | ✅ Complete |
-| **DevStudio Rumba** | Integrated Development Environment | → Next |
+| **Aello** | Integrated Development Environment | → Next |
 | **Arkai AI** | AI assistant built with Klang AI primitives | Planned |
 | **Alfa Git** | Version control platform | Planned |
 | **Marisea Cloud** | Cloud deployment & serverless runtime | Planned |
@@ -524,7 +524,7 @@ error[E0001]: use of moved value: \`name\`
 | **Phase 6** | Completion (All Levels) | Done |
 | **Phase 7** | Platform & Ecosystem | Done |
 | **Phase 2B** | Remove Rust — gcc-only install | In Progress |
-| **Next** | DevStudio Rumba (IDE) | Planned |
+| **Next** | Aello (IDE) | Planned |
 | **Future** | Arkai AI, Alfa Git, Marisea Cloud, Ocean OS | Planned |
     `
   }
