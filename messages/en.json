@@ -8,21 +8,21 @@
     "klang": "Klowns Language",
     "about": "About",
     "careers": "Careers",
-    "contact": "Contact Us"
+    "contact": "Talk to an Engineer"
   },
   "hero": {
     "eyebrow": "A HOUSE OF KAISER KLOWNS · IT / SOFTWARE / ENGINEERING",
     "title_1": "Intelligence,",
     "title_2": "Engineered.",
-    "body": "Anthovai is an intelligence-led engineering firm. We design, build, and deploy bespoke enterprise platforms, critical infrastructure, and advanced data systems for ambitious organizations. From Thailand, for the world.",
-    "cta_primary": "Explore Services"
+    "body": "Anthovai is an intelligence-led engineering firm. We design, build, and deploy bespoke enterprise platforms, critical infrastructure, and advanced data systems for ambitious organizations. Headquartered in Thailand, engineering for Southeast Asia and beyond.",
+    "cta_primary": "Book a Consultation"
   },
   "about": {
     "label": "WHO WE ARE",
     "headline": "The backbone of bold organizations.",
-    "p1": "At Anthovai, we believe that software should not just solve problems — it should give organizations an unfair advantage. We engineer the technical foundations for ambitious enterprises, bridging the gap between complex vision and seamless execution.",
-    "p2": "Our capabilities span the entire technological spectrum: from deploying custom AI models and engineering petabyte-scale data pipelines, to architecting zero-downtime cloud infrastructure and bespoke ERP platforms.",
-    "p3": "We build because off-the-shelf solutions force compromises. Every system we deploy is precision-engineered to be an operational backbone — giving you the intelligence and scale to dominate your industry."
+    "p1": "At Anthovai, we believe technology should be the catalyst for your organization's next leap. We don't just deliver software; we partner with ambitious enterprises to engineer their technical foundations, bridging the gap between complex vision and seamless execution.",
+    "p2": "Our capabilities span the entire technological spectrum: from deploying custom AI models and engineering robust data pipelines, to architecting zero-downtime cloud infrastructure and bespoke ERP platforms.",
+    "p3": "We build because off-the-shelf solutions often force compromises. Every system we co-create with you is precision-engineered to serve as your operational backbone — empowering your teams with the intelligence and scale to lead confidently into the future."
   },
   "products": {
     "label": "OUR PLATFORMS",
@@ -62,6 +62,28 @@
       "readable": "Python Readability",
       "safe": "Type Safe",
       "ai": "AI-Native Primitives"
+    }
+  },
+  "impact": {
+    "label": "OUR TRACK RECORD",
+    "headline": "Boutique scale. Enterprise impact.",
+    "metrics": {
+      "m1": {
+        "value": "20+",
+        "label": "Enterprise Projects Delivered"
+      },
+      "m2": {
+        "value": "100%",
+        "label": "In-house Engineering (Zero Outsource)"
+      },
+      "m3": {
+        "value": "<4",
+        "label": "Weeks to First Working MVP"
+      },
+      "m4": {
+        "value": "0",
+        "label": "Vendor Lock-in"
+      }
     }
   },
   "process": {
@@ -205,22 +227,26 @@
       "healthcare": {
         "title": "Healthcare",
         "desc": "Hospital Information Systems (HIS), PDPA-compliant patient portals, and clinical workflows. Active Reference: Nursing Faculty.",
-        "did": "We engineer highly secure, encrypted electronic health records and streamline clinical workflows for large-scale medical institutions."
+        "did": "We engineer highly secure, encrypted electronic health records and streamline clinical workflows for large-scale medical institutions.",
+        "tags": ["HIS Systems", "Patient Portals", "PDPA Compliant", "Health Data"]
       },
       "education": {
         "title": "Education",
         "desc": "Student management systems, digital infrastructure for universities. Active Client: Roi Et Bajabhat University.",
-        "did": "We built comprehensive university admission and student management platforms, handling thousands of concurrent users during registration periods."
+        "did": "We built comprehensive university admission and student management platforms, handling thousands of concurrent users during registration periods.",
+        "tags": ["Student Portals", "Admissions System", "High Concurrency", "E-Learning"]
       },
       "government": {
         "title": "Government",
         "desc": "Secure, scalable public sector platforms with robust audit trails. Focus on e-GP systems.",
-        "did": "We developed centralized data exchange platforms and public service portals with robust audit trails and citizen authentication."
+        "did": "We developed centralized data exchange platforms and public service portals with robust audit trails and citizen authentication.",
+        "tags": ["e-GP Integration", "Citizen Portals", "Secure Data", "Audit Trails"]
       },
       "manufacturing": {
         "title": "Manufacturing",
         "desc": "ERP, supply chain, IoT integration, production management systems. Active Clients: Bellco, CH, Vista.",
-        "did": "We built inventory and production management systems for textile manufacturers — real-time tracking, barcode scanning, role-based access."
+        "did": "We built inventory and production management systems for textile manufacturers — real-time tracking, barcode scanning, role-based access.",
+        "tags": ["ERP Solutions", "IoT Integration", "Supply Chain", "Warehouse Management"]
       }
     },
     "process_label": "LAYER 3",

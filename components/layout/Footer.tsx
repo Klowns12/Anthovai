@@ -52,7 +52,7 @@ export function Footer() {
 
       {/* CTA Band */}
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 pt-20 pb-16">
-        <motion.div
+        {/* <motion.div
           className="flex flex-col md:flex-row items-center justify-between gap-8 pb-16 border-b border-black/[0.06]"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +74,7 @@ export function Footer() {
             {ctaT('button')}
             <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </Link>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Main Footer Content */}

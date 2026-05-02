@@ -10,7 +10,7 @@ interface MarkdownContentProps {
 
 export function MarkdownContent({ content }: MarkdownContentProps) {
   return (
-    <div className="prose prose-invert prose-p:text-white-60 prose-headings:text-white prose-headings:font-medium prose-a:text-gold hover:prose-a:text-gold-light prose-strong:text-white prose-code:text-gold-light prose-code:bg-gold/[0.05] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-sm prose-pre:bg-transparent prose-pre:p-0 prose-pre:m-0 prose-li:text-white-60 max-w-none">
+    <div className="prose prose-p:text-white-60 prose-headings:text-white prose-headings:font-medium prose-a:text-gold hover:prose-a:text-gold-light prose-strong:text-white prose-code:text-gold-light prose-code:bg-gold/[0.05] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-sm prose-pre:bg-transparent prose-pre:p-0 prose-pre:m-0 prose-li:text-white-60 prose-td:text-white-60 prose-th:text-white max-w-none">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{

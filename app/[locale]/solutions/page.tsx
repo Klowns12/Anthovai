@@ -110,13 +110,14 @@ export default function SolutionsPage() {
             <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {industries.map((industry) => {
                 const Icon = industry.icon
+                const tags: string[] = t.raw(`industries.${industry.key}.tags`)
                 return (
                   <motion.div key={industry.key} variants={staggerItem} className="group p-10 border border-[#FFFFFF]/10 bg-[#111111] rounded-xl hover:border-gold-border hover:bg-[#1A1814] transition-colors duration-300">
                     <div className="flex items-start gap-6">
                       <div className="w-14 h-14 rounded-full border border-[#FFFFFF]/15 bg-bg flex items-center justify-center shrink-0 group-hover:border-gold group-hover:bg-[#F0EFE9] transition-colors duration-500">
                         <Icon size={24} className="text-[#06060A] group-hover:text-gold transition-colors" />
                       </div>
-                      <div>
+                      <div className="flex-1">
                         <h4 className="text-2xl font-medium text-[#FFFFFF] mb-4">
                           {t(`industries.${industry.key}.title`)}
                         </h4>
@@ -128,6 +129,15 @@ export default function SolutionsPage() {
                             "{t(`industries.${industry.key}.did`)}"
                           </p>
                         </div>
+                        {tags && tags.length > 0 && (
+                          <div className="flex flex-wrap gap-2 mt-6 pt-6 border-t border-[#FFFFFF]/10">
+                            {tags.map((tag, tagIndex) => (
+                              <span key={tagIndex} className="px-3 py-1 bg-white/[0.03] border border-white/[0.06] text-white/70 text-xs rounded-full">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </div>
                   </motion.div>

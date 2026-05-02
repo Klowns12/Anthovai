@@ -10,6 +10,7 @@ import { Manifesto } from '@/components/sections/Manifesto'
 import { FAQ } from '@/components/sections/FAQ'
 import { Marquee } from '@/components/ui/Marquee'
 import { TechStack } from '@/components/sections/TechStack'
+import { ImpactMetrics } from '@/components/sections/ImpactMetrics'
 
 export default function Home() {
   const t = useTranslations('marquee')
@@ -18,13 +19,13 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <ClientLogos />
-      {/* <TechStack /> */}
+      <TechStack />
       <Marquee items={marqueeItems} />
       <About />
       <Services />
       <Process />
       <Manifesto />
+      <ClientLogos />
       <FAQ />
     </>
   )

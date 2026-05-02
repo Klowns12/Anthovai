@@ -4,8 +4,20 @@ import { useTranslations } from 'next-intl'
 import { FadeUp } from '../animations/FadeUp'
 
 const techStack = [
-  'TypeScript', 'Next.js', 'React', 'Node.js', 'Python', 'Go', 
-  'PostgreSQL', 'Redis', 'Docker', 'Kubernetes', 'AWS', 'TensorFlow', 'PyTorch', 'Klang'
+  { name: 'TypeScript', src: 'https://cdn.simpleicons.org/typescript/06060A' },
+  { name: 'Next.js', src: 'https://cdn.simpleicons.org/nextdotjs/06060A' },
+  { name: 'React', src: 'https://cdn.simpleicons.org/react/06060A' },
+  { name: 'Node.js', src: 'https://cdn.simpleicons.org/nodedotjs/06060A' },
+  { name: 'Python', src: 'https://cdn.simpleicons.org/python/06060A' },
+  { name: 'Go', src: 'https://cdn.simpleicons.org/go/06060A' },
+  { name: 'PostgreSQL', src: 'https://cdn.simpleicons.org/postgresql/06060A' },
+  { name: 'Redis', src: 'https://cdn.simpleicons.org/redis/06060A' },
+  { name: 'Docker', src: 'https://cdn.simpleicons.org/docker/06060A' },
+  { name: 'Kubernetes', src: 'https://cdn.simpleicons.org/kubernetes/06060A' },
+  { name: 'Google Cloud', src: 'https://cdn.simpleicons.org/googlecloud/06060A' },
+  { name: 'TensorFlow', src: 'https://cdn.simpleicons.org/tensorflow/06060A' },
+  { name: 'PyTorch', src: 'https://cdn.simpleicons.org/pytorch/06060A' },
+  { name: 'Klang', src: '/Klowns-Language.png' }
 ]
 
 export function TechStack() {
@@ -44,10 +56,11 @@ export function TechStack() {
             <div className="flex items-center gap-6 pr-6 w-max group-hover:[animation-play-state:paused]">
               {[...techStack, ...techStack].map((tech, i) => (
                 <div
-                  key={`first-${tech}-${i}`}
-                  className="flex-shrink-0 px-8 py-3 border border-white/[0.06] rounded-full bg-white/[0.02] text-white/80 text-sm font-medium tracking-wide hover:border-gold/30 hover:bg-gold/[0.02] hover:text-white transition-all cursor-default"
+                  key={`first-${tech.name}-${i}`}
+                  className="group/item flex items-center justify-center gap-3 flex-shrink-0 px-6 h-[46px] border border-white/[0.06] rounded-full bg-white/[0.02] hover:border-gold/30 hover:bg-gold/[0.02] transition-all cursor-default"
                 >
-                  {tech}
+                  <img src={tech.src} alt={`${tech.name} logo`} className="h-[18px] w-auto opacity-70 group-hover/item:opacity-100 transition-opacity" />
+                  <span className="text-white/80 text-sm font-medium tracking-wide group-hover/item:text-gold transition-colors">{tech.name}</span>
                 </div>
               ))}
             </div>
@@ -55,10 +68,11 @@ export function TechStack() {
             <div className="flex items-center gap-6 pr-6 w-max aria-hidden group-hover:[animation-play-state:paused]">
               {[...techStack, ...techStack].map((tech, i) => (
                 <div
-                  key={`second-${tech}-${i}`}
-                  className="flex-shrink-0 px-8 py-3 border border-white/[0.06] rounded-full bg-white/[0.02] text-white/80 text-sm font-medium tracking-wide hover:border-gold/30 hover:bg-gold/[0.02] hover:text-white transition-all cursor-default"
+                  key={`second-${tech.name}-${i}`}
+                  className="group/item flex items-center justify-center gap-3 flex-shrink-0 px-6 h-[46px] border border-white/[0.06] rounded-full bg-white/[0.02] hover:border-gold/30 hover:bg-gold/[0.02] transition-all cursor-default"
                 >
-                  {tech}
+                  <img src={tech.src} alt={`${tech.name} logo`} className="h-[18px] w-auto opacity-70 group-hover/item:opacity-100 transition-opacity" />
+                  <span className="text-white/80 text-sm font-medium tracking-wide group-hover/item:text-gold transition-colors">{tech.name}</span>
                 </div>
               ))}
             </div>

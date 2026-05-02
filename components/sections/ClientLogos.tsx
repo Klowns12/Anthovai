@@ -19,12 +19,9 @@ const clients = [
   export function ClientLogos({ className }: { className?: string }) {
     const t = useTranslations('client_logos') 
   
-    // Duplicate the array 4 times so we have enough width for a seamless infinite scroll
-    const doubledClients = [...clients, ...clients, ...clients, ...clients]
-  
     return (
       <section className={cn('py-16 overflow-hidden border-t border-white/[0.04]', className)}>
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-10 text-center">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-12 text-center">
           <FadeUp>
             <p className="text-[15px] font-medium tracking-[0.2em] uppercase text-white-40">
               Trusted by organizations nationwide
@@ -35,51 +32,24 @@ const clients = [
           </FadeUp>
         </div>
 
-      <div className="relative w-full flex items-center">
-        {/* Left fade gradient */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-bg to-transparent z-10 pointer-events-none" />
-
-        {/* Right fade gradient */}
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-bg to-transparent z-10 pointer-events-none" />
-
-        <div className="flex overflow-hidden w-full group">
-          <div
-            className="flex w-max"
-            style={{ animation: `marquee 40s linear infinite` }}
-          >
-            {/* First half */}
-            <div className="flex items-center gap-16 pr-16 w-max group-hover:[animation-play-state:paused]">
-              {doubledClients.map((client, i) => (
+        <div className="mx-auto max-w-5xl px-6 lg:px-8">
+          <FadeUp delay={0.2}>
+            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-10 md:gap-x-16">
+              {clients.map((client, i) => (
                 <div
-                  key={`first-${client.name}-${i}`}
-                  className="flex-shrink-0 w-[120px] h-[60px] flex items-center justify-center transition-all duration-300 hover:scale-110 cursor-pointer"
+                  key={`client-${client.name}-${i}`}
+                  className="w-[100px] sm:w-[120px] h-[60px] flex items-center justify-center transition-all duration-300 hover:scale-110 cursor-pointer"
                 >
                   <img
                     src={client.logo}
                     alt={client.name}
-                    className={cn("max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity duration-300", client.className)}
+                    className={cn("max-w-full max-h-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300", client.className)}
                   />
                 </div>
               ))}
             </div>
-            {/* Second half */}
-            <div className="flex items-center gap-16 pr-16 w-max aria-hidden group-hover:[animation-play-state:paused]">
-              {doubledClients.map((client, i) => (
-                <div
-                  key={`second-${client.name}-${i}`}
-                  className="flex-shrink-0 w-[120px] h-[60px] flex items-center justify-center transition-all duration-300 hover:scale-110 cursor-pointer"
-                >
-                  <img
-                    src={client.logo}
-                    alt={client.name}
-                    className={cn("max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity duration-300", client.className)}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          </FadeUp>
         </div>
-      </div>
-    </section>
+      </section>
   )
 }

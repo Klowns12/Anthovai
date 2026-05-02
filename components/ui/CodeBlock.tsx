@@ -15,11 +15,11 @@ type TokenType = 'keyword' | 'type' | 'string' | 'comment' | 'number' | 'variabl
 
 const TOKEN_COLORS: Record<TokenType, string> = {
   keyword: 'text-gold',
-  type: 'text-[#4EC9B0]',
-  string: 'text-[#CE9178]',
-  comment: 'text-[#6A9955]',
-  number: 'text-[#B5CEA8]',
-  variable: 'text-[#9CDCFE]',
+  type: 'text-[#267F99]',
+  string: 'text-[#A31515]',
+  comment: 'text-[#008000]',
+  number: 'text-[#098658]',
+  variable: 'text-[#001080]',
   default: 'text-white-60',
 }
 
