@@ -359,8 +359,12 @@ db_test!(async fn the_system_role_can_read_the_tables_it_sweeps(db) {
     // Every table a cross-tenant job reads belongs in this list.
     const SWEPT: &[&str] = &["knowledge_bases", "documents", "api_keys"];
 
-    // Seed one row the sweep should be able to see, so an empty database
-    // cannot make this pass.
+    // A row in every one of them, so the assertion below is never vacuous.
+    //
+    // The first version of this test seeded only `knowledge_bases` and passed
+    // locally — because other tests had left rows in the rest. On CI's clean
+    // database it failed on `documents`, correctly. A test that depends on
+    // another test's leftovers is not testing what it claims to.
     let service = TenantService::new(db.clone());
     let alice = seed_user(&db).await;
     let created = service
@@ -373,17 +377,48 @@ db_test!(async fn the_system_role_can_read_the_tables_it_sweeps(db) {
         .expect("create");
 
     let ctx = owner_ctx(created.organization.id, alice);
+    let org = created.organization.id.to_db();
+    let workspace = created.default_workspace.id.to_db();
+    let kb_id = anthovai_core::KnowledgeBaseId::new();
+
     let mut tenant = db.tenant(&ctx).await.unwrap();
     anthovai_db::sqlx::query(
         "INSERT INTO knowledge_bases (id, tenant_id, workspace_id, name, embedding_model, embedding_dim)
          VALUES ($1, $2, $3, 'Swept', 'fake:hash-1536', 1536)",
     )
-    .bind(anthovai_core::KnowledgeBaseId::new().to_db())
-    .bind(created.organization.id.to_db())
-    .bind(created.default_workspace.id.to_db())
+    .bind(kb_id.to_db())
+    .bind(&org)
+    .bind(&workspace)
     .execute(tenant.conn())
     .await
     .unwrap();
+
+    anthovai_db::sqlx::query(
+        "INSERT INTO documents (id, tenant_id, knowledge_base_id, title, source_type)
+         VALUES ($1, $2, $3, 'Swept', 'md')",
+    )
+    .bind(anthovai_core::DocumentId::new().to_db())
+    .bind(&org)
+    .bind(kb_id.to_db())
+    .execute(tenant.conn())
+    .await
+    .unwrap();
+
+    // `key_hash` is unique across the whole table, so a fixed value here would
+    // collide the second time this test runs. It is not a real hash either way.
+    let key_id = anthovai_core::ApiKeyId::new();
+    anthovai_db::sqlx::query(
+        "INSERT INTO api_keys (id, tenant_id, workspace_id, name, key_hash, prefix)
+         VALUES ($1, $2, $3, 'Swept', $4, 'av_test_swep')",
+    )
+    .bind(key_id.to_db())
+    .bind(&org)
+    .bind(&workspace)
+    .bind(format!("not-a-real-hash-{}", key_id.to_db()))
+    .execute(tenant.conn())
+    .await
+    .unwrap();
+
     tenant.commit().await.unwrap();
 
     let mut system = db.system().await.unwrap();
