@@ -31,9 +31,20 @@ cargo test --workspace
 
 ## Continuous integration
 
+Both halves are filtered, so neither waits on the other.
+
 `.github/workflows/platform-ci.yml` runs only when something under `platform/`
-changes, so editing a landing page does not spend ten minutes compiling Rust.
-Vercel builds the site on every push to `main` — including a push that only
-touched `platform/`, which is a redundant build of identical content rather
-than a problem, and can be skipped later with an `ignoreCommand` in
-`vercel.json` if it becomes one.
+changes — editing a landing page does not spend ten minutes compiling Rust.
+
+`ignoreCommand` in `vercel.json` does the mirror image: a push that touched
+nothing outside `platform/` does not rebuild the site.
+
+```
+git diff --quiet HEAD^ HEAD -- . ':(exclude)platform'
+```
+
+Vercel reads the exit code, and the sense is inverted from what you might
+expect: **0 skips the build, anything else builds.** So `--quiet` returning 0
+(nothing changed outside `platform/`) skips, 1 (something did) builds, and 128
+(no `HEAD^` — a shallow clone, or the first commit) also builds. Every failure
+mode falls on the side of building, which is the harmless one.
