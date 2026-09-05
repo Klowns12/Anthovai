@@ -13,7 +13,15 @@
 #
 #   ANTHOVAI_API_KEY=av_live_… AGENT_ID=agt_… ./scripts/load-test.sh
 #
-# Needs `oha` (cargo install oha).
+# Needs `oha` (cargo install oha), and a server already running.
+#
+# `crates/api/tests/load.rs` measures the same thing and is the one to reach
+# for first: it needs nothing installed, stands the server up itself, and
+# asserts the p95 rather than printing it, so it can run in CI. Use this script
+# when the question is specifically about the network — real sockets, real
+# connection reuse, a real client on the other side — which an in-process test
+# cannot answer. On a toolchain where `oha` will not build, that test is the
+# only option.
 
 set -euo pipefail
 
