@@ -1,0 +1,104 @@
+# The model registry: the only file that names real provider models.
+#
+# Customers never see these names. They pick a policy (Anthovai Auto, or a
+# provider on Business and above) and the router picks a row from here. That
+# indirection is what lets a model be renamed, repriced, or retired without
+# breaking a single customer integration.
+#
+# Prices are micro-USD per million tokens: 2_000_000 means USD 2.00 / MTok.
+# Lower `priority` is tried first within a tier.
+#
+# `priced_on` is the date somebody last checked the two price fields against the
+# provider's published figures. **A row without it will not start in
+# production.** Every invoice is computed from those numbers, and a guess there
+# produces a wrong bill that nothing else in the system contradicts.
+#
+# The model *names* below were verified against each provider's live API — for
+# OpenAI, by `cargo test -p anthovai-provider-openai --test live -- --ignored`,
+# which calls every enabled model and fails when one has been retired.
+
+# ---- OpenAI ----------------------------------------------------------------
+#
+# Names confirmed live on 2026-09-05: all three answered, reported non-zero
+# usage, and returned a finish reason we map.
+#
+# Prices NOT confirmed. The figures below are placeholders and are wrong.
+# Set `priced_on` on each row once they have been checked.
+
+[[models]]
+id = "openai-small"
+provider = "openai"
+name = "gpt-5.4-nano"
+tier = "small"
+max_context_tokens = 400000
+max_output_tokens = 128000
+input_price_micro_per_mtok = 0
+output_price_micro_per_mtok = 0
+enabled = true
+priority = 0
+
+[[models]]
+id = "openai-medium"
+provider = "openai"
+name = "gpt-5.4-mini"
+tier = "medium"
+max_context_tokens = 400000
+max_output_tokens = 128000
+input_price_micro_per_mtok = 0
+output_price_micro_per_mtok = 0
+enabled = true
+priority = 0
+
+[[models]]
+id = "openai-large"
+provider = "openai"
+name = "gpt-5.5"
+tier = "large"
+max_context_tokens = 400000
+max_output_tokens = 128000
+input_price_micro_per_mtok = 0
+output_price_micro_per_mtok = 0
+enabled = true
+priority = 0
+
+# ---- Anthropic --------------------------------------------------------------
+#
+# Enabled but unreachable until `ANTHROPIC_API_KEY` is set, which the factory
+# says out loud at startup rather than discovering on the first question.
+# Names and prices both still need confirming against Anthropic's own figures.
+
+[[models]]
+id = "claude-small"
+provider = "anthropic"
+name = "claude-haiku-4-5"
+tier = "small"
+max_context_tokens = 200000
+max_output_tokens = 32000
+input_price_micro_per_mtok = 0
+output_price_micro_per_mtok = 0
+enabled = true
+priority = 1
+
+[[models]]
+id = "claude-medium"
+provider = "anthropic"
+name = "claude-sonnet-5"
+tier = "medium"
+max_context_tokens = 1000000
+max_output_tokens = 64000
+input_price_micro_per_mtok = 0
+output_price_micro_per_mtok = 0
+enabled = true
+priority = 1
+
+[[models]]
+id = "claude-large"
+provider = "anthropic"
+name = "claude-opus-5"
+tier = "large"
+max_context_tokens = 1000000
+max_output_tokens = 64000
+input_price_micro_per_mtok = 0
+output_price_micro_per_mtok = 0
+enabled = true
+priority = 1

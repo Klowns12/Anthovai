@@ -1,0 +1,57 @@
+# Base configuration. Layered over by config/{ANTHOVAI_ENV}.toml, then by
+# ANTHOVAI__SECTION__KEY environment variables.
+#
+# Secrets never live here. Provider entries name the environment variable that
+# holds the key; the key itself is read at startup.
+
+[server]
+host = "0.0.0.0"
+port = 8080
+request_timeout_secs = 65
+dashboard_origins = ["http://localhost:3000"]
+
+[database]
+url = "postgres://anthovai:anthovai@localhost:55432/anthovai"
+max_connections = 20
+run_migrations_on_start = false
+
+[storage]
+# Local disk by default, so a developer needs only PostgreSQL running.
+# Set provider = "s3" (and the endpoint below) to use MinIO or S3.
+provider = "local"
+local_path = "./data/storage"
+bucket = "anthovai-dev"
+endpoint = "http://localhost:9010"
+region = "auto"
+
+[embeddings]
+# Locked for v0.1: changing the model or the dimension means re-embedding a
+# whole knowledge base, so it is a migration, not a config change.
+default_model = "openai:text-embedding-3-small"
+dimension = 1536
+batch_size = 64
+concurrency = 4
+
+[retrieval]
+vector_top = 30
+keyword_top = 30
+rrf_k = 60.0
+
+[auth]
+session_ttl_hours = 168
+api_key_cache_secs = 60
+argon2_memory_kib = 65536
+
+[worker]
+concurrency = 4
+poll_interval_ms = 500
+
+[providers.openai]
+api_key_env = "OPENAI_API_KEY"
+base_url = "https://api.openai.com/v1"
+enabled = true
+
+[providers.anthropic]
+api_key_env = "ANTHROPIC_API_KEY"
+base_url = "https://api.anthropic.com"
+enabled = true

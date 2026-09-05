@@ -1,0 +1,74 @@
+# The whole platform, from images.
+#
+# `docker-compose.yml` next to this one runs only the backing services, which is
+# what a developer wants while `cargo run` holds the code. This file adds the API
+# and the worker as containers, which is what staging looks like.
+#
+#   docker compose -f docker/docker-compose.yml -f docker/docker-compose.stack.yml up --build
+#
+# Both extend the same project name, so they share one set of volumes and one
+# network — running this does not strand the database the other one created.
+
+name: anthovai
+
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: anthovai:dev
+    command: ["anthovai-api"]
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio-init:
+        condition: service_completed_successfully
+    ports:
+      - "8080:8080"
+    environment: &backend_env
+      # Inside the network the services answer on their own names and their
+      # real ports; the host-side port mappings are for us, not for them.
+      ANTHOVAI__DATABASE__URL: postgres://anthovai:anthovai@postgres:5432/anthovai
+      ANTHOVAI__STORAGE__PROVIDER: s3
+      ANTHOVAI__STORAGE__ENDPOINT: http://minio:9000
+      ANTHOVAI__STORAGE__BUCKET: anthovai-dev
+      AWS_ACCESS_KEY_ID: anthovai
+      AWS_SECRET_ACCESS_KEY: anthovai-secret
+      # Local, so a stack with no provider key still answers questions — from
+      # the retrieved passages, with the echo model. Set this to `production`
+      # and the API refuses to start without real keys, which is the point.
+      ANTHOVAI_ENV: local
+      # Passed through from the host when present. Absent is fine here.
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      RUST_LOG: ${RUST_LOG:-info,anthovai=debug,sqlx=warn}
+      # Applied by the API at startup. `sqlx` takes an advisory lock first, so
+      # several replicas starting together is safe: one migrates and the rest
+      # wait, rather than all of them running the same DDL.
+      ANTHOVAI__DATABASE__RUN_MIGRATIONS_ON_START: "true"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8080/internal/health"]
+      interval: 15s
+      timeout: 3s
+      start_period: 20s
+      retries: 3
+
+  worker:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: anthovai:dev
+    command: ["anthovai-worker"]
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio-init:
+        condition: service_completed_successfully
+      # Migrations are applied by the API. A worker that started first would
+      # poll a `jobs` table that does not exist yet and log its way through the
+      # backoff for no reason.
+      api:
+        condition: service_healthy
+    environment: *backend_env

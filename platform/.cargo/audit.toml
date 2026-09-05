@@ -1,0 +1,39 @@
+# Advisories `cargo audit` reports that we have looked at and accepted.
+#
+# Every entry needs a reason and a way out. An ignore list without those becomes
+# a place where real findings go to be forgotten.
+
+[advisories]
+ignore = [
+    # RUSTSEC-2023-0071 — Marvin attack: RSA key recovery through a timing
+    # sidechannel. No fixed version exists.
+    #
+    # `rsa` reaches the lock file through `sqlx-mysql`, which arrives with
+    # sqlx's `macros` feature. That feature is enabled for one thing:
+    # `sqlx::migrate!`, which embeds the migrations in the binary instead of
+    # reading a directory that might not be in the image.
+    #
+    # `sqlx-mysql` is never compiled — only `postgres` is in our feature list —
+    # so no RSA code is in either binary. Confirm with:
+    #   cargo tree -i rsa            (prints nothing: not in the build graph)
+    #   cargo tree -i sqlx-mysql
+    #
+    # Way out: sqlx splitting driver dependencies out of `macros`, or moving to
+    # a runtime `Migrator` that reads `migrations/` from disk.
+    "RUSTSEC-2023-0071",
+
+    # RUSTSEC-2026-0192 — `ttf-parser` is unmaintained. A warning, not a
+    # vulnerability.
+    #
+    # It comes from `lopdf`, under `pdf-extract`, and is reached only when
+    # extracting text from a PDF — which is attacker-supplied input, so this is
+    # not dismissed lightly. What limits it is the parser's own containment:
+    # PDF parsing runs on a blocking thread, under a 120-second timeout, inside
+    # `catch_unwind`, and its output is treated as untrusted text.
+    #
+    # Way out: this is one of the things the Thai-PDF decision settles. If we
+    # move to a `pdftotext` sidecar in a no-network container, the whole
+    # `pdf-extract` tree — `lopdf`, `ttf-parser` and the rest — leaves the
+    # build.
+    "RUSTSEC-2026-0192",
+]

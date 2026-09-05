@@ -1,0 +1,185 @@
+# The Rust platform under `platform/`.
+#
+# Path-filtered, because this repository also holds the anthovai.com website:
+# a change to a landing page should not spend ten minutes compiling Rust, and a
+# change to a migration should not wait on a Next.js build.
+#
+# `defaults.run.working-directory` puts every shell step in `platform/`. The
+# actions that do not run a shell — the cache, the Docker build — take the path
+# themselves, so those are set individually.
+
+name: Platform CI
+
+on:
+  push:
+    branches: [main]
+    paths: ["platform/**", ".github/workflows/platform-ci.yml"]
+  pull_request:
+    paths: ["platform/**", ".github/workflows/platform-ci.yml"]
+
+env:
+  CARGO_TERM_COLOR: always
+  RUSTFLAGS: -D warnings
+
+defaults:
+  run:
+    working-directory: platform
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: platform
+
+      - name: Format
+        run: cargo fmt --all -- --check
+
+      - name: Clippy
+        run: cargo clippy --workspace --all-targets -- -D warnings
+
+      - name: Test
+        run: cargo test --workspace
+
+  # Tenant isolation is the product's first promise, so it gets its own job:
+  # a red build here must be impossible to miss among ordinary test failures.
+  database:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: anthovai
+          POSTGRES_PASSWORD: anthovai
+          POSTGRES_DB: anthovai_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U anthovai"
+          --health-interval 5s --health-timeout 3s --health-retries 20
+    env:
+      ANTHOVAI_TEST_DATABASE_URL: postgres://anthovai:anthovai@localhost:5432/anthovai_test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: platform
+
+      # Without the environment variable these tests skip themselves, so the
+      # first check is that they actually ran.
+      - name: Cross-tenant isolation
+        run: cargo test -p anthovai-tenant --test isolation -- --nocapture
+
+      - name: Authentication and API keys
+        run: cargo test -p anthovai-auth --test auth_flow -- --nocapture
+
+      # A search that reached another tenant's chunks would return plausible
+      # answers from the wrong customer's documents, which is the worst kind of
+      # bug this product can have.
+      - name: Retrieval isolation
+        run: cargo test -p anthovai-retrieval --test retrieval -- --nocapture
+
+      - name: Everything else, against a real database
+        run: cargo test --workspace
+
+  # Whether retrieval actually finds the right passage is a property of the
+  # embedding model, so it cannot be measured against the local stand-in the
+  # other tests use. This job runs only where a provider key is configured, and
+  # makes real, billable calls.
+  relevance:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: anthovai
+          POSTGRES_PASSWORD: anthovai
+          POSTGRES_DB: anthovai_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U anthovai"
+          --health-interval 5s --health-timeout 3s --health-retries 20
+    env:
+      ANTHOVAI_TEST_DATABASE_URL: postgres://anthovai:anthovai@localhost:5432/anthovai_test
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: platform
+      - name: Retrieval quality
+        # Skips itself when no key is configured, rather than failing the build.
+        run: cargo test -p anthovai-retrieval --test relevance -- --ignored --nocapture
+
+      # The names in `config/models.toml` are the only thing in this repository
+      # that another company can retire without telling us. This calls every
+      # enabled model, so a shutdown date passing turns up here rather than as
+      # a customer's failed question.
+      - name: Every model in the registry still exists
+        run: cargo test -p anthovai-provider-openai --test live -- --ignored --nocapture
+
+  # Two questions with the same answer — "would we ship this?" — asked of the
+  # dependency tree and of the repository's own history.
+  supply-chain:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # `gitleaks` scans history, not just the tip. A secret committed and
+          # then removed is still a secret that was published.
+          fetch-depth: 0
+
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: platform
+
+      - name: Install cargo-audit
+        run: cargo install cargo-audit --locked
+
+      # Advisories are published continuously, so this can go red on a day
+      # nobody touched the code. That is the point of running it on every build
+      # rather than at release time.
+      - name: Known vulnerabilities
+        run: cargo audit --deny warnings
+
+      - name: Secrets in the repository
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_ENABLE_UPLOAD_ARTIFACT: false
+
+  # The image has to build, and both binaries have to start. A Dockerfile that
+  # only ever builds on a developer's machine is found out at deploy time.
+  image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Build
+        uses: docker/build-push-action@v6
+        with:
+          context: platform
+          file: platform/docker/Dockerfile
+          tags: anthovai:ci
+          load: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Both binaries are in the image and can be run
+        run: |
+          docker run --rm --entrypoint /bin/sh anthovai:ci -c \
+            'test -x /usr/local/bin/anthovai-api && test -x /usr/local/bin/anthovai-worker'
+
+      - name: It does not run as root
+        run: |
+          user=$(docker run --rm --entrypoint /bin/sh anthovai:ci -c 'id -un')
+          test "$user" = "anthovai" || { echo "image runs as $user"; exit 1; }

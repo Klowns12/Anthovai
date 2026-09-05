@@ -1,0 +1,19 @@
+[package]
+name = "anthovai-agent"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+anthovai-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+anyhow.workspace = true
+chrono.workspace = true
+tracing.workspace = true
+async-trait.workspace = true
+anthovai-inference.workspace = true
+anthovai-db.workspace = true
+sqlx.workspace = true

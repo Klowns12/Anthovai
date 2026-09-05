@@ -1,0 +1,21 @@
+[package]
+name = "anthovai-inference"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+anthovai-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+anyhow.workspace = true
+chrono.workspace = true
+tracing.workspace = true
+metrics.workspace = true
+async-trait.workspace = true
+reqwest.workspace = true
+tokio.workspace = true
+futures.workspace = true
+config.workspace = true

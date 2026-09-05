@@ -35,3 +35,16 @@ next-env.d.ts
 
 # bun
 bun.lockb
+
+# the Rust platform under platform/
+#
+# Its build directory reaches twenty gigabytes within a day of ordinary work,
+# and `data/` is whatever a developer has uploaded to their local object store.
+/platform/target
+/platform/data
+**/*.rs.bk
+
+# local env files, anywhere in the tree
+.env
+.env.*
+!.env.example

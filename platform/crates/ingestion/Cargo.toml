@@ -1,0 +1,38 @@
+[package]
+name = "anthovai-ingestion"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+anthovai-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+anyhow.workspace = true
+chrono.workspace = true
+tracing.workspace = true
+async-trait.workspace = true
+anthovai-knowledge.workspace = true
+anthovai-embeddings.workspace = true
+anthovai-storage.workspace = true
+anthovai-jobs.workspace = true
+tokio.workspace = true
+anthovai-retrieval.workspace = true
+anthovai-db.workspace = true
+tiktoken-rs.workspace = true
+pulldown-cmark.workspace = true
+whatlang.workspace = true
+pdf-extract.workspace = true
+zip.workspace = true
+quick-xml.workspace = true
+csv.workspace = true
+scraper.workspace = true
+url.workspace = true
+
+[dev-dependencies]
+anthovai-testkit.workspace = true
+lopdf = "0.42"
+pgvector.workspace = true
+sqlx.workspace = true
