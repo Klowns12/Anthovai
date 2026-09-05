@@ -1,0 +1,24 @@
+[package]
+name = "anthovai-jobs"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+anthovai-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+anyhow.workspace = true
+chrono.workspace = true
+tracing.workspace = true
+metrics.workspace = true
+async-trait.workspace = true
+sqlx.workspace = true
+tokio.workspace = true
+anthovai-db.workspace = true
+
+[dev-dependencies]
+anthovai-testkit.workspace = true
+tokio.workspace = true

@@ -1,0 +1,27 @@
+[package]
+name = "anthovai-worker-app"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "anthovai-worker"
+path = "src/main.rs"
+
+[dependencies]
+anthovai-core.workspace = true
+anthovai-db.workspace = true
+anthovai-jobs.workspace = true
+anthovai-knowledge.workspace = true
+anthovai-ingestion.workspace = true
+anthovai-storage.workspace = true
+anthovai-embeddings.workspace = true
+
+tokio.workspace = true
+async-trait.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+anyhow.workspace = true
+anthovai-retrieval.workspace = true
+anthovai-providers.workspace = true

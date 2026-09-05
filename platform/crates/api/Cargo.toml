@@ -1,0 +1,50 @@
+[package]
+name = "anthovai-api"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+anthovai-core.workspace = true
+anthovai-db.workspace = true
+anthovai-auth.workspace = true
+anthovai-tenant.workspace = true
+anthovai-agent.workspace = true
+anthovai-knowledge.workspace = true
+anthovai-storage.workspace = true
+anthovai-jobs.workspace = true
+anthovai-rag.workspace = true
+anthovai-inference.workspace = true
+anthovai-conversation.workspace = true
+anthovai-retrieval.workspace = true
+anthovai-usage.workspace = true
+anthovai-ingestion.workspace = true
+reqwest.workspace = true
+url.workspace = true
+metrics.workspace = true
+metrics-exporter-prometheus.workspace = true
+utoipa.workspace = true
+
+axum.workspace = true
+tower.workspace = true
+tower-http.workspace = true
+http.workspace = true
+tokio.workspace = true
+
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+anyhow.workspace = true
+chrono.workspace = true
+tracing.workspace = true
+async-trait.workspace = true
+sha2.workspace = true
+hex.workspace = true
+
+[dev-dependencies]
+anthovai-testkit.workspace = true
+tracing-subscriber.workspace = true
+anthovai-embeddings.workspace = true
+
+

@@ -1,0 +1,137 @@
+[workspace]
+resolver = "2"
+members = [
+    "apps/api",
+    "apps/worker",
+    "crates/core",
+    "crates/db",
+    "crates/auth",
+    "crates/tenant",
+    "crates/agent",
+    "crates/knowledge",
+    "crates/ingestion",
+    "crates/embeddings",
+    "crates/retrieval",
+    "crates/inference",
+    "crates/providers/openai",
+    "crates/providers/anthropic",
+    "crates/providers/factory",
+    "crates/conversation",
+    "crates/rag",
+    "crates/usage",
+    "crates/storage",
+    "crates/jobs",
+    "crates/guardrails",
+    "crates/api",
+    "crates/testkit",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.90"
+license = "UNLICENSED"
+authors = ["Anthovai Engineering <contact@anthovai.com>"]
+repository = "https://github.com/anthovai/anthovai-ai"
+
+[workspace.dependencies]
+# internal crates
+anthovai-core = { path = "crates/core" }
+anthovai-db = { path = "crates/db" }
+anthovai-auth = { path = "crates/auth" }
+anthovai-tenant = { path = "crates/tenant" }
+anthovai-agent = { path = "crates/agent" }
+anthovai-knowledge = { path = "crates/knowledge" }
+anthovai-ingestion = { path = "crates/ingestion" }
+anthovai-embeddings = { path = "crates/embeddings" }
+anthovai-retrieval = { path = "crates/retrieval" }
+anthovai-inference = { path = "crates/inference" }
+anthovai-provider-openai = { path = "crates/providers/openai" }
+anthovai-provider-anthropic = { path = "crates/providers/anthropic" }
+anthovai-providers = { path = "crates/providers/factory" }
+anthovai-conversation = { path = "crates/conversation" }
+anthovai-rag = { path = "crates/rag" }
+anthovai-usage = { path = "crates/usage" }
+anthovai-storage = { path = "crates/storage" }
+anthovai-jobs = { path = "crates/jobs" }
+anthovai-guardrails = { path = "crates/guardrails" }
+anthovai-api = { path = "crates/api" }
+anthovai-testkit = { path = "crates/testkit" }
+
+# async / runtime
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "signal", "time", "sync", "fs"] }
+tokio-stream = "0.1"
+futures = "0.3"
+async-trait = "0.1"
+
+# http
+axum = { version = "0.8", features = ["macros", "multipart"] }
+tower = "0.5"
+tower-http = { version = "0.6", features = ["trace", "cors", "limit", "timeout", "request-id"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls", "stream"] }
+http = "1"
+
+# data
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# `macros` is here only for `sqlx::migrate!`, which embeds the migrations in
+# the binary rather than reading them from a directory that may not be in the
+# image. It drags in every driver sqlx supports, MySQL included — see
+# `.cargo/audit.toml` for what that costs and why it is accepted.
+sqlx = { version = "0.8", default-features = false, features = ["runtime-tokio", "tls-rustls-ring", "postgres", "chrono", "json", "macros", "migrate"] }
+chrono = { version = "0.4", features = ["serde"] }
+ulid = { version = "1", features = ["serde"] }
+object_store = { version = "0.14", features = ["aws"] }
+pgvector = { version = "0.4", features = ["sqlx"] }
+tiktoken-rs = "0.7"
+pulldown-cmark = { version = "0.13", default-features = false }
+whatlang = "0.16"
+bytes = "1"
+
+# document parsing
+pdf-extract = "0.12"
+# DOCX is a zip of XML. `deflate` is the only compression Word writes, and
+# leaving the others out keeps a malicious archive from reaching a decoder we
+# never meant to run.
+zip = { version = "8", default-features = false, features = ["deflate"] }
+# 0.41 at the earliest: RUSTSEC-2026-0194 and -0195 are both reachable from a
+# `.docx` a customer uploads — quadratic parsing of duplicate attributes, and
+# unbounded allocation from namespace declarations. Attacker-supplied XML is
+# exactly what this crate is here to read.
+quick-xml = "0.42"
+csv = "1.4"
+scraper = "0.27"
+url = "2.5"
+
+# observability
+metrics = "0.24"
+metrics-exporter-prometheus = { version = "0.18", default-features = false }
+utoipa = { version = "5", features = ["axum_extras", "chrono"] }
+
+# errors / logging / config
+thiserror = "2"
+anyhow = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+config = { version = "0.15", default-features = false, features = ["toml"] }
+
+# crypto / util
+sha2 = "0.10"
+hex = "0.4"
+rand = "0.9"
+base64 = "0.22"
+argon2 = "0.5"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = "debuginfo"
+
+[profile.dev]
+# keep incremental builds fast while the workspace is young
+opt-level = 0
+debug = 1
+# Off deliberately. The incremental cache for this workspace reaches ten
+# gigabytes within a day of ordinary work, and a build that fails because the
+# disk is full costs far more than the rebuild time it saves.
+incremental = false

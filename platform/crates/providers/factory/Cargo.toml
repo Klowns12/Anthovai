@@ -1,0 +1,16 @@
+[package]
+name = "anthovai-providers"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+anthovai-core.workspace = true
+anthovai-embeddings.workspace = true
+anthovai-inference.workspace = true
+anthovai-provider-openai.workspace = true
+anthovai-provider-anthropic.workspace = true
+
+anyhow.workspace = true
+tracing.workspace = true
