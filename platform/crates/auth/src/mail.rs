@@ -43,18 +43,51 @@ pub trait Mailer: Send + Sync {
     fn delivers(&self) -> bool;
 }
 
-/// Writes the message to the log and reports that it did not deliver.
+/// Writes enough to the log to follow the link by hand, and no more.
+///
+/// The first version logged the recipient, the subject and the whole body. Two
+/// things wrong with that: an address is personal data, and the body carries a
+/// single-use credential — so an ordinary log became a place where both sat in
+/// plain text, retained for as long as logs are retained and readable by
+/// anybody who can read them.
+///
+/// What survives is the link, because without it this fallback is useless, and
+/// the address with its local part masked, because the operator still has to
+/// know whose link it is. That is the least that does the job.
 pub struct LoggingMailer;
+
+/// `somchai@example.com` becomes `s***@example.com`.
+///
+/// Enough to recognise an address you were expecting; not enough to harvest one
+/// you were not.
+fn mask(address: &str) -> String {
+    match address.split_once('@') {
+        Some((local, domain)) => {
+            let first = local.chars().next().unwrap_or('*');
+            format!("{first}***@{domain}")
+        }
+        // Not an address shape. Say nothing about it rather than guess.
+        None => "***".to_owned(),
+    }
+}
+
+/// The URL out of the message, so the body does not have to be logged whole.
+fn first_link(text: &str) -> Option<&str> {
+    let start = text.find("http")?;
+    let rest = &text[start..];
+    let end = rest.find(|c: char| c.is_whitespace()).unwrap_or(rest.len());
+    Some(&rest[..end])
+}
 
 #[async_trait::async_trait]
 impl Mailer for LoggingMailer {
     async fn send(&self, letter: Letter) -> Result<()> {
         tracing::warn!(
-            to = %letter.to,
-            subject = %letter.subject,
-            body = %letter.text,
-            "no mail transport is configured, so this message was not sent — \
-             the body is logged here so a link can still be followed by hand"
+            to = %mask(&letter.to),
+            link = first_link(&letter.text).unwrap_or("(none in this message)"),
+            "no mail transport is configured, so this was not sent. The link is \
+             a single-use credential and it is in this log — configure \
+             ANTHOVAI__MAIL__SMTP_URL before this runs anywhere real."
         );
         Ok(())
     }
@@ -159,5 +192,47 @@ pub fn confirmation_letter(to: &str, link: &str) -> Letter {
              If you did not create an account, nothing has been set up and you\n\
              can ignore this message.\n"
         ),
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn masking_keeps_the_domain_and_one_letter() {
+        assert_eq!(mask("somchai@example.com"), "s***@example.com");
+        assert_eq!(mask("a@b.co"), "a***@b.co");
+    }
+
+    #[test]
+    fn something_that_is_not_an_address_reveals_nothing() {
+        // Better to say nothing than to log a string of unknown provenance in
+        // the belief that it was an address.
+        assert_eq!(mask("not-an-address"), "***");
+        assert_eq!(mask(""), "***");
+    }
+
+    #[test]
+    fn the_link_comes_out_without_the_rest_of_the_message() {
+        let letter = confirmation_letter("somchai@example.com", "https://x.test/verify?token=abc");
+        let link = first_link(&letter.text).expect("the letter contains a link");
+        assert_eq!(link, "https://x.test/verify?token=abc");
+        assert!(!link.contains(char::is_whitespace));
+    }
+
+    #[test]
+    fn a_message_with_no_link_is_not_a_panic() {
+        assert_eq!(first_link("nothing to follow here"), None);
+    }
+
+    #[test]
+    fn the_confirmation_letter_says_what_the_link_is_for() {
+        let letter = confirmation_letter("a@b.test", "https://x.test/verify?token=t");
+        assert!(letter.text.contains("https://x.test/verify?token=t"));
+        // A recipient who did not ask for an account should be told that
+        // ignoring this leaves nothing behind.
+        assert!(letter.text.contains("ignore"));
+        assert_eq!(letter.to, "a@b.test");
     }
 }

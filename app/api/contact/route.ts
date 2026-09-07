@@ -5,7 +5,6 @@ export async function POST(request: Request) {
   try {
     const resend = new Resend(process.env.RESEND_API_KEY)
     const body = await request.json()
-    console.log('Form submission received:', body)
 
     const { error } = await resend.emails.send({
       from: 'Anthovai <onboarding@resend.dev>', // Keep onboarding@resend.dev until domain is verified
