@@ -595,5 +595,17 @@
     },
     "closing_title": "Start with one document",
     "closing_body": "There is nothing to install and no call to book. Sign up, upload something, and ask it a question."
+  },
+  "platform": {
+    "label": "The Platform",
+    "headline": "An agent that answers from your own documents",
+    "sub": "Most of what a customer asks is already written down somewhere in your organisation. Upload it and get an agent that answers from it — citing the passage it used — behind an API your own site, app or LINE bot can call.",
+    "points": [
+      "Upload a PDF, a Word file, or a page from your own site",
+      "Try questions and see exactly which passages it read",
+      "One POST to /v1/chat, with a key you issue yourself"
+    ],
+    "cta": "See how it works",
+    "cta_signup": "Create an account"
   }
 }

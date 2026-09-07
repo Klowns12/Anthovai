@@ -587,5 +587,17 @@
     },
     "closing_title": "Empiece con un documento",
     "closing_body": "No hay nada que instalar ni reunión que agendar. Regístrese, suba algo y pregunte."
+  },
+  "platform": {
+    "label": "La plataforma",
+    "headline": "Un agente que responde desde sus propios documentos",
+    "sub": "Casi todo lo que preguntan sus clientes ya está escrito en algún lugar de su organización. Súbalo y obtenga un agente que responde a partir de ello — citando el pasaje que usó — detrás de una API que su web, app o bot puede llamar.",
+    "points": [
+      "Suba un PDF, un archivo Word o una página de su propio sitio",
+      "Haga preguntas y vea exactamente qué pasajes leyó",
+      "Un POST a /v1/chat, con una clave que usted mismo emite"
+    ],
+    "cta": "Vea cómo funciona",
+    "cta_signup": "Crear una cuenta"
   }
 }

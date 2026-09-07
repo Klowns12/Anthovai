@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl'
 import { Hero } from '@/components/sections/Hero'
 import { About } from '@/components/sections/About'
+import { PlatformSection } from '@/components/sections/PlatformSection'
 import { Products } from '@/components/sections/Products'
 import { Process } from '@/components/sections/Process'
 import { ClientLogos } from '@/components/sections/ClientLogos'
@@ -21,6 +22,10 @@ export default function Home() {
       <TechStack />
       <Marquee items={marqueeItems} />
       <About />
+      {/* After About and before Services: a visitor learns who we are, then
+          the one thing they can start on their own today, then the work we do
+          alongside them. */}
+      <PlatformSection />
       <Services />
       <Process />
       <Manifesto />

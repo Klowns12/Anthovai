@@ -587,5 +587,17 @@
     },
     "closing_title": "Commencez par un document",
     "closing_body": "Rien à installer, aucun rendez-vous à prendre. Inscrivez-vous, téléversez, posez une question."
+  },
+  "platform": {
+    "label": "La plateforme",
+    "headline": "Un agent qui répond depuis vos propres documents",
+    "sub": "L'essentiel de ce que demandent vos clients est déjà écrit quelque part dans votre organisation. Téléversez-le et obtenez un agent qui y puise ses réponses — en citant le passage utilisé — derrière une API que votre site, votre application ou votre bot peut appeler.",
+    "points": [
+      "Téléversez un PDF, un fichier Word, ou une page de votre site",
+      "Posez des questions et voyez précisément les passages lus",
+      "Un POST vers /v1/chat, avec une clé que vous émettez vous-même"
+    ],
+    "cta": "Voir comment ça marche",
+    "cta_signup": "Créer un compte"
   }
 }

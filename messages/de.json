@@ -587,5 +587,17 @@
     },
     "closing_title": "Beginnen Sie mit einem Dokument",
     "closing_body": "Nichts zu installieren, kein Termin nötig. Registrieren, hochladen, fragen."
+  },
+  "platform": {
+    "label": "Die Plattform",
+    "headline": "Ein Agent, der aus Ihren eigenen Dokumenten antwortet",
+    "sub": "Das meiste, was Kunden fragen, steht in Ihrer Organisation schon irgendwo geschrieben. Laden Sie es hoch und erhalten Sie einen Agenten, der daraus antwortet — mit Verweis auf die genutzte Textstelle — hinter einer API, die Ihre Website, App oder Ihr Bot aufrufen kann.",
+    "points": [
+      "Laden Sie ein PDF, eine Word-Datei oder eine Seite Ihrer Website hoch",
+      "Stellen Sie Fragen und sehen Sie genau, welche Passagen gelesen wurden",
+      "Ein POST an /v1/chat, mit einem Schlüssel, den Sie selbst ausgeben"
+    ],
+    "cta": "So funktioniert es",
+    "cta_signup": "Konto erstellen"
   }
 }
