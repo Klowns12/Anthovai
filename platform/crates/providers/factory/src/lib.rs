@@ -42,6 +42,12 @@ impl Environment {
     fn allows_fakes(self) -> bool {
         !matches!(self, Self::Production)
     }
+
+    /// For the callers that gate on production without caring about fakes —
+    /// durable storage, say, which staging can reasonably do without.
+    pub fn is_production(self) -> bool {
+        matches!(self, Self::Production)
+    }
 }
 
 /// The embedding provider this deployment should use.

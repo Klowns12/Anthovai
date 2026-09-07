@@ -60,6 +60,27 @@ async fn main() -> anyhow::Result<()> {
     }
     db.ping().await.context("the database is not answering")?;
 
+    let environment = anthovai_providers::Environment::from_env();
+
+    // Local disk is the right default for a developer and a data-loss bug in a
+    // container: the filesystem goes away on the next deploy, taking every
+    // document a customer uploaded with it. Nothing reports that. The documents
+    // rows survive, so the knowledge base still lists them, and the failure
+    // surfaces later as `file_missing` on a re-embed — long after the file that
+    // could have been re-uploaded is the only copy anyone had.
+    //
+    // Refused rather than warned about, for the same reason as an unpriced
+    // model: by the time the symptom appears the damage cannot be undone.
+    if environment.is_production() && settings.storage.provider == "local" {
+        anyhow::bail!(
+            concat!(
+                "storage.provider is \"local\", which stores customer documents on the ",
+                "container's own filesystem and loses them on the next deploy. Set ",
+                "ANTHOVAI__STORAGE__PROVIDER=s3 with the endpoint, bucket and credentials."
+            )
+        );
+    }
+
     // Opened at startup so a misconfigured bucket stops the deployment rather
     // than surfacing as a failed upload an hour later.
     let storage = anthovai_storage::from_settings(&settings.storage)
@@ -70,7 +91,6 @@ async fn main() -> anyhow::Result<()> {
     let diagnostic_storage = std::sync::Arc::clone(&storage);
 
     let clock = Clock::system();
-    let environment = anthovai_providers::Environment::from_env();
 
     // The same embedder that built the index has to answer questions against
     // it — a knowledge base embedded by one model and searched by another

@@ -1,0 +1,25 @@
+# Line endings are content here, not formatting.
+#
+# `sqlx` records a checksum of each migration's bytes and refuses to run against
+# a database whose recorded checksum differs. Without this file the working tree
+# gets CRLF on Windows and LF on Linux, so the same commit produces two
+# different checksums — and whichever machine migrated first locks every other
+# one out with "migration 1 was previously applied but has been modified".
+#
+# Caught by a container refusing to start against a database a Windows checkout
+# had already migrated. The same hazard applies to anything hashed or signed, so
+# the rule is the whole tree rather than just `migrations/`.
+* text=auto eol=lf
+
+# Binary, and must never be touched.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.pdf binary
+*.docx binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
