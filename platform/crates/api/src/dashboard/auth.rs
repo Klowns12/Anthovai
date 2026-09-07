@@ -25,6 +25,13 @@ pub fn router() -> Router<AppState> {
         .route("/auth/signup", post(sign_up))
         .route("/auth/login", post(sign_in))
         .route("/auth/logout", post(sign_out))
+        // Asking for a confirmation email, and confirming with the token from
+        // one. The second takes no session: a link is followed in whatever
+        // browser opened the mail, which is very often not the one that signed
+        // up. Requiring a session there would send people to a login page
+        // holding a single-use token that their next click would waste.
+        .route("/auth/verify/request", post(request_verification))
+        .route("/auth/verify", post(confirm_verification))
         .route("/me", get(me))
 }
 
@@ -267,4 +274,111 @@ fn no_store(response: &mut Response) {
     if let Ok(value) = "no-store".parse() {
         response.headers_mut().insert(header::CACHE_CONTROL, value);
     }
+}
+
+// ---- email verification ---------------------------------------------------
+
+/// Deliberately mean. Each request sends mail to a real address, so this is
+/// both a way to spend money and a way to use us to send someone else post.
+const VERIFY_REQUESTS: u32 = 5;
+const VERIFY_WINDOW_SECS: i64 = 3_600;
+
+/// Confirmations are cheap to attempt and worth guessing at, so the ceiling is
+/// higher but still a ceiling.
+const CONFIRM_ATTEMPTS: u32 = 30;
+const CONFIRM_WINDOW_SECS: i64 = 3_600;
+
+#[derive(Serialize)]
+struct VerificationRequested {
+    /// Whether a message actually left the process. False when no mail
+    /// transport is configured, so the dashboard can avoid telling somebody to
+    /// check an inbox nothing was sent to.
+    sent: bool,
+    /// Already verified, so nothing was issued and nothing needed to be.
+    already_verified: bool,
+}
+
+async fn request_verification(
+    State(state): State<AppState>,
+    session: SessionUser,
+) -> Result<Response, ApiError> {
+    enforce(
+        &state,
+        &format!("verify:{}", session.user.id.to_db()),
+        VERIFY_REQUESTS,
+        VERIFY_WINDOW_SECS,
+        &session.request_id,
+    )?;
+
+    let issued = state
+        .auth
+        .request_email_verification(session.user.id)
+        .await
+        .map_err(|e| ApiError::from_domain(e, session.request_id.clone()))?;
+
+    let Some(issued) = issued else {
+        return Ok(Json(VerificationRequested {
+            sent: false,
+            already_verified: true,
+        })
+        .into_response());
+    };
+
+    // The link points at the website. A person following it wants a page that
+    // says what happened, and this API has none.
+    let link = format!(
+        "{}/verify?token={}",
+        state.site_url.trim_end_matches('/'),
+        issued.token
+    );
+
+    // A send that fails must not be reported as sent, and must not take the
+    // token with it: the customer can ask again, and the log holds the link
+    // either way.
+    if let Err(e) = state
+        .mailer
+        .send(anthovai_auth::mail::confirmation_letter(
+            &issued.email,
+            &link,
+        ))
+        .await
+    {
+        tracing::error!(error = %e, "could not send the confirmation email");
+        return Err(ApiError::from_domain(e, session.request_id.clone()));
+    }
+
+    Ok(Json(VerificationRequested {
+        sent: state.mailer.delivers(),
+        already_verified: false,
+    })
+    .into_response())
+}
+
+#[derive(Deserialize)]
+struct ConfirmRequest {
+    token: String,
+}
+
+async fn confirm_verification(
+    State(state): State<AppState>,
+    ReqId(request_id): ReqId,
+    headers: HeaderMap,
+    Json(body): Json<ConfirmRequest>,
+) -> Result<Response, ApiError> {
+    let client = client_key(&headers);
+    enforce(
+        &state,
+        &format!("verify-confirm:{client}"),
+        CONFIRM_ATTEMPTS,
+        CONFIRM_WINDOW_SECS,
+        &request_id,
+    )?;
+
+    state
+        .auth
+        .verify_email(body.token.trim())
+        .await
+        .map_err(|e| ApiError::from_domain(e, request_id.clone()))?;
+
+    Ok(StatusCode::NO_CONTENT.into_response())
 }

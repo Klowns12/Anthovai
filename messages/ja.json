@@ -5,7 +5,6 @@
   "nav": {
     "products": "プロダクト",
     "solutions": "ソリューション",
-    "klang": "クラウン言語",
     "about": "会社について",
     "careers": "採用情報",
     "contact": "お問い合わせ"
@@ -52,25 +51,6 @@
       "tag": "オペレーションスイート",
       "name": "KlownsNexus",
       "desc": "完全なビジネスオペレーションスイート。"
-    }
-  },
-  "klang": {
-    "tag": "ANTHOVAI製 · プログラミング言語",
-    "headline": "Klang — ひとつの言語、すべてのプラットフォーム。",
-    "sub": "C言語の速度、Pythonの可読性、組み込みAIプリミティブを持つ、モダンな静的型付けコンパイル言語。",
-    "cta": "Klangを探索",
-    "stat_tests": "テスト合格",
-    "stat_targets": "コンパイルターゲット",
-    "stat_stdlib": "標準ライブラリ関数",
-    "stat_version": "セルフホスティング",
-    "target_native": "ネイティブバイナリ",
-    "target_llvm": "LLVM IR",
-    "target_wasm": "Webアセンブリ",
-    "pillars": {
-      "speed": "Cレベル速度",
-      "readable": "Python可読性",
-      "safe": "型安全",
-      "ai": "AIネイティブプリミティブ"
     }
   },
   "process": {
@@ -342,67 +322,6 @@
       "email": "contact@anthovai.com",
       "location": "バンコク、タイ",
       "hours": "月〜金 9:00–18:00 ICT"
-    }
-  },
-  "klang_page": {
-    "hero_label": "私たちが作った言語",
-    "hero_headline": "すべてを動かすために作った言語。",
-    "hero_body": "モダンな静的型付けコンパイル言語。",
-    "pillars_label": "言語の柱",
-    "pillars": {
-      "speed": {
-        "title": "速度",
-        "desc": "ネイティブバイナリにコンパイル。"
-      },
-      "readability": {
-        "title": "可読性",
-        "desc": "Python風のクリーンな構文。"
-      },
-      "structure": {
-        "title": "構造",
-        "desc": "ファーストクラスの構造体と型安全。"
-      },
-      "ai": {
-        "title": "AIネイティブ",
-        "desc": "組み込みAIプリミティブ。"
-      }
-    },
-    "targets_label": "コンパイルターゲット",
-    "targets": {
-      "native": {
-        "title": "ネイティブバイナリ",
-        "desc": "最大パフォーマンスのマシンコード。"
-      },
-      "llvm": {
-        "title": "LLVM IR",
-        "desc": "クロスプラットフォーム最適化。"
-      },
-      "wasm": {
-        "title": "Webアセンブリ",
-        "desc": "ブラウザで実行。"
-      }
-    },
-    "install_label": "はじめに",
-    "install_command": "カール -sSf https://klang.kkg/install.sh |しー",
-    "docs_cta": "ドキュメント",
-    "ecosystem_label": "エコシステム",
-    "ecosystem": {
-      "klang": {
-        "name": "Klang",
-        "desc": "コンパイラとツールチェーン。"
-      },
-      "rumba": {
-        "name": "Aello",
-        "desc": "公式IDE。"
-      },
-      "arkai": {
-        "name": "アルカイAI",
-        "desc": "AIプラットフォーム。"
-      },
-      "ocean": {
-        "name": "Ocean OS",
-        "desc": "OS コンポーネント。"
-      }
     }
   },
   "marquee": {

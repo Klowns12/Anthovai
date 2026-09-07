@@ -5,7 +5,6 @@
   "nav": {
     "products": "Produits",
     "solutions": "Solutions",
-    "klang": "Langue des Klowns",
     "about": "À propos",
     "careers": "Carrières",
     "contact": "Nous contacter"
@@ -52,25 +51,6 @@
       "tag": "SUITE OPÉRATIONS",
       "name": "KlownsNexus",
       "desc": "Suite complète d'opérations commerciales."
-    }
-  },
-  "klang": {
-    "tag": "CONSTRUIT PAR ANTHOVAI · LANGAGE DE PROGRAMMATION",
-    "headline": "Klang — Un langage. Chaque plateforme.",
-    "sub": "Un langage compilé, typé statiquement, avec la vitesse du C, la lisibilité de Python et des primitives IA intégrées.",
-    "cta": "Explorer Klang",
-    "stat_tests": "Tests réussis",
-    "stat_targets": "Cibles de compilation",
-    "stat_stdlib": "Fonctions Stdlib",
-    "stat_version": "Auto-hébergement",
-    "target_native": "Binaire natif",
-    "target_llvm": "LLVM IR",
-    "target_wasm": "Assemblage Web",
-    "pillars": {
-      "speed": "Vitesse niveau C",
-      "readable": "Lisibilité Python",
-      "safe": "Sûreté des types",
-      "ai": "Primitives IA natives"
     }
   },
   "process": {
@@ -342,67 +322,6 @@
       "email": "contact@anthovai.com",
       "location": "Bangkok, Thaïlande",
       "hours": "Lun-Ven, 9:00-18:00 ICT"
-    }
-  },
-  "klang_page": {
-    "hero_label": "LE LANGAGE QUE NOUS AVONS CRÉÉ",
-    "hero_headline": "Le langage conçu pour tout alimenter.",
-    "hero_body": "Un langage compilé moderne et typé statiquement.",
-    "pillars_label": "PILIERS",
-    "pillars": {
-      "speed": {
-        "title": "Vitesse",
-        "desc": "Compilation en binaires natifs."
-      },
-      "readability": {
-        "title": "Lisibilité",
-        "desc": "Syntaxe inspirée de Python."
-      },
-      "structure": {
-        "title": "Structure",
-        "desc": "Structs et sûreté des types."
-      },
-      "ai": {
-        "title": "IA native",
-        "desc": "Primitives IA intégrées."
-      }
-    },
-    "targets_label": "CIBLES DE COMPILATION",
-    "targets": {
-      "native": {
-        "title": "Binaire natif",
-        "desc": "Code machine pour performance maximale."
-      },
-      "llvm": {
-        "title": "LLVM IR",
-        "desc": "Optimisation multi-plateforme."
-      },
-      "wasm": {
-        "title": "Assemblage Web",
-        "desc": "Exécution dans le navigateur."
-      }
-    },
-    "install_label": "COMMENCER",
-    "install_command": "curl -sSf https://klang.kkg/install.sh | merde",
-    "docs_cta": "Lire la documentation",
-    "ecosystem_label": "ÉCOSYSTÈME",
-    "ecosystem": {
-      "klang": {
-        "name": "Klang",
-        "desc": "Compilateur et toolchain."
-      },
-      "rumba": {
-        "name": "Aello",
-        "desc": "IDE officiel."
-      },
-      "arkai": {
-        "name": "Arkaï IA",
-        "desc": "Plateforme IA."
-      },
-      "ocean": {
-        "name": "Ocean OS",
-        "desc": "Composants OS."
-      }
     }
   },
   "marquee": {

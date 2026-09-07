@@ -46,6 +46,12 @@ argon2_memory_kib = 65536
 concurrency = 4
 poll_interval_ms = 500
 
+[mail]
+# No SMTP server by default: a developer gets the confirmation link in the log
+# rather than a mail provider account. Set smtp_url to send for real.
+from = "Anthovai <no-reply@anthovai.com>"
+site_url = "http://localhost:3000"
+
 [providers.openai]
 api_key_env = "OPENAI_API_KEY"
 base_url = "https://api.openai.com/v1"

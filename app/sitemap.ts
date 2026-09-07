@@ -11,8 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contact',
     '/products',
     '/solutions',
-    '/klang',
-    '/klang/docs',
     '/expertise/enterprise-software',
     '/expertise/enterprise-software/healthcare',
     '/expertise/enterprise-software/retail',

@@ -554,3 +554,84 @@ db_test!(async fn a_key_with_no_scopes_is_refused_at_creation(db) {
         .expect_err("a key that can do nothing is a mistake, not a feature");
     assert_eq!(err.code(), "invalid_request");
 });
+
+// ---- email verification ---------------------------------------------------
+
+db_test!(async fn a_token_proves_the_address_once_and_only_once(db) {
+    let auth = AuthService::new(db.clone(), Clock::system(), config());
+    let email = unique_email();
+    let user_id = auth
+        .sign_up(&email, "correct horse battery", None)
+        .await
+        .expect("sign up");
+
+    let issued = auth
+        .request_email_verification(user_id)
+        .await
+        .expect("request")
+        .expect("a fresh account has something to prove");
+    assert_eq!(issued.email, email);
+
+    auth.verify_email(&issued.token).await.expect("verify");
+
+    let user = auth.find_user(user_id).await.expect("find").expect("exists");
+    assert!(user.email_verified_at.is_some(), "the address should now be proved");
+
+    // A second use is not an error. A mail client that prefetches the link
+    // would otherwise consume it before the customer ever clicked, and they
+    // would be told their own confirmation link was invalid.
+    auth.verify_email(&issued.token)
+        .await
+        .expect("a second click on a link that already worked is not a failure");
+});
+
+db_test!(async fn asking_again_kills_the_link_that_was_sent_before(db) {
+    // Someone who asks for a second email is usually saying they think the
+    // first went astray. Leaving the first token alive would mean a link they
+    // have reason to distrust still opens their account.
+    let auth = AuthService::new(db.clone(), Clock::system(), config());
+    let user_id = auth
+        .sign_up(&unique_email(), "correct horse battery", None)
+        .await
+        .expect("sign up");
+
+    let first = auth.request_email_verification(user_id).await.unwrap().unwrap();
+    let second = auth.request_email_verification(user_id).await.unwrap().unwrap();
+    assert_ne!(first.token, second.token);
+
+    auth.verify_email(&first.token)
+        .await
+        .expect_err("the superseded link must not work");
+    auth.verify_email(&second.token).await.expect("the current link works");
+});
+
+db_test!(async fn an_invented_token_is_refused_and_says_nothing(db) {
+    let auth = AuthService::new(db.clone(), Clock::system(), config());
+    let error = auth
+        .verify_email("0000000000000000000000000000000000000000000000000000000000000000")
+        .await
+        .expect_err("a token nobody issued must not verify anybody");
+
+    // The same message an expired token gets. Telling the two apart would let
+    // somebody probe the table for tokens that were once real.
+    let rendered = format!("{error:?}");
+    assert!(
+        rendered.contains("verification_token_invalid"),
+        "unexpected error: {rendered}"
+    );
+});
+
+db_test!(async fn an_already_verified_account_is_issued_nothing(db) {
+    let auth = AuthService::new(db.clone(), Clock::system(), config());
+    let user_id = auth
+        .sign_up(&unique_email(), "correct horse battery", None)
+        .await
+        .expect("sign up");
+    auth.mark_email_verified(user_id).await.expect("verify by hand");
+
+    let issued = auth.request_email_verification(user_id).await.expect("request");
+    assert!(
+        issued.is_none(),
+        "there is nothing left to prove, and a token issued anyway is a working          link mailed on the strength of a request anyone with a session can repeat"
+    );
+});

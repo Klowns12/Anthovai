@@ -5,7 +5,6 @@
   "nav": {
     "products": "产品",
     "solutions": "解决方案",
-    "klang": "小丑语言",
     "about": "关于我们",
     "careers": "加入我们",
     "contact": "联系我们"
@@ -52,25 +51,6 @@
       "tag": "运营套件",
       "name": "KlownsNexus",
       "desc": "完整的业务运营套件。"
-    }
-  },
-  "klang": {
-    "tag": "ANTHOVAI 出品 · 编程语言",
-    "headline": "Klang — 一种语言，每个平台。",
-    "sub": "一种现代的、静态类型的编译语言，具有C的速度、Python的可读性和内置AI原语。",
-    "cta": "探索 Klang",
-    "stat_tests": "通过测试",
-    "stat_targets": "编译目标",
-    "stat_stdlib": "标准库函数",
-    "stat_version": "自举编译",
-    "target_native": "原生二进制",
-    "target_llvm": "LLVM红外",
-    "target_wasm": "网络组装",
-    "pillars": {
-      "speed": "C级速度",
-      "readable": "Python可读性",
-      "safe": "类型安全",
-      "ai": "AI原生原语"
     }
   },
   "process": {
@@ -342,67 +322,6 @@
       "email": "contact@anthovai.com",
       "location": "泰国 曼谷",
       "hours": "周一至周五, 9:00-18:00 ICT"
-    }
-  },
-  "klang_page": {
-    "hero_label": "我们构建的语言",
-    "hero_headline": "驱动一切的语言。",
-    "hero_body": "现代的、静态类型的编译编程语言。",
-    "pillars_label": "语言支柱",
-    "pillars": {
-      "speed": {
-        "title": "速度",
-        "desc": "编译为原生二进制，C级性能。"
-      },
-      "readability": {
-        "title": "可读性",
-        "desc": "Python启发的简洁语法。"
-      },
-      "structure": {
-        "title": "结构",
-        "desc": "一等结构体和类型安全。"
-      },
-      "ai": {
-        "title": "AI原生",
-        "desc": "内置AI原语。"
-      }
-    },
-    "targets_label": "编译目标",
-    "targets": {
-      "native": {
-        "title": "原生二进制",
-        "desc": "最大性能的机器码。"
-      },
-      "llvm": {
-        "title": "LLVM红外",
-        "desc": "跨平台优化。"
-      },
-      "wasm": {
-        "title": "网络组装",
-        "desc": "浏览器运行。"
-      }
-    },
-    "install_label": "开始使用",
-    "install_command": "卷曲-sSf https://klang.kkg/install.sh |嘘",
-    "docs_cta": "阅读文档",
-    "ecosystem_label": "生态系统",
-    "ecosystem": {
-      "klang": {
-        "name": "Klang",
-        "desc": "编译器和工具链。"
-      },
-      "rumba": {
-        "name": "Aello",
-        "desc": "官方IDE。"
-      },
-      "arkai": {
-        "name": "阿尔凯人工智能",
-        "desc": "AI平台。"
-      },
-      "ocean": {
-        "name": "Ocean OS",
-        "desc": "操作系统组件。"
-      }
     }
   },
   "marquee": {

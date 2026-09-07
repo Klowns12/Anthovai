@@ -5,7 +5,6 @@
   "nav": {
     "products": "제품",
     "solutions": "솔루션",
-    "klang": "클라운스 언어",
     "about": "소개",
     "careers": "채용",
     "contact": "문의하기"
@@ -52,25 +51,6 @@
       "tag": "운영 스위트",
       "name": "KlownsNexus",
       "desc": "완전한 비즈니스 운영 스위트."
-    }
-  },
-  "klang": {
-    "tag": "ANTHOVAI 제작 · 프로그래밍 언어",
-    "headline": "Klang — 하나의 언어. 모든 플랫폼.",
-    "sub": "C의 속도, Python의 가독성, 내장 AI 프리미티브를 갖춘 현대적 정적 타입 컴파일 언어.",
-    "cta": "Klang 탐색",
-    "stat_tests": "통과 테스트",
-    "stat_targets": "컴파일 타겟",
-    "stat_stdlib": "Stdlib 함수",
-    "stat_version": "셀프 호스팅",
-    "target_native": "네이티브 바이너리",
-    "target_llvm": "LLVM IR",
-    "target_wasm": "웹어셈블리",
-    "pillars": {
-      "speed": "C 수준 속도",
-      "readable": "Python 가독성",
-      "safe": "타입 안전",
-      "ai": "AI 네이티브 프리미티브"
     }
   },
   "process": {
@@ -342,67 +322,6 @@
       "email": "contact@anthowai.com",
       "location": "태국 방콕",
       "hours": "월~금, 9:00~18:00 ICT"
-    }
-  },
-  "klang_page": {
-    "hero_label": "우리가 만든 언어",
-    "hero_headline": "모든 것을 구동하기 위해 만든 언어.",
-    "hero_body": "현대적인 정적 타입 컴파일 프로그래밍 언어.",
-    "pillars_label": "언어 기둥",
-    "pillars": {
-      "speed": {
-        "title": "속도",
-        "desc": "네이티브 바이너리로 컴파일."
-      },
-      "readability": {
-        "title": "가독성",
-        "desc": "Python 영감의 깔끔한 구문."
-      },
-      "structure": {
-        "title": "구조",
-        "desc": "일급 구조체와 타입 안전."
-      },
-      "ai": {
-        "title": "AI 네이티브",
-        "desc": "내장 AI 프리미티브."
-      }
-    },
-    "targets_label": "컴파일 타겟",
-    "targets": {
-      "native": {
-        "title": "네이티브 바이너리",
-        "desc": "최대 성능의 머신 코드."
-      },
-      "llvm": {
-        "title": "LLVM IR",
-        "desc": "크로스 플랫폼 최적화."
-      },
-      "wasm": {
-        "title": "웹어셈블리",
-        "desc": "브라우저에서 실행."
-      }
-    },
-    "install_label": "시작하기",
-    "install_command": "컬 -sSf https://klang.kkg/install.sh | 쉿",
-    "docs_cta": "문서 읽기",
-    "ecosystem_label": "에코시스템",
-    "ecosystem": {
-      "klang": {
-        "name": "Klang",
-        "desc": "컴파일러와 도구 체인."
-      },
-      "rumba": {
-        "name": "Aello",
-        "desc": "공식 IDE."
-      },
-      "arkai": {
-        "name": "아르카이 AI",
-        "desc": "AI 플랫폼."
-      },
-      "ocean": {
-        "name": "Ocean OS",
-        "desc": "OS 컴포넌트."
-      }
     }
   },
   "marquee": {

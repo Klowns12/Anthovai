@@ -40,6 +40,52 @@ pub struct Settings {
     pub worker: WorkerSettings,
     #[serde(default)]
     pub providers: ProviderSettings,
+    #[serde(default)]
+    pub mail: MailSettings,
+}
+
+/// Where confirmation emails go out through.
+///
+/// Every field optional: a deployment without a mail provider still starts, and
+/// logs the messages it would have sent rather than refusing to run. That is
+/// the right trade for the one email this platform sends — but it is announced
+/// at startup, because silently not sending is indistinguishable from sending.
+#[derive(Clone, Debug, Deserialize)]
+pub struct MailSettings {
+    /// `smtp.provider.com:587`. Empty or absent means nothing is sent.
+    #[serde(default)]
+    pub smtp_url: Option<String>,
+    #[serde(default)]
+    pub username: Option<String>,
+    #[serde(default)]
+    pub password: Option<String>,
+    #[serde(default = "default_mail_from")]
+    pub from: String,
+    /// Where a confirmation link points — the website, not this API. The link
+    /// is followed by a person in a browser, and the page that thanks them
+    /// belongs to the site they signed up on.
+    #[serde(default = "default_site_url")]
+    pub site_url: String,
+}
+
+fn default_mail_from() -> String {
+    "Anthovai <no-reply@anthovai.com>".to_owned()
+}
+
+fn default_site_url() -> String {
+    "http://localhost:3000".to_owned()
+}
+
+impl Default for MailSettings {
+    fn default() -> Self {
+        Self {
+            smtp_url: None,
+            username: None,
+            password: None,
+            from: default_mail_from(),
+            site_url: default_site_url(),
+        }
+    }
 }
 
 #[derive(Clone, Debug, Deserialize)]

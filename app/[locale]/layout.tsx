@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       template: '%s | Anthovai',
     },
     description: t('description'),
-    keywords: ['AI', 'Software', 'Infrastructure', 'Enterprise', 'Thailand', 'Klowns Language', 'Kaiser Klowns'],
+    keywords: ['AI', 'Software', 'Infrastructure', 'Enterprise', 'Thailand', 'Kaiser Klowns'],
     authors: [{ name: 'Anthovai', url: 'https://anthovai.com' }],
     openGraph: {
       type: 'website',

@@ -128,6 +128,16 @@ async fn main() -> anyhow::Result<()> {
         },
     );
 
+    // Built before the state so a bad From address or an unreachable relay is a
+    // startup failure, not a surprise on the first customer's first signup.
+    let mailer = anthovai_auth::mail::from_settings(&anthovai_auth::MailSettings {
+        smtp_url: settings.mail.smtp_url.clone(),
+        username: settings.mail.username.clone(),
+        password: settings.mail.password.clone(),
+        from: settings.mail.from.clone(),
+    })
+    .context("could not configure outgoing mail")?;
+
     let state = AppState::new(
         Services {
             auth,
@@ -152,6 +162,8 @@ async fn main() -> anyhow::Result<()> {
         },
         clock,
         settings.server.dashboard_origins.clone(),
+        mailer,
+        settings.mail.site_url.clone(),
     );
 
     let addr: SocketAddr = format!("{}:{}", settings.server.host, settings.server.port)

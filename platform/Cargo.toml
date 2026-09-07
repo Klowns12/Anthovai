@@ -115,6 +115,10 @@ tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
 config = { version = "0.15", default-features = false, features = ["toml"] }
 dotenvy = "0.15"
+# rustls to match reqwest, so one TLS stack is compiled in rather than two.
+# `ring` is the crypto provider and `rustls-native-certs` reads the system
+# trust store — which is why the runtime image installs ca-certificates.
+lettre = { version = "0.11", default-features = false, features = ["smtp-transport", "tokio1-rustls", "ring", "rustls-native-certs", "builder", "hostname"] }
 
 # crypto / util
 sha2 = "0.10"

@@ -5,15 +5,19 @@
 
 pub mod api_key;
 pub mod cache;
+pub mod mail;
 pub mod password;
 pub mod repo;
 pub mod service;
 pub mod session;
+pub mod verification;
 
 pub use api_key::{from_authorization_header, generate, hash_key, Environment, GeneratedApiKey};
 pub use cache::ApiKeyCache;
 pub use service::{AuthConfig, AuthService, CreateApiKey, IssuedApiKey};
+pub use mail::{Letter, LoggingMailer, MailSettings, Mailer};
 pub use session::{NewSession, Session};
+pub use verification::{NewVerification, Verification};
 
 use anthovai_core::{
     AgentScope, ApiKeyId, DomainError, OrgId, Plan, Result, Scope, UserId, WorkspaceId,

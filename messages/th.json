@@ -5,7 +5,6 @@
   "nav": {
     "products": "Products",
     "solutions": "Solutions",
-    "klang": "Klowns Language",
     "about": "About",
     "careers": "Careers",
     "contact": "ปรึกษาวิศวกร"
@@ -47,21 +46,6 @@
       "tag": "OPERATIONS SUITE",
       "name": "KlownsNexus",
       "desc": "ชุดปฏิบัติการทางธุรกิจแบบครบจบในที่เดียว — ประกอบด้วยเครื่องมือสำนักงาน, การจัดการโครงงาน, และการทำงานร่วมกันผ่านแพลตฟอร์มเดียว"
-    }
-  },
-  "klang": {
-    "tag": "BUILT BY ANTHOVAI · PROGRAMMING LANGUAGE",
-    "headline": "Klang — หนึ่งภาษา ครอบคลุมทุกแพลตฟอร์ม",
-    "sub": "ภาษาที่ล้ำสมัยประเภท Statically-typed ที่ถูกคอมไพล์แล้ว ด้วยความเร็วเทียบเท่า C แต่อ่านง่ายเหมือน Python พร้อมความสามารถ AI ในตัว นี่คือขุมพลังพื้นฐานของระบบนิเวศ Anthovai",
-    "cta": "Explore Klang",
-    "target_native": "Native Binary",
-    "target_llvm": "LLVM IR",
-    "target_wasm": "WebAssembly",
-    "pillars": {
-      "speed": "เร็วระดับ C-Level",
-      "readable": "อ่านง่ายแบบ Python",
-      "safe": "ปลอดภัยด้าน Type",
-      "ai": "AI-Native Primitives"
     }
   },
   "impact": {
@@ -228,25 +212,45 @@
         "title": "Healthcare",
         "desc": "ระบบจัดการสารสนเทศโรงพยาบาล (HIS), พอร์ทัลผู้ป่วยที่รองรับ PDPA และเวิร์กโฟลว์คลินิก\n→ มีลูกค้าอ้างอิงจริง: คณะพยาบาลศาสตร์",
         "did": "เราออกแบบระบบเวชระเบียนอิเล็กทรอนิกส์ที่มีความปลอดภัยสูง พร้อมเข้ารหัส และเพิ่มประสิทธิภาพเวิร์กโฟลว์ทางคลินิกสำหรับสถาบันการแพทย์ขนาดใหญ่",
-        "tags": ["HIS Systems", "Patient Portals", "PDPA Compliant", "Health Data"]
+        "tags": [
+          "HIS Systems",
+          "Patient Portals",
+          "PDPA Compliant",
+          "Health Data"
+        ]
       },
       "education": {
         "title": "Education",
         "desc": "ระบบจัดการข้อมูลนักศึกษา, digital infrastructure สำหรับมหาวิทยาลัย\n→ มีลูกค้าจริง: ราชภัฏร้อยเอ็ด",
         "did": "เราร่วมสร้างแพลตฟอร์มรับสมัครนักศึกษาและระบบจัดการข้อมูลการศึกษา ที่รองรับผู้ใช้งานพร้อมกันหลักหมื่นคนในช่วงลงทะเบียนเรียน",
-        "tags": ["Student Portals", "Admissions System", "High Concurrency", "E-Learning"]
+        "tags": [
+          "Student Portals",
+          "Admissions System",
+          "High Concurrency",
+          "E-Learning"
+        ]
       },
       "government": {
         "title": "Government",
         "desc": "Secure public sector platforms โครงสร้างสำหรับหน่วยงานรัฐ รองรับทิศทาง e-GP",
         "did": "เราพัฒนาระบบแลกเปลี่ยนข้อมูลส่วนกลางและพอร์ทัลบริการประชาชน ที่มาพร้อมระบบตรวจสอบย้อนหลังที่เชื่อถือได้และการยืนยันตัวตน",
-        "tags": ["e-GP Integration", "Citizen Portals", "Secure Data", "Audit Trails"]
+        "tags": [
+          "e-GP Integration",
+          "Citizen Portals",
+          "Secure Data",
+          "Audit Trails"
+        ]
       },
       "manufacturing": {
         "title": "Manufacturing",
         "desc": "ERP, supply chain, IoT integration, production management systems\n→ มีลูกค้าจริง: Bellco, CH, Vista",
         "did": "เราสร้างระบบบริหารจัดการคลังสินค้าและสายการผลิตสำหรับผู้ผลิตสิ่งทอ — โดดเด่นด้วยการติดตามผลแบบ Real-time, ระบบสแกนบาร์โค้ด และการกำหนดสิทธิ์ผู้ใช้งาน",
-        "tags": ["ERP Solutions", "IoT Integration", "Supply Chain", "Warehouse Management"]
+        "tags": [
+          "ERP Solutions",
+          "IoT Integration",
+          "Supply Chain",
+          "Warehouse Management"
+        ]
       }
     },
     "process_label": "LAYER 3",
@@ -322,67 +326,6 @@
       "email": "contact@anthovai.com",
       "location": "Bangkok, Thailand",
       "hours": "Mon–Fri, 9:00–18:00 ICT"
-    }
-  },
-  "klang_page": {
-    "hero_label": "THE LANGUAGE WE BUILT",
-    "hero_headline": "ภาษาใหม่ล่าสุด เพื่อขับเคลื่อนขุมพลังในรูปแบบใหม่",
-    "hero_body": "Klang เป็นภาการเชื่อมต่อโปรแกรมใหม่ แบบ Statically-typed ที่ถูกนำมาคอมไพล์ — เพื่อเพิ่มศักยภาพของการทำงาน, ตีความหมายง่าย, สำหรับสั่งเพื่อการทำงานด้าน AI ได้",
-    "pillars_label": "LANGUAGE PILLARS",
-    "pillars": {
-      "speed": {
-        "title": "ความรวดเร็ว",
-        "desc": "ใช้เวลาประมวลผลโค้ดไปสู่โปรแกรมด้วยมาตรฐานที่เหนือชั้น"
-      },
-      "readability": {
-        "title": "การเข้าถึงที่ตรงประเด็น",
-        "desc": "ใช้งานแบบ Clean และ Python-inspired syntax ที่อำนวยต่อการเขียน พลิกอ่าน และดูแลในระดับจัดการได้"
-      },
-      "structure": {
-        "title": "จัดวางระบบการทำงานอย่างถูกต้อง",
-        "desc": "First-class structs, รูปแบบและโครงสร้าง รวมถึงระบบจัดการในตัวของเทคโนโลยี"
-      },
-      "ai": {
-        "title": "รองรับระบบปัญญาประดิษฐ์ในสายเลือด",
-        "desc": "ปรับให้เป็นโครงสร้างการบริหารจัดการ AI ไปจนถึงการคาดคะเน ไม่ต้องอาศัยโครงข่ายย่อยในการลงข้อมูลเพิ่มเติม"
-      }
-    },
-    "targets_label": "COMPILE TARGETS",
-    "targets": {
-      "native": {
-        "title": "Native Binary",
-        "desc": "เพื่อแสดงความเสถียรต่อระบบการประมวลผลโดยเฉพาะ"
-      },
-      "llvm": {
-        "title": "LLVM IR",
-        "desc": "รองรับฐานข้อมูลมาตรฐาน (LLVM Backend) เพื่อสิทธิภาพของการกระจายฐานข้อมูลผ่านการประมวลผล"
-      },
-      "wasm": {
-        "title": "WebAssembly",
-        "desc": "รับส่งข้อมูลรันโค้ดและส่งลงเข้าในเบราว์เซอร์ได้สมบูรณ์แบบต่อการให้พื้นที่ขนาดเล็กสุดได้"
-      }
-    },
-    "install_label": "GET STARTED",
-    "install_command": "curl -sSf https://klang.kkg/install.sh | sh",
-    "docs_cta": "Read the Docs",
-    "ecosystem_label": "ECOSYSTEM",
-    "ecosystem": {
-      "klang": {
-        "name": "Klang",
-        "desc": "โปรแกรมสำหรับดำเนินการแปลงคอมไพล์ รวมถึงระบบเครื่องมือจัดการฐานข้อมูลทั้งหมด"
-      },
-      "rumba": {
-        "name": "Aello",
-        "desc": "ซอฟต์แวร์แอปพลิเคชันรูปแบบใหม่ (Klang IDE) สำหรับกำหนดแบบองค์รวมของภาษา"
-      },
-      "arkai": {
-        "name": "Arkai AI",
-        "desc": "การปูฐาน AI platform ซึ่งครอบคลุมจุดศูนย์กลางของ Klang"
-      },
-      "ocean": {
-        "name": "Ocean OS",
-        "desc": "ควบคุมคอมโพเนนต์และการประสานงานระหว่างเคอร์เนล โดยถูกตีความเป็นภาษา Klang"
-      }
     }
   },
   "marquee": {

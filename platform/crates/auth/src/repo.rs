@@ -10,6 +10,7 @@ use sqlx::Row;
 
 use crate::api_key::Environment;
 use crate::session::{NewSession, Session};
+use crate::verification::{NewVerification, Verification};
 use crate::{ApiKeyRecord, KeyStatus, User};
 
 // ---- users ----------------------------------------------------------------
@@ -442,4 +443,102 @@ pub async fn touch_api_key(db: &mut TenantDb<'_>, key_id: ApiKeyId) -> Result<()
 
 fn sql(err: sqlx::Error) -> DomainError {
     DomainError::Database(err)
+}
+
+// ---- email verification ---------------------------------------------------
+
+pub async fn insert_verification(
+    db: &mut SystemDb<'_>,
+    verification: &NewVerification,
+) -> Result<()> {
+    sqlx::query(
+        "INSERT INTO email_verifications (token_hash, user_id, email, expires_at)
+         VALUES ($1, $2, $3, $4)",
+    )
+    .bind(&verification.token_hash)
+    .bind(verification.user_id.to_db())
+    .bind(&verification.email)
+    .bind(verification.expires_at)
+    .execute(db.conn())
+    .await
+    .map_err(|e| on_missing_reference(e, "user"))?;
+    Ok(())
+}
+
+pub async fn find_verification(
+    db: &mut SystemDb<'_>,
+    token_hash: &str,
+) -> Result<Option<Verification>> {
+    let row = sqlx::query(
+        "SELECT user_id, email, expires_at, consumed_at
+         FROM email_verifications WHERE token_hash = $1",
+    )
+    .bind(token_hash)
+    .fetch_optional(db.conn())
+    .await?;
+
+    row.map(|row| {
+        Ok(Verification {
+            user_id: id(&row, "user_id")?,
+            email: row.try_get("email")?,
+            expires_at: row.try_get("expires_at")?,
+            consumed_at: row.try_get("consumed_at")?,
+        })
+    })
+    .transpose()
+}
+
+/// Mark a token used, but only if it has not been used already.
+///
+/// The condition is in the UPDATE rather than in a preceding SELECT, so two
+/// requests arriving together cannot both find it unconsumed and both proceed.
+/// Returns whether this call is the one that consumed it.
+pub async fn consume_verification(
+    db: &mut SystemDb<'_>,
+    token_hash: &str,
+    now: DateTime<Utc>,
+) -> Result<bool> {
+    let result = sqlx::query(
+        "UPDATE email_verifications SET consumed_at = $2
+         WHERE token_hash = $1 AND consumed_at IS NULL",
+    )
+    .bind(token_hash)
+    .bind(now)
+    .execute(db.conn())
+    .await?;
+
+    Ok(result.rows_affected() == 1)
+}
+
+/// Void every outstanding token for a user.
+///
+/// Called when a new one is issued, so asking for a second email does not leave
+/// the first link alive — a customer who requested a new one because they
+/// suspected the old had gone astray would otherwise have achieved nothing.
+pub async fn invalidate_verifications(
+    db: &mut SystemDb<'_>,
+    user_id: UserId,
+    now: DateTime<Utc>,
+) -> Result<u64> {
+    let result = sqlx::query(
+        "UPDATE email_verifications SET consumed_at = $2
+         WHERE user_id = $1 AND consumed_at IS NULL",
+    )
+    .bind(user_id.to_db())
+    .bind(now)
+    .execute(db.conn())
+    .await?;
+
+    Ok(result.rows_affected())
+}
+
+pub async fn purge_expired_verifications(
+    db: &mut SystemDb<'_>,
+    now: DateTime<Utc>,
+) -> Result<u64> {
+    let result = sqlx::query("DELETE FROM email_verifications WHERE expires_at < $1")
+        .bind(now)
+        .execute(db.conn())
+        .await?;
+    Ok(result.rows_affected())
 }

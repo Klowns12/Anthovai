@@ -6,8 +6,13 @@ interface AuthShellProps {
   title: string
   intro: string
   children: React.ReactNode
-  /** The other door: "already have an account?" and its mirror. */
-  footer: React.ReactNode
+  /**
+   * The other door: "already have an account?" and its mirror.
+   *
+   * Optional, because not every page in this frame has one. The confirmation
+   * result is an end, not a fork.
+   */
+  footer?: React.ReactNode
 }
 
 /**
@@ -34,7 +39,9 @@ export function AuthShell({ label, title, intro, children, footer }: AuthShellPr
 
             {children}
 
-            <p className="text-sm text-white-60 mt-8">{footer}</p>
+            {/* An empty paragraph would still take its margin, leaving a
+                gap under a page that simply has nothing more to say. */}
+            {footer && <p className="text-sm text-white-60 mt-8">{footer}</p>}
           </FadeUp>
         </div>
       </section>

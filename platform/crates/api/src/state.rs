@@ -22,6 +22,9 @@ pub struct AppState {
     pub chat: Arc<ChatService>,
     pub conversations: Arc<ConversationService>,
     pub limits: Arc<RateLimiter>,
+    pub mailer: Arc<dyn anthovai_auth::Mailer>,
+    /// Where a confirmation link points: the website, not this API.
+    pub site_url: Arc<String>,
     /// The HTTP client used to fetch customer-supplied URLs. One per process:
     /// it holds the connection pool, and it is the only client configured to
     /// refuse redirects so the SSRF guard sees every hop.
@@ -72,6 +75,8 @@ impl AppState {
         services: Services,
         clock: anthovai_core::Clock,
         dashboard_origins: Vec<String>,
+        mailer: Arc<dyn anthovai_auth::Mailer>,
+        site_url: String,
     ) -> Self {
         Self {
             auth: Arc::new(services.auth),
@@ -82,6 +87,8 @@ impl AppState {
             conversations: Arc::new(services.conversations),
             diagnostics: Arc::new(services.diagnostics),
             limits: Arc::new(RateLimiter::new(clock.clone())),
+            mailer,
+            site_url: Arc::new(site_url),
             // A failure here means the TLS backend did not initialise, which
             // is fatal at startup and must not be quietly downgraded to a
             // default client — that one follows redirects, which would walk

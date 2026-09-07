@@ -11,7 +11,6 @@ import { cn } from '@/lib/utils'
 const navLinks = [
   // { href: '/products', key: 'products' },
   { href: '/solutions', key: 'solutions' },
-  { href: '/klang', key: 'klang' },
   { href: '/about', key: 'about' },
   { href: '/careers', key: 'careers' },
 ] as const

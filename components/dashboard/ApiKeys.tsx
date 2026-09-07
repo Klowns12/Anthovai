@@ -110,16 +110,7 @@ export function ApiKeys({
     <div className="space-y-8">
       {issued && <IssuedKeyPanel issued={issued} onDismiss={() => setIssued(null)} />}
 
-      {!emailVerified && (
-        <div className="bg-gold-dim border border-gold-border rounded-lg p-6">
-          <p className="text-white">Confirm your email address first</p>
-          <p className="text-sm text-white-60 mt-2 leading-relaxed">
-            A live key can call your agents and spend your allowance, so the
-            platform will not issue one until the address on the account has
-            been confirmed.
-          </p>
-        </div>
-      )}
+      {!emailVerified && <ConfirmAddress />}
 
       {keys.length === 0 && !creating && !issued && (
         <Empty
@@ -348,6 +339,79 @@ function IssuedKeyPanel({
       >
         I have saved it
       </button>
+    </div>
+  )
+}
+
+
+/**
+ * The one thing standing between a new account and a live key.
+ *
+ * It offers to send the email rather than only explaining why the buttons are
+ * disabled — the previous version of this panel said what was wrong and gave
+ * no way to fix it, which is a dead end dressed as an explanation.
+ */
+function ConfirmAddress() {
+  const [state, setState] = useState<'idle' | 'sending' | 'sent' | 'logged'>('idle')
+  const [error, setError] = useState<string | null>(null)
+
+  async function send() {
+    setError(null)
+    setState('sending')
+    try {
+      const result = await api.post<{ sent: boolean; already_verified: boolean }>(
+        '/auth/verify/request'
+      )
+      if (result.already_verified) {
+        // Verified in another tab, or by an administrator. Reloading is the
+        // honest response: this whole panel should no longer be here.
+        window.location.reload()
+        return
+      }
+      // `sent: false` means the platform has no mail transport configured. It
+      // logged the link instead, and telling someone to check an inbox nothing
+      // was sent to would waste their afternoon.
+      setState(result.sent ? 'sent' : 'logged')
+    } catch (failure) {
+      setError(explain(failure))
+      setState('idle')
+    }
+  }
+
+  return (
+    <div className="bg-gold-dim border border-gold-border rounded-lg p-6">
+      <p className="text-white">Confirm your email address first</p>
+      <p className="text-sm text-white-60 mt-2 leading-relaxed">
+        A live key can call your agents and spend your allowance, so the
+        platform will not issue one until the address on the account has been
+        confirmed. A test key works today and needs none of this.
+      </p>
+
+      {state === 'sent' && (
+        <p className="text-sm text-white mt-4">
+          Sent. The link works once and expires in a day.
+        </p>
+      )}
+
+      {state === 'logged' && (
+        <p className="text-sm text-white mt-4">
+          This deployment has no mail server configured, so nothing was sent —
+          the link is in the platform&rsquo;s log.
+        </p>
+      )}
+
+      {state !== 'sent' && state !== 'logged' && (
+        <Button
+          size="sm"
+          className="mt-4"
+          onClick={send}
+          disabled={state === 'sending'}
+        >
+          {state === 'sending' ? 'Sending…' : 'Send confirmation email'}
+        </Button>
+      )}
+
+      {error && <p className="text-sm text-gold mt-3">{error}</p>}
     </div>
   )
 }

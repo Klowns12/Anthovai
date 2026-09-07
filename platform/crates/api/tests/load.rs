@@ -241,6 +241,10 @@ async fn ready(db: &Db) -> (Router, String, String, OrgId) {
         },
         clock,
         vec!["https://app.anthovai.com".to_owned()],
+        // Nothing here sends mail; the logging mailer records what it would
+        // have sent and reports that it did not.
+        std::sync::Arc::new(anthovai_auth::mail::LoggingMailer),
+        "http://localhost:3000".to_owned(),
     );
 
     let auth = Arc::clone(&state.auth);

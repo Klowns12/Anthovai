@@ -16,6 +16,7 @@ use crate::cache::ApiKeyCache;
 use crate::password::{self, PasswordHasherConfig};
 use crate::repo::{self, ApiKeySummary, NewApiKey};
 use crate::session::{self, NewSession};
+use crate::verification::{self, NewVerification};
 use crate::User;
 
 #[derive(Clone, Copy, Debug)]
@@ -172,10 +173,127 @@ impl AuthService {
     /// The magic-link endpoint calls this when a token comes back (P3). Until
     /// that exists it is also how a deployment gets its first live API key, so
     /// it stays a first-class service method rather than a test-only hook.
+    /// Look a user up by id. The dashboard reads the session's user from the
+    /// session; this is for the paths that hold an id and nothing else.
+    pub async fn find_user(&self, user_id: UserId) -> Result<Option<User>> {
+        let mut db = self.db.system().await?;
+        let user = repo::find_user(&mut db, user_id).await?;
+        db.commit().await?;
+        Ok(user)
+    }
+
     pub async fn mark_email_verified(&self, user_id: UserId) -> Result<()> {
         let mut db = self.db.system().await?;
         repo::mark_email_verified(&mut db, user_id).await?;
         db.commit().await
+    }
+
+    /// Issue a fresh verification token for a user, voiding any outstanding
+    /// ones.
+    ///
+    /// Returns the token to be put in a link. It is never stored and never
+    /// returned again, so a caller that drops it has to ask for another.
+    ///
+    /// An already-verified account is not an error and does not get a token —
+    /// there is nothing left to prove, and issuing one anyway would email a
+    /// working link to an address on the strength of a request that anybody
+    /// holding a session could repeat.
+    pub async fn request_email_verification(
+        &self,
+        user_id: UserId,
+    ) -> Result<Option<NewVerification>> {
+        let now = self.clock.now();
+        let mut db = self.db.system().await?;
+
+        let user = repo::find_user(&mut db, user_id)
+            .await?
+            .ok_or(DomainError::NotFound("user"))?;
+
+        if user.email_verified_at.is_some() {
+            db.commit().await?;
+            return Ok(None);
+        }
+
+        repo::invalidate_verifications(&mut db, user_id, now).await?;
+        let issued = verification::issue(user_id, &user.email, now);
+        repo::insert_verification(&mut db, &issued).await?;
+        db.commit().await?;
+
+        Ok(Some(issued))
+    }
+
+    /// Accept a token and mark the address proved.
+    ///
+    /// Every failure returns the same error. A caller learns whether the token
+    /// worked and nothing else: distinguishing "expired" from "never existed"
+    /// would let somebody test guesses against the table and learn which ones
+    /// were once real.
+    ///
+    /// The exception is a token that this same request already consumed a
+    /// moment ago, which is reported as success — mail clients and security
+    /// scanners follow links before a person does, and a customer whose link
+    /// "stopped working" because their own mail provider opened it first is
+    /// being punished for something they cannot see.
+    pub async fn verify_email(&self, token: &str) -> Result<UserId> {
+        let now = self.clock.now();
+        let hash = verification::hash_token(token);
+        let mut db = self.db.system().await?;
+
+        let Some(found) = repo::find_verification(&mut db, &hash).await? else {
+            return Err(DomainError::rejected(
+                "verification_token_invalid",
+                "That confirmation link is not valid. It may have expired or already been used.",
+            ));
+        };
+
+        if found.is_expired(now) {
+            return Err(DomainError::rejected(
+                "verification_token_invalid",
+                "That confirmation link is not valid. It may have expired or already been used.",
+            ));
+        }
+
+        // The address may have changed since the token was issued, in which
+        // case it proves an address the account no longer has.
+        let user = repo::find_user(&mut db, found.user_id)
+            .await?
+            .ok_or_else(|| DomainError::rejected(
+                "verification_token_invalid",
+                "That confirmation link is not valid. It may have expired or already been used.",
+            ))?;
+
+        if !user.email.eq_ignore_ascii_case(&found.email) {
+            return Err(DomainError::rejected(
+                "verification_token_invalid",
+                "That confirmation link is not valid. It may have expired or already been used.",
+            ));
+        }
+
+        if user.email_verified_at.is_some() {
+            // Already done, by this token or another. Nothing to change.
+            db.commit().await?;
+            return Ok(found.user_id);
+        }
+
+        if !repo::consume_verification(&mut db, &hash, now).await? {
+            // Consumed by a concurrent request. That request is doing the same
+            // work, so this one has nothing to add and nothing to complain of.
+            db.commit().await?;
+            return Ok(found.user_id);
+        }
+
+        repo::mark_email_verified(&mut db, found.user_id).await?;
+        db.commit().await?;
+
+        Ok(found.user_id)
+    }
+
+    /// Remove verification tokens that expired. Housekeeping, like sessions.
+    pub async fn purge_expired_verifications(&self) -> Result<u64> {
+        let mut db = self.db.system().await?;
+        let removed = repo::purge_expired_verifications(&mut db, self.clock.now()).await?;
+        db.commit().await?;
+        Ok(removed)
     }
 
     pub async fn sign_out(&self, token: &str) -> Result<()> {

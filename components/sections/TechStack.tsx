@@ -16,8 +16,7 @@ const techStack = [
   { name: 'Kubernetes', src: 'https://cdn.simpleicons.org/kubernetes/06060A' },
   { name: 'Google Cloud', src: 'https://cdn.simpleicons.org/googlecloud/06060A' },
   { name: 'TensorFlow', src: 'https://cdn.simpleicons.org/tensorflow/06060A' },
-  { name: 'PyTorch', src: 'https://cdn.simpleicons.org/pytorch/06060A' },
-  { name: 'Klang', src: '/Klowns-Language.png' }
+  { name: 'PyTorch', src: 'https://cdn.simpleicons.org/pytorch/06060A' }
 ]
 
 export function TechStack() {
