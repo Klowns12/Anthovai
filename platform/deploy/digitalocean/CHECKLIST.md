@@ -195,9 +195,14 @@ missing from `ANTHOVAI__SERVER__DASHBOARD_ORIGINS`.
 
 ## Known, and not blocking
 
-- **Live keys cannot be issued.** `mark_email_verified` has no HTTP route and
-  there is no mailer, so a real customer can only get a `test` key. Test keys
-  work fully. This is the next thing worth building.
+- **Confirmation emails need an SMTP server.** Without
+  `ANTHOVAI__MAIL__SMTP_URL` the platform logs the link instead of sending it
+  and says so — at startup, and in its answer to the dashboard, which then
+  tells the customer rather than sending them to an empty inbox. Live keys
+  require a confirmed address, so this is the last thing between a real
+  customer and a live key. Four variables: `SMTP_URL`, `USERNAME`,
+  `PASSWORD`, `FROM`, all under `ANTHOVAI__MAIL__`. `ANTHOVAI__MAIL__SITE_URL`
+  must be the public site, since that is where the link points.
 - **Prices came from third-party trackers**, accepted on 2026-09-07, not from
   OpenAI's own page. Reconcile against the first real invoice.
 - **`gpt-5.5` is legacy** now that OpenAI's pricing page has moved to

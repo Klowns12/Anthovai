@@ -70,6 +70,28 @@ envs:
     scope: RUN_TIME
     value: https://www.anthovai.com,https://anthovai.com
 
+  # Confirmation email. Without SMTP_URL the link is written to the log and
+  # the dashboard says so — a live API key needs a confirmed address, so this
+  # is what stands between a real customer and one.
+  - key: ANTHOVAI__MAIL__SMTP_URL
+    scope: RUN_TIME
+    value: CHANGE_ME_smtp.provider.com:587
+  - key: ANTHOVAI__MAIL__USERNAME
+    scope: RUN_TIME
+    type: SECRET
+    value: CHANGE_ME_smtp_username
+  - key: ANTHOVAI__MAIL__PASSWORD
+    scope: RUN_TIME
+    type: SECRET
+    value: CHANGE_ME_smtp_password
+  - key: ANTHOVAI__MAIL__FROM
+    scope: RUN_TIME
+    value: Anthovai <no-reply@anthovai.com>
+  # Where the confirmation link points: the website, not this API.
+  - key: ANTHOVAI__MAIL__SITE_URL
+    scope: RUN_TIME
+    value: https://www.anthovai.com
+
   - key: OPENAI_API_KEY
     scope: RUN_TIME
     type: SECRET
