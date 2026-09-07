@@ -22,8 +22,18 @@
 # Names confirmed live on 2026-09-05: all three answered, reported non-zero
 # usage, and returned a finish reason we map.
 #
-# Prices NOT confirmed. The figures below are placeholders and are wrong.
-# Set `priced_on` on each row once they have been checked.
+# Prices below were read on 2026-09-07 from two independent trackers that agree
+# to the cent (benchlm.ai, updated 2026-09-03; aipricing.guru, updated
+# 2026-09-04). They are NOT from OpenAI's own page, which refused the request —
+# so `priced_on` is deliberately still absent and production still will not
+# start. Check these three rows against the figures on your own OpenAI billing
+# page and add `priced_on = "…"` to each; that field means a person looked, and
+# nothing else should ever set it.
+#
+# One thing those pages also said: gpt-5.5 is kept as legacy after OpenAI's
+# current page moved on to gpt-5.6. It still answers — the live provider test
+# calls it — but the large tier is sitting on a model the vendor has moved past,
+# which is worth a decision before customers depend on it.
 
 [[models]]
 id = "openai-small"
@@ -32,8 +42,8 @@ name = "gpt-5.4-nano"
 tier = "small"
 max_context_tokens = 400000
 max_output_tokens = 128000
-input_price_micro_per_mtok = 0
-output_price_micro_per_mtok = 0
+input_price_micro_per_mtok = 200000
+output_price_micro_per_mtok = 1250000
 enabled = true
 priority = 0
 
@@ -44,8 +54,8 @@ name = "gpt-5.4-mini"
 tier = "medium"
 max_context_tokens = 400000
 max_output_tokens = 128000
-input_price_micro_per_mtok = 0
-output_price_micro_per_mtok = 0
+input_price_micro_per_mtok = 750000
+output_price_micro_per_mtok = 4500000
 enabled = true
 priority = 0
 
@@ -56,8 +66,8 @@ name = "gpt-5.5"
 tier = "large"
 max_context_tokens = 400000
 max_output_tokens = 128000
-input_price_micro_per_mtok = 0
-output_price_micro_per_mtok = 0
+input_price_micro_per_mtok = 5000000
+output_price_micro_per_mtok = 30000000
 enabled = true
 priority = 0
 
