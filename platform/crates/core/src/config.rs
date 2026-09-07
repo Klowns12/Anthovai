@@ -154,9 +154,57 @@ impl Settings {
             .add_source(
                 config::Environment::with_prefix("ANTHOVAI")
                     .separator("__")
-                    .try_parsing(true),
+                    .try_parsing(true)
+                    // Without this a `Vec` field cannot come from the
+                    // environment at all, and `dashboard_origins` is exactly
+                    // the field a deployment needs to set: it is the origin
+                    // allowlist every dashboard request is checked against, so
+                    // a new domain would otherwise mean rebuilding the image.
+                    .list_separator(",")
+                    .with_list_parse_key("server.dashboard_origins"),
             )
             .build()?
             .try_deserialize()
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// The environment has to be able to set the origin allowlist.
+    ///
+    /// It is a `Vec`, and `config`'s environment source will not build one
+    /// without being told what separates the items — so before
+    /// `list_separator` this variable was accepted and then ignored, leaving
+    /// the compiled-in default in place. The symptom would have been every
+    /// dashboard request from the real site refused with `origin_not_allowed`,
+    /// with the setting plainly visible in the deployment's own configuration.
+    ///
+    /// Serialised: `std::env` is process-wide and these tests share it.
+    #[test]
+    fn the_origin_allowlist_can_come_from_the_environment() {
+        static GUARD: std::sync::Mutex<()> = std::sync::Mutex::new(());
+        let _held = GUARD.lock().unwrap_or_else(|e| e.into_inner());
+
+        let key = "ANTHOVAI__SERVER__DASHBOARD_ORIGINS";
+        // SAFETY: guarded above, and restored before the lock is released.
+        unsafe {
+            std::env::set_var(key, "https://www.anthovai.com,https://anthovai.com");
+        }
+        let settings = Settings::load_from("../../config");
+        unsafe {
+            std::env::remove_var(key);
+        }
+
+        let settings = settings.expect("configuration should load");
+        assert_eq!(
+            settings.server.dashboard_origins,
+            vec![
+                "https://www.anthovai.com".to_owned(),
+                "https://anthovai.com".to_owned(),
+            ],
+            "one comma-separated value must become two origins, not one"
+        );
     }
 }

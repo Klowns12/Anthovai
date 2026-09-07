@@ -1,0 +1,142 @@
+# DigitalOcean App Platform — the Anthovai platform (API + worker).
+#
+# The marketing site stays on Vercel. This is only the part Vercel cannot run:
+# a long-lived Rust process, a worker that polls every 500ms, PostgreSQL with
+# pgvector, and durable object storage.
+#
+#   doctl apps spec validate --spec app.yaml
+#   doctl apps create --spec app.yaml
+#   doctl apps update <app-id> --spec app.yaml
+#
+# Values marked CHANGE ME must be set before the first deploy. Secrets are NOT
+# in this file and must not be: it is committed. Set them once in the App
+# Platform UI (Settings → App-Level Environment Variables) or with
+# `doctl apps update --spec` after replacing the placeholders locally.
+
+name: anthovai-platform
+
+# Singapore: the closest region to customers in Thailand, and the same place to
+# put the database and the bucket — a request that crosses an ocean twice on
+# every retrieval is the cheapest latency there is to not spend.
+region: sgp
+
+# Set once at the app level so both components see the same values. A worker
+# that disagrees with the API about which database or bucket to use is a class
+# of bug that takes a day to find.
+envs:
+  - key: ANTHOVAI_ENV
+    scope: RUN_TIME
+    value: production
+
+  # The app's own login role — NOT doadmin. See CHECKLIST.md; this is the one
+  # setting where a convenient choice silently removes tenant isolation.
+  - key: ANTHOVAI__DATABASE__URL
+    scope: RUN_TIME
+    type: SECRET
+    value: CHANGE_ME_postgresql://anthovai_api:PASSWORD@HOST:25060/anthovai?sslmode=require
+
+  # Migrations create extensions and roles, which the app's role deliberately
+  # cannot do. They are applied by hand as an admin, once per release.
+  - key: ANTHOVAI__DATABASE__RUN_MIGRATIONS_ON_START
+    scope: RUN_TIME
+    value: "false"
+
+  # DigitalOcean Spaces speaks S3. `region` is the Spaces region, not "auto".
+  - key: ANTHOVAI__STORAGE__PROVIDER
+    scope: RUN_TIME
+    value: s3
+  - key: ANTHOVAI__STORAGE__ENDPOINT
+    scope: RUN_TIME
+    value: https://sgp1.digitaloceanspaces.com
+  - key: ANTHOVAI__STORAGE__REGION
+    scope: RUN_TIME
+    value: sgp1
+  - key: ANTHOVAI__STORAGE__BUCKET
+    scope: RUN_TIME
+    value: CHANGE_ME_anthovai-prod
+  - key: AWS_ACCESS_KEY_ID
+    scope: RUN_TIME
+    type: SECRET
+    value: CHANGE_ME_spaces_access_key
+  - key: AWS_SECRET_ACCESS_KEY
+    scope: RUN_TIME
+    type: SECRET
+    value: CHANGE_ME_spaces_secret_key
+
+  # Every dashboard request carries an Origin, and one that is not on this list
+  # is refused with `origin_not_allowed`. Both hosts, because a visitor who
+  # types the bare domain is not redirected before the request is made.
+  - key: ANTHOVAI__SERVER__DASHBOARD_ORIGINS
+    scope: RUN_TIME
+    value: https://www.anthovai.com,https://anthovai.com
+
+  - key: OPENAI_API_KEY
+    scope: RUN_TIME
+    type: SECRET
+    value: CHANGE_ME_sk-proj-...
+
+  # Signs session cookies. Changing it signs every customer out at once, so it
+  # is generated once and then left alone: `openssl rand -base64 48`.
+  - key: SESSION_SECRET
+    scope: RUN_TIME
+    type: SECRET
+    value: CHANGE_ME_generate_with_openssl_rand_base64_48
+
+  - key: RUST_LOG
+    scope: RUN_TIME
+    value: info,anthovai=info,sqlx=warn
+
+services:
+  - name: api
+    github:
+      repo: Klowns12/Anthovai
+      branch: main
+      deploy_on_push: true
+
+    # The repository root is the Next.js site; the platform is a subdirectory,
+    # and the Dockerfile's COPY paths are relative to `platform/`.
+    source_dir: platform
+    dockerfile_path: platform/docker/Dockerfile
+
+    http_port: 8080
+    instance_count: 1
+    # The API measured about 4 MB resident under load, so this is almost
+    # entirely headroom — raise it when concurrency does, not before.
+    instance_size_slug: apps-s-1vcpu-1gb
+
+    # Liveness only, which is what a restart should be decided on. Readiness
+    # reaches the database, storage and the providers, and restarting the API
+    # because the database blinked would turn a small outage into a large one.
+    health_check:
+      http_path: /internal/health
+      initial_delay_seconds: 20
+      period_seconds: 15
+      timeout_seconds: 3
+      failure_threshold: 3
+
+    routes:
+      - path: /
+
+workers:
+  - name: worker
+    github:
+      repo: Klowns12/Anthovai
+      branch: main
+      deploy_on_push: true
+
+    source_dir: platform
+    dockerfile_path: platform/docker/Dockerfile
+
+    # Same image, different binary. Which one runs is a property of the
+    # deployment, not of the build.
+    run_command: anthovai-worker
+
+    instance_count: 1
+    instance_size_slug: apps-s-1vcpu-1gb
+
+# The database is NOT declared here on purpose.
+#
+# A `databases:` block binds ${db.DATABASE_URL}, which is doadmin — a superuser,
+# and a superuser bypasses row-level security outright. Every customer would see
+# every other customer's data, with no error anywhere. Create the cluster
+# separately and give the app its own login role; CHECKLIST.md has the SQL.

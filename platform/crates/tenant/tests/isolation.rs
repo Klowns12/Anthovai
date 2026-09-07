@@ -349,6 +349,62 @@ db_test!(async fn the_application_roles_cannot_bypass_the_policies(db) {
     }
 });
 
+db_test!(async fn a_connection_that_forgets_to_set_a_role_sees_nothing(db) {
+    // The system policies are written `TO anthovai_system`, and PostgreSQL
+    // matches a policy's role list by *membership* — not by which role the
+    // session is currently running as. The application connects as one login
+    // role that is a member of both `anthovai_app` and `anthovai_system`,
+    // because `SET ROLE` requires membership; so before
+    // `0006_system_policies_need_the_role.sql` every `USING (true)` system
+    // policy was already in force on the bare connection, before any SET ROLE.
+    //
+    // Found while preparing a managed-database deployment: on a database with
+    // 74 knowledge bases across several tenants, a query on the plain
+    // connection with no tenant pinned returned all 74. `NOINHERIT` on the
+    // login role does not help — it governs privileges, not policy matching.
+    //
+    // The tenant policy alone yields nothing here, since `app_tenant_id()` is
+    // NULL and `tenant_id = NULL` matches no row. So "nothing" is the correct
+    // answer for a query that has chosen neither a role nor a tenant, and
+    // anything above zero means a permissive policy is letting it through.
+    const GUARDED: &[&str] = &[
+        "knowledge_bases",
+        "documents",
+        "api_keys",
+        "organizations",
+        "workspaces",
+        "usage_counters",
+        "subscriptions",
+    ];
+
+    // Seed one visible row so a zero cannot come from an empty table.
+    let service = TenantService::new(db.clone());
+    let alice = seed_user(&db).await;
+    service
+        .create_organization(
+            alice,
+            "Forgetful test",
+            &format!("forgetful-{}", OrgId::new().to_db().to_lowercase()),
+        )
+        .await
+        .expect("create");
+
+    // The pool's own connection: no SET ROLE, no tenant pinned. Exactly what a
+    // repository method that skipped `db.tenant()` would be running on.
+    for table in GUARDED {
+        let sql = format!("SELECT count(*) FROM {table}");
+        let visible: i64 = anthovai_db::sqlx::query_scalar(&sql)
+            .fetch_one(db.pool())
+            .await
+            .unwrap_or_else(|e| panic!("`{table}`: {e}"));
+
+        assert_eq!(
+            visible, 0,
+            "`{table}` returned {visible} rows to a connection that pinned no              tenant and switched to no role. Every tenant's rows are reachable              from any query that forgets to go through `db.tenant()`."
+        );
+    }
+});
+
 db_test!(async fn the_system_role_can_read_the_tables_it_sweeps(db) {
     // A `FORCE ROW LEVEL SECURITY` table with no policy for the system role
     // does not refuse that role. It returns an empty result set, successfully.
