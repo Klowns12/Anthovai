@@ -8,6 +8,14 @@
  * customer's organization until they happen to switch.
  *
  * A POST, because a GET would let any image tag on any page sign a customer out.
+ *
+ * It answers with a redirect and is driven by a plain form, not by `fetch` and
+ * a client-side navigation. That was the first version, and it signed people
+ * out only sometimes: the router's navigation cancelled the request, Chrome
+ * reported `ERR_ABORTED`, and a discarded response takes its `Set-Cookie`
+ * headers with it. A form post has no such race — the browser applies the
+ * cookies on the redirect it is already following — and it works without
+ * JavaScript.
  */
 
 import { NextRequest, NextResponse } from 'next/server'
@@ -31,7 +39,15 @@ export async function POST(request: NextRequest) {
     }
   }
 
-  const response = new NextResponse(null, { status: 204 })
+  // 303 so the browser follows with GET rather than repeating the POST.
+  const form = await request.formData().catch(() => null)
+  const requested = String(form?.get('next') ?? '/signin')
+  // Only ever a path on this site; an absolute URL here would be an open
+  // redirect on a route anyone can post to.
+  const next =
+    requested.startsWith('/') && !requested.startsWith('//') ? requested : '/signin'
+
+  const response = NextResponse.redirect(new URL(next, request.nextUrl.origin), 303)
 
   for (const name of [SESSION_COOKIE, ORG_COOKIE]) {
     response.cookies.set(name, '', {
