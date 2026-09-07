@@ -1,10 +1,7 @@
 import { useTranslations } from 'next-intl'
-import { Link } from '@/i18n/navigation'
 import { Button } from '../ui/Button'
-import { StaggerChildren, staggerItem } from '../animations/StaggerChildren'
-import { FadeUp } from '../animations/FadeUp'
+import { StaggerChildren } from '../animations/StaggerChildren'
 import { GlobeCanvas } from '../globe/GlobeCanvas'
-import { Counter } from '../ui/Counter'
 
 export function Hero() {
   const t = useTranslations('hero')

@@ -9,7 +9,6 @@ export const metadata: Metadata = {
 }
 
 type Props = {
-  params: Promise<{ locale: string }>
   searchParams: Promise<{ token?: string }>
 }
 
@@ -25,8 +24,7 @@ type Props = {
  * bouncing them to a sign-in page would spend the single-use token on the
  * redirect.
  */
-export default async function VerifyPage({ params, searchParams }: Props) {
-  const { locale } = await params
+export default async function VerifyPage({ searchParams }: Props) {
   const { token } = await searchParams
 
   const outcome = token ? await confirm(token) : 'missing'

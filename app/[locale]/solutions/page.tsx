@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl'
 import { FadeUp } from '@/components/animations/FadeUp'
 import { StaggerChildren, staggerItem } from '@/components/animations/StaggerChildren'
 import { Process } from '@/components/sections/Process'
-import { Cpu, Server, Shield, Database, ArrowRight, Library, Factory, Building2, Activity, Plus } from 'lucide-react'
+import { Cpu, Server, Database, ArrowRight, Library, Factory, Building2, Activity } from 'lucide-react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 

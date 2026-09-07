@@ -532,10 +532,7 @@ pub async fn invalidate_verifications(
     Ok(result.rows_affected())
 }
 
-pub async fn purge_expired_verifications(
-    db: &mut SystemDb<'_>,
-    now: DateTime<Utc>,
-) -> Result<u64> {
+pub async fn purge_expired_verifications(db: &mut SystemDb<'_>, now: DateTime<Utc>) -> Result<u64> {
     let result = sqlx::query("DELETE FROM email_verifications WHERE expires_at < $1")
         .bind(now)
         .execute(db.conn())

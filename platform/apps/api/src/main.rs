@@ -72,13 +72,11 @@ async fn main() -> anyhow::Result<()> {
     // Refused rather than warned about, for the same reason as an unpriced
     // model: by the time the symptom appears the damage cannot be undone.
     if environment.is_production() && settings.storage.provider == "local" {
-        anyhow::bail!(
-            concat!(
-                "storage.provider is \"local\", which stores customer documents on the ",
-                "container's own filesystem and loses them on the next deploy. Set ",
-                "ANTHOVAI__STORAGE__PROVIDER=s3 with the endpoint, bucket and credentials."
-            )
-        );
+        anyhow::bail!(concat!(
+            "storage.provider is \"local\", which stores customer documents on the ",
+            "container's own filesystem and loses them on the next deploy. Set ",
+            "ANTHOVAI__STORAGE__PROVIDER=s3 with the endpoint, bucket and credentials."
+        ));
     }
 
     // Opened at startup so a misconfigured bucket stops the deployment rather

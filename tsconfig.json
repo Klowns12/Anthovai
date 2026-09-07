@@ -7,6 +7,14 @@
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
+    // Dead imports accumulated quietly until thirteen of them had built up,
+    // including four in one file. `npm run type-check` now refuses them, so
+    // the count stays at zero without anyone remembering to look.
+    //
+    // `noUnusedParameters` is deliberately not enabled: an event handler that
+    // ignores its argument is ordinary React, and a rule that fires on correct
+    // code teaches people to ignore the rule.
+    "noUnusedLocals": true,
     "noEmit": true,
     "esModuleInterop": true,
     "moduleResolution": "bundler",

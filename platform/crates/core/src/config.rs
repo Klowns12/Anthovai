@@ -25,7 +25,9 @@ pub fn load_dotenv() {
         Ok(path) => tracing::info!(path = %path.display(), "loaded .env"),
         // Absent is the normal case in a deployment, and not worth a line.
         Err(e) if e.not_found() => {}
-        Err(e) => tracing::warn!(error = %e, "could not read .env; continuing with the environment as it is"),
+        Err(e) => {
+            tracing::warn!(error = %e, "could not read .env; continuing with the environment as it is")
+        }
     }
 }
 

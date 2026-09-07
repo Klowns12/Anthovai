@@ -257,10 +257,12 @@ impl AuthService {
         // case it proves an address the account no longer has.
         let user = repo::find_user(&mut db, found.user_id)
             .await?
-            .ok_or_else(|| DomainError::rejected(
+            .ok_or_else(|| {
+                DomainError::rejected(
                 "verification_token_invalid",
                 "That confirmation link is not valid. It may have expired or already been used.",
-            ))?;
+            )
+            })?;
 
         if !user.email.eq_ignore_ascii_case(&found.email) {
             return Err(DomainError::rejected(

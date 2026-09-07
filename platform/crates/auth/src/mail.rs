@@ -122,10 +122,9 @@ pub fn from_settings(settings: &MailSettings) -> Result<Arc<dyn Mailer>> {
 
     // STARTTLS rather than implicit TLS: it is what port 587 speaks, which is
     // what nearly every provider documents.
-    let mut builder = AsyncSmtpTransport::<Tokio1Executor>::starttls_relay(
-        url.split(':').next().unwrap_or(url),
-    )
-    .map_err(|e| DomainError::Internal(anyhow::anyhow!("SMTP relay `{url}`: {e}")))?;
+    let mut builder =
+        AsyncSmtpTransport::<Tokio1Executor>::starttls_relay(url.split(':').next().unwrap_or(url))
+            .map_err(|e| DomainError::Internal(anyhow::anyhow!("SMTP relay `{url}`: {e}")))?;
 
     if let Some(port) = url.split(':').nth(1).and_then(|p| p.parse::<u16>().ok()) {
         builder = builder.port(port);

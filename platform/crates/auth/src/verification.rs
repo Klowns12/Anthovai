@@ -85,7 +85,10 @@ mod tests {
     fn two_tokens_are_never_the_same() {
         let a = issue(user(), "a@example.com", Utc::now());
         let b = issue(user(), "a@example.com", Utc::now());
-        assert_ne!(a.token, b.token, "a predictable token is not a proof of anything");
+        assert_ne!(
+            a.token, b.token,
+            "a predictable token is not a proof of anything"
+        );
     }
 
     #[test]

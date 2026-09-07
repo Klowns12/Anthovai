@@ -24,6 +24,32 @@ impl<S: Send + Sync> FromRequestParts<S> for ReqId {
     }
 }
 
+/// The origin check on its own, for the routes that have no session to check.
+///
+/// `check_origin` used to run only inside the session extractors, which meant
+/// it never ran on sign-up, sign-in, or confirming an address — the three
+/// state-changing routes a caller reaches without a session. Signing somebody
+/// in from another site is a real thing to be able to do: the victim ends up
+/// authenticated as the attacker, and the documents they upload next land in
+/// the attacker's organization.
+///
+/// `SameSite=Lax` does not help here, because there is no cookie yet to
+/// withhold.
+pub struct SameOrigin;
+
+impl FromRequestParts<AppState> for SameOrigin {
+    type Rejection = ApiError;
+
+    async fn from_request_parts(
+        parts: &mut Parts,
+        state: &AppState,
+    ) -> Result<Self, Self::Rejection> {
+        let request_id = resolve_request_id(parts);
+        check_origin(parts, state).map_err(|err| ApiError::from_domain(err, request_id))?;
+        Ok(Self)
+    }
+}
+
 /// Public API authentication: `Authorization: Bearer av_live_…`.
 pub struct ApiKeyAuth {
     pub ctx: TenantCtx,

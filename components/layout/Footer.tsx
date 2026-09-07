@@ -22,7 +22,6 @@ const socialLinks = [
 export function Footer() {
   const t = useTranslations('footer')
   const navT = useTranslations('nav')
-  const ctaT = useTranslations('cta')
 
   return (
     <footer className="relative bg-bg overflow-hidden border-t border-white/[0.06]">

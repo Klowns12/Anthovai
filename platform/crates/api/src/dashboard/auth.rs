@@ -10,7 +10,7 @@ use chrono::Duration;
 use serde::{Deserialize, Serialize};
 
 use crate::error::ApiError;
-use crate::extract::{ReqId, SessionUser};
+use crate::extract::{ReqId, SameOrigin, SessionUser};
 use crate::state::AppState;
 
 /// Sign-in attempts allowed per window, per address and per client address.
@@ -51,6 +51,7 @@ struct SignUpResponse {
 
 async fn sign_up(
     State(state): State<AppState>,
+    _origin: SameOrigin,
     ReqId(request_id): ReqId,
     headers: HeaderMap,
     Json(body): Json<SignUpRequest>,
@@ -94,6 +95,7 @@ struct SignInResponse {
 
 async fn sign_in(
     State(state): State<AppState>,
+    _origin: SameOrigin,
     ReqId(request_id): ReqId,
     headers: HeaderMap,
     Json(body): Json<SignInRequest>,
@@ -361,6 +363,7 @@ struct ConfirmRequest {
 
 async fn confirm_verification(
     State(state): State<AppState>,
+    _origin: SameOrigin,
     ReqId(request_id): ReqId,
     headers: HeaderMap,
     Json(body): Json<ConfirmRequest>,

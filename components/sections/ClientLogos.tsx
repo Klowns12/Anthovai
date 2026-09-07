@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { FadeUp } from '../animations/FadeUp'
 import { cn } from '@/lib/utils'

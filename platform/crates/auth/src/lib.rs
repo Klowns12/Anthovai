@@ -14,8 +14,8 @@ pub mod verification;
 
 pub use api_key::{from_authorization_header, generate, hash_key, Environment, GeneratedApiKey};
 pub use cache::ApiKeyCache;
-pub use service::{AuthConfig, AuthService, CreateApiKey, IssuedApiKey};
 pub use mail::{Letter, LoggingMailer, MailSettings, Mailer};
+pub use service::{AuthConfig, AuthService, CreateApiKey, IssuedApiKey};
 pub use session::{NewSession, Session};
 pub use verification::{NewVerification, Verification};
 

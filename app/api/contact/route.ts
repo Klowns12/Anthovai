@@ -7,7 +7,7 @@ export async function POST(request: Request) {
     const body = await request.json()
     console.log('Form submission received:', body)
 
-    const { data, error } = await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: 'Anthovai <onboarding@resend.dev>', // Keep onboarding@resend.dev until domain is verified
       to: 'kaiserklowns@gmail.com', // Must be kaiserklowns@gmail.com until domain is verified
       subject: `[Contact Form] ${body.subject} from ${body.name}`,

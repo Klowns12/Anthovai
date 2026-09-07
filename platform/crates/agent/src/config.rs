@@ -331,16 +331,26 @@ mod tests {
             "behavior": { "strict_knowledge": false }
         });
 
-        let parsed: AgentConfig = serde_json::from_value(sent).expect("a partial behavior is valid");
+        let parsed: AgentConfig =
+            serde_json::from_value(sent).expect("a partial behavior is valid");
 
-        assert!(!parsed.behavior.strict_knowledge, "the field that was sent wins");
-        assert!(parsed.behavior.citations, "the fields that were not stay as configured");
+        assert!(
+            !parsed.behavior.strict_knowledge,
+            "the field that was sent wins"
+        );
+        assert!(
+            parsed.behavior.citations,
+            "the fields that were not stay as configured"
+        );
         assert_eq!(parsed.behavior.history_turns, 6);
         assert_eq!(
             parsed.behavior.fallback_message,
             BehaviorConfig::default().fallback_message
         );
-        assert_eq!(parsed.retrieval.top_k, 8, "an object left out entirely is still defaulted");
+        assert_eq!(
+            parsed.retrieval.top_k, 8,
+            "an object left out entirely is still defaulted"
+        );
     }
 
     #[test]
