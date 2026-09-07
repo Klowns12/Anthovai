@@ -63,9 +63,14 @@ priority = 0
 
 # ---- Anthropic --------------------------------------------------------------
 #
-# Enabled but unreachable until `ANTHROPIC_API_KEY` is set, which the factory
-# says out loud at startup rather than discovering on the first question.
-# Names and prices both still need confirming against Anthropic's own figures.
+# Off while we run on OpenAI keys only. Left in the file rather than deleted:
+# these rows carry the context windows and tier placement, which are the part
+# that takes research. Turning Anthropic on is setting `ANTHROPIC_API_KEY`,
+# flipping `enabled`, and confirming the prices.
+#
+# Enabled-with-no-key was the previous state, and the factory dutifully warned
+# about it at every startup — a warning that is noise once it is expected, and
+# noise is how a real one gets missed.
 
 [[models]]
 id = "claude-small"
@@ -76,7 +81,7 @@ max_context_tokens = 200000
 max_output_tokens = 32000
 input_price_micro_per_mtok = 0
 output_price_micro_per_mtok = 0
-enabled = true
+enabled = false
 priority = 1
 
 [[models]]
@@ -88,7 +93,7 @@ max_context_tokens = 1000000
 max_output_tokens = 64000
 input_price_micro_per_mtok = 0
 output_price_micro_per_mtok = 0
-enabled = true
+enabled = false
 priority = 1
 
 [[models]]
@@ -100,5 +105,5 @@ max_context_tokens = 1000000
 max_output_tokens = 64000
 input_price_micro_per_mtok = 0
 output_price_micro_per_mtok = 0
-enabled = true
+enabled = false
 priority = 1

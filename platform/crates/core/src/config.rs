@@ -7,6 +7,28 @@
 
 use serde::Deserialize;
 
+/// Read `.env` into the process environment, if there is one.
+///
+/// `.env.example` has said "copy to .env for local development" since the first
+/// commit, and nothing read it — so a key placed there did nothing, silently,
+/// and the only symptom was every question failing with `provider_unavailable`.
+///
+/// A real environment variable always wins over the file. That is what makes
+/// this safe to call in production too: a container's injected secrets are not
+/// quietly replaced by a `.env` that happened to be baked into the image.
+///
+/// Called from `main`, not from `Settings::load`, because putting values into
+/// the process environment is a side effect and a library function that reads
+/// configuration should not have one.
+pub fn load_dotenv() {
+    match dotenvy::dotenv() {
+        Ok(path) => tracing::info!(path = %path.display(), "loaded .env"),
+        // Absent is the normal case in a deployment, and not worth a line.
+        Err(e) if e.not_found() => {}
+        Err(e) => tracing::warn!(error = %e, "could not read .env; continuing with the environment as it is"),
+    }
+}
+
 #[derive(Clone, Debug, Deserialize)]
 pub struct Settings {
     pub server: ServerSettings,

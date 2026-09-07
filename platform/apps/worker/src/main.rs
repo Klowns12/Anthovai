@@ -7,7 +7,7 @@
 use std::sync::Arc;
 use std::time::Duration;
 
-use anthovai_core::config::Settings;
+use anthovai_core::config::{load_dotenv, Settings};
 use anthovai_db::Db;
 use anthovai_embeddings::EmbeddingRunner;
 use anthovai_ingestion::{pipeline, IngestPipeline};
@@ -21,6 +21,9 @@ mod handlers;
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     init_tracing();
+    // Before anything reads the environment: `Settings::load` consults it, and
+    // so does every provider that needs an API key.
+    load_dotenv();
 
     let settings = Settings::load().context("could not load configuration from config/")?;
 

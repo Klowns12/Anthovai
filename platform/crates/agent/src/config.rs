@@ -62,6 +62,7 @@ pub enum Language {
 }
 
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(default)]
 pub struct ResponseConfig {
     pub length: ResponseLength,
     pub format: ResponseFormat,
@@ -113,6 +114,7 @@ pub enum ResponseFormat {
 }
 
 #[derive(Clone, Copy, Debug, PartialEq, Serialize, Deserialize)]
+#[serde(default)]
 pub struct RetrievalConfig {
     pub top_k: usize,
     pub context_token_budget: u32,
@@ -134,6 +136,7 @@ impl Default for RetrievalConfig {
 }
 
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(default)]
 pub struct BehaviorConfig {
     /// When true, the agent answers only from retrieved knowledge and returns
     /// `fallback_message` when nothing relevant was found.
@@ -155,6 +158,7 @@ impl Default for BehaviorConfig {
 }
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(default)]
 pub struct GuardrailConfig {
     pub block_pii_output: bool,
     pub max_input_chars: usize,
@@ -309,6 +313,34 @@ mod tests {
         let parsed: AgentConfig = serde_json::from_value(stored).unwrap();
         assert_eq!(parsed.retrieval.top_k, 8);
         assert!(parsed.validate(Plan::Free).is_ok());
+    }
+
+    #[test]
+    fn a_partial_nested_object_keeps_the_defaults_around_it() {
+        // The shape the dashboard sends when a customer edits the two settings
+        // it exposes. Before `#[serde(default)]` reached the nested structs
+        // this was a 422 — every field of `behavior` had to be present — which
+        // meant the Save button on the agent editor could never succeed.
+        //
+        // The container attribute, not one per field: `#[serde(default)]` on a
+        // field would fill a missing `strict_knowledge` with `bool::default()`,
+        // which is `false`. Silently answering from outside the knowledge is
+        // the one default we must never arrive at by accident.
+        let sent = serde_json::json!({
+            "instructions": "ตอบสั้น",
+            "behavior": { "strict_knowledge": false }
+        });
+
+        let parsed: AgentConfig = serde_json::from_value(sent).expect("a partial behavior is valid");
+
+        assert!(!parsed.behavior.strict_knowledge, "the field that was sent wins");
+        assert!(parsed.behavior.citations, "the fields that were not stay as configured");
+        assert_eq!(parsed.behavior.history_turns, 6);
+        assert_eq!(
+            parsed.behavior.fallback_message,
+            BehaviorConfig::default().fallback_message
+        );
+        assert_eq!(parsed.retrieval.top_k, 8, "an object left out entirely is still defaulted");
     }
 
     #[test]

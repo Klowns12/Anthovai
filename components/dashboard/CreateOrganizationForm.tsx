@@ -29,6 +29,33 @@ export function slugify(name: string): string {
   return slug
 }
 
+/**
+ * An address for a name that has no ASCII in it at all.
+ *
+ * `slugify` turns every Thai character into a hyphen and then trims them, so a
+ * Thai name — which is most of them — leaves the field empty with no
+ * explanation. Rather than let a customer stare at a blank required field, we
+ * suggest something they can accept or replace.
+ *
+ * Derived from the name rather than random: a client component renders on the
+ * server too, and `Math.random()` there would produce one address in the HTML
+ * and a different one after hydration.
+ */
+export function fallbackSlug(name: string): string {
+  let hash = 0
+  for (const character of name) {
+    hash = (hash * 31 + character.codePointAt(0)!) >>> 0
+  }
+  return `org-${hash.toString(36)}`
+}
+
+/** The address a name implies: its own if it has one, a suggestion if not. */
+export function suggestSlug(name: string): string {
+  const trimmed = name.trim()
+  if (!trimmed) return ''
+  return slugify(trimmed) || fallbackSlug(trimmed)
+}
+
 export function CreateOrganizationForm() {
   const [name, setName] = useState('')
   const [slug, setSlug] = useState('')
@@ -39,7 +66,11 @@ export function CreateOrganizationForm() {
   const [slugError, setSlugError] = useState<string | null>(null)
   const [busy, setBusy] = useState(false)
 
-  const effectiveSlug = slugTouched ? slug : slugify(name)
+  const effectiveSlug = slugTouched ? slug : suggestSlug(name)
+
+  // Worth saying only when it applies. A customer whose name transliterated
+  // cleanly does not need to be told anything about addresses.
+  const suggested = !slugTouched && name.trim() !== '' && slugify(name) === ''
 
   function localSlugProblem(value: string): string | null {
     if (value.length < SLUG_MIN) return `At least ${SLUG_MIN} characters.`
@@ -100,7 +131,11 @@ export function CreateOrganizationForm() {
           setSlugError(null)
         }}
         placeholder="abc-school"
-        hint="Lowercase letters, digits and hyphens. This appears in URLs and cannot be changed later."
+        hint={
+          suggested
+            ? 'Your name has no Latin letters, so we suggested an address. Change it now if you like — it appears in URLs and cannot be changed later.'
+            : 'Lowercase letters, digits and hyphens. This appears in URLs and cannot be changed later.'
+        }
         error={slugError}
       />
       <Button type="submit" size="lg" className="w-full" disabled={busy || !name.trim()}>

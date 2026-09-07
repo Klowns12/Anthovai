@@ -1,6 +1,7 @@
 'use client'
 
-import { Link, usePathname } from '@/i18n/navigation'
+import { useState } from 'react'
+import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { cn } from '@/lib/utils'
 import type { Organization, User } from '@/lib/session'
 
@@ -46,6 +47,7 @@ export function DashboardNav({ organization, user, memberships }: Props) {
 
           <div className="text-right">
             <p className="text-sm text-white-60">{user.name || user.email}</p>
+            <SignOut />
             {!user.email_verified && (
               // Worth saying here rather than only when a key is refused: it is
               // the one thing that silently blocks the last step of setup.
@@ -79,5 +81,35 @@ export function DashboardNav({ organization, user, memberships }: Props) {
         </nav>
       </div>
     </div>
+  )
+}
+
+/**
+ * Leaving.
+ *
+ * A refresh rather than a client-side navigation: every dashboard page is a
+ * server component that read the session cookie while rendering, and the router
+ * cache still holds those answers. Without `refresh()` the customer would be
+ * signed out and still looking at their own organization's name.
+ */
+function SignOut() {
+  const router = useRouter()
+  const [busy, setBusy] = useState(false)
+
+  async function signOut() {
+    setBusy(true)
+    await fetch('/api/session/signout', { method: 'POST' })
+    router.replace('/signin')
+    router.refresh()
+  }
+
+  return (
+    <button
+      onClick={signOut}
+      disabled={busy}
+      className="text-[11px] tracking-[0.2em] uppercase text-white-30 hover:text-gold transition-colors mt-2 disabled:opacity-50"
+    >
+      {busy ? 'Signing out…' : 'Sign out'}
+    </button>
   )
 }

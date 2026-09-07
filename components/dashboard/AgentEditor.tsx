@@ -45,7 +45,15 @@ export function AgentEditor({
     }
   }
 
-  async function save() {
+  /**
+   * Saving the draft. Answers whether it worked, because `publish` has to know.
+   *
+   * The error is shown here either way — a customer who pressed Save wants to
+   * see why it did not — but swallowing it entirely once meant `publish` went
+   * on to ship the previous draft while the editor showed something newer, and
+   * reported success.
+   */
+  async function save(): Promise<boolean> {
     setError(null)
     setSaving(true)
     try {
@@ -60,8 +68,10 @@ export function AgentEditor({
       })
       setDirty(false)
       setSaved(true)
+      return true
     } catch (failure) {
       setError(explain(failure))
+      return false
     } finally {
       setSaving(false)
     }
@@ -91,8 +101,11 @@ export function AgentEditor({
     setPublishing(true)
     try {
       // Saving first, so publish never quietly ships the previous draft while
-      // the editor on screen shows something newer.
-      if (dirty) await save()
+      // the editor on screen shows something newer. If that save failed, the
+      // stored draft is not what is on screen, and publishing it would put a
+      // version live that the customer never approved — so stop, leaving the
+      // save's own error on screen to say why.
+      if (dirty && !(await save())) return
       // Publishing answers with the whole agent, the same shape the page was
       // rendered from — so the version below is the platform's own answer
       // rather than an assumption about what it did.

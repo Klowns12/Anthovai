@@ -137,15 +137,30 @@ export function Playground({
 
               {showPassages && (
                 <ul className="mt-4 space-y-4">
-                  {answer.retrieval.passages.map((passage) => (
+                  {answer.retrieval.passages.map((passage, index) => (
                     <li
                       key={passage.chunk_id}
                       className="bg-bg-3 rounded-md p-4 text-xs"
                     >
                       <p className="text-white-30 font-mono mb-2">
-                        score {passage.score.toFixed(3)}
+                        {/*
+                          Similarity first, because it is the only one of the
+                          two that means anything on its own: how close this
+                          passage is to the question, and the number the
+                          relevance floor is applied to.
+
+                          `score` is reciprocal-rank fusion, which is derived
+                          from position rather than closeness — the top hit
+                          scores 1/61 whether it was a perfect match or a
+                          desperate one. Leading with it, as this did, invites
+                          a customer to read 0.016 as "barely relevant" and go
+                          looking for a problem that is not there.
+                        */}
+                        {passage.similarity !== undefined
+                          ? `similarity ${passage.similarity.toFixed(3)}`
+                          : `rank score ${passage.score.toFixed(3)}`}
                         {passage.similarity !== undefined &&
-                          ` · similarity ${passage.similarity.toFixed(3)}`}
+                          ` · rank ${index + 1} of ${answer.retrieval!.passages.length}`}
                       </p>
                       <p className="text-white-60 leading-relaxed whitespace-pre-wrap">
                         {passage.snippet}
