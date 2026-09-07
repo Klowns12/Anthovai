@@ -35,10 +35,15 @@ services:
       ANTHOVAI__STORAGE__BUCKET: anthovai-dev
       AWS_ACCESS_KEY_ID: anthovai
       AWS_SECRET_ACCESS_KEY: anthovai-secret
-      # Local, so a stack with no provider key still answers questions — from
-      # the retrieved passages, with the echo model. Set this to `production`
-      # and the API refuses to start without real keys, which is the point.
-      ANTHOVAI_ENV: local
+      # Local by default, so a stack with no provider key still answers
+      # questions — from the retrieved passages, with the echo model. Set
+      # ANTHOVAI_ENV=production in the shell and the API refuses to start
+      # without real keys and durable storage, which is the point, and which
+      # is the whole value of being able to try it here before a real host.
+      #
+      # It was a literal `local` until it needed testing, at which point
+      # `ANTHOVAI_ENV=production docker compose up` quietly did nothing.
+      ANTHOVAI_ENV: ${ANTHOVAI_ENV:-local}
       # Passed through from the host when present. Absent is fine here.
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}

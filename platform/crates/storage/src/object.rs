@@ -48,7 +48,20 @@ impl ObjectStoreStorage {
     }
 
     fn s3(settings: &StorageSettings) -> Result<Self> {
-        let mut builder = object_store::aws::AmazonS3Builder::new()
+        // `from_env` rather than `new`, so the conventional AWS variables work.
+        // Every managed host hands credentials over that way — DigitalOcean
+        // Spaces, S3, Tigris, and an IAM role with no variables at all — and
+        // `new` reads none of them.
+        //
+        // The failure that this fixes gave no useful signal: with no
+        // credentials the client falls back to the EC2 metadata service at
+        // 169.254.169.254, which on any other host simply never answers. Every
+        // call spent about three seconds going nowhere and readiness reported
+        // "object storage is not answering", which is true and says nothing
+        // about why.
+        //
+        // Our own settings are applied after, so an explicit key still wins.
+        let mut builder = object_store::aws::AmazonS3Builder::from_env()
             .with_bucket_name(&settings.bucket)
             .with_region(&settings.region);
 
