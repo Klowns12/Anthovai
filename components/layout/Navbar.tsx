@@ -10,6 +10,10 @@ import { cn } from '@/lib/utils'
 
 const navLinks = [
   // { href: '/products', key: 'products' },
+  // First, because it is the one thing on this site a visitor can sign up for
+  // and use the same afternoon. It also carries the only link to the sign-in
+  // page anywhere on the marketing site.
+  { href: '/platform', key: 'platform' },
   { href: '/solutions', key: 'solutions' },
   { href: '/about', key: 'about' },
   { href: '/careers', key: 'careers' },

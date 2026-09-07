@@ -3,6 +3,7 @@
     "description": "Anthovai: la empresa de ingeniería de software, plataformas empresariales e infraestructura inteligente de servicio completo. Construido desde Tailandia, para el mundo."
   },
   "nav": {
+    "platform": "Plataforma",
     "products": "Productos",
     "solutions": "Soluciones",
     "about": "Nosotros",
@@ -546,5 +547,45 @@
         }
       }
     }
+  },
+  "platform_page": {
+    "hero_label": "Anthovai Platform",
+    "hero_headline": "Sus documentos. Su agente. Su API.",
+    "hero_body": "Suba lo que su organización sabe. Obtendrá un agente que responde a partir de ello — citando el pasaje que usó — y una clave de API que su web, app o bot puede llamar.",
+    "cta_primary": "Crear una cuenta",
+    "cta_secondary": "Iniciar sesión",
+    "steps_label": "Cómo funciona",
+    "steps_title": "Tres pasos, unos diez minutos",
+    "steps": {
+      "upload": {
+        "title": "Suba lo que sabe",
+        "body": "PDF, Word, Markdown, hojas de cálculo o una página de su propio sitio. Se analiza, divide e indexa mientras usted lo observa."
+      },
+      "build": {
+        "title": "Dígale al agente con quién habla",
+        "body": "Defina su tono y qué decir cuando no sepa. Pruebe preguntas y vea qué pasajes leyó y qué puntuación obtuvieron."
+      },
+      "connect": {
+        "title": "Conéctelo a su producto",
+        "body": "Un POST a /v1/chat con su clave. Una clave de prueba funciona al instante; una clave real requiere confirmar su correo."
+      }
+    },
+    "points_title": "Lo que cuida",
+    "points": {
+      "grounded": {
+        "title": "Dice cuando no sabe",
+        "body": "Por defecto el agente responde solo desde sus documentos. Si le preguntan algo que no cubren, lo dice con sus propias palabras en lugar de inventar una respuesta segura para su cliente."
+      },
+      "isolation": {
+        "title": "Su conocimiento es suyo",
+        "body": "Cada consulta está ligada a su organización en cuatro capas separadas, la más interna impuesta por la propia base de datos. Un error en nuestro código no devuelve nada, no los datos de otro."
+      },
+      "thai": {
+        "title": "Tailandés, bien hecho",
+        "body": "El tailandés no separa palabras con espacios, y ahí es donde fallan en silencio la mayoría de las herramientas. Contamos y dividimos por tokens reales, y una pregunta en inglés sobre un manual tailandés se responde en tailandés."
+      }
+    },
+    "closing_title": "Empiece con un documento",
+    "closing_body": "No hay nada que instalar ni reunión que agendar. Regístrese, suba algo y pregunte."
   }
 }

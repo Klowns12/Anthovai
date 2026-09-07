@@ -3,6 +3,7 @@
     "description": "Anthovai — la société offrant une gamme complète d'ingénierie logicielle, de plates-formes d'entreprise et d'infrastructures intelligentes. Construit depuis la Thaïlande, pour le monde."
   },
   "nav": {
+    "platform": "Plateforme",
     "products": "Produits",
     "solutions": "Solutions",
     "about": "À propos",
@@ -546,5 +547,45 @@
         }
       }
     }
+  },
+  "platform_page": {
+    "hero_label": "Anthovai Platform",
+    "hero_headline": "Vos documents. Votre agent. Votre API.",
+    "hero_body": "Téléversez ce que votre organisation sait. Vous obtenez un agent qui y puise ses réponses — en citant le passage utilisé — et une clé d'API que votre site, votre application ou votre bot peut appeler.",
+    "cta_primary": "Créer un compte",
+    "cta_secondary": "Se connecter",
+    "steps_label": "Comment ça marche",
+    "steps_title": "Trois étapes, une dizaine de minutes",
+    "steps": {
+      "upload": {
+        "title": "Téléversez ce que vous savez",
+        "body": "PDF, Word, Markdown, tableurs, ou une page de votre propre site. Le contenu est analysé, découpé et indexé sous vos yeux."
+      },
+      "build": {
+        "title": "Dites à l'agent à qui il parle",
+        "body": "Définissez son ton et ce qu'il répond quand il ignore. Testez des questions et voyez les passages lus et leurs scores."
+      },
+      "connect": {
+        "title": "Reliez-le à votre produit",
+        "body": "Un POST vers /v1/chat avec votre clé. Une clé de test fonctionne aussitôt ; une clé live demande une adresse confirmée."
+      }
+    },
+    "points_title": "Ce à quoi il fait attention",
+    "points": {
+      "grounded": {
+        "title": "Il dit quand il ne sait pas",
+        "body": "Par défaut, l'agent ne répond qu'à partir de vos documents. Sur ce qu'ils ne couvrent pas, il le dit — avec vos propres mots — plutôt que d'inventer une réponse assurée pour votre client."
+      },
+      "isolation": {
+        "title": "Votre savoir reste le vôtre",
+        "body": "Chaque requête est liée à votre organisation par quatre couches distinctes, la plus interne appliquée par la base de données elle-même. Une erreur de notre code ne renvoie rien, pas les données d'autrui."
+      },
+      "thai": {
+        "title": "Le thaï, correctement",
+        "body": "Le thaï ne sépare pas les mots par des espaces, et c'est là que la plupart des outils échouent sans le dire. Nous comptons et découpons en jetons réels, et une question en anglais sur un manuel thaï reçoit une réponse en thaï."
+      }
+    },
+    "closing_title": "Commencez par un document",
+    "closing_body": "Rien à installer, aucun rendez-vous à prendre. Inscrivez-vous, téléversez, posez une question."
   }
 }

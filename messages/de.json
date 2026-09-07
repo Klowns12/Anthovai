@@ -3,6 +3,7 @@
     "description": "Anthovai – das Full-Service-Unternehmen für Softwareentwicklung, Unternehmensplattformen und intelligente Infrastruktur. Gebaut aus Thailand, für die Welt."
   },
   "nav": {
+    "platform": "Plattform",
     "products": "Produkte",
     "solutions": "Lösungen",
     "about": "Über uns",
@@ -546,5 +547,45 @@
         }
       }
     }
+  },
+  "platform_page": {
+    "hero_label": "Anthovai Platform",
+    "hero_headline": "Ihre Dokumente. Ihr Agent. Ihre API.",
+    "hero_body": "Laden Sie hoch, was Ihre Organisation weiß. Sie erhalten einen Agenten, der daraus antwortet — mit Verweis auf die genutzte Textstelle — und einen API-Schlüssel für Ihre eigene Website, App oder Ihren Bot.",
+    "cta_primary": "Konto erstellen",
+    "cta_secondary": "Anmelden",
+    "steps_label": "So funktioniert es",
+    "steps_title": "Drei Schritte, etwa zehn Minuten",
+    "steps": {
+      "upload": {
+        "title": "Laden Sie Ihr Wissen hoch",
+        "body": "PDF, Word, Markdown, Tabellen oder eine Seite Ihrer eigenen Website. Alles wird gelesen, geteilt und indexiert, während Sie zusehen."
+      },
+      "build": {
+        "title": "Sagen Sie dem Agenten, mit wem er spricht",
+        "body": "Legen Sie Ton und Verhalten bei Unwissenheit fest. Testen Sie Fragen und sehen Sie, welche Passagen gelesen wurden und wie sie bewertet waren."
+      },
+      "connect": {
+        "title": "Verbinden Sie ihn mit Ihrem Produkt",
+        "body": "Ein POST an /v1/chat mit Ihrem Schlüssel. Ein Testschlüssel wirkt sofort; ein Live-Schlüssel verlangt eine bestätigte E-Mail-Adresse."
+      }
+    },
+    "points_title": "Worauf geachtet wird",
+    "points": {
+      "grounded": {
+        "title": "Er sagt, wenn er es nicht weiß",
+        "body": "Der Agent antwortet standardmäßig nur aus Ihren Dokumenten. Was darin nicht steht, beantwortet er nicht — er sagt es, in Ihren eigenen Worten, statt Ihrem Kunden etwas Selbstsicheres zu erfinden."
+      },
+      "isolation": {
+        "title": "Ihr Wissen bleibt Ihres",
+        "body": "Jede Abfrage ist in vier getrennten Schichten an Ihre Organisation gebunden, die innerste davon durch die Datenbank selbst. Ein Fehler in unserem Code liefert nichts — nicht die Daten anderer."
+      },
+      "thai": {
+        "title": "Thailändisch, richtig gemacht",
+        "body": "Thailändisch trennt Wörter nicht durch Leerzeichen — genau dort scheitern die meisten Werkzeuge unbemerkt. Wir zählen und teilen nach echten Tokens, und eine englische Frage an ein thailändisches Handbuch wird auf Thai beantwortet."
+      }
+    },
+    "closing_title": "Beginnen Sie mit einem Dokument",
+    "closing_body": "Nichts zu installieren, kein Termin nötig. Registrieren, hochladen, fragen."
   }
 }

@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/careers',
     '/contact',
     '/products',
+    '/platform',
     '/solutions',
     '/expertise/enterprise-software',
     '/expertise/enterprise-software/healthcare',

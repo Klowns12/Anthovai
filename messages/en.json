@@ -3,6 +3,7 @@
     "description": "Anthovai — An intelligence-led engineering firm building bespoke enterprise platforms and critical infrastructure. Built from Thailand, for the world."
   },
   "nav": {
+    "platform": "Platform",
     "products": "Products",
     "solutions": "Solutions",
     "about": "About",
@@ -554,5 +555,45 @@
         }
       }
     }
+  },
+  "platform_page": {
+    "hero_label": "Anthovai Platform",
+    "hero_headline": "Your documents. Your agent. Your API.",
+    "hero_body": "Upload what your organisation knows. Get an agent that answers from it — with a citation back to the passage it used — and an API key your own website, app or LINE bot can call.",
+    "cta_primary": "Create an account",
+    "cta_secondary": "Sign in",
+    "steps_label": "How it works",
+    "steps_title": "Three steps, about ten minutes",
+    "steps": {
+      "upload": {
+        "title": "Upload what you know",
+        "body": "PDF, Word, Markdown, spreadsheets, or a page on your own site. It is parsed, split and indexed while you watch."
+      },
+      "build": {
+        "title": "Tell the agent who it is talking to",
+        "body": "Set its tone and what to say when it does not know. Try questions in the playground and see the passages it read, and what they scored."
+      },
+      "connect": {
+        "title": "Connect it to your own product",
+        "body": "One POST to /v1/chat with your key. A test key works the moment you sign up; a live key needs your email confirmed."
+      }
+    },
+    "points_title": "What it is careful about",
+    "points": {
+      "grounded": {
+        "title": "It says when it does not know",
+        "body": "By default the agent answers only from your documents. Ask it something they do not cover and it says so, in your own words, instead of inventing a confident answer for your customer."
+      },
+      "isolation": {
+        "title": "Your knowledge is yours",
+        "body": "Every query is bound to your organisation in four separate layers, the innermost enforced by the database itself. A mistake in our code returns nothing rather than somebody else's data."
+      },
+      "thai": {
+        "title": "Thai, properly",
+        "body": "Thai has no spaces between words, which is where most tools quietly go wrong. Documents are counted and split by real tokens, and an English question about a Thai handbook is answered in Thai."
+      }
+    },
+    "closing_title": "Start with one document",
+    "closing_body": "There is nothing to install and no call to book. Sign up, upload something, and ask it a question."
   }
 }
