@@ -100,3 +100,75 @@ export const IN_PROGRESS = new Set([
 export function isInProgress(document: DocumentSummary): boolean {
   return IN_PROGRESS.has(document.status)
 }
+
+/**
+ * An agent's configuration.
+ *
+ * The platform's `AgentConfig` has more in it than this — retrieval tuning,
+ * model policy, guardrails — and every field of it is `#[serde(default)]`
+ * except `instructions`. So a partial config is a valid one, and the dashboard
+ * sends only what it lets a customer change. The rest keeps the platform's
+ * defaults, which are the considered ones.
+ */
+export interface AgentConfig {
+  instructions: string
+  language?: 'auto' | 'th' | 'en'
+  behavior?: {
+    /** Answer only from retrieved passages. Off means the model may fall back
+     * on what it knows, which is how a confident wrong answer happens. */
+    strict_knowledge?: boolean
+    citations?: boolean
+    /** What it says when nothing relevant was found. */
+    fallback_message?: string
+    history_turns?: number
+  }
+}
+
+export interface AgentVersion {
+  version: number
+  created_at: string
+  published: boolean
+}
+
+export interface AgentDetail extends AgentSummary {
+  draft_version: number | null
+  published_version: number | null
+  draft_config: AgentConfig | null
+  published_config: AgentConfig | null
+  knowledge_base_ids: string[]
+  versions: AgentVersion[]
+}
+
+/** What the playground answers with. */
+export interface TestAnswer {
+  id: string
+  conversation_id: string
+  answer: string
+  grounded: boolean
+  used_fallback: boolean
+  sources: Source[]
+  usage: { input_tokens: number; output_tokens: number }
+  model?: { provider: string; name: string }
+  latency_ms: number
+  retrieval?: {
+    embedding_tokens: number
+    passages: {
+      chunk_id: string
+      document_id: string
+      score: number
+      similarity?: number
+      snippet: string
+    }[]
+  }
+}
+
+export interface Source {
+  index: number
+  document_id: string
+  chunk_id: string
+  title: string
+  page?: number
+  url?: string
+  snippet: string
+  score: number
+}
