@@ -210,8 +210,33 @@ missing from `ANTHOVAI__SERVER__DASHBOARD_ORIGINS`.
   moved past.
 - **Embedding tokens are counted but never priced.** Ingestion and every
   question cost real money that appears on no invoice.
-- **Documents become one chunk each** at typical Thai document sizes, so
-  retrieval is all-or-nothing per document.
+- **Reading scans is off by default.** `ANTHOVAI__OCR__ENABLED=false` means a
+  scanned PDF or a photograph is refused with a reason rather than queued
+  against a service that is not there. Turning it on means deploying
+  `ocr-sidecar/` alongside the API and worker.
+- **One database test is intermittent.** `the_worker_takes_a_queued_document_to_ready`
+  passes alone and sometimes fails in a full run: the test harness drains the
+  whole `jobs` table rather than its own tenant's, so concurrent tests claim
+  each other's work. It says nothing about the deployment.
+
+
+## Fixed since this was written
+
+Kept here because a checklist that only ever grows is one nobody trusts.
+
+- Documents used to become **one chunk each** at typical Thai sizes, because the
+  chunker sized them with `chars / 4` while the real tokenizer sat unused in the
+  same crate — a 3.7x undercount for Thai. Pasted text also lost its Markdown
+  headings, so there was nothing to split on. Both fixed; a question set went
+  from 18 answers out of 24 to 24 out of 24, and existing knowledge bases are
+  found and rebuilt automatically by the worker's startup sweep.
+- A strict agent used to treat **a refusal as an absence** — asked whether a
+  discounted book could be returned, with the policy saying plainly that it
+  could not, it replied "I have no information about this" seven times out of
+  eight. Fixed in the prompt; 48/48 after, with questions the documents do not
+  cover still declined 24 times out of 24.
+- **Live keys could not be issued at all** until email confirmation existed.
+  They can now, given SMTP.
 
 ---
 
