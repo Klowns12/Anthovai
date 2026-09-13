@@ -638,6 +638,19 @@ db_test!(async fn a_base_an_older_chunker_built_is_found_too(db) {
     // answer verbatim in the document.
     let fixture = Fixture::new(&db).await;
 
+    // Ingest something first. `Fixture::new` builds a knowledge base and a
+    // pipeline and stops there, so without this the base holds no chunks — the
+    // UPDATE below then matches nothing, there is genuinely nothing stale, and
+    // the sweep is right to find none. The first version of this test omitted
+    // it and failed for that reason while the sweep itself was working, which
+    // is a test reporting the truth about data it forgot to create.
+    let document_id = fixture.upload("handbook.md", HANDBOOK).await;
+    let outcome = fixture.ingest(document_id, 1).await;
+    assert!(
+        outcome.chunks > 0,
+        "the fixture must produce chunks for there to be anything stale"
+    );
+
     // Pretend these chunks were written before the version stamp existed,
     // which is what every chunk in every existing deployment looks like.
     let mut tenant = db.tenant(&fixture.ctx).await.unwrap();
