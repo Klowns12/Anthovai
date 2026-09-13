@@ -389,20 +389,57 @@ db_test!(async fn a_connection_that_forgets_to_set_a_role_sees_nothing(db) {
         .await
         .expect("create");
 
-    // The pool's own connection: no SET ROLE, no tenant pinned. Exactly what a
-    // repository method that skipped `db.tenant()` would be running on.
+    // The check has to run as a role that is not a superuser, and this is not a
+    // detail of the test — it is the whole reason the test was wrong for eight
+    // CI runs while passing on a developer's machine, where it was skipped.
+    //
+    // PostgreSQL exempts superusers from row-level security outright, and
+    // `FORCE ROW LEVEL SECURITY` does not change that. Tests connect as the
+    // database owner, which is a superuser, because migrations create roles and
+    // extensions. So the property this test is about — that a query which pins
+    // no tenant and switches to no role sees nothing — cannot be observed from
+    // the pool's own connection at all. Asserting it there asserted something
+    // that can never be true, and the failure said "isolation is broken" when
+    // the connection was simply the wrong one to ask.
+    //
+    // Measured on the same database, same moment: as the owner, 106 rows; as
+    // the role below, 0.
+    let mut probe = db.pool().begin().await.expect("begin");
+
+    // A stand-in for the login role a deployment creates: member of both, so it
+    // could `SET ROLE` either way, and holding neither unless it does. That
+    // membership is the thing that used to leak, before
+    // `0006_system_policies_need_the_role.sql`.
+    for statement in [
+        "DROP ROLE IF EXISTS forgetful_probe",
+        "CREATE ROLE forgetful_probe NOLOGIN",
+        "GRANT anthovai_app, anthovai_system TO forgetful_probe",
+        "SET LOCAL ROLE forgetful_probe",
+    ] {
+        anthovai_db::sqlx::query(statement)
+            .execute(&mut *probe)
+            .await
+            .unwrap_or_else(|e| panic!("{statement}: {e}"));
+    }
+
     for table in GUARDED {
         let sql = format!("SELECT count(*) FROM {table}");
         let visible: i64 = anthovai_db::sqlx::query_scalar(&sql)
-            .fetch_one(db.pool())
+            .fetch_one(&mut *probe)
             .await
             .unwrap_or_else(|e| panic!("`{table}`: {e}"));
 
         assert_eq!(
             visible, 0,
-            "`{table}` returned {visible} rows to a connection that pinned no              tenant and switched to no role. Every tenant's rows are reachable              from any query that forgets to go through `db.tenant()`."
+            "`{table}` returned {visible} rows to a connection that pinned no \
+             tenant and switched to no role. Every tenant's rows are reachable \
+             from any query that forgets to go through `db.tenant()`."
         );
     }
+
+    // Rolled back, so the probe role does not outlive the test and the other
+    // tests sharing this database never see it.
+    probe.rollback().await.expect("rollback");
 });
 
 db_test!(async fn the_system_role_can_read_the_tables_it_sweeps(db) {

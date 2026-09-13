@@ -515,19 +515,23 @@ pub async fn consume_verification(
 /// Called when a new one is issued, so asking for a second email does not leave
 /// the first link alive — a customer who requested a new one because they
 /// suspected the old had gone astray would otherwise have achieved nothing.
-pub async fn invalidate_verifications(
-    db: &mut SystemDb<'_>,
-    user_id: UserId,
-    now: DateTime<Utc>,
-) -> Result<u64> {
-    let result = sqlx::query(
-        "UPDATE email_verifications SET consumed_at = $2
-         WHERE user_id = $1 AND consumed_at IS NULL",
-    )
-    .bind(user_id.to_db())
-    .bind(now)
-    .execute(db.conn())
-    .await?;
+/// Removed rather than marked consumed.
+///
+/// `consumed_at` means "somebody followed this link", and `verify_email` reads
+/// it that way: a token it finds already consumed is treated as one whose twin
+/// request arrived first, and answered `Ok`, so that a mail scanner opening the
+/// link before the customer does not break it.
+///
+/// Marking a superseded token consumed put it into that same state, so an old
+/// link that should have been refused answered `Ok` instead — and did so
+/// without verifying anything, which is the worst of both. Deleting the row
+/// leaves nothing to find, which is what a superseded link should be.
+pub async fn invalidate_verifications(db: &mut SystemDb<'_>, user_id: UserId) -> Result<u64> {
+    let result =
+        sqlx::query("DELETE FROM email_verifications WHERE user_id = $1 AND consumed_at IS NULL")
+            .bind(user_id.to_db())
+            .execute(db.conn())
+            .await?;
 
     Ok(result.rows_affected())
 }

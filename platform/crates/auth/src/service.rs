@@ -214,7 +214,7 @@ impl AuthService {
             return Ok(None);
         }
 
-        repo::invalidate_verifications(&mut db, user_id, now).await?;
+        repo::invalidate_verifications(&mut db, user_id).await?;
         let issued = verification::issue(user_id, &user.email, now);
         repo::insert_verification(&mut db, &issued).await?;
         db.commit().await?;
