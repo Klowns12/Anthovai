@@ -27,10 +27,23 @@ ANTHOVAI__OCR__ENABLED=true docker compose --profile ocr \
   -f docker/docker-compose.yml -f docker/docker-compose.stack.yml up --build
 ```
 
+## Try it
+
+With the service running, open <http://127.0.0.1:9090> and drop a Thai document
+on the page — a photo of a delivery note, a scanned invoice, a PDF. It shows the
+text that came back, the fields pulled out of it, and the arithmetic that
+decides whether the document can be trusted without a person reading it. Three
+sample documents are included for when you have nothing to hand.
+
+It is also the demo to put in front of a customer: dropping a photograph of a
+delivery note and watching `40 → 38` appear against the damaged line makes the
+point faster than any description of it does.
+
 ## Endpoints
 
 | | |
 |---|---|
+| `GET /` | The demo page. |
 | `GET /health` | 200 when Ollama answers and the model is pulled; 503 otherwise. The worker checks this at startup and reports, but does not refuse to start. |
 | `POST /ocr` | `{"pdf_b64": ...}` or `{"image_b64": ...}` → `{model, total_ms, pages: [{page, markdown, ms}]}`. 422 when a page is too small to read reliably (`OCR_MIN_PX`) — better a refusal than numbers that are quietly wrong. |
 | `POST /extract` | Markdown → structured fields, arithmetic and reconciliation checks, `needs_review` with reasons in Thai ([`docs/delivery-note-checks.md`](docs/delivery-note-checks.md)). For the cost-control product; the RAG path does not call it. |
