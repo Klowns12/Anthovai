@@ -9,6 +9,7 @@ members = [
     "crates/tenant",
     "crates/agent",
     "crates/knowledge",
+    "crates/costing",
     "crates/ingestion",
     "crates/embeddings",
     "crates/retrieval",
@@ -42,6 +43,7 @@ anthovai-auth = { path = "crates/auth" }
 anthovai-tenant = { path = "crates/tenant" }
 anthovai-agent = { path = "crates/agent" }
 anthovai-knowledge = { path = "crates/knowledge" }
+anthovai-costing = { path = "crates/costing" }
 anthovai-ingestion = { path = "crates/ingestion" }
 anthovai-embeddings = { path = "crates/embeddings" }
 anthovai-retrieval = { path = "crates/retrieval" }

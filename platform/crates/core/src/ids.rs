@@ -137,6 +137,9 @@ typed_id!(RequestId, "req");
 typed_id!(JobId, "job");
 typed_id!(UsageRecordId, "use");
 typed_id!(AuditLogId, "aud");
+typed_id!(ProjectId, "prj");
+typed_id!(PhaseId, "pha");
+typed_id!(CostEntryId, "cost");
 
 #[cfg(test)]
 mod tests {

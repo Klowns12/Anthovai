@@ -209,6 +209,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "anthovai-costing"
+version = "0.1.0"
+dependencies = [
+ "anthovai-core",
+ "chrono",
+ "serde",
+ "thiserror",
+]
+
+[[package]]
 name = "anthovai-db"
 version = "0.1.0"
 dependencies = [

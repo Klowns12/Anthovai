@@ -1,0 +1,12 @@
+[package]
+name = "anthovai-costing"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+anthovai-core.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+chrono.workspace = true
