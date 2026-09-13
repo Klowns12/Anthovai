@@ -13,8 +13,35 @@ use crate::chunker::{Block, ParsedDocument};
 use crate::normalize::normalize;
 use crate::{error_codes, ParseInput, Parser};
 
-/// Paragraphs separated by blank lines, and nothing else claimed about them.
+/// Paragraphs separated by blank lines — unless the text has headings, in which
+/// case they are kept.
+///
+/// Pasting into the dashboard produces `SourceType::Text`, because the type is
+/// decided from the shape of the request before any bytes are read. That meant
+/// a customer who pasted a structured document had its structure thrown away:
+/// every `## heading` became an ordinary paragraph, the chunker never saw a
+/// heading to split on, and a document covering three subjects became one
+/// chunk whose embedding was near none of them.
+///
+/// Measured on a clinic's opening hours: asking "what time does it open on
+/// Saturday" retrieved nothing at all, three times out of three, while the
+/// answer sat verbatim in the text.
 pub struct TextParser;
+
+/// Whether this text is using Markdown headings.
+///
+/// An ATX heading and nothing looser: `#` through `######` at the start of a
+/// line, followed by a space and something. `#1`, `#hashtag` and a `#` comment
+/// do not qualify, which is the point — plain text that happens to contain a
+/// hash should stay plain text.
+fn has_headings(text: &str) -> bool {
+    text.lines().any(|line| {
+        let hashes = line.chars().take_while(|c| *c == '#').count();
+        (1..=6).contains(&hashes)
+            && line[hashes..].starts_with(' ')
+            && !line[hashes + 1..].trim().is_empty()
+    })
+}
 
 #[async_trait]
 impl Parser for TextParser {
@@ -30,15 +57,22 @@ impl Parser for TextParser {
             return Err(empty());
         }
 
-        let blocks = text
-            .split("\n\n")
-            .map(str::trim)
-            .filter(|p| !p.is_empty())
-            .map(|p| Block::Paragraph {
-                text: p.to_owned(),
-                page: None,
-            })
-            .collect();
+        let blocks = if has_headings(&text) {
+            markdown_blocks(&text)
+        } else {
+            text.split("\n\n")
+                .map(str::trim)
+                .filter(|p| !p.is_empty())
+                .map(|p| Block::Paragraph {
+                    text: p.to_owned(),
+                    page: None,
+                })
+                .collect()
+        };
+
+        if blocks.is_empty() {
+            return Err(empty());
+        }
 
         Ok(ParsedDocument {
             title: input.title(),
@@ -182,6 +216,71 @@ fn empty() -> DomainError {
 
 #[cfg(test)]
 mod tests {
+
+    #[test]
+    fn a_hash_that_is_not_a_heading_leaves_the_text_alone() {
+        // The reason `has_headings` is strict. None of these should turn a
+        // plain document into a Markdown one.
+        assert!(!has_headings("issue #42 is still open"));
+        assert!(!has_headings("#hashtag"));
+        assert!(!has_headings("#"));
+        assert!(!has_headings("#   "));
+        assert!(!has_headings("####### seven is not a heading"));
+        assert!(!has_headings("no hashes at all"));
+    }
+
+    #[test]
+    fn an_atx_heading_is_recognised() {
+        assert!(has_headings("# Title"));
+        assert!(has_headings("intro\n\n## Section\n\nbody"));
+        assert!(has_headings("###### deep"));
+    }
+
+    #[tokio::test]
+    async fn pasted_text_with_headings_keeps_them() {
+        // The bug this exists for: a pasted document with three sections used
+        // to arrive as one undifferentiated run of paragraphs, so the chunker
+        // had nothing to split on.
+        let pasted = "# นโยบายคลินิก\n\n                      ## เวลาทำการ\n\n                      จันทร์ถึงศุกร์ 10:00 ถึง 20:00 น.\n\n                      ## การนัดหมาย\n\n                      โทร 02-259-8800\n\n                      ## สิทธิ\n\n                      ใช้ประกันสังคมได้";
+
+        let parsed = TextParser
+            .parse(input(pasted.as_bytes(), "pasted.txt"))
+            .await
+            .expect("parse");
+
+        let headings: Vec<&str> = parsed
+            .blocks
+            .iter()
+            .filter_map(|b| match b {
+                Block::Heading { text, .. } => Some(text.as_str()),
+                _ => None,
+            })
+            .collect();
+
+        assert_eq!(
+            headings,
+            vec!["นโยบายคลินิก", "เวลาทำการ", "การนัดหมาย", "สิทธิ"],
+            "every heading in pasted text must survive as a heading"
+        );
+    }
+
+    #[tokio::test]
+    async fn pasted_text_without_headings_is_still_paragraphs() {
+        let parsed = TextParser
+            .parse(input(
+                "first thought\n\nsecond thought".as_bytes(),
+                "pasted.txt",
+            ))
+            .await
+            .expect("parse");
+
+        assert_eq!(parsed.blocks.len(), 2);
+        assert!(parsed
+            .blocks
+            .iter()
+            .all(|b| matches!(b, Block::Paragraph { .. })));
+    }
+
     use super::*;
 
     fn input(bytes: &[u8], title: &str) -> ParseInput {

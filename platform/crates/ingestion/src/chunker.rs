@@ -6,6 +6,21 @@
 
 use serde::{Deserialize, Serialize};
 
+/// Which generation of this chunker produced a chunk.
+///
+/// Stamped into every chunk's metadata so a knowledge base built by an older
+/// one can be found and rebuilt. Bump it whenever a change here would give a
+/// different answer for the same input — a new size, a new boundary rule, a
+/// parser that starts seeing structure it used to miss.
+///
+/// 1: the original.
+/// 2: token counts come from the tokenizer rather than `chars / 4`, which had
+///    been sizing Thai chunks at roughly four times the configured budget; and
+///    pasted text keeps its Markdown headings, which it had been discarding.
+///    Measured on one clinic's documents, the two together took a question set
+///    from 18 answers out of 24 to 24 out of 24.
+pub const CHUNKER_VERSION: u32 = 2;
+
 /// One unit of parsed content, before chunking.
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub enum Block {
@@ -67,13 +82,25 @@ pub struct ChunkDraft {
     pub record_key: Option<String>,
 }
 
-/// A rough token count: good enough for sizing chunks, and it costs nothing.
-/// Real accounting uses the provider's reported usage.
+/// How many tokens a piece of text is worth, for sizing a chunk.
+///
+/// This used to be `words.max(chars / 4)`, which is close enough for English
+/// and wrong for Thai by a factor of nearly four: measured against
+/// `cl100k_base`, a line of Thai clinic hours came out at 21 by that formula
+/// and 79 in reality. Every Thai document was therefore chunked to roughly
+/// 1,850 tokens while the configuration asked for 500 — and an oversized chunk
+/// is not a sizing detail. Its embedding is the average of everything in it, so
+/// a document covering three subjects became one vector near none of them, and
+/// a question about one subject retrieved nothing at all.
+///
+/// `tokens::count` is in this crate already, and its own documentation says it
+/// exists for exactly this: "Thai has no spaces, and a '500 word' chunk of it
+/// can be several thousand tokens." The chunker simply was not calling it.
+///
+/// It falls back to a character heuristic when the tokenizer cannot be loaded,
+/// which is the one case the old formula was right about.
 pub fn estimate_tokens(text: &str) -> usize {
-    let words = text.split_whitespace().count();
-    // Thai and other scripts without spaces need the character-based floor.
-    let chars = text.chars().count();
-    words.max(chars / 4).max(1)
+    crate::tokens::count(text).max(1)
 }
 
 /// Split a parsed document. Headings set the context for the paragraphs that

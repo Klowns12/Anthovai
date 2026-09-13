@@ -465,14 +465,39 @@ fn sql(err: sqlx::Error) -> DomainError {
 ///
 /// Read as the system role: this runs at startup across every tenant, before
 /// any request has chosen one.
+/// Knowledge bases whose vectors no longer describe what we would index today.
+///
+/// `chunker_version` is passed in rather than read from a constant here: this
+/// crate is below `anthovai-ingestion`, not above it, and a repository that
+/// imported the chunker to ask what generation it was would invert that.
 pub async fn knowledge_bases_needing_reembedding(
     db: &mut SystemDb<'_>,
+    chunker_version: u32,
 ) -> Result<Vec<(OrgId, KnowledgeBaseId)>> {
+    // Two reasons a base is stale, and they are genuinely different.
+    //
+    // The model: vectors built by a stand-in cannot be compared with real ones
+    // at all, so retrieval against them is meaningless.
+    //
+    // The chunker: the vectors are real and comparable, but the text they
+    // describe was cut in a way we have since decided was wrong. That is the
+    // quieter of the two — nothing errors, questions simply go unanswered —
+    // and it is the one that needed a version stamp before it could be seen.
     let rows = sqlx::query(
-        "SELECT tenant_id, id FROM knowledge_bases
-         WHERE embedding_model LIKE 'fake:%' AND deleted_at IS NULL
-         ORDER BY created_at",
+        "SELECT DISTINCT kb.tenant_id, kb.id, kb.created_at
+         FROM knowledge_bases kb
+         WHERE kb.deleted_at IS NULL
+           AND (
+             kb.embedding_model LIKE 'fake:%'
+             OR EXISTS (
+               SELECT 1 FROM document_chunks c
+               WHERE c.knowledge_base_id = kb.id
+                 AND COALESCE((c.metadata ->> 'chunker_version')::int, 1) < $1
+             )
+           )
+         ORDER BY kb.created_at",
     )
+    .bind(i32::try_from(chunker_version).unwrap_or(i32::MAX))
     .fetch_all(db.conn())
     .await?;
 

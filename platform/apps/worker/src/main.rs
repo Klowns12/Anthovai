@@ -185,7 +185,11 @@ async fn shutdown_signal() {
 /// have already been swept.
 async fn queue_reembedding(db: &Db) -> anyhow::Result<usize> {
     let mut system = db.system().await?;
-    let bases = anthovai_knowledge::repo::knowledge_bases_needing_reembedding(&mut system).await?;
+    let bases = anthovai_knowledge::repo::knowledge_bases_needing_reembedding(
+        &mut system,
+        anthovai_ingestion::chunker::CHUNKER_VERSION,
+    )
+    .await?;
 
     for (org_id, knowledge_base_id) in &bases {
         anthovai_jobs::JobQueue::enqueue_in(

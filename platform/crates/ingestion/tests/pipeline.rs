@@ -13,6 +13,7 @@ use anthovai_core::{
 };
 use anthovai_db::{sqlx, Db};
 use anthovai_embeddings::{EmbeddingRunner, HashEmbedder, RunnerConfig};
+use anthovai_ingestion::chunker::CHUNKER_VERSION;
 use anthovai_ingestion::{pipeline, IngestPipeline};
 use anthovai_knowledge::{
     repo as knowledge_repo, CreateKnowledgeBase, DocumentStatus, KnowledgeService, UploadTarget,
@@ -622,6 +623,91 @@ db_test!(async fn retired_chunks_survive_long_enough_for_running_requests(db) {
 
 // ---- re-embedding ----------------------------------------------------------
 
+db_test!(async fn a_base_an_older_chunker_built_is_found_too(db) {
+    // The second reason a base goes stale, and the quieter one.
+    //
+    // A model change is loud: vectors built by a stand-in cannot be compared
+    // with real ones, and the sweep has always looked for those. A chunker
+    // change is silent — the vectors are real and comparable, but the text
+    // they describe was cut in a way we have since decided was wrong.
+    //
+    // The symptom that led here: a clinic's opening hours became one chunk
+    // with its appointment rules and its payment terms, so the chunk's
+    // embedding sat near none of the three. Asking what time it opened on
+    // Saturday retrieved nothing at all, three times out of three, with the
+    // answer verbatim in the document.
+    let fixture = Fixture::new(&db).await;
+
+    // Pretend these chunks were written before the version stamp existed,
+    // which is what every chunk in every existing deployment looks like.
+    let mut tenant = db.tenant(&fixture.ctx).await.unwrap();
+    anthovai_db::sqlx::query(
+        "UPDATE document_chunks SET metadata = metadata - 'chunker_version'
+         WHERE knowledge_base_id = $1",
+    )
+    .bind(fixture.knowledge_base_id.to_db())
+    .execute(tenant.conn())
+    .await
+    .unwrap();
+    tenant.commit().await.unwrap();
+
+    // Take the model out of the question, so only the chunker can explain a
+    // hit. Otherwise this test would pass for the reason the old one covers.
+    let mut tenant = db.tenant(&fixture.ctx).await.unwrap();
+    knowledge_repo::set_embedding_model(
+        &mut tenant,
+        fixture.knowledge_base_id,
+        "openai:text-embedding-3-small",
+    )
+    .await
+    .unwrap();
+    tenant.commit().await.unwrap();
+
+    let mut system = db.system().await.unwrap();
+    let found =
+        knowledge_repo::knowledge_bases_needing_reembedding(&mut system, CHUNKER_VERSION)
+            .await
+            .expect("the sweep should read across tenants");
+    system.commit().await.unwrap();
+
+    assert!(
+        found
+            .iter()
+            .any(|(_, kb_id)| *kb_id == fixture.knowledge_base_id),
+        "a base whose chunks predate the current chunker must be swept: its \
+         vectors are fine and the text under them is not, which nothing else \
+         reports"
+    );
+
+    // And once its chunks carry the current version, it is done.
+    let mut tenant = db.tenant(&fixture.ctx).await.unwrap();
+    anthovai_db::sqlx::query(
+        "UPDATE document_chunks
+         SET metadata = jsonb_set(metadata, '{chunker_version}', to_jsonb($2::int))
+         WHERE knowledge_base_id = $1",
+    )
+    .bind(fixture.knowledge_base_id.to_db())
+    .bind(i32::try_from(CHUNKER_VERSION).unwrap())
+    .execute(tenant.conn())
+    .await
+    .unwrap();
+    tenant.commit().await.unwrap();
+
+    let mut system = db.system().await.unwrap();
+    let found =
+        knowledge_repo::knowledge_bases_needing_reembedding(&mut system, CHUNKER_VERSION)
+            .await
+            .unwrap();
+    system.commit().await.unwrap();
+
+    assert!(
+        !found
+            .iter()
+            .any(|(_, kb_id)| *kb_id == fixture.knowledge_base_id),
+        "a base rebuilt by the current chunker should not be swept again"
+    );
+});
+
 db_test!(async fn a_base_built_by_the_stand_in_is_found_and_can_be_repointed(db) {
     // Everything a developer indexes before a provider key exists is embedded
     // by the hash stand-in. Those bases answer questions and mean nothing by
@@ -635,7 +721,7 @@ db_test!(async fn a_base_built_by_the_stand_in_is_found_and_can_be_repointed(db)
     let fixture = Fixture::new(&db).await;
 
     let mut system = db.system().await.unwrap();
-    let found = knowledge_repo::knowledge_bases_needing_reembedding(&mut system)
+    let found = knowledge_repo::knowledge_bases_needing_reembedding(&mut system, CHUNKER_VERSION)
         .await
         .expect("the sweep should be able to read across tenants");
     system.commit().await.unwrap();
@@ -662,7 +748,7 @@ db_test!(async fn a_base_built_by_the_stand_in_is_found_and_can_be_repointed(db)
     tenant.commit().await.unwrap();
 
     let mut system = db.system().await.unwrap();
-    let found = knowledge_repo::knowledge_bases_needing_reembedding(&mut system)
+    let found = knowledge_repo::knowledge_bases_needing_reembedding(&mut system, CHUNKER_VERSION)
         .await
         .unwrap();
     system.commit().await.unwrap();
