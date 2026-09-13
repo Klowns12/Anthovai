@@ -210,10 +210,23 @@ missing from `ANTHOVAI__SERVER__DASHBOARD_ORIGINS`.
   moved past.
 - **Embedding tokens are counted but never priced.** Ingestion and every
   question cost real money that appears on no invoice.
-- **Reading scans is off by default.** `ANTHOVAI__OCR__ENABLED=false` means a
-  scanned PDF or a photograph is refused with a reason rather than queued
-  against a service that is not there. Turning it on means deploying
-  `ocr-sidecar/` alongside the API and worker.
+- **Reading scans is off by default**, and the two kinds of file behave
+  differently, which is worth knowing before a customer asks.
+  - A **photograph** (`.png`, `.jpg`, `.webp`) is refused at upload, HTTP 400
+    with code `ocr_not_enabled`. The person sees it while still looking at the
+    form, and nothing is queued.
+  - A **scanned PDF** is accepted and queued, because nothing knows it is a
+    scan until the worker tries to read it. It then fails ingestion with
+    `no_extractable_text` and a message saying to OCR it first, and sits in the
+    customer's document list as `failed`.
+
+  Either way they get a reason rather than silence, but only the first is
+  immediate — expect failed documents to appear in lists on a deployment with
+  OCR off. Turning it on means deploying `ocr-sidecar/` as its own component.
+  The setting belongs at the app level, not on one component: the worker uses
+  it to decide whether to send pages to the sidecar, and the API uses it to
+  decide whether to accept an image at all. On the worker alone, uploads are
+  refused while the worker reports the sidecar is up.
 - **One database test is intermittent.** `the_worker_takes_a_queued_document_to_ready`
   passes alone and sometimes fails in a full run: the test harness drains the
   whole `jobs` table rather than its own tenant's, so concurrent tests claim
