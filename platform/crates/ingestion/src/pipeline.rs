@@ -303,6 +303,10 @@ fn metadata_for(
         "page": draft.page,
         "record_key": draft.record_key,
         "language": parsed.language,
+        "ocr": parsed.ocr,
+        // Which chunker built this. Absent on anything indexed before the
+        // field existed, which is exactly the set that needs rebuilding.
+        "chunker_version": crate::chunker::CHUNKER_VERSION,
     })
 }
 
