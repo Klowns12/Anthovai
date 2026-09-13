@@ -8,7 +8,8 @@
     "solutions": "Lösungen",
     "about": "Über uns",
     "careers": "Karriere",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "private_ai": "Private KI"
   },
   "hero": {
     "eyebrow": "EIN HAUS DER KAISER KLOWNS · IT / SOFTWARE / ENGINEERING",
@@ -586,7 +587,12 @@
       }
     },
     "closing_title": "Beginnen Sie mit einem Dokument",
-    "closing_body": "Nichts zu installieren, kein Termin nötig. Registrieren, hochladen, fragen."
+    "closing_body": "Nichts zu installieren, kein Termin nötig. Registrieren, hochladen, fragen.",
+    "private_ai_callout": {
+      "title": "Lieber innerhalb Ihres eigenen Netzwerks betreiben?",
+      "body": "Dieselbe Plattform, installiert auf Ihren Servern, mit OCR für gescannte Thai-Dokumente. Nichts verlässt das Gebäude.",
+      "cta": "Private KI"
+    }
   },
   "platform": {
     "label": "Die Plattform",
@@ -599,5 +605,186 @@
     ],
     "cta": "So funktioniert es",
     "cta_signup": "Konto erstellen"
+  },
+  "private_ai": {
+    "label": "Private KI",
+    "headline": "KI für Ihre internen Dokumente – innerhalb Ihres eigenen Netzwerks",
+    "sub": "Verträge, Handbücher, Notizen und Scans – alles, was Ihr Team niemals in einen öffentlichen Chatbot einfügen würde. Dieselbe Plattform, installiert auf einem Server unter Ihrer Kontrolle, liest Thai korrekt – und nichts verlässt das Gebäude.",
+    "points": [
+      "Auf Ihrem Server installiert oder vollständig offline",
+      "Liest gescannte Thai-Dokumente und Fotos von Seiten",
+      "Jede Antwort nennt die Seite, aus der sie stammt"
+    ],
+    "cta": "So wird es bereitgestellt",
+    "cta_demo": "Demo vereinbaren"
+  },
+  "private_ai_page": {
+    "meta_title": "Private KI für Ihre Dokumente",
+    "meta_description": "Fragen und Antworten, Suche und Zusammenfassungen über die Dokumente Ihrer Organisation, installiert auf einem Server unter Ihrer Kontrolle. Liest Thai-Scans und Fotos. Nichts verlässt Ihr Netzwerk.",
+    "hero_label": "Anthovai Private AI",
+    "hero_headline": "Lassen Sie Ihr Team KI für interne Dokumente nutzen – ohne dass eine einzige Datei das Unternehmen verlässt",
+    "hero_body": "Fragen und Antworten, Suche und Zusammenfassungen über Ihre eigenen Thai- und englischen Dokumente, installiert auf einem Server unter Kontrolle Ihrer Organisation. Keine Public Cloud, kein ausländischer Anbieter dazwischen, und jeden Weg, den die Daten nehmen, können Sie prüfen.",
+    "cta_primary": "30-minütige Demo vereinbaren",
+    "cta_secondary": "So funktioniert die Plattform",
+    "boundary_label": "Ihre Netzwerkgrenze",
+    "boundary": {
+      "docs": {
+        "title": "Ihre Dokumente",
+        "body": "PDF, Word, Scans, Fotos von Seiten, Verträge, Handbücher, interne Notizen"
+      },
+      "read": {
+        "title": "Thai lesen",
+        "body": "Eine auf Thai-Dokumenten trainierte OCR liest Tabellen, Behördenformulare und gescannte Seiten"
+      },
+      "kb": {
+        "title": "Ihre Wissensbasis",
+        "body": "Gespeichert, durchsuchbar und je Arbeitsbereich berechtigt"
+      },
+      "answer": {
+        "title": "Antworten mit Quellen",
+        "body": "Jede Antwort verweist auf die Seite, aus der sie stammt – und lässt sich prüfen"
+      }
+    },
+    "boundary_inside": "Jeder Schritt läuft auf Maschinen unter Kontrolle Ihrer Organisation",
+    "boundary_outside": "Dateien, die diese Linie überschreiten: 0",
+    "why_label": "Warum jetzt",
+    "why_title": "Ihre Mitarbeiter nutzen KI schon heute. Die Frage ist, welche Dateien dabei nach draußen gegangen sind.",
+    "why": {
+      "damage": {
+        "stat": "฿20 Mio.+",
+        "title": "Ein Schaden, der bereits eingetreten ist",
+        "body": "Ein thailändischer Autoteilehersteller soll über 20 Millionen Baht verloren haben, nachdem ein Mitarbeiter technische Zeichnungen zum Übersetzen in eine öffentliche KI hochgeladen hatte."
+      },
+      "pdpa": {
+        "stat": "PDPA",
+        "title": "Haftung nach dem Gesetz",
+        "body": "Personenbezogene Daten, die die Organisation verlassen, ziehen Bußgelder in Millionenhöhe nach sich – und in manchen Fällen strafrechtliche Haftung für Unternehmen und Führungskräfte."
+      },
+      "shadow": {
+        "stat": "Unsichtbar",
+        "title": "Schatten-KI",
+        "body": "Ohne eine sichere Alternative nutzen Menschen private KI-Konten für die Arbeit, und die IT kann nicht wissen, welche Dateien bereits hochgeladen wurden."
+      }
+    },
+    "uses_label": "Was Ihr Team damit kann",
+    "uses_title": "Dokumentenarbeit, die Stunden dauerte, in Minuten",
+    "uses": [
+      {
+        "title": "Einem Vertrag eine Frage stellen",
+        "body": "„Wie hoch ist die Verzugsstrafe in diesem Vertrag?“ – beantwortet mit Seitenzahl."
+      },
+      {
+        "title": "Gescannte Thai-Dokumente lesen",
+        "body": "Alte Scans werden zu durchsuchbarem Text, den man befragen kann – Tabellen und Behördenformulare eingeschlossen."
+      },
+      {
+        "title": "Maschinenhandbücher und Normen durchsuchen",
+        "body": "Ein Techniker fragt, wie ein Fehlercode zu quittieren ist, und erhält aus Tausenden Seiten sofort das richtige Verfahren."
+      },
+      {
+        "title": "Notizen und Berichte zusammenfassen",
+        "body": "Protokolle zusammengefasst, Angebote verglichen, eine Antwort entworfen – aus dem Material Ihrer eigenen Organisation."
+      }
+    ],
+    "compare_label": "Im Vergleich",
+    "compare_title": "Was den Unterschied ausmacht, statt Mitarbeiter öffentliche KI nutzen zu lassen",
+    "compare_public": "Öffentliche KI (privates Konto)",
+    "compare_private": "Anthovai Private AI",
+    "compare_rows": [
+      {
+        "label": "Wo die Daten liegen",
+        "public": "Server eines ausländischen Anbieters",
+        "private": "Der Server Ihrer Organisation"
+      },
+      {
+        "label": "Gescannte Thai-Dokumente",
+        "public": "Unvorhersehbar",
+        "private": "Auf Thai-Dokumenten trainierte OCR"
+      },
+      {
+        "label": "Zugriff nach Abteilung",
+        "public": "Keiner",
+        "private": "Sie bestimmen, wer welche Dokumente sieht"
+      },
+      {
+        "label": "Nachvollziehbarkeit",
+        "public": "Für die Organisation unsichtbar",
+        "private": "Gespräche bleiben in Ihrer eigenen Datenbank"
+      },
+      {
+        "label": "Kosten",
+        "public": "Pro Nutzer und Monat, wachsend mit der Belegschaft",
+        "private": "Ein System für die ganze Organisation"
+      }
+    ],
+    "packages_label": "Pakete",
+    "packages_title": "Mit einer Abteilung beginnen. Erweitern, wenn es sich bewährt.",
+    "tiers": {
+      "pilot": {
+        "name": "Pilot",
+        "for": "Eine Abteilung, im echten Einsatz",
+        "price": "฿150.000",
+        "price_note": "einmalige Installation",
+        "monthly": "+ ฿15.000 / Monat Betreuung",
+        "points": [
+          "Bis zu 20 Nutzer",
+          "Erster Dokumentensatz wird für Sie importiert",
+          "Eine Schulung",
+          "Innerhalb von 30 Tagen im Einsatz"
+        ]
+      },
+      "business": {
+        "name": "Business",
+        "for": "Die ganze Organisation",
+        "price": "ab ฿280.000",
+        "price_note": "einmalige Installation",
+        "monthly": "+ ฿25.000–40.000 / Monat je nach Größe",
+        "points": [
+          "Unbegrenzt viele Abteilungen",
+          "Zugriff nach Arbeitsbereich und Rolle",
+          "Modell- und Systemupdates inklusive",
+          "Vorrangiger Support"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "for": "Besondere Anforderungen",
+        "price": "Nach Umfang",
+        "price_note": "Angebot nach Vor-Ort-Termin",
+        "monthly": "",
+        "points": [
+          "Vollständig offline (air-gapped) betrieben",
+          "SLA und dedizierter Support",
+          "Anbindung interner Systeme"
+        ]
+      }
+    },
+    "packages_note": "Richtpreise zur Budgetplanung; Umfang und Preis werden nach einem Vor-Ort-Termin bestätigt. Server-Hardware, falls nicht vorhanden, kommt hinzu – wir spezifizieren sie mit Ihnen.",
+    "timeline_label": "Die ersten 30 Tage",
+    "timeline_title": "Von der Unterschrift bis zum Team, das damit arbeitet",
+    "weeks": [
+      {
+        "when": "Woche 1",
+        "title": "Erhebung und Installation",
+        "body": "Maschine und Netzwerk bewerten; Installation auf Ihrem Server."
+      },
+      {
+        "when": "Woche 2",
+        "title": "Erste Dokumente importieren",
+        "body": "Mit Ihrem Team das Wesentliche auswählen; importieren und Lesequalität prüfen."
+      },
+      {
+        "when": "Woche 3",
+        "title": "Test mit echten Nutzern",
+        "body": "Ein Pilotteam arbeitet damit; unbeantwortete Fragen dienen der Feinabstimmung."
+      },
+      {
+        "when": "Woche 4",
+        "title": "Übergabe und Schulung",
+        "body": "Nutzer und Administratoren schulen; Übergabe mit vollständiger Systemdokumentation."
+      }
+    ],
+    "closing_title": "Sehen Sie eine Demo mit Ihren eigenen Dokumenten",
+    "closing_body": "Wir installieren die Demo vor Ihren Augen auf Ihrer Maschine. Ziehen Sie das Netzwerkkabel – sie läuft weiter, weil von Anfang an nichts nach draußen musste."
   }
 }

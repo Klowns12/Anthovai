@@ -48,6 +48,13 @@ services:
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       RUST_LOG: ${RUST_LOG:-info,anthovai=debug,sqlx=warn}
+      # Scanned PDFs. Off unless the `ocr` profile is up as well:
+      #   ANTHOVAI__OCR__ENABLED=true docker compose --profile ocr -f ... up
+      # There is deliberately no depends_on for it: the worker retries a scan
+      # until the sidecar answers, so the two may start in any order, and a
+      # stack without the profile still runs — scans are refused with a reason.
+      ANTHOVAI__OCR__ENABLED: ${ANTHOVAI__OCR__ENABLED:-false}
+      ANTHOVAI__OCR__BASE_URL: http://ocr-sidecar:9090
       # Applied by the API at startup. `sqlx` takes an advisory lock first, so
       # several replicas starting together is safe: one migrates and the rest
       # wait, rather than all of them running the same DDL.
@@ -77,3 +84,22 @@ services:
       api:
         condition: service_healthy
     environment: *backend_env
+
+  # Reads scanned PDFs for the worker (ocr-sidecar/README.md). Opt-in with
+  # `--profile ocr`, because it needs Ollama with the Typhoon OCR model — on
+  # the host's GPU here, which is what host.docker.internal reaches.
+  ocr-sidecar:
+    profiles: ["ocr"]
+    build:
+      context: ../ocr-sidecar
+    image: anthovai-ocr-sidecar:dev
+    restart: unless-stopped
+    environment:
+      OCR_OLLAMA_URL: ${OCR_OLLAMA_URL:-http://host.docker.internal:11434}
+      OCR_MODEL: ${OCR_MODEL:-scb10x/typhoon-ocr1.5-3b}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    # Not published on the host. The worker reaches it by name inside the
+    # network, and that is the only place a customer's pages should travel.
+    expose:
+      - "9090"

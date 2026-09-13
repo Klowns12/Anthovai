@@ -10,7 +10,7 @@ use std::time::Duration;
 use anthovai_core::config::{load_dotenv, Settings};
 use anthovai_db::Db;
 use anthovai_embeddings::EmbeddingRunner;
-use anthovai_ingestion::{pipeline, IngestPipeline};
+use anthovai_ingestion::{pipeline, IngestPipeline, OcrClient, ParserRegistry};
 use anthovai_jobs::{WorkerConfig, WorkerRuntime};
 use anyhow::Context;
 use tracing::{info, warn};
@@ -47,7 +47,7 @@ async fn main() -> anyhow::Result<()> {
 
     let embedder_model_id = embedder.model_id().to_owned();
 
-    let pipeline = Arc::new(IngestPipeline::new(
+    let mut pipeline = IngestPipeline::new(
         db.clone(),
         Arc::clone(&storage),
         Arc::new(EmbeddingRunner::new(
@@ -58,7 +58,34 @@ async fn main() -> anyhow::Result<()> {
             ),
         )),
         pipeline::chunk_config_from(500, 80),
-    ));
+    );
+
+    if settings.ocr.enabled {
+        let ocr = Arc::new(
+            OcrClient::new(
+                &settings.ocr.base_url,
+                Duration::from_secs(settings.ocr.timeout_secs),
+            )
+            .context("could not build the OCR client")?,
+        );
+        // Announced, not fatal. A sidecar still loading its model would
+        // otherwise stop every customer's uploads, scans or not — and a scan
+        // queued meanwhile is retried, not failed, so nothing is lost by
+        // starting first.
+        match ocr.health().await {
+            Ok(()) => {
+                info!(url = %settings.ocr.base_url, "OCR sidecar is up; scanned PDFs will be read")
+            }
+            Err(e) => warn!(
+                error = %e,
+                "OCR is enabled but the sidecar is not answering yet; scans are retried until it is"
+            ),
+        }
+        pipeline = pipeline.with_parsers(ParserRegistry::with_ocr(ocr));
+    } else {
+        info!("OCR is off; a scanned PDF is refused with a reason");
+    }
+    let pipeline = Arc::new(pipeline);
 
     let config = WorkerConfig {
         concurrency: settings.worker.concurrency,

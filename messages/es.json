@@ -8,7 +8,8 @@
     "solutions": "Soluciones",
     "about": "Nosotros",
     "careers": "Carreras",
-    "contact": "Contáctenos"
+    "contact": "Contáctenos",
+    "private_ai": "IA privada"
   },
   "hero": {
     "eyebrow": "UNA CASA DE PAYASOS KAISER · TI / SOFTWARE / INGENIERÍA",
@@ -586,7 +587,12 @@
       }
     },
     "closing_title": "Empiece con un documento",
-    "closing_body": "No hay nada que instalar ni reunión que agendar. Regístrese, suba algo y pregunte."
+    "closing_body": "No hay nada que instalar ni reunión que agendar. Regístrese, suba algo y pregunte.",
+    "private_ai_callout": {
+      "title": "¿Prefiere ejecutarla dentro de su propia red?",
+      "body": "La misma plataforma, instalada en sus servidores, con OCR para documentos tailandeses escaneados. Nada sale del edificio.",
+      "cta": "IA privada"
+    }
   },
   "platform": {
     "label": "La plataforma",
@@ -599,5 +605,186 @@
     ],
     "cta": "Vea cómo funciona",
     "cta_signup": "Crear una cuenta"
+  },
+  "private_ai": {
+    "label": "IA privada",
+    "headline": "IA sobre sus documentos internos, dentro de su propia red",
+    "sub": "Contratos, manuales, notas internas y escaneos: lo que su equipo jamás pegaría en un chatbot público. La misma plataforma, instalada en un servidor que su organización controla, que lee tailandés correctamente, y nada sale del edificio.",
+    "points": [
+      "Instalada en su servidor o totalmente sin conexión",
+      "Lee documentos tailandeses escaneados y fotos de páginas",
+      "Cada respuesta cita la página de la que procede"
+    ],
+    "cta": "Ver cómo se despliega",
+    "cta_demo": "Reservar una demo"
+  },
+  "private_ai_page": {
+    "meta_title": "IA privada para sus documentos",
+    "meta_description": "Preguntas y respuestas, búsqueda y resúmenes sobre los documentos de su organización, instalados en un servidor que usted controla. Lee escaneos y fotos en tailandés. Nada sale de su red.",
+    "hero_label": "Anthovai Private AI",
+    "hero_headline": "Deje que su equipo use IA en los documentos internos, sin que un solo archivo salga de la empresa",
+    "hero_body": "Preguntas y respuestas, búsqueda y resúmenes sobre sus propios documentos en tailandés e inglés, instalados en un servidor que su organización controla. Sin nube pública, sin proveedores extranjeros en el camino, y cada salto que dan los datos puede inspeccionarse.",
+    "cta_primary": "Reservar una demo de 30 minutos",
+    "cta_secondary": "Cómo funciona la plataforma",
+    "boundary_label": "El perímetro de su red",
+    "boundary": {
+      "docs": {
+        "title": "Sus documentos",
+        "body": "PDF, Word, escaneos, fotos de páginas, contratos, manuales, notas internas"
+      },
+      "read": {
+        "title": "Lectura en tailandés",
+        "body": "Un OCR entrenado con documentos tailandeses lee tablas, formularios oficiales y páginas escaneadas"
+      },
+      "kb": {
+        "title": "Su base de conocimiento",
+        "body": "Almacenada, consultable y con permisos por espacio de trabajo"
+      },
+      "answer": {
+        "title": "Respuestas con citas",
+        "body": "Cada respuesta remite a la página de origen, para poder comprobarla"
+      }
+    },
+    "boundary_inside": "Cada paso se ejecuta en máquinas que su organización controla",
+    "boundary_outside": "Archivos que cruzan esta línea: 0",
+    "why_label": "Por qué ahora",
+    "why_title": "Su personal ya usa IA hoy. La pregunta es qué archivos se han ido con ella.",
+    "why": {
+      "damage": {
+        "stat": "฿20 M+",
+        "title": "Una pérdida que ya ocurrió",
+        "body": "Se informa de que una fábrica tailandesa de autopartes perdió más de 20 millones de bahts después de que un empleado subiera planos de ingeniería a una IA pública para traducirlos."
+      },
+      "pdpa": {
+        "stat": "PDPA",
+        "title": "Responsabilidad legal",
+        "body": "Los datos personales que salen de la organización acarrean multas administrativas de millones de bahts y, en algunos casos, responsabilidad penal, para la empresa y para sus directivos."
+      },
+      "shadow": {
+        "stat": "Invisible",
+        "title": "IA en la sombra",
+        "body": "Sin una opción segura, la gente usa cuentas de IA personales para el trabajo, y TI no tiene forma de saber qué archivos ya se han subido."
+      }
+    },
+    "uses_label": "Lo que su equipo puede hacer",
+    "uses_title": "Trabajo documental que llevaba horas, en minutos",
+    "uses": [
+      {
+        "title": "Preguntarle a un contrato",
+        "body": "«¿Cuál es la penalización por entrega tardía en este contrato?», respondido con el número de página."
+      },
+      {
+        "title": "Leer documentos tailandeses escaneados",
+        "body": "Los escaneos antiguos se convierten en texto consultable al que se puede preguntar, tablas y formularios oficiales incluidos."
+      },
+      {
+        "title": "Buscar en manuales de máquinas y normas",
+        "body": "Un técnico pregunta cómo borrar un código de error y obtiene al instante el procedimiento correcto entre miles de páginas."
+      },
+      {
+        "title": "Resumir notas e informes",
+        "body": "Actas resumidas, presupuestos comparados, una respuesta redactada, a partir del material de su propia organización."
+      }
+    ],
+    "compare_label": "Lado a lado",
+    "compare_title": "En qué se diferencia de dejar que el personal use IA pública",
+    "compare_public": "IA pública (cuenta personal)",
+    "compare_private": "Anthovai Private AI",
+    "compare_rows": [
+      {
+        "label": "Dónde residen los datos",
+        "public": "Servidores de un proveedor extranjero",
+        "private": "El servidor de su organización"
+      },
+      {
+        "label": "Documentos tailandeses escaneados",
+        "public": "Impredecible",
+        "private": "OCR entrenado con documentos tailandeses"
+      },
+      {
+        "label": "Acceso por departamento",
+        "public": "Ninguno",
+        "private": "Usted decide quién ve qué documentos"
+      },
+      {
+        "label": "Trazabilidad",
+        "public": "Invisible para la organización",
+        "private": "Las conversaciones quedan en su propia base de datos"
+      },
+      {
+        "label": "Coste",
+        "public": "Por usuario y mes, creciendo con la plantilla",
+        "private": "Un solo sistema para toda la organización"
+      }
+    ],
+    "packages_label": "Paquetes",
+    "packages_title": "Empiece por un departamento. Amplíe cuando lo merezca.",
+    "tiers": {
+      "pilot": {
+        "name": "Pilot",
+        "for": "Un departamento, en uso real",
+        "price": "฿150.000",
+        "price_note": "instalación única",
+        "monthly": "+ ฿15.000 / mes de soporte",
+        "points": [
+          "Hasta 20 usuarios",
+          "Primer conjunto de documentos importado por nosotros",
+          "Una sesión de formación",
+          "En uso en 30 días"
+        ]
+      },
+      "business": {
+        "name": "Business",
+        "for": "Toda la organización",
+        "price": "desde ฿280.000",
+        "price_note": "instalación única",
+        "monthly": "+ ฿25.000–40.000 / mes según tamaño",
+        "points": [
+          "Departamentos ilimitados",
+          "Acceso por espacio de trabajo y rol",
+          "Actualizaciones de modelo y sistema incluidas",
+          "Soporte prioritario"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "for": "Requisitos específicos",
+        "price": "Según alcance",
+        "price_note": "cotizado tras visita técnica",
+        "monthly": "",
+        "points": [
+          "Despliegue totalmente sin conexión (air-gapped)",
+          "SLA y soporte dedicado",
+          "Integración con sistemas internos"
+        ]
+      }
+    },
+    "packages_note": "Precios orientativos para presupuestar; el alcance y el precio se confirman tras una visita técnica. El hardware de servidor, si no dispone de él, va aparte: lo dimensionamos con usted.",
+    "timeline_label": "Los primeros 30 días",
+    "timeline_title": "De la firma a un equipo que lo usa",
+    "weeks": [
+      {
+        "when": "Semana 1",
+        "title": "Evaluación e instalación",
+        "body": "Evaluamos la máquina y la red; instalamos en su servidor."
+      },
+      {
+        "when": "Semana 2",
+        "title": "Importar los primeros documentos",
+        "body": "Elegimos lo importante con su equipo; importamos y comprobamos la calidad de lectura."
+      },
+      {
+        "when": "Semana 3",
+        "title": "Prueba con usuarios reales",
+        "body": "Un equipo piloto lo usa de verdad; las preguntas sin respuesta afinan el sistema."
+      },
+      {
+        "when": "Semana 4",
+        "title": "Entrega y formación",
+        "body": "Formamos a usuarios y administradores; entregamos con la documentación completa del sistema."
+      }
+    ],
+    "closing_title": "Vea una demo con sus propios documentos",
+    "closing_body": "Instalamos la demo en su máquina, delante de usted. Desconecte el cable de red y sigue funcionando, porque nada tenía que salir desde el principio."
   }
 }

@@ -6,6 +6,10 @@ import { motion } from 'framer-motion'
 import { ArrowUpRight, Mail, MapPin, Clock } from 'lucide-react'
 
 const footerLinks = {
+  platform: [
+    { label: 'platform', href: '/platform' },
+    { label: 'private_ai', href: '/platform/private-ai' },
+  ],
   company: [
     { label: 'about', href: '/about' },
     { label: 'careers', href: '/careers' },
@@ -78,7 +82,7 @@ export function Footer() {
 
       {/* Main Footer Content */}
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <motion.div
             className="lg:col-span-1"
@@ -96,6 +100,31 @@ export function Footer() {
             <p className="mt-2 text-[10px] tracking-[0.2em] uppercase text-white-30">
               {t('parent')}
             </p>
+          </motion.div>
+
+          {/* Platform — the products a visitor can act on, hosted or installed */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+          >
+            <h3 className="text-[11px] font-medium tracking-[0.25em] uppercase text-white-30 mb-5">
+              {t('platform')}
+            </h3>
+            <ul className="space-y-3">
+              {footerLinks.platform.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="group text-sm text-white-60 hover:text-gold transition-colors flex items-center gap-2"
+                  >
+                    {navT(link.label)}
+                    <ArrowUpRight size={12} className="opacity-0 -translate-x-2 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </motion.div>
 
           {/* Company */}

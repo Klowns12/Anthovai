@@ -44,6 +44,46 @@ pub struct Settings {
     pub providers: ProviderSettings,
     #[serde(default)]
     pub mail: MailSettings,
+    #[serde(default)]
+    pub ocr: OcrSettings,
+}
+
+/// The OCR sidecar, which reads scanned PDFs for the worker.
+///
+/// Off by default. It needs a model runtime on the same machine, and a
+/// deployment without one should refuse a scan with a reason the customer can
+/// act on, not queue it against a service that is not there. When it is on,
+/// the worker sends page images to `base_url` — a loopback or compose-network
+/// address, never a public one. Documents not leaving the machine is what the
+/// product is sold on.
+#[derive(Clone, Debug, Deserialize)]
+pub struct OcrSettings {
+    #[serde(default)]
+    pub enabled: bool,
+    #[serde(default = "default_ocr_url")]
+    pub base_url: String,
+    /// One document, every page of it. Typhoon OCR on a small GPU takes about
+    /// a minute a page; a long scan needs the room.
+    #[serde(default = "default_ocr_timeout_secs")]
+    pub timeout_secs: u64,
+}
+
+fn default_ocr_url() -> String {
+    "http://127.0.0.1:9090".to_owned()
+}
+
+fn default_ocr_timeout_secs() -> u64 {
+    900
+}
+
+impl Default for OcrSettings {
+    fn default() -> Self {
+        Self {
+            enabled: false,
+            base_url: default_ocr_url(),
+            timeout_secs: default_ocr_timeout_secs(),
+        }
+    }
 }
 
 /// Where confirmation emails go out through.

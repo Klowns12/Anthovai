@@ -44,6 +44,8 @@ impl Parser for TextParser {
             title: input.title(),
             language: detect_language(&text),
             blocks,
+            // Text the file carried, not a transcription of an image.
+            ocr: false,
         })
     }
 }
@@ -69,6 +71,8 @@ impl Parser for MarkdownParser {
             title: input.title(),
             language: detect_language(&text),
             blocks,
+            // Text the file carried, not a transcription of an image.
+            ocr: false,
         })
     }
 }
@@ -77,7 +81,7 @@ impl Parser for MarkdownParser {
 ///
 /// Inline formatting is dropped: what is being indexed is meaning, and `**bold**`
 /// markers in a chunk only cost tokens and confuse a match.
-fn markdown_blocks(markdown: &str) -> Vec<Block> {
+pub(crate) fn markdown_blocks(markdown: &str) -> Vec<Block> {
     let mut blocks = Vec::new();
     let mut buffer = String::new();
     let mut heading: Option<u8> = None;

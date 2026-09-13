@@ -52,6 +52,16 @@ poll_interval_ms = 500
 from = "Anthovai <no-reply@anthovai.com>"
 site_url = "http://localhost:3000"
 
+[ocr]
+# Scanned PDFs go to the OCR sidecar (ocr-sidecar/) when this is on. Off by
+# default: a machine without the model should refuse a scan with a reason, not
+# queue it against a service that is not there. The worker retries a scan until
+# the sidecar answers, so the two may start in any order.
+enabled = false
+base_url = "http://127.0.0.1:9090"
+# The whole document. Typhoon OCR on a 6 GB GPU takes about a minute a page.
+timeout_secs = 900
+
 [providers.openai]
 api_key_env = "OPENAI_API_KEY"
 base_url = "https://api.openai.com/v1"

@@ -6,6 +6,7 @@
 
 pub mod docx;
 pub mod html;
+pub mod image;
 pub mod pdf;
 pub mod structured;
 pub mod text;
@@ -14,10 +15,12 @@ use std::sync::Arc;
 
 use anthovai_knowledge::SourceType;
 
+use crate::ocr::OcrClient;
 use crate::Parser;
 
 pub use docx::DocxParser;
 pub use html::HtmlParser;
+pub use image::ImageParser;
 pub use pdf::PdfParser;
 pub use structured::{CsvParser, JsonParser};
 pub use text::{MarkdownParser, TextParser};
@@ -28,20 +31,34 @@ pub struct ParserRegistry {
 }
 
 impl ParserRegistry {
-    /// Every format the platform reads.
+    /// Every format the platform reads. A scanned PDF or a photograph is
+    /// refused with a reason.
     ///
     /// Order matters only in that each parser claims a disjoint set of types;
     /// `for_type` takes the first that claims one.
     pub fn new() -> Self {
+        Self::build(PdfParser::new(), ImageParser::new())
+    }
+
+    /// As `new`, with scans and photographs read by the OCR sidecar.
+    pub fn with_ocr(ocr: Arc<OcrClient>) -> Self {
+        Self::build(
+            PdfParser::with_ocr(Arc::clone(&ocr)),
+            ImageParser::with_ocr(ocr),
+        )
+    }
+
+    fn build(pdf: PdfParser, image: ImageParser) -> Self {
         Self {
             parsers: vec![
                 Arc::new(TextParser),
                 Arc::new(MarkdownParser),
-                Arc::new(PdfParser),
+                Arc::new(pdf),
                 Arc::new(DocxParser),
                 Arc::new(JsonParser),
                 Arc::new(CsvParser),
                 Arc::new(HtmlParser),
+                Arc::new(image),
             ],
         }
     }
@@ -95,6 +112,7 @@ mod tests {
             SourceType::Csv,
             SourceType::Html,
             SourceType::Url,
+            SourceType::Image,
         ] {
             assert_eq!(
                 registry.supports(source),
@@ -102,6 +120,14 @@ mod tests {
                 "{source:?}: the upload gate and the parser registry disagree"
             );
         }
+    }
+
+    #[test]
+    fn a_picture_has_a_parser_whether_or_not_ocr_is_configured() {
+        // Without OCR the parser exists and refuses with a reason. What must
+        // never happen is `for_type` returning `None`, which the pipeline
+        // reports as "no parser for `image` files" — true, and useless.
+        assert!(ParserRegistry::new().for_type(SourceType::Image).is_some());
     }
 
     #[test]

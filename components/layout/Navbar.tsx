@@ -14,6 +14,10 @@ const navLinks = [
   // and use the same afternoon. It also carries the only link to the sign-in
   // page anywhere on the marketing site.
   { href: '/platform', key: 'platform' },
+  // The same platform, installed in the customer's own network. Next to the
+  // hosted one because it is the same product; a visitor from a bank or a
+  // factory should not have to read the hosted page to learn it exists.
+  { href: '/platform/private-ai', key: 'private_ai' },
   { href: '/solutions', key: 'solutions' },
   { href: '/about', key: 'about' },
   { href: '/careers', key: 'careers' },

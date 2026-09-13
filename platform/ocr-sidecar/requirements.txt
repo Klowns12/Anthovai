@@ -1,0 +1,8 @@
+# The OCR sidecar. Every package here is permissively licensed; pypdfium2 is
+# chosen over PyMuPDF deliberately — PyMuPDF is AGPL, and this ships inside a
+# product that is sold.
+fastapi>=0.115
+uvicorn>=0.30
+pydantic>=2.7
+pypdfium2>=4.30
+pillow>=10.4

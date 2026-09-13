@@ -30,9 +30,15 @@ quick-xml.workspace = true
 csv.workspace = true
 scraper.workspace = true
 url.workspace = true
+# The OCR sidecar is reached over HTTP; the PDF goes across as base64.
+reqwest.workspace = true
+base64.workspace = true
 
 [dev-dependencies]
 anthovai-testkit.workspace = true
 lopdf = "0.42"
 pgvector.workspace = true
 sqlx.workspace = true
+# A stand-in sidecar for the OCR tests: a router on a loopback port.
+axum.workspace = true
+tokio = { workspace = true, features = ["net"] }

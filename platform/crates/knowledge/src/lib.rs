@@ -111,6 +111,10 @@ pub enum SourceType {
     Json,
     Csv,
     Text,
+    /// A photograph or scan of a page — PNG, JPEG or WebP. It carries no text
+    /// of its own; OCR reads it, so a deployment without OCR refuses it at
+    /// upload rather than failing it in the worker.
+    Image,
 }
 
 impl SourceType {
@@ -125,6 +129,7 @@ impl SourceType {
             Self::Json => "json",
             Self::Csv => "csv",
             Self::Text => "text",
+            Self::Image => "image",
         }
     }
 
@@ -138,6 +143,12 @@ impl SourceType {
         // treating it as a Word document.
         if bytes.starts_with(&[0x50, 0x4B, 0x03, 0x04]) {
             return Some(Self::Docx);
+        }
+        if bytes.starts_with(&[0x89, b'P', b'N', b'G', 0x0D, 0x0A, 0x1A, 0x0A])
+            || bytes.starts_with(&[0xFF, 0xD8, 0xFF])
+            || (bytes.starts_with(b"RIFF") && bytes.get(8..12) == Some(b"WEBP"))
+        {
+            return Some(Self::Image);
         }
         None
     }
@@ -154,6 +165,10 @@ impl SourceType {
             "html" | "htm" => Some(Self::Html),
             "pdf" => Some(Self::Pdf),
             "docx" => Some(Self::Docx),
+            // What a phone or a scanner produces. HEIC is left out on purpose:
+            // the OCR sidecar's image library does not read it, and accepting
+            // it here would fail it there.
+            "png" | "jpg" | "jpeg" | "webp" => Some(Self::Image),
             _ => None,
         }
     }
@@ -180,6 +195,7 @@ impl std::str::FromStr for SourceType {
             "json" => Ok(Self::Json),
             "csv" => Ok(Self::Csv),
             "text" => Ok(Self::Text),
+            "image" => Ok(Self::Image),
             other => Err(DomainError::validation(format!(
                 "unknown source type `{other}`"
             ))),
@@ -299,12 +315,36 @@ mod tests {
     }
 
     #[test]
+    fn a_photograph_is_recognised_by_its_bytes_whatever_the_format() {
+        let png = [0x89, b'P', b'N', b'G', 0x0D, 0x0A, 0x1A, 0x0A, 0x00];
+        let jpeg = [0xFF, 0xD8, 0xFF, 0xE0, 0x00];
+        let webp = b"RIFF\x24\x00\x00\x00WEBPVP8 ";
+        for bytes in [&png[..], &jpeg[..], &webp[..]] {
+            assert_eq!(
+                SourceType::from_magic_bytes(bytes),
+                Some(SourceType::Image),
+                "{bytes:?}"
+            );
+        }
+        // RIFF is also WAV and AVI; only the WEBP form is a picture.
+        assert_eq!(
+            SourceType::from_magic_bytes(b"RIFF\x24\x00\x00\x00WAVEfmt "),
+            None
+        );
+    }
+
+    #[test]
     fn extensions_are_the_fallback_for_text_formats() {
         assert_eq!(SourceType::from_extension("notes.md"), Some(SourceType::Md));
         assert_eq!(
             SourceType::from_extension("HANDBOOK.PDF"),
             Some(SourceType::Pdf)
         );
+        assert_eq!(
+            SourceType::from_extension("site-photo.JPG"),
+            Some(SourceType::Image)
+        );
+        assert_eq!(SourceType::from_extension("IMG_2041.heic"), None);
         assert_eq!(SourceType::from_extension("no-extension"), None);
         assert_eq!(SourceType::from_extension("archive.tar.gz"), None);
     }
@@ -324,6 +364,7 @@ mod tests {
             SourceType::Csv,
             SourceType::Html,
             SourceType::Url,
+            SourceType::Image,
         ] {
             assert!(source.is_supported(), "{source:?}");
         }
@@ -341,6 +382,7 @@ mod tests {
             SourceType::Json,
             SourceType::Csv,
             SourceType::Text,
+            SourceType::Image,
         ] {
             assert_eq!(source.as_str().parse::<SourceType>().unwrap(), source);
         }

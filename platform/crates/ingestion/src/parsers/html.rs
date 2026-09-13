@@ -73,6 +73,7 @@ impl Parser for HtmlParser {
             title,
             language: detect_language(&sample),
             blocks: parsed.blocks,
+            ocr: false,
         })
     }
 }

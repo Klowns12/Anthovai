@@ -4,22 +4,26 @@
 //! untrusted input handed to a parser that does real work, so it runs on a
 //! blocking thread under a timeout and a page cap rather than in the async
 //! runtime. And a scanned PDF — a photograph of a page — contains no text at
-//! all; it must be refused with a reason the customer can act on, not retried
-//! forever, because no number of attempts will make text appear.
+//! all. When an OCR sidecar is configured the pages go there and the text
+//! comes back; when it is not, the file is refused with a reason the customer
+//! can act on rather than retried forever, because no number of attempts will
+//! make text appear.
 //!
 //! Page numbers are kept on every block. A citation that can say "page 14" is
 //! worth a great deal in a hundred-page handbook.
 
 use std::panic::AssertUnwindSafe;
+use std::sync::Arc;
 use std::time::Duration;
 
 use anthovai_core::{DomainError, Result};
 use anthovai_knowledge::SourceType;
 use async_trait::async_trait;
-use tracing::warn;
+use tracing::{info, warn};
 
 use crate::chunker::{Block, ParsedDocument};
 use crate::normalize::normalize;
+use crate::ocr::{self, OcrClient};
 use crate::parsers::text::detect_language;
 use crate::{error_codes, ParseInput, Parser};
 
@@ -41,7 +45,27 @@ const MAX_PAGES: usize = 2_000;
 /// document produces a knowledge base that looks populated and answers nothing.
 const MIN_TEXT_CHARS: usize = 32;
 
-pub struct PdfParser;
+pub struct PdfParser {
+    ocr: Option<Arc<OcrClient>>,
+}
+
+impl PdfParser {
+    /// Reads the text a PDF carries. A scan is refused with a reason.
+    pub fn new() -> Self {
+        Self { ocr: None }
+    }
+
+    /// As `new`, but a scan is read by the OCR sidecar instead of refused.
+    pub fn with_ocr(ocr: Arc<OcrClient>) -> Self {
+        Self { ocr: Some(ocr) }
+    }
+}
+
+impl Default for PdfParser {
+    fn default() -> Self {
+        Self::new()
+    }
+}
 
 #[async_trait]
 impl Parser for PdfParser {
@@ -51,13 +75,16 @@ impl Parser for PdfParser {
 
     async fn parse(&self, input: ParseInput) -> Result<ParsedDocument> {
         let title = input.title();
-        let bytes = input.bytes;
+        // Shared rather than moved: the bytes go to the blocking thread first
+        // and, if that finds no text, to the OCR service afterwards.
+        let bytes = Arc::new(input.bytes);
 
+        let for_extraction = Arc::clone(&bytes);
         let work = tokio::task::spawn_blocking(move || {
             // `pdf-extract` panics on some malformed files rather than
             // returning an error. Unwinding out of a worker thread would take
             // the job down without a reason the customer could read.
-            std::panic::catch_unwind(AssertUnwindSafe(|| pages_of(&bytes)))
+            std::panic::catch_unwind(AssertUnwindSafe(|| pages_of(for_extraction.as_slice())))
                 .unwrap_or_else(|_| Err(unreadable()))
         });
 
@@ -74,24 +101,42 @@ impl Parser for PdfParser {
         };
 
         let blocks = blocks_from(&pages);
-        let characters: usize = blocks
-            .iter()
-            .filter_map(|b| match b {
-                Block::Paragraph { text, .. } => Some(text.chars().count()),
-                _ => None,
-            })
-            .sum();
-
-        if characters < MIN_TEXT_CHARS {
-            return Err(no_text());
+        if text_characters(&blocks) >= MIN_TEXT_CHARS {
+            let sample: String = pages.iter().take(5).cloned().collect::<Vec<_>>().join("\n");
+            return Ok(ParsedDocument {
+                title,
+                language: detect_language(&sample),
+                blocks,
+                ocr: false,
+            });
         }
 
-        let sample: String = pages.iter().take(5).cloned().collect::<Vec<_>>().join("\n");
+        // ---- a scan ----------------------------------------------------
+        let Some(ocr) = &self.ocr else {
+            return Err(no_text());
+        };
+
+        info!(document = %title, "no selectable text; sending the pages to OCR");
+        let recovered = ocr.ocr_pdf(&bytes).await.map_err(ocr::to_domain_error)?;
+
+        let blocks = ocr::blocks_from_pages(&recovered);
+        if text_characters(&blocks) < MIN_TEXT_CHARS {
+            return Err(nothing_recovered());
+        }
+
+        info!(document = %title, pages = recovered.len(), "text recovered by OCR");
+        let sample: String = recovered
+            .iter()
+            .take(5)
+            .cloned()
+            .collect::<Vec<_>>()
+            .join("\n");
 
         Ok(ParsedDocument {
             title,
             language: detect_language(&sample),
             blocks,
+            ocr: true,
         })
     }
 }
@@ -146,10 +191,29 @@ fn blocks_from(pages: &[String]) -> Vec<Block> {
     blocks
 }
 
+/// How much prose there is — the measure of whether this is a document.
+fn text_characters(blocks: &[Block]) -> usize {
+    blocks
+        .iter()
+        .filter_map(|b| match b {
+            Block::Paragraph { text, .. } => Some(text.chars().count()),
+            _ => None,
+        })
+        .sum()
+}
+
 fn no_text() -> DomainError {
     DomainError::validation(format!(
         "{}: this PDF holds no selectable text. It is most likely a scan or a \
          set of page images; run it through OCR and upload the result.",
+        error_codes::NO_EXTRACTABLE_TEXT
+    ))
+}
+
+fn nothing_recovered() -> DomainError {
+    DomainError::validation(format!(
+        "{}: this PDF holds no selectable text, and OCR found no readable text \
+         on its pages either. The scan may be blank, or too poor to read.",
         error_codes::NO_EXTRACTABLE_TEXT
     ))
 }
@@ -176,6 +240,7 @@ fn too_many_pages(count: usize) -> DomainError {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::ocr::testing;
 
     fn input(bytes: Vec<u8>) -> ParseInput {
         ParseInput {
@@ -266,13 +331,22 @@ mod tests {
         bytes
     }
 
+    /// What a scan looks like from here: valid pages, no text operators.
+    fn scan() -> Vec<u8> {
+        pdf(&[&[], &[]])
+    }
+
+    async fn ocr_client(url: String) -> Arc<OcrClient> {
+        Arc::new(OcrClient::new(url, Duration::from_secs(5)).unwrap())
+    }
+
     #[tokio::test]
     async fn text_is_extracted_and_carries_its_page_number() {
         let bytes = pdf(&[
             &["The library opens at seven in the morning."],
             &["Parking permits cost four hundred baht per semester."],
         ]);
-        let doc = PdfParser.parse(input(bytes)).await.unwrap();
+        let doc = PdfParser::new().parse(input(bytes)).await.unwrap();
 
         let paragraphs = paragraphs(&doc);
         assert!(
@@ -287,13 +361,12 @@ mod tests {
                 .any(|(text, page)| text.contains("Parking permits") && *page == Some(2)),
             "a citation that cannot say which page is much less useful: {paragraphs:?}"
         );
+        assert!(!doc.ocr, "text the file carried is not OCR");
     }
 
     #[tokio::test]
     async fn a_pdf_with_no_selectable_text_is_refused_and_says_why() {
-        // What a scan looks like from here: valid pages, no text operators.
-        let bytes = pdf(&[&[], &[]]);
-        let err = PdfParser.parse(input(bytes)).await.unwrap_err();
+        let err = PdfParser::new().parse(input(scan())).await.unwrap_err();
 
         let message = err.to_string();
         assert!(
@@ -307,17 +380,99 @@ mod tests {
     }
 
     #[tokio::test]
+    async fn a_scan_is_read_by_the_sidecar_when_there_is_one() {
+        let url = testing::serve(testing::sidecar_answering(vec![
+            (1, "# ใบส่งของ\n\nส่งที่หน่วยงาน โครงการบ้านพักอาศัย ซ.รามอินทรา 19"),
+            (
+                2,
+                "<table><tr><td>1</td><td>อิฐมอญ</td><td>4,000</td><td>ก้อน</td></tr></table>",
+            ),
+        ]))
+        .await;
+        let parser = PdfParser::with_ocr(ocr_client(url).await);
+
+        let doc = parser.parse(input(scan())).await.unwrap();
+
+        assert!(doc.ocr, "the reader should know this text came from a scan");
+        let paragraphs = paragraphs(&doc);
+        assert!(
+            paragraphs
+                .iter()
+                .any(|(text, page)| text.contains("รามอินทรา") && *page == Some(1)),
+            "{paragraphs:?}"
+        );
+        assert!(
+            paragraphs
+                .iter()
+                .any(|(text, page)| text.contains("อิฐมอญ | 4,000") && *page == Some(2)),
+            "the table's numbers must survive: {paragraphs:?}"
+        );
+        assert_eq!(doc.language.as_deref(), Some("tha"));
+    }
+
+    #[tokio::test]
+    async fn a_pdf_that_carries_text_never_goes_to_ocr() {
+        // The sidecar here would fail every call. It must never be asked.
+        let parser = PdfParser::with_ocr(ocr_client(testing::dead_url().await).await);
+        let bytes = pdf(&[&["The library opens at seven in the morning."]]);
+
+        let doc = parser.parse(input(bytes)).await.unwrap();
+        assert!(!doc.ocr);
+    }
+
+    #[tokio::test]
+    async fn a_scan_with_the_sidecar_down_is_retried_not_failed() {
+        let parser = PdfParser::with_ocr(ocr_client(testing::dead_url().await).await);
+
+        let err = parser.parse(input(scan())).await.unwrap_err();
+        assert_eq!(err.code(), error_codes::OCR_UNAVAILABLE, "{err}");
+        assert!(
+            crate::IngestError::from_parse(err).is_retryable(),
+            "a sidecar that is restarting must not fail the document for good"
+        );
+    }
+
+    #[tokio::test]
+    async fn a_scan_the_sidecar_refuses_is_final_and_carries_its_reason() {
+        let url = testing::serve(testing::sidecar_refusing()).await;
+        let parser = PdfParser::with_ocr(ocr_client(url).await);
+
+        let err = parser.parse(input(scan())).await.unwrap_err();
+        let message = err.to_string();
+        assert!(
+            message.contains(error_codes::NO_EXTRACTABLE_TEXT),
+            "{message}"
+        );
+        assert!(message.contains("too small"), "{message}");
+        assert!(!crate::IngestError::from_parse(err).is_retryable());
+    }
+
+    #[tokio::test]
+    async fn a_scan_ocr_finds_nothing_on_is_refused() {
+        let url = testing::serve(testing::sidecar_answering(vec![(1, ""), (2, "   ")])).await;
+        let parser = PdfParser::with_ocr(ocr_client(url).await);
+
+        let err = parser.parse(input(scan())).await.unwrap_err();
+        let message = err.to_string();
+        assert!(
+            message.contains(error_codes::NO_EXTRACTABLE_TEXT),
+            "{message}"
+        );
+        assert!(message.contains("OCR found no readable text"), "{message}");
+    }
+
+    #[tokio::test]
     async fn a_watermark_alone_is_not_a_document() {
         // A handful of stray glyphs is the usual output of a scan, and it must
         // not pass for content.
         let bytes = pdf(&[&["DRAFT"]]);
-        let err = PdfParser.parse(input(bytes)).await.unwrap_err();
+        let err = PdfParser::new().parse(input(bytes)).await.unwrap_err();
         assert!(err.to_string().contains(error_codes::NO_EXTRACTABLE_TEXT));
     }
 
     #[tokio::test]
     async fn something_that_is_not_a_pdf_is_refused_rather_than_crashing() {
-        let err = PdfParser
+        let err = PdfParser::new()
             .parse(input(b"%PDF-1.7\nnot really".to_vec()))
             .await
             .unwrap_err();
@@ -375,7 +530,10 @@ mod tests {
             return;
         };
 
-        let doc = PdfParser.parse(input(bytes)).await.expect("parse the PDF");
+        let doc = PdfParser::new()
+            .parse(input(bytes))
+            .await
+            .expect("parse the PDF");
         let text: String = paragraphs(&doc)
             .iter()
             .map(|(t, _)| *t)
@@ -408,7 +566,7 @@ mod tests {
 
     #[test]
     fn the_parser_only_claims_pdfs() {
-        assert!(PdfParser.supports(SourceType::Pdf));
-        assert!(!PdfParser.supports(SourceType::Docx));
+        assert!(PdfParser::new().supports(SourceType::Pdf));
+        assert!(!PdfParser::new().supports(SourceType::Docx));
     }
 }

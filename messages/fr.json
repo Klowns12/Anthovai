@@ -8,7 +8,8 @@
     "solutions": "Solutions",
     "about": "À propos",
     "careers": "Carrières",
-    "contact": "Nous contacter"
+    "contact": "Nous contacter",
+    "private_ai": "IA privée"
   },
   "hero": {
     "eyebrow": "UNE MAISON DE KAISER KLOWNS · INFORMATIQUE / LOGICIELS / INGÉNIERIE",
@@ -586,7 +587,12 @@
       }
     },
     "closing_title": "Commencez par un document",
-    "closing_body": "Rien à installer, aucun rendez-vous à prendre. Inscrivez-vous, téléversez, posez une question."
+    "closing_body": "Rien à installer, aucun rendez-vous à prendre. Inscrivez-vous, téléversez, posez une question.",
+    "private_ai_callout": {
+      "title": "Vous préférez la faire tourner dans votre propre réseau ?",
+      "body": "La même plateforme, installée sur vos serveurs, avec l’OCR pour les documents thaïs numérisés. Rien ne quitte le bâtiment.",
+      "cta": "IA privée"
+    }
   },
   "platform": {
     "label": "La plateforme",
@@ -599,5 +605,186 @@
     ],
     "cta": "Voir comment ça marche",
     "cta_signup": "Créer un compte"
+  },
+  "private_ai": {
+    "label": "IA privée",
+    "headline": "L’IA sur vos documents internes, à l’intérieur de votre propre réseau",
+    "sub": "Contrats, manuels, notes internes et documents numérisés : tout ce que votre équipe ne collerait jamais dans un chatbot public. La même plateforme, installée sur un serveur que votre organisation contrôle, qui lit correctement le thaï — et rien ne quitte le bâtiment.",
+    "points": [
+      "Installée sur votre serveur, ou entièrement hors ligne",
+      "Lit les documents thaïs numérisés et les photos de pages",
+      "Chaque réponse cite la page dont elle provient"
+    ],
+    "cta": "Voir le déploiement",
+    "cta_demo": "Réserver une démo"
+  },
+  "private_ai_page": {
+    "meta_title": "Une IA privée pour vos documents",
+    "meta_description": "Questions-réponses, recherche et synthèses sur les documents de votre organisation, installées sur un serveur que vous contrôlez. Lit les numérisations et photos en thaï. Rien ne quitte votre réseau.",
+    "hero_label": "Anthovai Private AI",
+    "hero_headline": "Laissez votre équipe utiliser l’IA sur les documents internes — sans qu’un seul fichier ne quitte l’entreprise",
+    "hero_body": "Questions-réponses, recherche et synthèses sur vos propres documents en thaï et en anglais, installées sur un serveur que votre organisation contrôle. Pas de cloud public, aucun prestataire étranger sur le chemin, et chaque étape parcourue par les données peut être inspectée.",
+    "cta_primary": "Réserver une démo de 30 minutes",
+    "cta_secondary": "Comment fonctionne la plateforme",
+    "boundary_label": "Le périmètre de votre réseau",
+    "boundary": {
+      "docs": {
+        "title": "Vos documents",
+        "body": "PDF, Word, numérisations, photos de pages, contrats, manuels, notes internes"
+      },
+      "read": {
+        "title": "Lecture du thaï",
+        "body": "Un OCR entraîné sur des documents thaïs lit tableaux, formulaires administratifs et pages numérisées"
+      },
+      "kb": {
+        "title": "Votre base de connaissances",
+        "body": "Stockée, interrogée et cloisonnée par espace de travail"
+      },
+      "answer": {
+        "title": "Des réponses avec sources",
+        "body": "Chaque réponse renvoie à la page d’origine, pour pouvoir être vérifiée"
+      }
+    },
+    "boundary_inside": "Chaque étape s’exécute sur des machines que votre organisation contrôle",
+    "boundary_outside": "Fichiers franchissant cette ligne : 0",
+    "why_label": "Pourquoi maintenant",
+    "why_title": "Vos collaborateurs utilisent déjà l’IA aujourd’hui. La question est de savoir quels fichiers sont partis avec.",
+    "why": {
+      "damage": {
+        "stat": "฿20 M+",
+        "title": "Une perte déjà survenue",
+        "body": "Une usine thaïlandaise de pièces automobiles aurait perdu plus de 20 millions de bahts après qu’un employé a téléversé des plans techniques dans une IA publique pour les traduire."
+      },
+      "pdpa": {
+        "stat": "PDPA",
+        "title": "Responsabilité légale",
+        "body": "Des données personnelles qui sortent de l’organisation exposent à des amendes administratives de plusieurs millions de bahts, et parfois à des poursuites pénales — pour l’entreprise comme pour ses dirigeants."
+      },
+      "shadow": {
+        "stat": "Invisible",
+        "title": "IA fantôme",
+        "body": "Sans option sûre à disposition, les gens utilisent des comptes IA personnels pour le travail, et l’informatique n’a aucun moyen de savoir quels fichiers ont déjà été téléversés."
+      }
+    },
+    "uses_label": "Ce que votre équipe peut faire",
+    "uses_title": "Le travail documentaire qui prenait des heures, en quelques minutes",
+    "uses": [
+      {
+        "title": "Poser une question à un contrat",
+        "body": "« Quelle est la pénalité de retard dans ce contrat ? » — avec le numéro de page."
+      },
+      {
+        "title": "Lire des documents thaïs numérisés",
+        "body": "Les vieilles numérisations deviennent un texte consultable et interrogeable — tableaux et formulaires administratifs compris."
+      },
+      {
+        "title": "Chercher dans les manuels et les normes",
+        "body": "Un technicien demande comment effacer un code d’erreur et obtient aussitôt la bonne procédure parmi des milliers de pages."
+      },
+      {
+        "title": "Synthétiser notes et rapports",
+        "body": "Comptes rendus résumés, devis comparés, réponse rédigée — à partir des documents de votre organisation."
+      }
+    ],
+    "compare_label": "Côte à côte",
+    "compare_title": "En quoi cela diffère de laisser le personnel utiliser une IA publique",
+    "compare_public": "IA publique (compte personnel)",
+    "compare_private": "Anthovai Private AI",
+    "compare_rows": [
+      {
+        "label": "Où résident les données",
+        "public": "Les serveurs d’un prestataire étranger",
+        "private": "Le serveur de votre organisation"
+      },
+      {
+        "label": "Documents thaïs numérisés",
+        "public": "Résultats imprévisibles",
+        "private": "OCR entraîné sur des documents thaïs"
+      },
+      {
+        "label": "Accès par service",
+        "public": "Aucun",
+        "private": "Vous décidez qui voit quels documents"
+      },
+      {
+        "label": "Traçabilité",
+        "public": "Invisible pour l’organisation",
+        "private": "Les conversations restent dans votre base de données"
+      },
+      {
+        "label": "Coût",
+        "public": "Par utilisateur et par mois, croissant avec l’effectif",
+        "private": "Un seul système pour toute l’organisation"
+      }
+    ],
+    "packages_label": "Offres",
+    "packages_title": "Commencez par un service. Étendez quand les résultats le justifient.",
+    "tiers": {
+      "pilot": {
+        "name": "Pilot",
+        "for": "Un service, en usage réel",
+        "price": "฿150 000",
+        "price_note": "installation unique",
+        "monthly": "+ ฿15 000 / mois de maintenance",
+        "points": [
+          "Jusqu’à 20 utilisateurs",
+          "Premier lot de documents importé pour vous",
+          "Une session de formation",
+          "En service sous 30 jours"
+        ]
+      },
+      "business": {
+        "name": "Business",
+        "for": "Toute l’organisation",
+        "price": "à partir de ฿280 000",
+        "price_note": "installation unique",
+        "monthly": "+ ฿25 000–40 000 / mois selon la taille",
+        "points": [
+          "Services illimités",
+          "Accès par espace de travail et par rôle",
+          "Mises à jour du modèle et du système incluses",
+          "Support prioritaire"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "for": "Besoins spécifiques",
+        "price": "Selon le périmètre",
+        "price_note": "chiffré après visite sur site",
+        "monthly": "",
+        "points": [
+          "Déploiement entièrement hors ligne (air-gapped)",
+          "SLA et support dédié",
+          "Intégration aux systèmes internes"
+        ]
+      }
+    },
+    "packages_note": "Prix indicatifs pour la budgétisation ; le périmètre et le prix sont confirmés après une visite sur site. Le matériel serveur, si vous n’en disposez pas, est en sus — nous le dimensionnons avec vous.",
+    "timeline_label": "Les 30 premiers jours",
+    "timeline_title": "De la signature à une équipe qui s’en sert",
+    "weeks": [
+      {
+        "when": "Semaine 1",
+        "title": "Audit et installation",
+        "body": "Évaluation de la machine et du réseau ; installation sur votre serveur."
+      },
+      {
+        "when": "Semaine 2",
+        "title": "Import des premiers documents",
+        "body": "Sélection de l’essentiel avec votre équipe ; import et contrôle de la qualité de lecture."
+      },
+      {
+        "when": "Semaine 3",
+        "title": "Test avec de vrais utilisateurs",
+        "body": "Une équipe pilote l’utilise réellement ; les questions restées sans réponse servent à régler le système."
+      },
+      {
+        "when": "Semaine 4",
+        "title": "Livraison et formation",
+        "body": "Formation des utilisateurs et des administrateurs ; livraison avec la documentation complète du système."
+      }
+    ],
+    "closing_title": "Voyez une démo sur vos propres documents",
+    "closing_body": "Nous installons la démo sur votre machine, devant vous. Débranchez le câble réseau : elle fonctionne toujours — parce que rien n’avait besoin de sortir."
   }
 }

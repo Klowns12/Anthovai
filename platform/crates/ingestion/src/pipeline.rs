@@ -141,7 +141,7 @@ impl IngestPipeline {
                 source_url: document.source_url.clone(),
             })
             .await
-            .map_err(|e| IngestError::permanent(error_codes::NO_EXTRACTABLE_TEXT, e.to_string()))?;
+            .map_err(IngestError::from_parse)?;
 
         // ---- chunk --------------------------------------------------------
         self.set_status(org_id, document_id, DocumentStatus::Chunking)

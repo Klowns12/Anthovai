@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl'
 import { Hero } from '@/components/sections/Hero'
 import { About } from '@/components/sections/About'
 import { PlatformSection } from '@/components/sections/PlatformSection'
+import { PrivateAiSection } from '@/components/sections/PrivateAiSection'
 import { Process } from '@/components/sections/Process'
 import { ClientLogos } from '@/components/sections/ClientLogos'
 import { Services } from '@/components/sections/Services'
@@ -24,6 +25,10 @@ export default function Home() {
           the one thing they can start on their own today, then the work we do
           alongside them. */}
       <PlatformSection />
+      {/* The same platform for the buyer who cannot upload anything anywhere:
+          installed on their own servers. Directly after the hosted version, so
+          the two read as one product with two front doors. */}
+      <PrivateAiSection />
       <Services />
       <Process />
       <Manifesto />
