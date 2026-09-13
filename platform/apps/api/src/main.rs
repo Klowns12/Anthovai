@@ -84,6 +84,15 @@ async fn main() -> anyhow::Result<()> {
     let storage = anthovai_storage::from_settings(&settings.storage)
         .context("could not open object storage")?;
     info!(provider = %settings.storage.provider, "object storage ready");
+
+    // Says which way the image gate is set before anyone hits it. Without this
+    // an `ocr_not_enabled` refusal is indistinguishable from a bug, and the
+    // worker already announces the same setting from its own side.
+    if settings.ocr.enabled {
+        info!(sidecar = %settings.ocr.base_url, "OCR is on; photographs and scans are accepted");
+    } else {
+        info!("OCR is off; photographs and scans are refused at upload");
+    }
     // The knowledge service takes ownership of the storage handle; readiness
     // needs to reach the same bucket, so it keeps its own clone.
     let diagnostic_storage = std::sync::Arc::clone(&storage);
@@ -142,7 +151,9 @@ async fn main() -> anyhow::Result<()> {
             tenants: TenantService::new(db.clone()),
             agents: Arc::clone(&agents),
             // Photographs and scans are accepted only where the worker has an
-            // OCR sidecar to read them; the same setting drives both.
+            // OCR sidecar to read them; the same setting drives both. Announced
+            // below, because "the upload was refused" and "this deployment
+            // cannot read pictures" look identical from the outside.
             knowledge: KnowledgeService::new(db.clone(), storage, settings.embeddings.clone())
                 .accepting_images(settings.ocr.enabled),
             chat: ChatService::new(
