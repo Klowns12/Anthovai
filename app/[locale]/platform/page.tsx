@@ -145,6 +145,30 @@ export default function PlatformPage() {
         </div>
       </section>
 
+      {/* The other way in: the same platform on the customer's own servers */}
+      <section className="py-16 border-b border-white/[0.04]">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <FadeUp>
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 bg-bg-2 border border-gold-border rounded-lg px-8 py-7">
+              <div>
+                <h2 className="text-white text-lg font-medium leading-snug">
+                  {t('private_ai_callout.title')}
+                </h2>
+                <p className="text-white-60 leading-relaxed mt-2 max-w-2xl">
+                  {t('private_ai_callout.body')}
+                </p>
+              </div>
+              <Link
+                href="/platform/private-ai"
+                className="shrink-0 inline-flex items-center justify-center text-sm tracking-wide px-7 py-3.5 rounded-md border border-gold-border text-gold hover:bg-gold-dim transition-colors"
+              >
+                {t('private_ai_callout.cta')}
+              </Link>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
       {/* Closing */}
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">

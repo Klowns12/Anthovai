@@ -8,7 +8,8 @@
     "solutions": "Solutions",
     "about": "About",
     "careers": "Careers",
-    "contact": "Talk to an Engineer"
+    "contact": "Talk to an Engineer",
+    "private_ai": "Private AI"
   },
   "hero": {
     "eyebrow": "A HOUSE OF KAISER KLOWNS · SOUTHEAST ASIA ENGINEERING PARTNER",
@@ -594,7 +595,12 @@
       }
     },
     "closing_title": "Start with one document",
-    "closing_body": "There is nothing to install and no call to book. Sign up, upload something, and ask it a question."
+    "closing_body": "There is nothing to install and no call to book. Sign up, upload something, and ask it a question.",
+    "private_ai_callout": {
+      "title": "Would you rather run it inside your own network?",
+      "body": "The same platform, installed on your servers, with OCR for scanned Thai documents. Nothing leaves the building.",
+      "cta": "Private AI"
+    }
   },
   "platform": {
     "label": "The Platform",
@@ -607,5 +613,186 @@
     ],
     "cta": "See how it works",
     "cta_signup": "Create an account"
+  },
+  "private_ai": {
+    "label": "Private AI",
+    "headline": "AI on your internal documents, inside your own network",
+    "sub": "Contracts, manuals, memos and scans your team could never paste into a public chatbot. The same platform, installed on a server your organisation controls, reading Thai documents properly — and nothing leaves the building.",
+    "points": [
+      "Installed on your server, or fully offline",
+      "Reads scanned Thai documents and photographs of pages",
+      "Every answer cites the page it came from"
+    ],
+    "cta": "See how it is deployed",
+    "cta_demo": "Book a demo"
+  },
+  "private_ai_page": {
+    "meta_title": "Private AI for your documents",
+    "meta_description": "Question-answering, search and summaries over your organisation's own documents, installed on a server you control. Reads Thai scans and photographs. Nothing leaves your network.",
+    "hero_label": "Anthovai Private AI",
+    "hero_headline": "Let your team use AI on internal documents — without a single file leaving the company",
+    "hero_body": "Question-answering, search and summaries over your own Thai and English documents, installed on a server your organisation controls. No public cloud, no foreign provider in the path, and every hop the data takes is one you can inspect.",
+    "cta_primary": "Book a 30-minute demo",
+    "cta_secondary": "How the platform works",
+    "boundary_label": "Your network boundary",
+    "boundary": {
+      "docs": {
+        "title": "Your documents",
+        "body": "PDF, Word, scans, photographs of pages, contracts, manuals, internal memos"
+      },
+      "read": {
+        "title": "Read in Thai",
+        "body": "OCR trained on Thai documents reads tables, government forms and scanned pages"
+      },
+      "kb": {
+        "title": "Your knowledge base",
+        "body": "Stored, searched and permissioned by workspace"
+      },
+      "answer": {
+        "title": "Answers with citations",
+        "body": "Every answer points back to the page it came from, so it can be checked"
+      }
+    },
+    "boundary_inside": "Every step runs on machines your organisation controls",
+    "boundary_outside": "Files that cross this line: 0",
+    "why_label": "Why now",
+    "why_title": "Your staff already use AI today. The question is which files have gone out with it.",
+    "why": {
+      "damage": {
+        "stat": "฿20M+",
+        "title": "A loss that has already happened",
+        "body": "A Thai auto-parts factory is reported to have lost more than 20 million baht after an employee uploaded engineering drawings to a public AI to translate them."
+      },
+      "pdpa": {
+        "stat": "PDPA",
+        "title": "Liability under the law",
+        "body": "Personal data that leaves the organisation carries administrative fines in the millions of baht, and in some cases criminal liability — for the company and for its officers."
+      },
+      "shadow": {
+        "stat": "Unseen",
+        "title": "Shadow AI",
+        "body": "With no safe option provided, people use personal AI accounts for company work, and IT has no way of knowing which files have already been uploaded."
+      }
+    },
+    "uses_label": "What your team can do",
+    "uses_title": "Document work that took hours, in minutes",
+    "uses": [
+      {
+        "title": "Ask a contract a question",
+        "body": "“What is the late-delivery penalty in this contract?” — answered with the page number."
+      },
+      {
+        "title": "Read scanned Thai documents",
+        "body": "Old scans become searchable text you can question — tables and government forms included."
+      },
+      {
+        "title": "Search machine manuals and standards",
+        "body": "A technician asks how to clear an error code from thousands of pages of manuals and gets the right procedure at once."
+      },
+      {
+        "title": "Summarise memos and reports",
+        "body": "Meeting notes summarised, quotations compared, a reply drafted — from your organisation’s own material."
+      }
+    ],
+    "compare_label": "Side by side",
+    "compare_title": "How it differs from letting staff use public AI",
+    "compare_public": "Public AI (personal account)",
+    "compare_private": "Anthovai Private AI",
+    "compare_rows": [
+      {
+        "label": "Where the data lives",
+        "public": "A foreign provider’s servers",
+        "private": "Your organisation’s server"
+      },
+      {
+        "label": "Scanned Thai documents",
+        "public": "Unpredictable",
+        "private": "OCR trained on Thai documents"
+      },
+      {
+        "label": "Access by department",
+        "public": "None",
+        "private": "Decide who sees which documents"
+      },
+      {
+        "label": "Audit trail",
+        "public": "Invisible to the organisation",
+        "private": "Conversations kept in your own database"
+      },
+      {
+        "label": "Cost",
+        "public": "Per seat, per month, growing with headcount",
+        "private": "One system for the whole organisation"
+      }
+    ],
+    "packages_label": "Packages",
+    "packages_title": "Start with one department. Expand when it earns it.",
+    "tiers": {
+      "pilot": {
+        "name": "Pilot",
+        "for": "One department, in real use",
+        "price": "฿150,000",
+        "price_note": "one-time installation",
+        "monthly": "+ ฿15,000 / month support",
+        "points": [
+          "Up to 20 users",
+          "First document set imported for you",
+          "One training session",
+          "In use within 30 days"
+        ]
+      },
+      "business": {
+        "name": "Business",
+        "for": "The whole organisation",
+        "price": "from ฿280,000",
+        "price_note": "one-time installation",
+        "monthly": "+ ฿25,000–40,000 / month by size",
+        "points": [
+          "Unlimited departments",
+          "Access by workspace and role",
+          "Model and system updates included",
+          "Priority support"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "for": "Specific requirements",
+        "price": "By scope",
+        "price_note": "quoted after a site survey",
+        "monthly": "",
+        "points": [
+          "Fully offline (air-gapped) deployment",
+          "SLA and dedicated support",
+          "Integration with internal systems"
+        ]
+      }
+    },
+    "packages_note": "Indicative prices for budgeting; scope and price are confirmed after a site survey. Server hardware, if you do not already have it, is separate — we specify it with you.",
+    "timeline_label": "The first 30 days",
+    "timeline_title": "From signature to a team using it",
+    "weeks": [
+      {
+        "when": "Week 1",
+        "title": "Survey and install",
+        "body": "Assess the machine and network; install on your server."
+      },
+      {
+        "when": "Week 2",
+        "title": "Import the first documents",
+        "body": "Choose what matters with your team; import and check the reading quality."
+      },
+      {
+        "when": "Week 3",
+        "title": "Test with real users",
+        "body": "A pilot team uses it for real; the questions it could not answer tune the system."
+      },
+      {
+        "when": "Week 4",
+        "title": "Hand over and train",
+        "body": "Train users and administrators; hand over with full system documentation."
+      }
+    ],
+    "closing_title": "See a demo on your own documents",
+    "closing_body": "We install the demo on your machine, in front of you. Unplug the network cable and it still works — because nothing needed to leave in the first place."
   }
 }
