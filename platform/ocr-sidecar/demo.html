@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthovai · อ่านเอกสารไทย</title>
+<style>
+  :root {
+    --bg: #F8F6F0;
+    --paper: #FFFFFF;
+    --ink: #06060A;
+    --ink-60: rgba(6, 6, 10, 0.62);
+    --ink-30: rgba(6, 6, 10, 0.32);
+    --gold: #C9A84C;
+    --gold-text: #8A6D2A;
+    --gold-dim: rgba(201, 168, 76, 0.12);
+    --line: rgba(6, 6, 10, 0.12);
+    --good: #2E7D4F;
+    --bad: #B3402E;
+    --warn: #8A6D2A;
+    --thai: "Leelawadee UI", "Noto Sans Thai", "Sarabun", Tahoma, sans-serif;
+    --mono: "Cascadia Mono", Consolas, "Courier New", monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--thai); font-size: 16px; line-height: 1.65;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px 64px; }
+
+  header { padding: 36px 0 8px; display: flex; justify-content: space-between;
+           align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .brand { font-family: var(--mono); font-size: 13px; letter-spacing: 0.3em; }
+  .brand em { color: var(--gold-text); font-style: normal; }
+  .privacy { font-size: 13px; color: var(--gold-text); }
+
+  h1 { font-size: clamp(24px, 3.4vw, 34px); line-height: 1.3; margin: 20px 0 8px; font-weight: 700; }
+  .lede { color: var(--ink-60); max-width: 60ch; margin: 0 0 28px; }
+
+  /* ---- drop zone ---- */
+  #drop {
+    border: 2px dashed var(--gold); border-radius: 10px; background: var(--gold-dim);
+    padding: 40px 24px; text-align: center; cursor: pointer; transition: background .15s;
+  }
+  #drop.over { background: rgba(201, 168, 76, 0.22); }
+  #drop strong { display: block; font-size: 18px; margin-bottom: 6px; }
+  #drop span { color: var(--ink-60); font-size: 14px; }
+  #file { display: none; }
+
+  .samples { margin-top: 14px; font-size: 14px; color: var(--ink-60); }
+  .samples button {
+    font-family: var(--thai); font-size: 14px; background: none; cursor: pointer;
+    border: 1px solid var(--line); border-radius: 4px; padding: 5px 12px; margin: 4px 4px 0 0;
+    color: var(--ink);
+  }
+  .samples button:hover { border-color: var(--gold); color: var(--gold-text); }
+
+  /* ---- status ---- */
+  #status { margin: 22px 0 0; display: none; }
+  #status.on { display: block; }
+  .bar { height: 3px; background: var(--line); border-radius: 2px; overflow: hidden; }
+  .bar i { display: block; height: 100%; width: 30%; background: var(--gold);
+           animation: slide 1.1s ease-in-out infinite; }
+  @keyframes slide { 0% { margin-left: -30%; } 100% { margin-left: 100%; } }
+  .step { font-size: 14px; color: var(--ink-60); margin-top: 10px; }
+  .err { color: var(--bad); }
+
+  /* ---- results ---- */
+  #out { display: none; margin-top: 32px; }
+  #out.on { display: block; }
+  .verdict { border-radius: 8px; padding: 18px 20px; margin-bottom: 22px;
+             border: 1px solid var(--line); background: var(--paper); }
+  .verdict.pass { border-color: var(--good); }
+  .verdict.review { border-color: var(--warn); }
+  .verdict h2 { margin: 0 0 6px; font-size: 18px; }
+  .verdict.pass h2 { color: var(--good); }
+  .verdict.review h2 { color: var(--warn); }
+  .verdict ul { margin: 8px 0 0; padding-inline-start: 20px; color: var(--ink-60); font-size: 15px; }
+
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
+  @media (max-width: 860px) { .cols { grid-template-columns: 1fr; } }
+  .card { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .card > h3 { margin: 0; padding: 12px 18px; font-size: 13px; letter-spacing: .08em;
+               border-bottom: 1px solid var(--line); color: var(--ink-60); font-weight: 600; }
+  .card .body { padding: 16px 18px; }
+  .card .body.scroll { max-height: 460px; overflow: auto; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: start; padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--ink-30); font-weight: 600; font-size: 12px; letter-spacing: .06em; }
+  td.num { text-align: end; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  tr.flag td { background: rgba(179, 64, 46, 0.06); }
+
+  .kv { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size: 15px; }
+  .kv dt { color: var(--ink-30); }
+  .kv dd { margin: 0; }
+
+  .check { display: flex; gap: 9px; align-items: baseline; font-size: 14.5px; padding: 3px 0; }
+  .check .mark { font-family: var(--mono); font-weight: 700; }
+  .check.ok .mark { color: var(--good); }
+  .check.no .mark { color: var(--bad); }
+  .check .name { color: var(--ink-60); }
+
+  pre { margin: 0; font-family: var(--mono); font-size: 12.5px; line-height: 1.6;
+        white-space: pre-wrap; word-break: break-word; }
+  .page-tag { font-family: var(--mono); font-size: 11px; letter-spacing: .1em;
+              color: var(--gold-text); margin: 14px 0 4px; }
+  .page-tag:first-child { margin-top: 0; }
+
+  .meta { font-size: 13px; color: var(--ink-30); margin-top: 18px; }
+  footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line);
+           font-size: 13px; color: var(--ink-30); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand">ANTHOV<em>AI</em></div>
+    <div class="privacy" id="privacy">· กำลังตรวจสอบเครื่อง…</div>
+  </header>
+
+  <h1>ลองให้ระบบอ่านเอกสารไทยของคุณ</h1>
+  <p class="lede">
+    ลากไฟล์ใบส่งของ ใบกำกับภาษี ใบเสนอราคา หรือรูปถ่ายหน้ากระดาษมาวางด้านล่าง
+    ระบบจะอ่านข้อความ แยกเป็นข้อมูลที่ใช้งานต่อได้ แล้วตรวจตัวเลขให้เอง
+    ทุกอย่างทำงานบนเครื่องนี้ ไฟล์ไม่ถูกส่งออกไปไหน
+  </p>
+
+  <div id="drop" tabindex="0" role="button" aria-label="เลือกไฟล์เอกสาร">
+    <strong>ลากไฟล์มาวางที่นี่ หรือคลิกเพื่อเลือก</strong>
+    <span>รูปถ่าย (PNG, JPG, WebP) หรือ PDF — ด้านยาวอย่างน้อย 1200 พิกเซล</span>
+  </div>
+  <input type="file" id="file" accept=".png,.jpg,.jpeg,.webp,.pdf">
+
+  <div class="samples" id="samples"></div>
+
+  <div id="status">
+    <div class="bar"><i></i></div>
+    <div class="step" id="step"></div>
+  </div>
+
+  <div id="out">
+    <div class="verdict" id="verdict"></div>
+    <div class="cols">
+      <div>
+        <div class="card">
+          <h3>ข้อมูลที่ดึงออกมาได้</h3>
+          <div class="body" id="fields"></div>
+        </div>
+        <div class="card" style="margin-top:22px">
+          <h3>ผลตรวจ</h3>
+          <div class="body" id="checks"></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>ข้อความที่อ่านได้ทั้งหมด</h3>
+        <div class="body scroll"><div id="raw"></div></div>
+      </div>
+    </div>
+    <div class="meta" id="meta"></div>
+  </div>
+
+  <footer>
+    เดโมนี้เรียกบริการ OCR บนเครื่องนี้โดยตรง · ไม่มีการส่งข้อมูลออกนอกเครื่อง ·
+    ความแม่นยำขึ้นกับคุณภาพภาพ ตัวเลขที่ตรวจไม่ผ่านจะถูกส่งให้คนตรวจเสมอ
+  </footer>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+
+// Opened by double-clicking the file rather than through the service. Nothing
+// here can work — a relative fetch has no origin to resolve against — and the
+// browser's own words for it ("Failed to parse URL from /ocr") explain none of
+// that to the person reading them. Say what to do instead, and stop.
+//
+// Any origin that is not http(s), rather than `file:` alone: a preview pane may
+// hand the same page to the browser as `data:` or `blob:`, which fails
+// identically and would otherwise slip past the check.
+if (location.protocol !== "http:" && location.protocol !== "https:") {
+  document.querySelector(".wrap").innerHTML = `
+    <header><div class="brand">ANTHOV<em>AI</em></div></header>
+    <h1>เปิดหน้านี้ผ่านบริการ ไม่ใช่เปิดไฟล์ตรง ๆ</h1>
+    <p class="lede">หน้านี้ต้องคุยกับบริการ OCR ที่รันอยู่บนเครื่อง
+      การเปิดไฟล์จากดิสก์โดยตรงทำให้เรียกบริการไม่ได้เลย</p>
+    <div class="card"><div class="body">
+      <p style="margin-top:0">เริ่มบริการ (ถ้ายังไม่ได้เริ่ม):</p>
+      <pre style="background:var(--gold-dim);padding:12px 14px;border-radius:6px">cd platform/ocr-sidecar
+python -m uvicorn app:app --host 127.0.0.1 --port 9090</pre>
+      <p style="margin-bottom:0">แล้วเปิด
+        <a href="http://127.0.0.1:9090" style="color:var(--gold-text)">http://127.0.0.1:9090</a></p>
+    </div></div>`;
+  throw new Error("opened as file://");
+}
+
+const drop = $("drop"), fileInput = $("file");
+
+// The sidecar answers on the same origin this page came from.
+async function health() {
+  try {
+    const r = await fetch("/health");
+    const h = await r.json();
+    $("privacy").textContent = `· ทำงานบนเครื่องนี้ · ${h.model}`;
+  } catch {
+    $("privacy").innerHTML = '<span class="err">· ต่อกับบริการ OCR ไม่ได้</span>';
+  }
+}
+health();
+
+// Sample documents, when this checkout has them. The server says which, rather
+// than the page probing each file — a HEAD against a GET route answers 405.
+(async function offerSamples() {
+  let found = [];
+  try {
+    found = await (await fetch("samples")).json();
+  } catch { return; }
+  if (!found.length) return;
+  $("samples").append("ไม่มีไฟล์อยู่ใกล้มือ? ลองตัวอย่าง: ");
+  for (const { name, label } of found) {
+    const b = document.createElement("button");
+    b.textContent = label;
+    b.onclick = async () => {
+      const blob = await (await fetch(`samples/${name}`)).blob();
+      run(new File([blob], name, { type: blob.type }));
+    };
+    $("samples").append(b);
+  }
+})();
+
+drop.onclick = () => fileInput.click();
+drop.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); fileInput.click(); } };
+fileInput.onchange = () => fileInput.files[0] && run(fileInput.files[0]);
+["dragenter", "dragover"].forEach((e) =>
+  drop.addEventListener(e, (ev) => { ev.preventDefault(); drop.classList.add("over"); }));
+["dragleave", "drop"].forEach((e) =>
+  drop.addEventListener(e, (ev) => { ev.preventDefault(); drop.classList.remove("over"); }));
+drop.addEventListener("drop", (ev) => ev.dataTransfer.files[0] && run(ev.dataTransfer.files[0]));
+document.addEventListener("paste", (ev) => {
+  const f = [...(ev.clipboardData?.files || [])][0];
+  if (f) run(f);
+});
+
+const b64 = (file) => new Promise((res, rej) => {
+  const r = new FileReader();
+  r.onload = () => res(r.result.split(",")[1]);
+  r.onerror = rej;
+  r.readAsDataURL(file);
+});
+
+function say(text, isError) {
+  $("status").className = "on";
+  $("step").className = isError ? "step err" : "step";
+  $("step").textContent = text;
+  if (isError) $("status").querySelector(".bar").style.display = "none";
+  else $("status").querySelector(".bar").style.display = "";
+}
+
+async function run(file) {
+  $("out").className = "";
+  const isPdf = /\.pdf$/i.test(file.name) || file.type === "application/pdf";
+  say(`กำลังอ่าน ${file.name} — โมเดลใช้เวลาประมาณหนึ่งนาทีต่อหน้า`);
+  const started = Date.now();
+
+  let ocr;
+  try {
+    const payload = isPdf ? { pdf_b64: await b64(file) } : { image_b64: await b64(file) };
+    const r = await fetch("/ocr", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    const body = await r.json();
+    if (!r.ok) {
+      const detail = typeof body.detail === "string" ? body.detail : JSON.stringify(body.detail);
+      say(r.status === 422
+        ? `ภาพเล็กเกินกว่าจะอ่านได้แม่นยำ — ${detail} · ถ่ายใกล้ขึ้นหรือสแกนที่ความละเอียดสูงกว่านี้`
+        : `อ่านไม่สำเร็จ (${r.status}): ${detail}`, true);
+      return;
+    }
+    ocr = body;
+  } catch (e) {
+    say(`ติดต่อบริการ OCR ไม่ได้: ${e.message}`, true);
+    return;
+  }
+
+  say("อ่านข้อความได้แล้ว กำลังแยกข้อมูลและตรวจตัวเลข…");
+  const markdown = ocr.pages.map((p) => p.markdown).join("\n\n");
+
+  let doc = null;
+  try {
+    const r = await fetch("/extract", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ markdown }),
+    });
+    if (r.ok) doc = await r.json();
+  } catch { /* extraction is a bonus; the text still stands */ }
+
+  $("status").className = "";
+  render(file, ocr, doc, Date.now() - started);
+}
+
+const esc = (s) => String(s ?? "").replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+const money = (n) => Number(n).toLocaleString("th-TH", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+const CHECK_NAMES = {
+  items_match_subtotal: "ผลรวมรายการตรงกับยอดรวมเป็นเงิน",
+  vat_is_7pct: "ภาษีมูลค่าเพิ่มเท่ากับ 7%",
+  total_adds_up: "ยอดรวม + ภาษี ตรงกับยอดสุทธิ",
+  has_doc_no: "อ่านเลขที่เอกสารได้",
+  has_date: "อ่านวันที่ได้",
+  date_plausible: "วันที่อยู่ในช่วงที่สมเหตุสมผล",
+  has_items: "พบตารางรายการ",
+  rows_sequential: "ลำดับแถวต่อเนื่อง",
+  all_rows_have_qty: "ทุกแถวมีจำนวน",
+  all_rows_have_unit: "ทุกแถวมีหน่วย",
+  units_recognized: "หน่วยเป็นหน่วยที่รู้จัก",
+  no_ambiguous_qty: "ไม่มีจำนวนที่กำกวม",
+};
+
+const DOC_TYPES = {
+  invoice_like: "ใบกำกับภาษี / ใบเสนอราคา",
+  delivery_note: "ใบส่งของ",
+  text: "เอกสารข้อความ",
+  unknown: "ไม่ทราบชนิด",
+};
+
+function render(file, ocr, doc, ms) {
+  // ---- verdict
+  const v = $("verdict");
+  if (!doc) {
+    v.className = "verdict";
+    v.innerHTML = "<h2>อ่านข้อความได้</h2><p>ยังแยกข้อมูลเป็นฟิลด์ไม่ได้สำหรับเอกสารแบบนี้</p>";
+  } else if (doc.needs_review) {
+    v.className = "verdict review";
+    v.innerHTML = "<h2>ต้องให้คนตรวจ</h2>"
+      + "<p>ระบบอ่านได้ แต่มีจุดที่ยืนยันเองไม่ได้ จึงไม่ส่งเข้าระบบอัตโนมัติ</p>"
+      + (doc.review_reasons?.length
+        ? "<ul>" + doc.review_reasons.map((r) => `<li>${esc(r)}</li>`).join("") + "</ul>" : "");
+  } else {
+    v.className = "verdict pass";
+    v.innerHTML = "<h2>ตรวจผ่านทั้งหมด</h2><p>ตัวเลขสอดคล้องกันเอง เอกสารแบบนี้เข้าระบบได้อัตโนมัติ</p>";
+  }
+
+  // ---- fields
+  const f = [];
+  if (doc) {
+    const kv = [
+      ["ชนิดเอกสาร", DOC_TYPES[doc.doc_type] || doc.doc_type],
+      ["เลขที่", doc.doc_no], ["วันที่", doc.date],
+      ["หน่วยงาน / โครงการ", doc.site], ["ผู้รับ", doc.receiver],
+      ["เลขผู้เสียภาษี", doc.tax_ids?.join(", ")],
+    ].filter(([, val]) => val);
+    if (kv.length) {
+      f.push('<dl class="kv">' + kv.map(([k, val]) =>
+        `<dt>${esc(k)}</dt><dd>${esc(val)}</dd>`).join("") + "</dl>");
+    }
+    if (doc.line_items?.length) {
+      const hasMoney = doc.line_items.some((i) => i.amount != null);
+      f.push('<table style="margin-top:14px"><thead><tr><th>รายการ</th><th class="num">จำนวน</th>'
+        + (hasMoney ? '<th class="num">จำนวนเงิน</th>' : "<th>หน่วย</th>") + "</tr></thead><tbody>"
+        + doc.line_items.map((i) => {
+          const flagged = i.net_qty != null || (i.qty == null && i.qty_raw);
+          const qty = i.qty != null ? i.qty.toLocaleString("th-TH") : esc(i.qty_raw ?? "—");
+          const net = i.net_qty != null ? ` <span style="color:var(--bad)">→ ${i.net_qty}</span>` : "";
+          return `<tr class="${flagged ? "flag" : ""}"><td>${esc(i.description)}</td>`
+            + `<td class="num">${qty}${net}</td>`
+            + (hasMoney ? `<td class="num">${i.amount != null ? money(i.amount) : "—"}</td>`
+              : `<td>${esc(i.unit ?? "—")}</td>`) + "</tr>";
+        }).join("") + "</tbody></table>");
+    }
+    const t = doc.totals || {};
+    const rows = [["รวมเป็นเงิน", t.subtotal], ["ภาษีมูลค่าเพิ่ม", t.vat], ["ยอดสุทธิ", t.grand_total]]
+      .filter(([, val]) => val != null);
+    if (rows.length) {
+      f.push('<table style="margin-top:10px"><tbody>' + rows.map(([k, val]) =>
+        `<tr><td>${esc(k)}</td><td class="num">${money(val)}</td></tr>`).join("") + "</tbody></table>");
+    }
+  }
+  $("fields").innerHTML = f.join("") || '<span style="color:var(--ink-30)">— ไม่มีฟิลด์ที่ดึงได้ —</span>';
+
+  // ---- checks
+  const entries = Object.entries(doc?.checks || {});
+  $("checks").innerHTML = entries.length
+    ? entries.map(([k, ok]) =>
+      `<div class="check ${ok ? "ok" : "no"}"><span class="mark">${ok ? "✓" : "✕"}</span>`
+      + `<span class="name">${esc(CHECK_NAMES[k] || k)}</span></div>`).join("")
+    : '<span style="color:var(--ink-30)">— เอกสารแบบนี้ไม่มีตัวเลขให้ตรวจ —</span>';
+
+  // ---- raw text, per page
+  $("raw").innerHTML = ocr.pages.map((p) =>
+    `<div class="page-tag">หน้า ${p.page}</div><pre>${esc(p.markdown)}</pre>`).join("");
+
+  $("meta").textContent =
+    `${file.name} · ${(file.size / 1024).toFixed(0)} KB · ${ocr.pages.length} หน้า · `
+    + `อ่านเสร็จใน ${(ms / 1000).toFixed(0)} วินาที · โมเดล ${ocr.model}`;
+
+  $("out").className = "on";
+  $("out").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+</script>
+</body>
+</html>

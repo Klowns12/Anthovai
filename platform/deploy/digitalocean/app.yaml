@@ -104,6 +104,25 @@ envs:
     type: SECRET
     value: CHANGE_ME_generate_with_openssl_rand_base64_48
 
+  # Reading scanned PDFs and photographs. Off unless a sidecar is running:
+  # with it off a scan is refused with a reason the customer can act on, which
+  # is the right answer when there is nothing to send the pages to. Turning it
+  # on means deploying `ocr-sidecar/` as its own component or service and
+  # pointing BASE_URL at it — App Platform gives internal components a private
+  # hostname, so it does not need to be public.
+  #
+  # The timeout is per document, not per page. Typhoon OCR on a small GPU takes
+  # roughly a minute a page, so a long scan needs the room it is given.
+  - key: ANTHOVAI__OCR__ENABLED
+    scope: RUN_TIME
+    value: "false"
+  - key: ANTHOVAI__OCR__BASE_URL
+    scope: RUN_TIME
+    value: http://ocr-sidecar:9090
+  - key: ANTHOVAI__OCR__TIMEOUT_SECS
+    scope: RUN_TIME
+    value: "900"
+
   - key: RUST_LOG
     scope: RUN_TIME
     value: info,anthovai=info,sqlx=warn

@@ -210,8 +210,46 @@ missing from `ANTHOVAI__SERVER__DASHBOARD_ORIGINS`.
   moved past.
 - **Embedding tokens are counted but never priced.** Ingestion and every
   question cost real money that appears on no invoice.
-- **Documents become one chunk each** at typical Thai document sizes, so
-  retrieval is all-or-nothing per document.
+- **Reading scans is off by default**, and the two kinds of file behave
+  differently, which is worth knowing before a customer asks.
+  - A **photograph** (`.png`, `.jpg`, `.webp`) is refused at upload, HTTP 400
+    with code `ocr_not_enabled`. The person sees it while still looking at the
+    form, and nothing is queued.
+  - A **scanned PDF** is accepted and queued, because nothing knows it is a
+    scan until the worker tries to read it. It then fails ingestion with
+    `no_extractable_text` and a message saying to OCR it first, and sits in the
+    customer's document list as `failed`.
+
+  Either way they get a reason rather than silence, but only the first is
+  immediate — expect failed documents to appear in lists on a deployment with
+  OCR off. Turning it on means deploying `ocr-sidecar/` as its own component.
+  The setting belongs at the app level, not on one component: the worker uses
+  it to decide whether to send pages to the sidecar, and the API uses it to
+  decide whether to accept an image at all. On the worker alone, uploads are
+  refused while the worker reports the sidecar is up.
+- **One database test is intermittent.** `the_worker_takes_a_queued_document_to_ready`
+  passes alone and sometimes fails in a full run: the test harness drains the
+  whole `jobs` table rather than its own tenant's, so concurrent tests claim
+  each other's work. It says nothing about the deployment.
+
+
+## Fixed since this was written
+
+Kept here because a checklist that only ever grows is one nobody trusts.
+
+- Documents used to become **one chunk each** at typical Thai sizes, because the
+  chunker sized them with `chars / 4` while the real tokenizer sat unused in the
+  same crate — a 3.7x undercount for Thai. Pasted text also lost its Markdown
+  headings, so there was nothing to split on. Both fixed; a question set went
+  from 18 answers out of 24 to 24 out of 24, and existing knowledge bases are
+  found and rebuilt automatically by the worker's startup sweep.
+- A strict agent used to treat **a refusal as an absence** — asked whether a
+  discounted book could be returned, with the policy saying plainly that it
+  could not, it replied "I have no information about this" seven times out of
+  eight. Fixed in the prompt; 48/48 after, with questions the documents do not
+  cover still declined 24 times out of 24.
+- **Live keys could not be issued at all** until email confirmation existed.
+  They can now, given SMTP.
 
 ---
 

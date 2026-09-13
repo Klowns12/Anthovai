@@ -249,6 +249,7 @@ impl ChatService {
             routed.response.text.clone(),
             &retrieved.context.sources,
             agent.config.behavior.citations,
+            &agent.config.behavior.fallback_message,
         );
 
         if guardrails
