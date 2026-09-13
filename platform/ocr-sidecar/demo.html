@@ -169,6 +169,31 @@
 
 <script>
 const $ = (id) => document.getElementById(id);
+
+// Opened by double-clicking the file rather than through the service. Nothing
+// here can work — a relative fetch has no origin to resolve against — and the
+// browser's own words for it ("Failed to parse URL from /ocr") explain none of
+// that to the person reading them. Say what to do instead, and stop.
+//
+// Any origin that is not http(s), rather than `file:` alone: a preview pane may
+// hand the same page to the browser as `data:` or `blob:`, which fails
+// identically and would otherwise slip past the check.
+if (location.protocol !== "http:" && location.protocol !== "https:") {
+  document.querySelector(".wrap").innerHTML = `
+    <header><div class="brand">ANTHOV<em>AI</em></div></header>
+    <h1>เปิดหน้านี้ผ่านบริการ ไม่ใช่เปิดไฟล์ตรง ๆ</h1>
+    <p class="lede">หน้านี้ต้องคุยกับบริการ OCR ที่รันอยู่บนเครื่อง
+      การเปิดไฟล์จากดิสก์โดยตรงทำให้เรียกบริการไม่ได้เลย</p>
+    <div class="card"><div class="body">
+      <p style="margin-top:0">เริ่มบริการ (ถ้ายังไม่ได้เริ่ม):</p>
+      <pre style="background:var(--gold-dim);padding:12px 14px;border-radius:6px">cd platform/ocr-sidecar
+python -m uvicorn app:app --host 127.0.0.1 --port 9090</pre>
+      <p style="margin-bottom:0">แล้วเปิด
+        <a href="http://127.0.0.1:9090" style="color:var(--gold-text)">http://127.0.0.1:9090</a></p>
+    </div></div>`;
+  throw new Error("opened as file://");
+}
+
 const drop = $("drop"), fileInput = $("file");
 
 // The sidecar answers on the same origin this page came from.
