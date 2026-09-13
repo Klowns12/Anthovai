@@ -23,14 +23,17 @@ Worker ดึงงานด้วย `SELECT ... FOR UPDATE SKIP LOCKED` ที
 
 | Type | MIME / detect | Parser (Rust crate แนะนำ) | Output |
 |------|---------------|---------------------------|--------|
-| PDF | application/pdf | `pdf-extract` หรือ `lopdf` + fallback เรียก `pdftotext` (poppler) ผ่าน sidecar | text per page |
+| PDF | application/pdf | `pdf-extract`; ถ้าไม่มี text layer (สแกน) และเปิด `[ocr] enabled` → ส่งทั้งไฟล์ให้ **OCR sidecar** (`ocr-sidecar/`, Typhoon OCR 1.5) ได้ markdown ต่อหน้า; ตาราง HTML ถูกแปลงเป็นข้อความแถวละย่อหน้า | text per page (+ `ocr: true` ใน chunk metadata) |
 | DOCX | application/vnd.openxmlformats-officedocument.wordprocessingml.document | `docx-rs` / unzip + parse `word/document.xml` | text with headings |
 | TXT / MD | text/plain, text/markdown | direct; MD ใช้ `pulldown-cmark` เพื่อรู้โครงสร้าง heading | text with headings |
 | HTML / URL | text/html | `reqwest` + `scraper` + readability heuristic (ตัด nav/footer) | main text + title |
 | JSON | application/json | `serde_json` → schema detection → flatten | records |
 | CSV | text/csv | `csv` crate; header row = field names | records (1 row = 1 record) |
+| Image | image/png, image/jpeg, image/webp (magic bytes; ต่อท้ายชื่อ .png/.jpg/.jpeg/.webp) | **OCR sidecar เท่านั้น** — `ImageParser` ส่ง `image_b64`; ไม่มี text layer ให้ลองก่อน; ถ้า `[ocr] enabled = false` API ปฏิเสธตั้งแต่ upload ด้วย code `ocr_not_enabled` (migration 0008 เพิ่ม `'image'` ใน CHECK) | 1 หน้าเสมอ (+ `ocr: true`) |
 
-ข้อจำกัด P1: ไม่มี OCR, ไม่มี image understanding, URL crawl แค่หน้าเดียว (ไม่ follow links; site crawl = P5)
+ข้อจำกัด P1: OCR เป็น opt-in (ต้องมี sidecar + Ollama บนเครื่องเดียวกัน); HEIC จากไอโฟนไม่รับ (PIL ใน sidecar อ่านไม่ได้ — ต้องแปลงที่ต้นทาง); ไม่มี image understanding นอกเหนือจากข้อความ; URL crawl แค่หน้าเดียว (ไม่ follow links; site crawl = P5)
+
+สถานะเอกสารเมื่อ OCR เกี่ยวข้อง: sidecar ไม่ตอบ → job **retry** (`ocr_unavailable`, transient) ไม่ใช่ FAILED; sidecar ปฏิเสธไฟล์ (หน้าเล็กเกินอ่าน) หรือ OCR ไม่พบข้อความ → FAILED `no_extractable_text` พร้อมเหตุผล
 
 ### A.4 Normalization
 - Unicode NFC, ตัด control chars, รวม whitespace ซ้ำ, แก้ hyphenation ข้ามบรรทัดใน PDF

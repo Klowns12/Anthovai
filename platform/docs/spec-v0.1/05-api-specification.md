@@ -211,6 +211,7 @@ metadata          = {"category":"admission"}   (optional JSON string)
 { "id": "doc_01J...", "knowledge_base_id": "kb_01J...", "title": "handbook-2026.pdf",
   "source_type": "pdf", "status": "queued", "progress": 0, "created_at": "..." }
 ```
+`source_type` ∈ `pdf | docx | txt | md | html | url | json | csv | text | image` — ตัดสินจากนามสกุลไฟล์ (`.png/.jpg/.jpeg/.webp` → `image`) ถ้า deployment ไม่ได้เปิด OCR การอัปโหลด `image` ตอบ **400** `ocr_not_enabled` ทันที ไม่รับไว้แล้วไป fail ใน worker
 
 **`GET /v1/documents/{id}`** → object เดียวกัน + `chunk_count, token_count, error_code, error_message, current_version`
 **`GET /v1/documents?knowledge_base_id=&status=`** → list

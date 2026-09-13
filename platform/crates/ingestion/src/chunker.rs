@@ -29,6 +29,14 @@ pub struct ParsedDocument {
     pub title: String,
     pub language: Option<String>,
     pub blocks: Vec<Block>,
+    /// Whether this text was read off an image rather than carried by the file.
+    ///
+    /// A scan that went through OCR is a transcription, and a transcription can
+    /// be wrong in ways a text layer cannot: a misread digit in a price looks
+    /// exactly like a correct one. Everything downstream that wants to say so —
+    /// a citation, a confidence note, a decision not to answer from it alone —
+    /// needs to know, and only the parser does.
+    pub ocr: bool,
 }
 
 #[derive(Clone, Copy, Debug)]

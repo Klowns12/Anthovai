@@ -71,6 +71,7 @@ impl Parser for DocxParser {
             title,
             language: detect_language(&sample),
             blocks,
+            ocr: false,
         })
     }
 }

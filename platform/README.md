@@ -50,6 +50,22 @@ with the developer setup above rather than stranding them. `OPENAI_API_KEY` and
 the stack still answers questions, from the retrieved passages, using the local
 echo model.
 
+### Scanned PDFs and photographs
+
+Off by default. A PDF with no text layer, or a `.png`/`.jpg`/`.webp` of a page,
+needs the OCR sidecar — a small service running Typhoon OCR next to the worker
+(see [`ocr-sidecar/README.md`](ocr-sidecar/README.md)). With it running:
+
+```bash
+ANTHOVAI__OCR__ENABLED=true cargo run --bin anthovai-worker
+ANTHOVAI__OCR__ENABLED=true cargo run --bin anthovai-api
+```
+
+Both binaries read the same setting: the worker sends scans to the sidecar,
+and the API accepts image uploads only when there is something to read them.
+Without it, a scan is refused at upload with a reason rather than left failing
+in the queue.
+
 The API answers on <http://localhost:8080/internal/health>. Three more endpoints
 are worth knowing:
 

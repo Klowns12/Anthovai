@@ -146,11 +146,11 @@ export function Documents({
             <input
               type="file"
               name="file"
-              accept=".pdf,.docx,.txt,.md,.markdown,.json,.csv,.html,.htm"
+              accept=".pdf,.docx,.txt,.md,.markdown,.json,.csv,.html,.htm,.png,.jpg,.jpeg,.webp"
               className="block w-full text-sm text-white-60 file:mr-4 file:py-2 file:px-4 file:rounded-sm file:border file:border-gold-border file:bg-gold-dim file:text-gold file:text-[11px] file:tracking-[0.2em] file:uppercase file:cursor-pointer"
             />
             <p className="text-xs text-white-30 mt-3">
-              PDF, Word, Markdown, text, JSON, CSV or HTML.
+              PDF, Word, Markdown, text, JSON, CSV or HTML — or a photo or scan of a page, where OCR is enabled.
             </p>
           </div>
         )}

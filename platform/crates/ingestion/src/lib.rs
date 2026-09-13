@@ -5,16 +5,18 @@
 
 pub mod chunker;
 pub mod normalize;
+pub mod ocr;
 pub mod parsers;
 pub mod pipeline;
 pub mod tokens;
 
 pub use chunker::{chunk, Block, ChunkConfig, ChunkDraft, ParsedDocument};
 pub use normalize::normalize;
+pub use ocr::{OcrClient, OcrError};
 pub use parsers::ParserRegistry;
 pub use pipeline::{IngestOutcome, IngestPipeline};
 
-use anthovai_core::Result;
+use anthovai_core::{DomainError, Result};
 use anthovai_knowledge::SourceType;
 use async_trait::async_trait;
 
@@ -76,6 +78,25 @@ impl IngestError {
         }
     }
 
+    /// What a parser's failure means for the queue.
+    ///
+    /// Parsers return `DomainError` like every domain crate, and most of what
+    /// they say about a file is final: no text, not a PDF, too many pages.
+    /// Two things are not about the file at all — a parse that ran out of
+    /// time on a busy worker, and an OCR service that was not answering — and
+    /// those are worth another attempt.
+    pub fn from_parse(error: DomainError) -> Self {
+        match error.code().as_str() {
+            error_codes::PARSE_TIMEOUT => {
+                Self::transient_with(error_codes::PARSE_TIMEOUT, error.to_string())
+            }
+            error_codes::OCR_UNAVAILABLE => {
+                Self::transient_with(error_codes::OCR_UNAVAILABLE, error.to_string())
+            }
+            _ => Self::permanent(error_codes::NO_EXTRACTABLE_TEXT, error.to_string()),
+        }
+    }
+
     pub fn code(&self) -> &'static str {
         match self {
             Self::Transient { code, .. } | Self::Permanent { code, .. } => code,
@@ -100,6 +121,9 @@ pub mod error_codes {
     pub const DOCUMENT_MISSING: &str = "document_missing";
     pub const FILE_MISSING: &str = "file_missing";
     pub const TEMPORARY_FAILURE: &str = "temporary_failure";
+    /// The OCR sidecar was configured but did not answer. Retried: the scan
+    /// is fine, the service is not there yet.
+    pub const OCR_UNAVAILABLE: &str = "ocr_unavailable";
 }
 
 #[cfg(test)]
@@ -118,6 +142,27 @@ mod tests {
         let error = IngestError::transient_with(error_codes::EMBEDDING_FAILED, "503 from provider");
         assert!(error.is_retryable());
         assert_eq!(error.code(), "embedding_failed");
+    }
+
+    #[test]
+    fn a_parser_that_ran_out_of_time_is_retried_and_a_scan_is_not() {
+        let slow = IngestError::from_parse(DomainError::Conflict(error_codes::PARSE_TIMEOUT));
+        assert!(slow.is_retryable());
+        assert_eq!(slow.code(), "parse_timeout");
+
+        let no_sidecar = IngestError::from_parse(DomainError::rejected(
+            error_codes::OCR_UNAVAILABLE,
+            "connection refused",
+        ));
+        assert!(no_sidecar.is_retryable());
+        assert_eq!(no_sidecar.code(), "ocr_unavailable");
+
+        let scan = IngestError::from_parse(DomainError::validation(format!(
+            "{}: this is a scan",
+            error_codes::NO_EXTRACTABLE_TEXT
+        )));
+        assert!(!scan.is_retryable());
+        assert_eq!(scan.code(), "no_extractable_text");
     }
 
     #[test]

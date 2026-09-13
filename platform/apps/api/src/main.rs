@@ -141,7 +141,10 @@ async fn main() -> anyhow::Result<()> {
             auth,
             tenants: TenantService::new(db.clone()),
             agents: Arc::clone(&agents),
-            knowledge: KnowledgeService::new(db.clone(), storage, settings.embeddings.clone()),
+            // Photographs and scans are accepted only where the worker has an
+            // OCR sidecar to read them; the same setting drives both.
+            knowledge: KnowledgeService::new(db.clone(), storage, settings.embeddings.clone())
+                .accepting_images(settings.ocr.enabled),
             chat: ChatService::new(
                 db.clone(),
                 agents,

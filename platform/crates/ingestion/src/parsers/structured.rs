@@ -74,6 +74,7 @@ impl Parser for JsonParser {
             title: input.title(),
             language: detect_language(&sample_of(&blocks)),
             blocks,
+            ocr: false,
         })
     }
 }
@@ -272,6 +273,7 @@ impl Parser for CsvParser {
             title: input.title(),
             language: detect_language(&sample_of(&blocks)),
             blocks,
+            ocr: false,
         })
     }
 }

@@ -24,6 +24,11 @@ pub struct KnowledgeService {
     db: Db,
     storage: Storage,
     embeddings: EmbeddingSettings,
+    /// Whether photographs and scans may be uploaded. They can only be read
+    /// by the OCR sidecar, so this follows `[ocr] enabled` — a deployment
+    /// without OCR refuses them here, with a reason, instead of accepting
+    /// them and failing them in the worker an hour later.
+    image_uploads: bool,
 }
 
 #[derive(Clone, Debug)]
@@ -67,7 +72,15 @@ impl KnowledgeService {
             db,
             storage,
             embeddings,
+            image_uploads: false,
         }
+    }
+
+    /// Accept photographs and scans. Only when OCR is enabled on this
+    /// deployment: without it there is nothing that can read them.
+    pub fn accepting_images(mut self, enabled: bool) -> Self {
+        self.image_uploads = enabled;
+        self
     }
 
     // ---- knowledge bases --------------------------------------------------
@@ -212,6 +225,7 @@ impl KnowledgeService {
                 source_type.as_str()
             )));
         }
+        image_gate(self.image_uploads, source_type)?;
 
         let document_id = DocumentId::new();
         let mut db = self.db.tenant(ctx).await?;
@@ -397,6 +411,7 @@ impl Clone for KnowledgeService {
             db: self.db.clone(),
             storage: Arc::clone(&self.storage),
             embeddings: self.embeddings.clone(),
+            image_uploads: self.image_uploads,
         }
     }
 }
@@ -432,6 +447,21 @@ fn describe(target: &UploadTarget) -> Result<(String, SourceType, Option<String>
         }
     }
 }
+
+/// A photograph needs OCR to become text. Carries its own code so a dashboard
+/// can say "ask your administrator to enable OCR" rather than "invalid file".
+fn image_gate(image_uploads: bool, source_type: SourceType) -> Result<()> {
+    if source_type == SourceType::Image && !image_uploads {
+        return Err(DomainError::rejected(
+            OCR_NOT_ENABLED,
+            "photographs and scans need OCR, which is not enabled on this deployment",
+        ));
+    }
+    Ok(())
+}
+
+/// Error code for an image uploaded where nothing can read it.
+pub const OCR_NOT_ENABLED: &str = "ocr_not_enabled";
 
 fn validated_name(name: &str) -> Result<String> {
     let trimmed = name.trim();
@@ -473,6 +503,31 @@ mod tests {
 
         assert_eq!(title, "handbook.md");
         assert_eq!(source, SourceType::Md);
+    }
+
+    #[test]
+    fn a_photograph_is_typed_as_an_image() {
+        let (title, source, mime) = describe(&UploadTarget::File {
+            filename: "ใบส่งของ-หน้างาน.jpg".into(),
+            mime_type: Some("image/jpeg".into()),
+            declared_size: None,
+        })
+        .unwrap();
+
+        assert_eq!(title, "ใบส่งของ-หน้างาน.jpg");
+        assert_eq!(source, SourceType::Image);
+        assert_eq!(mime.as_deref(), Some("image/jpeg"));
+    }
+
+    #[test]
+    fn images_are_refused_at_the_door_unless_ocr_can_read_them() {
+        let err = image_gate(false, SourceType::Image).unwrap_err();
+        assert_eq!(err.code(), OCR_NOT_ENABLED);
+        assert!(err.to_string().contains("OCR"), "{err}");
+
+        image_gate(true, SourceType::Image).expect("allowed once OCR is on");
+        // The gate is about images only; a PDF passes either way.
+        image_gate(false, SourceType::Pdf).expect("a PDF needs no OCR to be accepted");
     }
 
     #[test]
