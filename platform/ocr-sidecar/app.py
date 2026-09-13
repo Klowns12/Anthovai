@@ -17,12 +17,14 @@ import binascii
 import io
 import json
 import os
+import re
 import time
 import urllib.error
 import urllib.request
 
 import pypdfium2 as pdfium  # BSD/Apache — ตั้งใจเลี่ยง PyMuPDF (AGPL)
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
 from PIL import Image
 from pydantic import BaseModel
 
@@ -143,6 +145,58 @@ def _pdf_pages_to_png_b64(pdf_bytes: bytes) -> list[str]:
         scale = TARGET_PX / float(max(w_pt, h_pt))
         out.append(_to_png_b64(page.render(scale=scale).to_pil()))
     return out
+
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+
+
+@app.get("/", include_in_schema=False)
+def demo():
+    """A page to drop a Thai document on and watch it be read.
+
+    Served from the sidecar itself so trying it is one command rather than a
+    second server. The sidecar is never published outside the machine — compose
+    only `expose`s it, and locally it binds loopback — so this adds no surface
+    that was not already there.
+
+    It is also the demo to put in front of a customer: it shows the reading, the
+    fields pulled out of it, and the arithmetic that decides whether a document
+    can be trusted without a person looking at it.
+    """
+    return FileResponse(os.path.join(HERE, "demo.html"), media_type="text/html")
+
+
+SAMPLE_LABELS = {
+    "03_delivery_note.png": "ใบส่งของ",
+    "01_tax_invoice.png": "ใบกำกับภาษี",
+    "02_quotation.png": "ใบเสนอราคา",
+}
+
+
+@app.get("/samples", include_in_schema=False)
+def samples():
+    """Which sample documents this checkout actually has.
+
+    The page asks rather than probing each file: a HEAD against a GET route
+    answers 405, so probing reported "missing" for files that were there.
+    """
+    here = os.path.join(HERE, "samples")
+    return [
+        {"name": name, "label": label}
+        for name, label in SAMPLE_LABELS.items()
+        if os.path.isfile(os.path.join(here, name))
+    ]
+
+
+@app.get("/samples/{name}", include_in_schema=False)
+def sample(name: str):
+    """One of the synthetic Thai documents, if they were put next to this file."""
+    if not re.fullmatch(r"[0-9A-Za-z_.-]{1,64}\.(png|jpg|jpeg|webp|pdf)", name):
+        raise HTTPException(404, "no such sample")
+    path = os.path.join(HERE, "samples", name)
+    if not os.path.isfile(path):
+        raise HTTPException(404, "no such sample")
+    return FileResponse(path)
 
 
 @app.get("/health")
