@@ -60,6 +60,10 @@ point faster than any description of it does.
 
 ## How it was chosen
 
+[`benchmark/`](benchmark/README.md) holds the harness that decided it: the
+document generator, the scorer, and the purchase-order fixture. Re-run it when
+a new model appears.
+
 [`docs/benchmark-2026-09-13.md`](docs/benchmark-2026-09-13.md) — the model, the prompt and
 the 1800 px rendering are the recipe that scored 97% field accuracy on Thai
 invoices, quotations, delivery notes and an official memo. The earlier model
