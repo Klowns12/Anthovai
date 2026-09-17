@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
-import { DeliveryNoteDemo } from '@/components/demo/DeliveryNoteDemo'
+import { DemoSwitcher } from '@/components/demo/DemoSwitcher'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -16,5 +16,5 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function DemoPage() {
-  return <DeliveryNoteDemo />
+  return <DemoSwitcher />
 }

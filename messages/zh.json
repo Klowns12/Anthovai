@@ -594,7 +594,7 @@
       "body": "同一套平台，安装在您的服务器上，并配备泰文扫描件 OCR。没有任何东西离开大楼。",
       "cta": "私有 AI"
     },
-    "cta_demo": "Try reading a delivery note"
+    "cta_demo": "Try the demo"
   },
   "platform": {
     "label": "平台",
@@ -790,8 +790,8 @@
     "closing_body": "我们当着您的面，把演示装在您的机器上。拔掉网线它照样工作——因为从一开始就没有任何东西需要离开。"
   },
   "demo": {
-    "meta_title": "Try reading a delivery note",
-    "meta_description": "Drop a delivery note. The system reads it, pulls the lines, and checks the numbers — including damaged goods that reduce quantity.",
+    "meta_title": "Try the demo — delivery notes and clinic Q&A",
+    "meta_description": "Drop a delivery note and watch the numbers get checked, or ask a sample clinic whose answers come from uploaded documents — with citations.",
     "label": "Demo",
     "headline": "Let the system read a delivery note",
     "lede": "Drop a file or use a sample. It reads the text, pulls the lines, and checks the numbers. Watch for quantity reduced by damaged goods, and the words needs review.",
@@ -835,6 +835,34 @@
     "elapsed": "read in {seconds}s",
     "footnote": "Numbers that fail a check are always sent to a person. Accuracy depends on image quality. This demo sends the image to a model via API.",
     "cta_signup": "Try asking a document in the dashboard",
-    "cta_contact": "Book a look at your own documents"
+    "cta_contact": "Book a look at your own documents",
+    "tab_ocr": "Read a delivery note",
+    "tab_rag": "Ask the clinic",
+    "rag": {
+      "label": "Demo",
+      "headline": "Ask a clinic from its own documents",
+      "lede": "This is a sample dental clinic with prices and hours in a knowledge base. Answers have to come from those documents — ask something they do not cover and you get a refusal, not an invented reply.",
+      "privacy_checking": "Checking the service…",
+      "privacy": "Asks via API · answers cite uploaded documents",
+      "privacy_down": "The document Q&A demo is not ready",
+      "placeholder": "Ask about prices, hours, or coverage…",
+      "ask": "Ask",
+      "asking": "Searching the documents…",
+      "try": "Try asking:",
+      "q_scale": "How much is a scaling?",
+      "q_hours": "What time do you open on Monday?",
+      "q_gold": "Can I use the gold card?",
+      "q_cancel": "Is there a fee to reschedule at short notice?",
+      "q_offtopic": "What is the secret formula of Coca-Cola?",
+      "sources": "Answered from",
+      "ungrounded": "Nothing relevant was found, so it used the fallback instead of inventing an answer.",
+      "page": "page",
+      "usage": "{in} in · {out} out · {ms} ms",
+      "fail": "Could not ask ({status}): {detail}",
+      "down": "Could not reach the service: {message}",
+      "footnote": "The clinic is sample data for this demo. Answers come from documents in the knowledge base, not from the open internet.",
+      "cta_signup": "Try it with your own documents in the dashboard",
+      "cta_contact": "Book a look at your own documents"
+    }
   }
 }
