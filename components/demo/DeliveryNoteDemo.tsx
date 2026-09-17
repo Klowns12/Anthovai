@@ -217,8 +217,7 @@ export function DeliveryNoteDemo() {
     : []
 
   return (
-    <main className="pt-32 pb-24">
-      <section className="py-16 relative overflow-hidden">
+    <section className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 dot-grid opacity-20 pointer-events-none" />
         <div className="mx-auto max-w-5xl px-6 lg:px-8 relative z-10">
           <FadeUp>
@@ -462,8 +461,7 @@ export function DeliveryNoteDemo() {
             </Link>
           </div>
         </div>
-      </section>
-    </main>
+    </section>
   )
 }
 
