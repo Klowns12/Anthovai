@@ -18,6 +18,7 @@ const navLinks = [
   // hosted one because it is the same product; a visitor from a bank or a
   // factory should not have to read the hosted page to learn it exists.
   { href: '/platform/private-ai', key: 'private_ai' },
+  { href: '/demo', key: 'demo' },
   { href: '/solutions', key: 'solutions' },
   { href: '/about', key: 'about' },
   { href: '/careers', key: 'careers' },

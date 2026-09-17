@@ -67,10 +67,10 @@ export default function PlatformPage() {
                 {t('cta_primary')}
               </Link>
               <Link
-                href="/signin"
+                href="/demo"
                 className="text-sm tracking-wide px-8 py-4 rounded-md border border-white/[0.12] text-white-60 hover:text-white hover:border-white/[0.24] transition-colors"
               >
-                {t('cta_secondary')}
+                {t('cta_demo')}
               </Link>
             </div>
           </FadeUp>

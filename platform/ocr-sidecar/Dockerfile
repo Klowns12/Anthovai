@@ -17,7 +17,8 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY app.py extract.py ./
+COPY app.py extract.py demo.html ./
+COPY samples ./samples
 
 USER ocr
 EXPOSE 9090
@@ -25,10 +26,10 @@ EXPOSE 9090
 # Inside the compose network the worker reaches this by service name, so the
 # bind is the container's interface, not loopback. The network itself is what
 # keeps it off the internet.
-ENV OCR_OLLAMA_URL=http://host.docker.internal:11434 \
-    OCR_MODEL=scb10x/typhoon-ocr1.5-3b
+ENV OCR_BACKEND=api \
+    OCR_MODEL=gpt-5.4-mini
 
-# Healthy means the model is pulled and Ollama answers — `/health` returns 503
+# Healthy means the configured backend is usable — `/health` returns 503
 # otherwise — so the worker's retries stop the moment OCR is really ready.
 HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
     CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:9090/health', timeout=4)" || exit 1

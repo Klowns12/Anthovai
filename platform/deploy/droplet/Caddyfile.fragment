@@ -1,0 +1,32 @@
+# anthovai.152.42.177.130.sslip.io — the Anthovai platform API (/opt/anthovai)
+#
+# sslip.io rather than a name under anthovai.com, so this needs no DNS change
+# and Caddy can still get a real certificate — the same trick the kai-services
+# and vikunja blocks above use. Point ANTHOVAI_API_URL on Vercel here.
+#
+# TLS is not optional for this one: the website proxies a customer's session
+# cookie through it, and their own application sends an API key with every
+# question. Over plain HTTP both cross the internet in the clear.
+#
+# 8090 rather than 8080, which belongs to something else on this host.
+anthovai.152.42.177.130.sslip.io {
+	reverse_proxy 172.17.0.1:8090 {
+		# A question is several model calls and an embedding round trip. The
+		# API's own request timeout is 65s, so the proxy must outlast it or a
+		# slow answer becomes a 504 instead of the API's own named error.
+		transport http {
+			response_header_timeout 120s
+		}
+	}
+}
+
+# Costing OCR demo — sidecar on 172.17.0.1:9090, not on the public IP.
+# A page takes about a minute. The API's 120s timeout is not enough.
+demo.152.42.177.130.sslip.io {
+	reverse_proxy 172.17.0.1:9090 {
+		transport http {
+			response_header_timeout 180s
+			read_timeout 180s
+		}
+	}
+}
