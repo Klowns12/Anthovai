@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/products',
     '/platform',
     '/platform/private-ai',
+    '/demo',
     '/solutions',
     '/expertise/enterprise-software',
     '/expertise/enterprise-software/healthcare',

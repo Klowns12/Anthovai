@@ -9,7 +9,8 @@
     "about": "会社について",
     "careers": "採用情報",
     "contact": "お問い合わせ",
-    "private_ai": "プライベート AI"
+    "private_ai": "プライベート AI",
+    "demo": "Demo"
   },
   "hero": {
     "eyebrow": "カイザー クラウンの家 · IT / ソフトウェア / エンジニアリング",
@@ -592,7 +593,8 @@
       "title": "自社ネットワークの内側で動かしたいですか？",
       "body": "同じプラットフォームを御社サーバーに導入し、タイ語スキャン文書用の OCR も備えます。何も外に出ません。",
       "cta": "プライベート AI"
-    }
+    },
+    "cta_demo": "Try reading a delivery note"
   },
   "platform": {
     "label": "プラットフォーム",
@@ -786,5 +788,53 @@
     ],
     "closing_title": "御社自身の文書でデモを",
     "closing_body": "御社のマシンに、目の前でデモを導入します。LAN ケーブルを抜いても動きます——そもそも何も外に出す必要がないからです。"
+  },
+  "demo": {
+    "meta_title": "Try reading a delivery note",
+    "meta_description": "Drop a delivery note. The system reads it, pulls the lines, and checks the numbers — including damaged goods that reduce quantity.",
+    "label": "Demo",
+    "headline": "Let the system read a delivery note",
+    "lede": "Drop a file or use a sample. It reads the text, pulls the lines, and checks the numbers. Watch for quantity reduced by damaged goods, and the words needs review.",
+    "privacy_checking": "Checking the reader…",
+    "privacy_api": "Reads via API · {model} · do not upload confidential documents",
+    "privacy_local": "Running on this machine · {model}",
+    "privacy_down": "Cannot reach the document reader",
+    "drop_title": "Drop a file here, or click to choose",
+    "drop_hint": "Photo (PNG, JPG, WebP) or PDF — longest side at least 1200 pixels",
+    "samples_intro": "Nothing to hand? Try a sample:",
+    "reading": "Reading {name} — about a minute per page",
+    "extracting": "Text is in. Pulling fields and checking numbers…",
+    "too_small": "Image too small to read reliably — {detail}",
+    "ocr_fail": "Could not read ({status}): {detail}",
+    "ocr_down": "Could not reach the reader: {message}",
+    "verdict_text": "The text was read",
+    "verdict_text_body": "Fields could not be pulled from this kind of document",
+    "verdict_review": "Needs a person to review",
+    "verdict_review_body": "It was read, but something could not be confirmed, so it would not enter the system automatically",
+    "verdict_pass": "All checks passed",
+    "verdict_pass_body": "The numbers add up. A document like this can enter the system on its own",
+    "fields": "Fields pulled out",
+    "checks": "Checks",
+    "raw": "All text that was read",
+    "no_fields": "— no fields pulled —",
+    "no_checks": "— no numbers to check on this kind of document —",
+    "page": "page",
+    "kind": "Document type",
+    "doc_no": "Number",
+    "date": "Date",
+    "site": "Site / project",
+    "receiver": "Receiver",
+    "tax_ids": "Tax ID",
+    "item": "Item",
+    "qty": "Qty",
+    "amount": "Amount",
+    "unit": "Unit",
+    "subtotal": "Subtotal",
+    "vat": "VAT",
+    "grand_total": "Total",
+    "elapsed": "read in {seconds}s",
+    "footnote": "Numbers that fail a check are always sent to a person. Accuracy depends on image quality. This demo sends the image to a model via API.",
+    "cta_signup": "Try asking a document in the dashboard",
+    "cta_contact": "Book a look at your own documents"
   }
 }

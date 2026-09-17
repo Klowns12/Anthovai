@@ -9,6 +9,7 @@ const footerLinks = {
   platform: [
     { label: 'platform', href: '/platform' },
     { label: 'private_ai', href: '/platform/private-ai' },
+    { label: 'demo', href: '/demo' },
   ],
   company: [
     { label: 'about', href: '/about' },
